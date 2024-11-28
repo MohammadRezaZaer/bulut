@@ -1,6 +1,8 @@
 import type { Config } from 'tailwindcss';
 import defaultTheme from 'tailwindcss/defaultTheme';
-
+const brandColor = '#6E21FF';
+const brandColorDark = '#748E63';
+const secondaryColor = '#FFAF59';
 export default {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
@@ -9,6 +11,13 @@ export default {
         primary: ['Inter', ...defaultTheme.fontFamily.sans],
       },
       colors: {
+        brand: {
+          DEFAULT: brandColor,
+          secondary: secondaryColor,
+          third: "#5B6064",
+          dark: brandColorDark,
+          "1": "#CAC2B5"
+        },
         primary: {
           // Customize it on globals.css :root
           50: 'rgb(var(--tw-color-primary-50) / <alpha-value>)',

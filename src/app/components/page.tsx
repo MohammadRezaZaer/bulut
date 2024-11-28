@@ -22,6 +22,8 @@ import UnstyledLink from '@/components/links/UnstyledLink';
 import NextImage from '@/components/NextImage';
 import Skeleton from '@/components/Skeleton';
 
+
+
 type Color = (typeof colorList)[number];
 
 export default function ComponentPage() {
