@@ -54,7 +54,7 @@ export default function RootLayout(props: {
   modal: React.ReactNode;
 }) {
   return (
-    <html >
+    <html lang="fa" dir={"rtl"}>
       <body>
         {props.children}
         {props.modal}

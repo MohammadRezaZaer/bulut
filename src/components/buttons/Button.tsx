@@ -46,23 +46,23 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         type='button'
         disabled={disabled}
         className={cn(
-          'inline-flex items-center rounded font-medium',
+          'inline-flex  items-center rounded-lg font-medium',
           'focus-visible:ring-primary-500 focus:outline-none focus-visible:ring',
           'shadow-sm',
-          'transition-colors duration-75',
+          'transition-all duration-75',
           //#region  //*=========== Size ===========
           [
-            size === 'base' && ['px-3 py-1.5', 'text-sm md:text-base'],
+            size === 'base' && ['px-[47.5px] py-[14px] h-12', 'text-sm md:text-base'],
             size === 'sm' && ['px-2 py-1', 'text-xs md:text-sm'],
           ],
           //#endregion  //*======== Size ===========
           //#region  //*=========== Variants ===========
           [
             variant === 'primary' && [
-              'bg-primary-500 text-white',
-              'border-primary-600 border',
-              'hover:bg-primary-600 hover:text-white',
-              'active:bg-primary-700',
+              'bg-brand text-white',
+
+              'hover:bg-brand-secondary hover:text-white',
+              'active:scale-95',
               'disabled:bg-primary-700',
             ],
             variant === 'outline' && [
@@ -113,45 +113,46 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
             <ImSpinner2 className='animate-spin' />
           </div>
         )}
-        {LeftIcon && (
-          <div
-            className={cn([
-              size === 'base' && 'mr-1',
-              size === 'sm' && 'mr-1.5',
-            ])}
-          >
-            <LeftIcon
-              size='1em'
-              className={cn(
-                [
-                  size === 'base' && 'md:text-md text-md',
-                  size === 'sm' && 'md:text-md text-sm',
-                ],
-                classNames?.leftIcon
-              )}
-            />
-          </div>
-        )}
+
+          {RightIcon && (
+              <div
+                  className={cn([
+                      size === 'base' && 'mx-1',
+                      size === 'sm' && 'mx-1.5',
+                  ])}
+              >
+                  <RightIcon
+                      size='1em'
+                      className={cn(
+                          [
+                              size === 'base' && 'text-md md:text-md',
+                              size === 'sm' && 'md:text-md text-sm',
+                          ],
+                          classNames?.rightIcon
+                      )}
+                  />
+              </div>
+          )}
         {children}
-        {RightIcon && (
-          <div
-            className={cn([
-              size === 'base' && 'ml-1',
-              size === 'sm' && 'ml-1.5',
-            ])}
-          >
-            <RightIcon
-              size='1em'
-              className={cn(
-                [
-                  size === 'base' && 'text-md md:text-md',
-                  size === 'sm' && 'md:text-md text-sm',
-                ],
-                classNames?.rightIcon
-              )}
-            />
-          </div>
-        )}
+          {LeftIcon && (
+              <div
+                  className={cn([
+                      size === 'base' && 'mr-1',
+                      size === 'sm' && 'mr-1.5',
+                  ])}
+              >
+                  <LeftIcon
+                      size='1em'
+                      className={cn(
+                          [
+                              size === 'base' && 'md:text-md text-md',
+                              size === 'sm' && 'md:text-md text-sm',
+                          ],
+                          classNames?.leftIcon
+                      )}
+                  />
+              </div>
+          )}
       </button>
     );
   }

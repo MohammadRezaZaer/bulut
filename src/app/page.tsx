@@ -1,14 +1,17 @@
 "use client"
 
 import Link from 'next/link';
-import {Fragment, useState} from 'react'
+import React, {Fragment, useState} from 'react'
 import {Menu, Transition} from '@headlessui/react'
 import {Bars3Icon, BellIcon,} from '@heroicons/react/24/outline'
 import {ChevronDownIcon, MagnifyingGlassIcon} from '@heroicons/react/20/solid'
 import {cn} from "@/lib/utils";
 import {navigation, Sidebar} from "@/components/sidebar";
+import NextImage from "@/components/NextImage";
+import Button from "@/components/buttons/Button";
+import {ArrowRight, Plus} from "lucide-react";
 
-export const  photos = Array.from({ length: 6 }, (_, i) => i + 1);
+export const  photos = Array.from({ length: 3 }, (_, i) => i + 1);
 
 const userNavigation = [
   { name: 'Your profile', href: '#' },
@@ -19,9 +22,9 @@ function DeskSideBar(props: { sidebarOpen: boolean, onClick: () => void, callbac
   return <>
     {/* Static sidebar for desktop */}
     <div
-        className={cn("hidden  lg:inset-y-0 lg:right-0 lg:z-30 lg:block lg:w-20 lg:overflow-y-auto shadow-sm border-l border-gray-200 lg:pb-4 transition-all lg:min-h-[calc(100vh-64px)]", {"lg:w-40": props.sidebarOpen})}>
+        className={cn("hidden  lg:inset-y-0 lg:end-0 lg:z-30 lg:block lg:w-20 bg-white lg:overflow-y-auto shadow-sm border-l border-gray-200 lg:pb-4 transition-all duration-500 lg:min-h-[calc(100vh-64px)]", {"lg:w-80": props.sidebarOpen})}>
 
-      <nav className="px-4">
+      <nav className="px-8">
         <ul role="list" className="flex flex-col items-center space-y-1">
 
 
@@ -49,7 +52,7 @@ function DashHeader(props: {
   sidebarOpen: boolean,
   onClick1: () => void,
   callbackfn1: (item) => JSX.Element,
-  callbackfn2: (id) => JSX.Element
+
 }) {
   return <div className="">
     <div
@@ -72,22 +75,7 @@ function DashHeader(props: {
           />
         </div>
 
-        <form className="relative flex flex-1" action="#" method="GET">
-          <label htmlFor="search-field" className="sr-only">
-            Search
-          </label>
-          <MagnifyingGlassIcon
-              className="pointer-events-none absolute inset-y-0 left-0 h-full w-5 text-gray-400"
-              aria-hidden="true"
-          />
-          <input
-              id="search-field"
-              className="block h-full w-full border-0 py-0 pl-8 pr-0 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm"
-              placeholder="Search..."
-              type="search"
-              name="search"
-          />
-        </form>
+
         <div className="flex items-center gap-x-4 lg:gap-x-6">
           <button type="button" className="-m-2.5 p-2.5 text-gray-400 hover:text-gray-500">
             <span className="sr-only">View notifications</span>
@@ -132,15 +120,55 @@ function DashHeader(props: {
       </div>
     </div>
 
-    <main className="">
-      <div className="flex flex-row-reverse">
+    <main className="bg-[#F0F1F1] ">
+      <div className="flex   ">
 
         <DeskSideBar sidebarOpen={props.sidebarOpen} onClick={props.onClick1}
                      callbackfn={props.callbackfn1}/>
-        <section className="cards-container">
-          {photos.map(props.callbackfn2)}
-        </section>
+<section className="py-10 px-12 w-full bg-white m-4 rounded-xl">
+    <div className="flex w-full items-center mb-10">
 
+        <span>مدیریت کتاب‌ها</span>
+        <form className="relative flex flex-[0.4] mr-auto mx-4 h-12" action="#" method="GET">
+            <label htmlFor="search-field" className="sr-only">
+                Search
+            </label>
+
+            <input
+                id="search-field"
+                className="dir-rtl block h-full w-full border-1 border-gray-400 rounded-lg py-3 pr-8 pl-0 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm"
+                placeholder="جستجو بر اساس نام کتاب"
+                type="search"
+                name="search"
+            />
+            <MagnifyingGlassIcon
+                className="pointer-events-none absolute inset-y-0 right-2 h-full w-5 text-gray-400"
+                aria-hidden="true"
+            />
+        </form>
+
+        <Button
+            rightIcon={Plus}> افزودن
+        </Button>
+    </div>
+    <div className="flex flex-wrap gap-2 ">
+
+
+        {photos.map((id) => <Link
+            className="relative min-w-[306px] max-h-[401px] aspect-[1.3] bg-white shadow-lg items-start flex flex-col rounded"
+            key={id} href={`/photos/${id}`} passHref>
+            <NextImage
+                useSkeleton
+                className='w-full aspect-square relative'
+                src={`/items/${id}.png`}
+                fill
+                alt='Icon'
+            />
+            <h2 className="text-lg ">دیزاین یک شغل است</h2>
+            <p className="text-lg font-bold"><span className="text-gray-400 font-medium">قیمت :</span> 58.000 تومان</p>
+        </Link>)}
+    </div>
+</section>
 
       </div>
     </main>
@@ -148,7 +176,7 @@ function DashHeader(props: {
 }
 
 export default function Page() {
-  const [mobSidebarOpen, setMobSidebarOpen] = useState(false)
+    const [mobSidebarOpen, setMobSidebarOpen] = useState(false)
   const [SidebarOpen, setSidebarOpen] = useState(false)
 
   return (<>
@@ -167,8 +195,8 @@ export default function Page() {
                                  'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold'
                              )}
                          >
-                           <item.icon className="h-6 w-6 shrink-0" aria-hidden="true"/>
-                           {item.name}
+                             {item.name}
+                             <item.icon className="h-6 w-6 shrink-0" aria-hidden="true"/>
                          </a>
                        </li>
                    )}/>
@@ -189,23 +217,19 @@ export default function Page() {
                 )}
               </Menu.Item>
           )} sidebarOpen={SidebarOpen} onClick1={() => setSidebarOpen((prev) => !prev)} callbackfn1={(item) => (
-              <li key={item.name} className="w-full">
+              <li key={item.name} className="w-full min-w-12">
                 <a
                     href={item.href}
                     className={cn(
                         item.current ? 'bg-brand text-white' : 'text-gray-400 hover:text-white hover:bg-brand',
-                        'group flex gap-x-3 rounded-md p-3 flex-row-reverse text-sm leading-6 font-semibold'
+                        'group flex gap-x-3 rounded-md p-3 text-sm leading-6 font-semibold'
                     )}
                 >
-                  <item.icon className="h-6 w-6 shrink-0" aria-hidden="true"/>
-                  <span className={cn({"sr-only": !SidebarOpen})}>{item.name}</span>
+                    <item.icon className="h-6 w-6 shrink-0" aria-hidden="true"/>
+                    <span className={cn({"sr-only": !SidebarOpen})}>{item.name}</span>
                 </a>
               </li>
-          )} callbackfn2={(id) => (
-              <Link className="card" key={id} href={`/photos/${id}`} passHref>
-                {id}
-              </Link>
-          )}/>
+          )} />
 
 
         </div>
