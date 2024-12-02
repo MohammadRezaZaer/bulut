@@ -4,12 +4,14 @@ import Link from 'next/link';
 import React, {Fragment, useState} from 'react'
 import {Menu, Transition} from '@headlessui/react'
 import {Bars3Icon, BellIcon,} from '@heroicons/react/24/outline'
-import {ChevronDownIcon, MagnifyingGlassIcon} from '@heroicons/react/20/solid'
+import {ChevronDownIcon, MagnifyingGlassIcon, PencilSquareIcon, TrashIcon} from '@heroicons/react/20/solid'
 import {cn} from "@/lib/utils";
 import {navigation, Sidebar} from "@/components/sidebar";
 import NextImage from "@/components/NextImage";
 import Button from "@/components/buttons/Button";
 import {ArrowRight, Plus} from "lucide-react";
+
+import { EllipsisHorizontalIcon } from '@heroicons/react/20/solid'
 
 export const  photos = Array.from({ length: 3 }, (_, i) => i + 1);
 
@@ -44,6 +46,69 @@ function DeskSideBar(props: { sidebarOpen: boolean, onClick: () => void, callbac
       </nav>
     </div>
   </>;
+}
+
+function ContextMenu({id}) {
+    return <Menu as="div" className="relative inline-block text-left">
+        <div>
+            <Menu.Button
+                className="flex items-center rounded-full bg-gray-100 text-gray-950 hover:text-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-100">
+                <span className="sr-only">Open options</span>
+                <EllipsisHorizontalIcon className="h-5 w-5" aria-hidden="true"/>
+            </Menu.Button>
+        </div>
+
+        <Transition
+            as={Fragment}
+            enter="transition ease-out duration-100"
+            enterFrom="transform opacity-0 scale-95"
+            enterTo="transform opacity-100 scale-100"
+            leave="transition ease-in duration-75"
+            leaveFrom="transform opacity-100 scale-100"
+            leaveTo="transform opacity-0 scale-95"
+        >
+            <Menu.Items
+                className="absolute left-0 z-10 mt-2 w-56 origin-top-left rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                <div className="py-1">
+                    <Menu.Item>
+                        {({active}) => (
+                            <Link
+                                href={`/edit/${id}`} passHref
+                                className={cn(
+                                    active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                                    'group flex items-center px-4 py-2 text-sm'
+                                )}
+                            >
+                                <PencilSquareIcon
+                                    className="ml-3 h-5 w-5 text-gray-400 group-hover:text-gray-500"
+                                    aria-hidden="true"
+                                />
+                                ویرایش
+                            </Link>
+                        )}
+                    </Menu.Item>
+                    <Menu.Item>
+                        {({active}) => (
+                            <Link
+                                href={`/delete/${id}`} passHref
+
+                                className={cn(
+                                    active ? 'bg-gray-100 text-gray-700' : ' text-red-500',
+                                    'group flex items-center px-4 py-2 text-sm'
+                                )}
+                            >
+                                <TrashIcon
+                                    className="ml-3 h-5 w-5 text-red-500 group-hover:text-gray-500"
+                                    aria-hidden="true"/>
+                                حذف
+                            </Link>
+                        )}
+                    </Menu.Item>
+
+                </div>
+            </Menu.Items>
+        </Transition>
+    </Menu>;
 }
 
 function DashHeader(props: {
@@ -154,9 +219,9 @@ function DashHeader(props: {
     <div className="flex flex-wrap gap-2 ">
 
 
-        {photos.map((id) => <Link
+        {photos.map((id) => <div
             className="relative min-w-[306px] max-h-[401px] aspect-[1.3] bg-white shadow-lg items-start flex flex-col rounded"
-            key={id} href={`/photos/${id}`} passHref>
+            key={id} >
             <NextImage
                 useSkeleton
                 className='w-full aspect-square relative'
@@ -164,9 +229,18 @@ function DashHeader(props: {
                 fill
                 alt='Icon'
             />
-            <h2 className="text-lg ">دیزاین یک شغل است</h2>
-            <p className="text-lg font-bold"><span className="text-gray-400 font-medium">قیمت :</span> 58.000 تومان</p>
-        </Link>)}
+            <div className="p-4 relative w-full">
+                <div className="flex w-full justify-between items-center">
+
+
+                    <h2 className="text-lg ">دیزاین یک شغل است</h2>
+
+
+                    <ContextMenu id={id} />
+                </div>
+                <p className="text-lg font-bold"><span className="text-gray-400 font-medium">قیمت :</span> 58.000 تومان
+                </p></div>
+        </div>)}
     </div>
 </section>
 
@@ -177,26 +251,26 @@ function DashHeader(props: {
 
 export default function Page() {
     const [mobSidebarOpen, setMobSidebarOpen] = useState(false)
-  const [SidebarOpen, setSidebarOpen] = useState(false)
+    const [SidebarOpen, setSidebarOpen] = useState(false)
 
-  return (<>
+    return (<>
 
 
-        <div>
-          <Sidebar show={mobSidebarOpen} onClose={setMobSidebarOpen} onClick={() => setMobSidebarOpen(false)}
-                   callbackfn={(item) => (
-                       <li key={item.name}>
-                         <a
-                             href={item.href}
-                             className={cn(
-                                 item.current
-                                     ? 'bg-gray-800 text-white'
-                                     : 'text-gray-400 hover:text-white hover:bg-gray-800',
-                                 'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold'
-                             )}
-                         >
-                             {item.name}
-                             <item.icon className="h-6 w-6 shrink-0" aria-hidden="true"/>
+            <div>
+                <Sidebar show={mobSidebarOpen} onClose={setMobSidebarOpen} onClick={() => setMobSidebarOpen(false)}
+                         callbackfn={(item) => (
+                             <li key={item.name}>
+                                 <a
+                                     href={item.href}
+                                     className={cn(
+                                         item.current
+                                             ? 'bg-gray-800 text-white'
+                                             : 'text-gray-400 hover:text-white hover:bg-gray-800',
+                                         'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold'
+                                     )}
+                                 >
+                                     {item.name}
+                                     <item.icon className="h-6 w-6 shrink-0" aria-hidden="true"/>
                          </a>
                        </li>
                    )}/>
