@@ -1,3 +1,4 @@
+import AddBookForm from "@/components/AddBookForm";
 import { Modal } from "./modal";
 
 export default async function PhotoModal({
@@ -6,5 +7,12 @@ export default async function PhotoModal({
   params: Promise<{ id: string }>;
 }) {
   const photoId = (await params).id;
-  return <Modal>{photoId + "kkkk "}</Modal>;
+  return <Modal>
+
+    <div className="max-w-lg mx-auto mt-10 bg-white p-6 shadow rounded-lg">
+      <h1 className="text-xl font-bold mb-6">افزودن کتاب</h1>
+      <AddBookForm/>
+    </div>
+
+  </Modal>;
 }

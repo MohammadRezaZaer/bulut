@@ -1,32 +1,35 @@
 import {Bars3Icon, BellIcon} from "@heroicons/react/24/outline";
 import {Menu, Transition} from "@headlessui/react";
 import {ChevronDownIcon, MagnifyingGlassIcon} from "@heroicons/react/20/solid";
-import React, {Fragment} from "react";
+import React, {Fragment, useState} from "react";
 import {DeskSideBar} from "@/components/deskSideBar";
 import Button from "@/components/buttons/Button";
 import {Plus} from "lucide-react";
 import NextImage from "@/components/NextImage";
 import {ContextMenu} from "@/components/contextMenu";
 import {photos} from "@/app/page";
+import {cn} from "@/lib/utils";
 
 const userNavigation = [
     {name: 'Your profile', href: '#'},
     {name: 'Sign out', href: '#'},
 ]
 
-export function DashHeader(props: {
-    onClick: () => void,
-    callbackfn: (item) => JSX.Element,
-    sidebarOpen: boolean,
-    onClick1: () => void,
-    callbackfn1: (item) => JSX.Element,
+export function DashHeader( {
+
+                                setMobSidebarOpen
+
+
+
 
 }) {
+    const [SidebarOpen, setSidebarOpen] = useState(false)
+
     return <div className="">
         <div
             className="sticky  top-0 z-40 flex  h-16 shrink-0 items-center gap-x-4 border-b border-gray-200 bg-white px-4 shadow-sm sm:gap-x-6  lg:pl-8 ">
             <button type="button" className="-m-2.5 p-2.5 text-gray-700 lg:hidden"
-                    onClick={props.onClick}>
+                    onClick={() => setMobSidebarOpen(true)}>
                 <span className="sr-only">Open sidebar</span>
                 <Bars3Icon className="h-6 w-6" aria-hidden="true"/>
             </button>
@@ -80,7 +83,21 @@ export function DashHeader(props: {
                         >
                             <Menu.Items
                                 className="absolute right-0 z-10 mt-2.5 w-32 origin-top-right rounded-md bg-white py-2 shadow-lg ring-1 ring-gray-900/5 focus:outline-none">
-                                {userNavigation.map(props.callbackfn)}
+                                {userNavigation.map((item) => (
+                                    <Menu.Item key={item.name}>
+                                        {({active}) => (
+                                            <a
+                                                href={item.href}
+                                                className={cn(
+                                                    active ? 'bg-gray-50' : '',
+                                                    'block px-3 py-1 text-sm leading-6 text-gray-900'
+                                                )}
+                                            >
+                                                {item.name}
+                                            </a>
+                                        )}
+                                    </Menu.Item>
+                                ))}
                             </Menu.Items>
                         </Transition>
                     </Menu>
@@ -91,8 +108,21 @@ export function DashHeader(props: {
         <main className="bg-[#F0F1F1] ">
             <div className="flex   ">
 
-                <DeskSideBar sidebarOpen={props.sidebarOpen} onClick={props.onClick1}
-                             callbackfn={props.callbackfn1}/>
+                <DeskSideBar sidebarOpen={SidebarOpen} onClick={() => setSidebarOpen((prev) => !prev)}
+                             callbackfn={(item) => (
+                                 <li key={item.name} className="w-full min-w-12">
+                                     <a
+                                         href={item.href}
+                                         className={cn(
+                                             item.current ? 'bg-brand text-white' : 'text-gray-400 hover:text-white hover:bg-brand',
+                                             'group flex gap-x-3 rounded-md p-3 text-sm leading-6 font-semibold'
+                                         )}
+                                     >
+                                         <item.icon className="h-6 w-6 shrink-0" aria-hidden="true"/>
+                                         <span className={cn({"sr-only": !SidebarOpen})}>{item.name}</span>
+                                     </a>
+                                 </li>
+                             )}/>
                 <section className="py-10 px-12 w-full bg-white m-4 rounded-xl">
                     <div className="flex w-full items-center mb-10">
 
