@@ -11,12 +11,9 @@ import {Dialog, Transition} from "@headlessui/react";
 import {Fragment} from "react";
 
 export const navigation = [
-    {name: 'Dashboard', href: '#', icon: HomeIcon, current: true},
-    {name: 'Team', href: '#', icon: UsersIcon, current: false},
-    {name: 'Projects', href: '#', icon: FolderIcon, current: false},
-    {name: 'Calendar', href: '#', icon: CalendarIcon, current: false},
-    {name: 'Documents', href: '#', icon: DocumentDuplicateIcon, current: false},
-    {name: 'Reports', href: '#', icon: ChartPieIcon, current: false},
+    {name: 'داشبورد', href: '/', icon: HomeIcon, current: true},
+    {name: 'مدیریت کتاب‌ها', href: '/manage-books', icon: UsersIcon, current: false},
+    {name: 'فروشگاه', href: '/shop', icon: FolderIcon, current: false},
 ]
 
 export function Sidebar(props: {
@@ -39,7 +36,7 @@ export function Sidebar(props: {
                 <div className="fixed inset-0 bg-gray-900/80"/>
             </Transition.Child>
 
-            <div className="fixed inset-0 flex flex-row-reverse">
+            <div className="fixed inset-0 flex ">
                 <Transition.Child
                     as={Fragment}
                     enter="transition ease-in-out duration-300 transform"
