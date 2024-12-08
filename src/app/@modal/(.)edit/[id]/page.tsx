@@ -9,7 +9,7 @@ export default async function PhotoModal({
   const photoId = (await params).id;
   return <Modal>
 
-    <div className="max-w-lg mx-auto mt-10 bg-white p-6  rounded-lg">
+    <div className="w-full mx-auto mt-10 bg-white p-6  rounded-lg">
       <h1 className="text-xl font-bold mb-6">افزودن کتاب</h1>
       <AddBookForm/>
     </div>
