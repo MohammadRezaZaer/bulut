@@ -80,7 +80,7 @@ export default function Page() {
 
                                     <input
                                         id="search-field"
-                                        className="dir-rtl block h-full w-full border-1 border-gray-400 rounded-lg py-3 pr-8 pl-0 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm"
+                                        className="direction-rtl block h-full w-full border-1 border-gray-400 rounded-lg py-3 pr-8 pl-0 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm"
                                         placeholder="جستجو بر اساس نام کتاب"
                                         type="search"
                                         name="search"

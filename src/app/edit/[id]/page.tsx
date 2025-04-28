@@ -1,4 +1,6 @@
 import AddBookForm from "@/components/AddBookForm";
+import ManualBimeRegister from "@/components/ManualBimeRegister";
+import PlateForm from "@/components/Pelak";
 
 export const dynamicParams = false;
 
@@ -15,6 +17,10 @@ export default async function PhotoPage({
   const id = (await params).id;
   return <div className="max-w-lg mx-auto mt-10 bg-white p-6 shadow rounded-lg">
     <h1 className="text-xl font-bold mb-6">افزودن کتاب</h1>
-    <AddBookForm/>
+    {/*<AddBookForm/>*/}
+    <ManualBimeRegister/>
+{/*<PlateForm/>*/}
+
+
   </div>;
 }
