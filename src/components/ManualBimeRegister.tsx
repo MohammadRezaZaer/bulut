@@ -72,10 +72,26 @@ import {
     PhoneInput
 } from "@/components/ui/phone-input";
 
-import {InputDigits, InputLetter, InputPlate, InputPlateGroup} from "@/components/ui/input-plate";
+import { InputPlate} from "@/components/ui/input-plate";
 
 const formSchema = z.object({
-    pelak: z.string()
+    pelak: z.object({
+        leftNumber: z.string(),
+        letter: z.string(),
+        rightNumber: z.string(),
+        iranNumber: z.string(),
+    }).refine((data) => {
+        return (
+            /^\d{2}$/.test(data.leftNumber) &&
+            /^[\u0600-\u06FFa-zA-Z]+$/.test(data.letter) && // Allow Farsi or Latin letters
+            /^\d{3}$/.test(data.rightNumber) &&
+            /^\d{2}$/.test(data.iranNumber)
+        );
+    }, {
+        message: "Please fill all pelak fields correctly.",
+        path: [],
+    }),
+
 
     // tavalod: z.coerce.date(),
     // name_5757013412: z.string(),
@@ -130,8 +146,13 @@ export default function ManualBimeRegister() {
     const form = useForm < z.infer < typeof formSchema >> ({
         resolver: zodResolver(formSchema),
         defaultValues: {
-            "tavalod": new Date(),
-            "pelak": "",
+            // "tavalod": new Date(),
+            pelak: {
+                leftNumber: "",
+                letter: "",
+                rightNumber: "",
+                iranNumber: "",
+            },
         },
     })
 
@@ -149,6 +170,9 @@ export default function ManualBimeRegister() {
         }
     }
 
+    console.log("Form state", form.watch());
+    console.log("Errors", form.formState.errors);
+
     return (
         <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 max-w-3xl mx-auto py-10">
@@ -159,9 +183,10 @@ export default function ManualBimeRegister() {
                     name="pelak"
                     rules={{
                         validate: (value) => {
-                            const regex = /^\d{2}.{1}\d{3}\d{2}$/
-                            if (!regex.test(value)) return "Please fill out all plate fields correctly."
-                            return true
+                            // console.log({value})
+                            // const regex = /^\d{2}.{1}\d{3}\d{2}$/
+                            // if (!regex.test(value)) return "Please fill out all plate fields correctly."
+                            // return true
                         }
                     }}
                     render={({ field }) => (

@@ -15,13 +15,13 @@ interface InputPlateProps {
 }
 
 export const InputPlate = ({value, onChange}: InputPlateProps) => {
-    const [digits, setDigits] = React.useState(["", "", "", ""]) // 4 pieces: [2 digits, 1 letter, 3 digits, 2 digits]
-    console.log({digits})
+    const [digits, setDigits] = React.useState(["", "الف", "", ""]) // 4 pieces: [2 digits, 1 letter, 3 digits, 2 digits]
+    // console.log({digits})
 
     // Split incoming value into local state
-    React.useEffect(() => {
-        if (value) {
-            console.log({value})
+    // React.useEffect(() => {
+    //     if (value) {
+            // console.log({value})
             // const matched = value.match(/^(\d{0,2})(.?)(\d{0,3})(\d{0,2})$/)
             // if (matched) {
             //     setDigits([
@@ -31,8 +31,8 @@ export const InputPlate = ({value, onChange}: InputPlateProps) => {
             //         matched[4] || ""
             //     ])
             // }
-        }
-    }, [value])
+    //     }
+    // }, [value])
 
     const updatePiece = (index: number, val: string) => {
         const newDigits = [...digits]
@@ -41,42 +41,55 @@ export const InputPlate = ({value, onChange}: InputPlateProps) => {
 
         // Create the structured object and pass it to onChange
         onChange({
-            leftNumber: newDigits[0],   // Letter
-            letter: newDigits[1],        // Third part (2 digits)
-            rightNumber: newDigits[2],  // Second part (3 digits)
-            iranNumber: newDigits[3]  // First part (2 digits)
+            leftNumber: newDigits[0] || "",
+            letter: newDigits[1] || "",
+            rightNumber: newDigits[2] || "",
+            iranNumber: newDigits[3] || "",
         })
     }
 
     return (
-        <div className=" mx-auto flex h-[48px]  w-full max-w-full rounded">
-            <div
-                className=" flex  rounded-r  border-y-[0.4px] border-r-[0.4px] border-solid border-[#A6A9BD]  direction-ltr">
-                <InputDigits
-                    value={digits[0]}
-                    className="h-[28px] w-[33px]"
-                    onChange={(e) => updatePiece(0, e.target.value)}
-                    maxLength={2}
-                />
-                <InputLetter
-                    value={digits[1]}
-                    onChange={(e) => updatePiece(1, e.target.value)}
-                />
-                <InputDigits
-                    value={digits[2]}
-                    className="h-[28px] w-[33px] "
-                    onChange={(e) => updatePiece(2, e.target.value)}
-                    maxLength={3}
-                />
-                <InputDigits
-                    value={digits[3]}
-                    className=" h-[28px] w-[24px] pr-px "
-                    onChange={(e) => updatePiece(3, e.target.value)}
-                    maxLength={2}
-                />
-            </div>
-        </div>
+        <div className="mx-auto flex h-[48px]  w-full max-w-full rounded">
+            <div className=" flex  rounded-r  border-y-[0.4px] border-r-[0.4px] border-solid border-[#A6A9BD] ">
+                <div
+                    className="flex h-full w-[46px] items-center justify-center border-l-[0.4px] border-solid border-[#A6A9BD] ">
+                    <InputDigits
+                        value={digits[3]}
+                        className=" h-[28px] w-[24px] pr-px "
+                        wrapperClassName=" flex h-[32px] w-[30px] items-center justify-center rounded-[5px] border border-solid border-[#8B929A36]  "
+                        onChange={(e) => updatePiece(3, e.target.value)}
+                        maxLength={2}
+                        placeholder={50}
+                    /></div>
+                <div
+                    className=" flex h-full w-[201px] items-center justify-center gap-2">
+                    <InputDigits
+                        value={digits[2]}
+                        className="h-[28px] w-[33px] "
+                        onChange={(e) => updatePiece(2, e.target.value)}
+                        maxLength={3}
+                        placeholder={345}
+                    />
 
+                    <InputLetter
+                        value={digits[1]}
+                        onChange={(e) => updatePiece(1, e.target.value)}
+                    />
+
+                    <InputDigits
+                        value={digits[0]}
+                        className="h-[28px] w-[33px]"
+                        wrapperClassName="flex h-[32px] w-[52px] items-center justify-center rounded-[5px] border border-solid border-[#8B929A36] "
+
+                        onChange={(e) => updatePiece(0, e.target.value)}
+                        maxLength={2}
+                        placeholder={66}
+                    />
+                </div>
+
+            </div>
+            <img className="" src={"/images/pelak-badge.png"}/>
+        </div>
     )
 }
 
@@ -92,7 +105,7 @@ interface InputDigitsProps extends React.InputHTMLAttributes<HTMLInputElement> {
 }
 
 export const InputDigits = React.forwardRef<HTMLInputElement, InputDigitsProps>(
-    ({className, __index = 0, maxLength = 1, ...props}, ref) => {
+    ({className, wrapperClassName, __index = 0, maxLength = 1, ...props}, ref) => {
         const ctx = React.useContext(InputPlateContext)
         const inputRef = React.useRef<HTMLInputElement>(null)
 
@@ -112,7 +125,7 @@ export const InputDigits = React.forwardRef<HTMLInputElement, InputDigitsProps>(
 
         return (
             <div
-                className="flex h-[32px] w-[65px] items-center justify-center rounded-[5px] border border-solid border-[#8B929A36] ">
+                className={cn("flex h-[32px] w-[65px] items-center justify-center rounded-[5px] border border-solid border-[#8B929A36] ", wrapperClassName)}>
                 <input
                     ref={(node) => {
                         inputRef.current = node
@@ -147,7 +160,7 @@ const letterOptions = [
 ];
 export const InputLetter = React.forwardRef<HTMLSelectElement, InputLetterProps>(
     ({value, onChange, ...props}, ref) => {
-        console.log({value})
+        // console.log({value})
         return (
             <div className="flex h-[32px] w-[52px] justify-center rounded-[5px] border border-solid border-[#8B929A36]">
                 <select

@@ -4,31 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8407cdba-7ec5-42fd-9274-72c9660efa8b" name="Changes" comment="pelak initial functionality and style">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/pelak-badge.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ManualBimeRegister.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Pelak.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ui/calendar.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ui/command.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ui/dialog.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ui/input-otp.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ui/input-plate.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ui/location-input.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ui/phone-input.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ui/popover.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ui/scroll-area.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ui/select.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/countries.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/states.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/edit/[id]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/edit/[id]/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/global.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/global.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/utils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/utils.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tailwind.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.ts" afterDir="false" />
+    <list default="true" id="8407cdba-7ec5-42fd-9274-72c9660efa8b" name="Changes" comment="done with error show">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ManualBimeRegister.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ManualBimeRegister.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/form.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/input-plate.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/input-plate.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,6 +95,7 @@
       <workItem from="1733937987729" duration="179000" />
       <workItem from="1745785170875" duration="11676000" />
       <workItem from="1745849442584" duration="14039000" />
+      <workItem from="1745950011848" duration="7224000" />
     </task>
     <servers />
   </component>
@@ -134,6 +115,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="pelak initial functionality and style" />
-    <option name="LAST_COMMIT_MESSAGE" value="pelak initial functionality and style" />
+    <MESSAGE value="done with error show" />
+    <option name="LAST_COMMIT_MESSAGE" value="done with error show" />
   </component>
 </project>
