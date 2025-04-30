@@ -1,78 +1,25 @@
 "use client"
-import {
-    useState
-} from "react"
-import {
-    toast
-} from "sonner"
-import {
-    useForm
-} from "react-hook-form"
-import {
-    zodResolver
-} from "@hookform/resolvers/zod"
+import {useState} from "react"
+import {toast} from "sonner"
+import {useForm} from "react-hook-form"
+import {zodResolver} from "@hookform/resolvers/zod"
 import * as z from "zod"
-import {
-    cn
-} from "@/lib/utils"
-import {
-    Button
-} from "@/components/ui/button"
-import {
-    Form,
-    FormControl,
-    FormDescription,
-    FormField,
-    FormItem,
-    FormLabel,
-    FormMessage,
-} from "@/components/ui/form"
-import {
-    InputOTP,
-    InputOTPGroup,
-    InputOTPSeparator,
-    InputOTPSlot
-} from "@/components/ui/input-otp"
-import {
-    format
-} from "date-fns"
-
-import {
-    Calendar
-} from "@/components/ui/calendar"
-import {
-    Calendar as CalendarIcon
-} from "lucide-react"
-import {
-    Command,
-    CommandEmpty,
-    CommandGroup,
-    CommandInput,
-    CommandItem,
-    CommandList
-} from "@/components/ui/command"
-import {
-    Popover,
-    PopoverContent,
-    PopoverTrigger,
-} from "@/components/ui/popover"
-import {
-    Check,
-    ChevronsUpDown
-} from "lucide-react"
+import {cn} from "@/lib/utils"
+import {Button} from "@/components/ui/button"
+import {Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage,} from "@/components/ui/form"
+import DatePicker from "react-multi-date-picker";
+import {Check, ChevronsUpDown} from "lucide-react"
+import {Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList} from "@/components/ui/command"
+import {Popover, PopoverContent, PopoverTrigger,} from "@/components/ui/popover"
 import LocationSelector from "@/components/ui/location-input"
-import {
-    Select,
-    SelectContent,
-    SelectItem,
-    SelectTrigger,
-    SelectValue
-} from "@/components/ui/select"
-import {
-    PhoneInput
-} from "@/components/ui/phone-input";
+import {Select, SelectContent, SelectItem, SelectTrigger, SelectValue} from "@/components/ui/select"
+import {PhoneInput} from "@/components/ui/phone-input";
 
-import { InputPlate} from "@/components/ui/input-plate";
+import {InputPlate} from "@/components/ui/input-plate";
+import persian from "react-date-object/calendars/persian"
+import persian_fa from "react-date-object/locales/persian_fa";
+import {Input} from "@/components/ui/input";
+
 
 const formSchema = z.object({
     pelak: z.object({
@@ -93,11 +40,10 @@ const formSchema = z.object({
     }),
 
 
-    // tavalod: z.coerce.date(),
-    // name_5757013412: z.string(),
-    // name_3672871041: z.tuple([z.string(), z.string().optional()]),
-    // name_4643675995: z.string(),
-    // name_3559197074: z.string()
+    tavalod: z.coerce.date(),
+    'location-state': z.tuple([z.string(), z.string().optional()])
+
+
 });
 
 export default function ManualBimeRegister() {
@@ -109,44 +55,17 @@ export default function ManualBimeRegister() {
             label: "French",
             value: "fr"
         },
-        {
-            label: "German",
-            value: "de"
-        },
-        {
-            label: "Spanish",
-            value: "es"
-        },
-        {
-            label: "Portuguese",
-            value: "pt"
-        },
-        {
-            label: "Russian",
-            value: "ru"
-        },
-        {
-            label: "Japanese",
-            value: "ja"
-        },
-        {
-            label: "Korean",
-            value: "ko"
-        },
-        {
-            label: "Chinese",
-            value: "zh"
-        },
+
     ] as
         const;
 
-    const [countryName, setCountryName] = useState < string > ('')
-    const [stateName, setStateName] = useState < string > ('')
+    const [stateName, setStateName] = useState<string>('')
+    const [cityName, setCityName] = useState<string>('')
 
-    const form = useForm < z.infer < typeof formSchema >> ({
+    const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
         defaultValues: {
-            // "tavalod": new Date(),
+            "tavalod": new Date(),
             pelak: {
                 leftNumber: "",
                 letter: "",
@@ -156,7 +75,7 @@ export default function ManualBimeRegister() {
         },
     })
 
-    function onSubmit(values: z.infer < typeof formSchema > ) {
+    function onSubmit(values: z.infer<typeof formSchema>) {
         try {
             console.log(values);
             toast(
@@ -189,11 +108,11 @@ export default function ManualBimeRegister() {
                             // return true
                         }
                     }}
-                    render={({ field }) => (
+                    render={({field}) => (
                         <FormItem>
                             <FormLabel>Plate Number</FormLabel>
                             <FormControl>
-                                <InputPlate value={field.value} onChange={field.onChange} />
+                                <InputPlate value={field.value} onChange={field.onChange}/>
 
 
                             </FormControl>
@@ -203,126 +122,61 @@ export default function ManualBimeRegister() {
                     )}
                 />
 
-
-
-
                 <FormField
                     control={form.control}
                     name="tavalod"
+                    rules={{
+                        validate: (value) => {
+                            console.log({value})
+                            // const regex = /^\d{2}.{1}\d{3}\d{2}$/
+                            // if (!regex.test(value)) return "Please fill out all plate fields correctly."
+                            // return true
+                        }
+                    }}
                     render={({field}) => (
-                        <FormItem className="flex flex-col">
-                            <FormLabel>Date of birth</FormLabel>
-                            <Popover>
-                                <PopoverTrigger asChild>
-                                    <FormControl>
-                                        <Button
-                                            variant={"outline"}
-                                            className={cn(
-                                                "w-[240px] pl-3 text-left font-normal",
-                                                !field.value && "text-muted-foreground"
-                                            )}
-                                        >
-                                            {field.value ? (
-                                                format(field.value, "PPP")
-                                            ) : (
-                                                <span>Pick a date</span>
-                                            )}
-                                            <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
-                                        </Button>
-                                    </FormControl>
-                                </PopoverTrigger>
-                                <PopoverContent className="w-auto p-0" align="start">
-                                    <Calendar
-                                        mode="single"
-                                        selected={field.value}
-                                        onSelect={field.onChange}
-                                        initialFocus
+                        <FormItem>
+                            <FormLabel>tavalod</FormLabel>
+                            <FormControl>
+                                <div className="flex w-full flex-col gap-[2px]  text-sm xl:col-span-2">
+
+
+                                    <DatePicker
+                                        value={field.value || ""}
+                                        onChange={(date) => {
+                                            // console.log({"date":date.format?.("YYYY-MM-D")})
+                                            // field.onChange(date?.isValid ? date : "");
+                                        }}
+                                        format={"YYYY/MM/DD"}
+                                        calendar={persian}
+                                        locale={persian_fa}
+                                        calendarPosition="bottom-right"
+                                        render={<CustomInput/>}
+
                                     />
-                                </PopoverContent>
-                            </Popover>
-                            <FormDescription>Your date of birth is used to calculate your age.</FormDescription>
-                            <FormMessage />
-                        </FormItem>
-                    )}
-                />
-                <FormField
-                    control={form.control}
-                    name="name_5757013412"
-                    render={({ field }) => (
-                        <FormItem className="flex flex-col">
-                            <FormLabel>Language</FormLabel>
-                            <Popover>
-                                <PopoverTrigger asChild>
-                                    <FormControl>
-                                        <Button
-                                            variant="outline"
-                                            role="combobox"
-                                            className={cn(
-                                                "w-[200px] justify-between",
-                                                !field.value && "text-muted-foreground"
-                                            )}
-
-                                        >
-                                            {field.value
-                                                ? languages.find(
-                                                    (language) => language.value === field.value
-                                                )?.label
-                                                : "Select language"}
-                                            <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
-                                        </Button>
-                                    </FormControl>
-                                </PopoverTrigger>
-                                <PopoverContent className="w-[200px] p-0">
-                                    <Command>
-                                        <CommandInput placeholder="Search language..." />
-                                        <CommandList>
-                                            <CommandEmpty>No language found.</CommandEmpty>
-                                            <CommandGroup>
-                                                {languages.map((language) => (
-                                                    <CommandItem
-                                                        value={language.label}
-                                                        key={language.value}
-                                                        onSelect={() => {
-                                                            form.setValue("name_5757013412", language.value);
-                                                        }}
-                                                    >
-                                                        <Check
-                                                            className={cn(
-                                                                "mr-2 h-4 w-4",
-                                                                language.value === field.value
-                                                                    ? "opacity-100"
-                                                                    : "opacity-0"
-                                                            )}
-                                                        />
-                                                        {language.label}
-                                                    </CommandItem>
-                                                ))}
-                                            </CommandGroup>
-                                        </CommandList>
-                                    </Command>
-                                </PopoverContent>
-                            </Popover>
-                            <FormDescription>This is the language that will be used in the dashboard.</FormDescription>
-                            <FormMessage />
+                                </div>
+                            </FormControl>
+                            <FormDescription>Please enter the one-time password sent to your phone.</FormDescription>
+                            <FormMessage/>
                         </FormItem>
                     )}
                 />
 
+
                 <FormField
                     control={form.control}
-                    name="name_3672871041"
+                    name="location-state"
                     render={({ field }) => (
                         <FormItem>
                             <FormLabel>Select Country</FormLabel>
                             <FormControl>
                                 <LocationSelector
-                                    onCountryChange={(country) => {
-                                        setCountryName(country?.name || '')
-                                        form.setValue(field.name, [country?.name || '', stateName || ''])
+                                    onCountryChange={(state) => {
+                                        setStateName(state?.title || '')
+                                        form.setValue(field.name, [state?.title || '', stateName || ''])
                                     }}
-                                    onStateChange={(state) => {
-                                        setStateName(state?.name || '')
-                                        form.setValue(field.name, [form.getValues(field.name)[0] || '', state?.name || ''])
+                                    onStateChange={(city) => {
+                                        setCityName(city?.title || '')
+                                        form.setValue(field.name, [form.getValues(field.name)[0] || '', city?.title || ''])
                                     }}
                                 />
                             </FormControl>
@@ -332,44 +186,55 @@ export default function ManualBimeRegister() {
                     )}
                 />
 
+
                 <FormField
                     control={form.control}
-                    name="name_4643675995"
+                    name="coverageAmount"
                     render={({ field }) => (
                         <FormItem>
-                            <FormLabel>Email</FormLabel>
+                            <FormLabel>Coverage Amount</FormLabel>
                             <Select onValueChange={field.onChange} defaultValue={field.value}>
                                 <FormControl>
                                     <SelectTrigger>
-                                        <SelectValue placeholder="Select a verified email to display" />
+                                        <SelectValue placeholder="coverageAmount" />
                                     </SelectTrigger>
                                 </FormControl>
                                 <SelectContent>
-                                    <SelectItem value="m@example.com">m@example.com</SelectItem>
-                                    <SelectItem value="m@google.com">m@google.com</SelectItem>
-                                    <SelectItem value="m@support.com">m@support.com</SelectItem>
+                                    {Array.from({ length: 25 }, (_, i) => {
+                                        const value = (i + 1) * 1000000;
+                                        const label = value.toLocaleString();
+                                        return (
+                                            <SelectItem key={value} value={value.toString()}>
+                                                {label}
+                                            </SelectItem>
+                                        );
+                                    })}
                                 </SelectContent>
                             </Select>
-                            <FormDescription>You can manage email addresses in your email settings.</FormDescription>
+                            <FormDescription>coverageAmount</FormDescription>
                             <FormMessage />
                         </FormItem>
                     )}
                 />
 
+
+
                 <FormField
                     control={form.control}
-                    name="name_3559197074"
+                    name="mobileNumber"
                     render={({ field }) => (
                         <FormItem className="flex flex-col items-start">
-                            <FormLabel>Phone number</FormLabel>
+                            <FormLabel>mobileNumber</FormLabel>
                             <FormControl className="w-full">
                                 <PhoneInput
                                     placeholder="Placeholder"
                                     {...field}
-                                    defaultCountry="TR"
+                                    defaultCountry="IR"
+                                    countries={["IR"]} // restricts to only IR
+                                    international={false}
                                 />
                             </FormControl>
-                            <FormDescription>Enter your phone number.</FormDescription>
+                            <FormDescription>Enter your mobile Number.</FormDescription>
                             <FormMessage />
                         </FormItem>
                     )}
@@ -378,5 +243,39 @@ export default function ManualBimeRegister() {
                 <Button type="submit">Submit</Button>
             </form>
         </Form>
+    )
+}
+
+function CustomInput({onFocus, value, onChange}) {
+
+
+    const toEnglishDigits = (str: string) =>
+        str.replace(/[\u06F0-\u06F9]/g, (d) => String.fromCharCode(d.charCodeAt(0) - 1728))
+            .replace(/[\u0660-\u0669]/g, (d) => String.fromCharCode(d.charCodeAt(0) - 1584));
+
+
+    console.log({val: value.toString()})
+
+    let raw = toEnglishDigits(value.toString());
+
+    const [year = "", month = "", day = ""] = raw.split("/");
+    if (raw.length > 8) raw = raw.slice(0, 8);
+
+    const formatted = [
+        year.slice(0, 4),
+        month.slice(0, 2),
+        day.slice(0, 2),
+    ]
+        .filter(Boolean)
+        .join("/");
+
+
+    // console.log({raw,formatted,value})
+    return (
+        <Input
+            onFocus={onFocus}
+            value={formatted}
+            onChange={onChange}
+        />
     )
 }

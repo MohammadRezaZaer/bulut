@@ -18,8 +18,8 @@ import {
 import { cn } from "@/lib/utils"
 
 // Import JSON data directly
-import countries from "@/data/countries.json"
 import states from "@/data/states.json"
+import cities from "@/data/cities.json"
 
 interface Timezone {
   zoneName: string
@@ -29,48 +29,27 @@ interface Timezone {
   tzName: string
 }
 
-interface CountryProps {
-  id: number
-  name: string
-  iso3: string
-  iso2: string
-  numeric_code: string
-  phone_code: string
-  capital: string
-  currency: string
-  currency_name: string
-  currency_symbol: string
-  tld: string
-  native: string
-  region: string
-  region_id: string
-  subregion: string
-  subregion_id: string
-  nationality: string
-  timezones: Timezone[]
-  translations: Record<string, string>
-  latitude: string
-  longitude: string
-  emoji: string
-  emojiU: string
+interface CityProps {
+  "id": number,
+  "title": string,
+  "slug": string,
+  "province_id": number,
+  "latitude": number,
+  "longitude": number
 }
 
-interface StateProps {
-  id: number
-  name: string
-  country_id: number
-  country_code: string
-  country_name: string
-  state_code: string
-  type: string | null
-  latitude: string
-  longitude: string
+interface StateMeProps {
+  "id": number,
+  "title": string,
+  "slug": string,
+  "latitude": number,
+  "longitude": number
 }
 
 interface LocationSelectorProps {
   disabled?: boolean
-  onCountryChange?: (country: CountryProps | null) => void
-  onStateChange?: (state: StateProps | null) => void
+  onCountryChange?: (country: StateMeProps | null) => void
+  onStateChange?: (state: CityProps | null) => void
 }
 
 const LocationSelector = ({
@@ -78,31 +57,31 @@ const LocationSelector = ({
   onCountryChange,
   onStateChange,
 }: LocationSelectorProps) => {
-  const [selectedCountry, setSelectedCountry] = useState<CountryProps | null>(
+  const [selectedState, setSelectedState] = useState<StateMeProps | null>(
     null,
   )
-  const [selectedState, setSelectedState] = useState<StateProps | null>(null)
+  const [selectedCity, setSelectedCity] = useState<CityProps | null>(null)
   const [openCountryDropdown, setOpenCountryDropdown] = useState(false)
   const [openStateDropdown, setOpenStateDropdown] = useState(false)
 
   // Cast imported JSON data to their respective types
-  const countriesData = countries as CountryProps[]
-  const statesData = states as StateProps[]
+  const statesData = states as StateMeProps[]
+  const citiesData = cities as CityProps[]
 
   // Filter states for selected country
-  const availableStates = statesData.filter(
-    (state) => state.country_id === selectedCountry?.id,
+  const availableCities = citiesData.filter(
+    (city) => city.province_id === selectedState?.id,
   )
 
-  const handleCountrySelect = (country: CountryProps | null) => {
-    setSelectedCountry(country)
-    setSelectedState(null) // Reset state when country changes
+  const handleCountrySelect = (country: StateMeProps | null) => {
+    setSelectedState(country)
+    setSelectedCity(null) // Reset state when country changes
     onCountryChange?.(country)
     onStateChange?.(null)
   }
 
-  const handleStateSelect = (state: StateProps | null) => {
-    setSelectedState(state)
+  const handleStateSelect = (state: CityProps | null) => {
+    setSelectedCity(state)
     onStateChange?.(state)
   }
 
@@ -118,10 +97,10 @@ const LocationSelector = ({
             disabled={disabled}
             className="w-full justify-between"
           >
-            {selectedCountry ? (
+            {selectedState ? (
               <div className="flex items-center gap-2">
-                <span>{selectedCountry.emoji}</span>
-                <span>{selectedCountry.name}</span>
+                {/*<span>{selectedState.emoji}</span>*/}
+                <span>{selectedState.title}</span>
               </div>
             ) : (
               <span>Select Country...</span>
@@ -131,36 +110,38 @@ const LocationSelector = ({
         </PopoverTrigger>
         <PopoverContent className="w-[300px] p-0">
           <Command>
-            <CommandInput placeholder="Search country..." />
+            <CommandInput placeholder="Search state..." />
             <CommandList>
               <CommandEmpty>No country found.</CommandEmpty>
               <CommandGroup>
-                <ScrollArea className="h-[300px]">
-                  {countriesData.map((country) => (
-                    <CommandItem
-                      key={country.id}
-                      value={country.name}
-                      onSelect={() => {
-                        handleCountrySelect(country)
-                        setOpenCountryDropdown(false)
-                      }}
-                      className="flex cursor-pointer items-center justify-between text-sm"
-                    >
-                      <div className="flex items-center gap-2">
-                        <span>{country.emoji}</span>
-                        <span>{country.name}</span>
-                      </div>
-                      <Check
-                        className={cn(
-                          "'h-4 w-4'",
-                          selectedCountry?.id === country.id
-                            ? "'opacity-100'"
-                            : "'opacity-0'",
-                        )}
-                      />
-                    </CommandItem>
+                <ScrollArea className="h-[280px]">
+                  {statesData.map((state) => (
+                      <CommandItem
+                          key={state.id}
+                          value={state.title}
+                          onSelect={() => {
+                            handleCountrySelect(state)
+                            setOpenCountryDropdown(false)
+                          }}
+                          className="flex cursor-pointer items-center justify-between text-sm"
+                      >
+                        <div className="flex items-center gap-2">
+                          {/*<span>{state.emoji}</span>*/}
+                          <span>{state.title}</span>
+                        </div>
+                        <Check
+                            className={cn(
+                                "'h-4 w-4'",
+                                selectedState?.id === state.id
+                                    ? "'opacity-100'"
+                                    : "'opacity-0'",
+                            )}
+                        />
+
+
+                      </CommandItem>
                   ))}
-                  <ScrollBar orientation="vertical" />
+                  <ScrollBar orientation="vertical"/>
                 </ScrollArea>
               </CommandGroup>
             </CommandList>
@@ -169,18 +150,18 @@ const LocationSelector = ({
       </Popover>
 
       {/* State Selector - Only shown if selected country has states */}
-      {availableStates.length > 0 && (
+      { (
         <Popover open={openStateDropdown} onOpenChange={setOpenStateDropdown}>
           <PopoverTrigger asChild>
             <Button
               variant="outline"
               role="combobox"
               aria-expanded={openStateDropdown}
-              disabled={!selectedCountry}
+              disabled={!selectedState}
               className="w-full justify-between"
             >
-              {selectedState ? (
-                <span>{selectedState.name}</span>
+              {selectedCity ? (
+                <span>{selectedCity.title}</span>
               ) : (
                 <span>Select State...</span>
               )}
@@ -193,27 +174,29 @@ const LocationSelector = ({
               <CommandList>
                 <CommandEmpty>No state found.</CommandEmpty>
                 <CommandGroup>
-                  <ScrollArea className="h-[300px]">
-                    {availableStates.map((state) => (
-                      <CommandItem
-                        key={state.id}
-                        value={state.name}
-                        onSelect={() => {
-                          handleStateSelect(state)
-                          setOpenStateDropdown(false)
-                        }}
-                        className="flex cursor-pointer items-center justify-between text-sm"
-                      >
-                        <span>{state.name}</span>
-                        <Check
-                          className={cn(
-                            "'h-4 w-4'",
-                            selectedState?.id === state.id
-                              ? "'opacity-100'"
-                              : "'opacity-0'",
-                          )}
-                        />
-                      </CommandItem>
+                  <ScrollArea className="h-[280px]">
+                    {availableCities.map((state) => (
+                        <CommandItem
+                            key={state.id}
+                            value={state.title}
+                            onSelect={() => {
+                              handleStateSelect(state)
+                              setOpenStateDropdown(false)
+                            }}
+                            className="flex cursor-pointer items-center justify-between text-sm"
+                        >
+                          <span>{state.title}</span>
+                          <Check
+                              className={cn(
+                                  "'h-4 w-4'",
+                                  selectedCity?.id === state.id
+                                      ? "'opacity-100'"
+                                      : "'opacity-0'",
+                              )}
+                          />
+
+
+                        </CommandItem>
                     ))}
                     <ScrollBar orientation="vertical" />
                   </ScrollArea>

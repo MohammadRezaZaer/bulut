@@ -119,3 +119,18 @@
     background-size: 0 2px, 100% 2px;
   }
 }
+
+
+.rmdp-week-day{
+  @apply !text-brand
+}
+.rmdp-day.rmdp-selected span:not(.highlight) {
+  @apply !bg-brand
+
+}
+.rmdp-day.rmdp-today span{
+  @apply !bg-brand-secondary
+}
+.rmdp-day:not(.rmdp-disabled,.rmdp-day-hidden) span:hover{
+  @apply !bg-brand/50
+}

@@ -38,6 +38,7 @@ const PhoneInput: React.ForwardRefExoticComponent<PhoneInputProps> =
                     className={cn("flex", className)}
                     flagComponent={FlagComponent}
                     countrySelectComponent={CountrySelect}
+
                     inputComponent={InputComponent}
                     smartCaret={false}
                     /**
@@ -62,7 +63,7 @@ const InputComponent = React.forwardRef<
     React.ComponentProps<"input">
 >(({ className, ...props }, ref) => (
     <Input
-        className={cn("rounded-e-lg rounded-s-none", className)}
+        className={cn("rounded-lg", className)}
         {...props}
         ref={ref}
     />
@@ -84,51 +85,33 @@ const CountrySelect = ({
                            options: countryList,
                            onChange,
                        }: CountrySelectProps) => {
-    return (
-        <Popover>
-            <PopoverTrigger asChild>
-                <Button
-                    type="button"
-                    variant="outline"
-                    className="flex gap-1 rounded-e-none rounded-s-lg border-r-0 px-3 focus:z-10"
-                    disabled={disabled}
-                >
-                    <FlagComponent
-                        country={selectedCountry}
-                        countryName={selectedCountry}
-                    />
-                    <ChevronsUpDown
-                        className={cn(
-                            "-mr-2 size-4 opacity-50",
-                            disabled ? "hidden" : "opacity-100",
-                        )}
-                    />
-                </Button>
-            </PopoverTrigger>
-            <PopoverContent className="w-[300px] p-0">
-                <Command>
-                    <CommandInput placeholder="Search country..." />
-                    <CommandList>
-                        <ScrollArea className="h-72">
-                            <CommandEmpty>No country found.</CommandEmpty>
-                            <CommandGroup>
-                                {countryList.map(({ value, label }) =>
-                                    value ? (
-                                        <CountrySelectOption
-                                            key={value}
-                                            country={value}
-                                            countryName={label}
-                                            selectedCountry={selectedCountry}
-                                            onChange={onChange}
-                                        />
-                                    ) : null,
-                                )}
-                            </CommandGroup>
-                        </ScrollArea>
-                    </CommandList>
-                </Command>
-            </PopoverContent>
-        </Popover>
+    return (<></>
+        // <Popover>
+        //
+        //     <PopoverContent className="w-[300px] p-0">
+        //         <Command>
+        //             <CommandInput placeholder="Search country..." />
+        //             <CommandList>
+        //                 <ScrollArea className="h-72">
+        //                     <CommandEmpty>No country found.</CommandEmpty>
+        //                     <CommandGroup>
+        //                         {countryList.map(({ value, label }) =>
+        //                             value ? (
+        //                                 <CountrySelectOption
+        //                                     key={value}
+        //                                     country={value}
+        //                                     countryName={label}
+        //                                     selectedCountry={selectedCountry}
+        //                                     onChange={onChange}
+        //                                 />
+        //                             ) : null,
+        //                         )}
+        //                     </CommandGroup>
+        //                 </ScrollArea>
+        //             </CommandList>
+        //         </Command>
+        //     </PopoverContent>
+        // </Popover>
     );
 };
 

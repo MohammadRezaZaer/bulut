@@ -5,10 +5,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8407cdba-7ec5-42fd-9274-72c9660efa8b" name="Changes" comment="done with error show">
+      <change afterPath="$PROJECT_DIR$/src/app/actions.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/api/login/route.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/api/logout/route.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/dashboard/actions.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/dashboard/logout-form.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/dashboard/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/login/actions.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/login/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/verify/actions.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/verify/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lib/auth.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lib/otp.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/middleware.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/ManualBimeRegister.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ManualBimeRegister.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/command.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/command.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/ui/form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/form.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/ui/input-plate.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/input-plate.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/location-input.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/location-input.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/phone-input.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/phone-input.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/scroll-area.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/scroll-area.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/countries.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/cities.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/states.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/states.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/globals.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,27 +57,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;F:/ready code/bulut/ts-pnpm/src/components/ui&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;pnpm&quot;,
-    &quot;npm.dev.executor&quot;: &quot;Run&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;F:\\ready code\\bulut\\ts-pnpm\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "F:/ready code/bulut/ts-pnpm/src/app/login",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "pnpm",
+    "npm.dev.executor": "Debug",
+    "ts.external.directory.path": "F:\\ready code\\bulut\\ts-pnpm\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\ready code\bulut\ts-pnpm\src\app\login" />
+      <recent name="F:\ready code\bulut\ts-pnpm\src\app\api\login" />
+      <recent name="F:\ready code\bulut\ts-pnpm\src\app\api\logout" />
+      <recent name="F:\ready code\bulut\ts-pnpm\src\app\api" />
       <recent name="F:\ready code\bulut\ts-pnpm\src\components\ui" />
-      <recent name="F:\ready code\bulut\ts-pnpm\src\components" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\ready code\bulut\ts-pnpm\src\app" />
+      <recent name="F:\ready code\bulut\ts-pnpm\src\app\api\login" />
       <recent name="F:\ready code\bulut\ts-pnpm\src\data" />
     </key>
   </component>
@@ -95,8 +122,17 @@
       <workItem from="1733937987729" duration="179000" />
       <workItem from="1745785170875" duration="11676000" />
       <workItem from="1745849442584" duration="14039000" />
-      <workItem from="1745950011848" duration="7224000" />
+      <workItem from="1745950011848" duration="35629000" />
     </task>
+    <task id="LOCAL-00001" summary="done with error show">
+      <option name="closed" value="true" />
+      <created>1745959311321</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1745959311321</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -114,6 +150,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <MESSAGE value="pelak initial functionality and style" />
     <MESSAGE value="done with error show" />
     <option name="LAST_COMMIT_MESSAGE" value="done with error show" />

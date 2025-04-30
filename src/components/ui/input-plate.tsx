@@ -49,14 +49,14 @@ export const InputPlate = ({value, onChange}: InputPlateProps) => {
     }
 
     return (
-        <div className="mx-auto flex h-[48px]  w-full max-w-full rounded">
-            <div className=" flex  rounded-r  border-y-[0.4px] border-r-[0.4px] border-solid border-[#A6A9BD] ">
+        <div className="mx-auto flex h-[48px]  w-full max-w-full rounded-xl">
+            <div className=" flex rounded-r border-y-[0.4px] border-r-[0.4px] border-solid border-[#A6A9BD] ">
                 <div
                     className="flex h-full w-[46px] items-center justify-center border-l-[0.4px] border-solid border-[#A6A9BD] ">
                     <InputDigits
                         value={digits[3]}
                         className=" h-[28px] w-[24px] pr-px "
-                        wrapperClassName=" flex h-[32px] w-[30px] items-center justify-center rounded-[5px] border border-solid border-[#8B929A36]  "
+                        wrapperClassName=" flex h-[32px] w-[30px] items-center justify-center rounded-[6px] border border-solid border-[#8B929A36]  "
                         onChange={(e) => updatePiece(3, e.target.value)}
                         maxLength={2}
                         placeholder={50}
@@ -79,7 +79,7 @@ export const InputPlate = ({value, onChange}: InputPlateProps) => {
                     <InputDigits
                         value={digits[0]}
                         className="h-[28px] w-[33px]"
-                        wrapperClassName="flex h-[32px] w-[52px] items-center justify-center rounded-[5px] border border-solid border-[#8B929A36] "
+                        wrapperClassName="flex h-[32px] w-[52px] items-center justify-center rounded-[6px] border border-solid border-[#8B929A36] "
 
                         onChange={(e) => updatePiece(0, e.target.value)}
                         maxLength={2}
@@ -125,7 +125,7 @@ export const InputDigits = React.forwardRef<HTMLInputElement, InputDigitsProps>(
 
         return (
             <div
-                className={cn("flex h-[32px] w-[65px] items-center justify-center rounded-[5px] border border-solid border-[#8B929A36] ", wrapperClassName)}>
+                className={cn("flex h-[32px] w-[65px] items-center justify-center rounded-[6px] border border-solid border-[#8B929A36] ", wrapperClassName)}>
                 <input
                     ref={(node) => {
                         inputRef.current = node
@@ -136,7 +136,7 @@ export const InputDigits = React.forwardRef<HTMLInputElement, InputDigitsProps>(
                     type="text"
                     inputMode="numeric"
                     className={cn(
-                        "outline-none",
+                        "outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 rounded-md text-center",
                         className
                     )}
                     onChange={handleChange}
@@ -162,7 +162,7 @@ export const InputLetter = React.forwardRef<HTMLSelectElement, InputLetterProps>
     ({value, onChange, ...props}, ref) => {
         // console.log({value})
         return (
-            <div className="flex h-[32px] w-[52px] justify-center rounded-[5px] border border-solid border-[#8B929A36]">
+            <div className="flex h-[32px] w-[52px] justify-center rounded-[6px] border border-solid border-[#8B929A36]">
                 <select
                     ref={ref}
                     value={value}
