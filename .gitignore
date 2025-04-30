@@ -46,3 +46,4 @@ pnpm-lock.yaml
 /.idea/inspectionProfiles/Project_Default.xml
 /.idea/ts-pnpm.iml
 /.idea/vcs.xml
+/.idea/*
