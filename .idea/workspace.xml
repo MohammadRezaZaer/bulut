@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8407cdba-7ec5-42fd-9274-72c9660efa8b" name="Changes" comment="want to add dashboard2">
-      <change afterPath="$PROJECT_DIR$/public/images/login-logo.svg" afterDir="false" />
+    <list default="true" id="8407cdba-7ec5-42fd-9274-72c9660efa8b" name="Changes" comment="at last login verify to dashboard&#10;and logout">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/login/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/login/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,26 +37,28 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "F:/ready code/bulut/ts-pnpm/public/images",
+    "last_opened_file_path": "F:/ready code/bulut/ts-pnpm/src/components",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "pnpm",
     "npm.dev.executor": "Run",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "ts.external.directory.path": "F:\\ready code\\bulut\\ts-pnpm\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\ready code\bulut\ts-pnpm\src\components" />
+      <recent name="F:\ready code\bulut\ts-pnpm\src\app\components" />
       <recent name="F:\ready code\bulut\ts-pnpm\public\images" />
       <recent name="F:\ready code\bulut\ts-pnpm\src\app\login" />
       <recent name="F:\ready code\bulut\ts-pnpm\src\app\api\login" />
-      <recent name="F:\ready code\bulut\ts-pnpm\src\app\api\logout" />
-      <recent name="F:\ready code\bulut\ts-pnpm\src\app\api" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\ready code\bulut\ts-pnpm\src\components" />
       <recent name="F:\ready code\bulut\ts-pnpm\src\app" />
       <recent name="F:\ready code\bulut\ts-pnpm\src\app\api\login" />
       <recent name="F:\ready code\bulut\ts-pnpm\src\data" />
@@ -100,7 +101,8 @@
       <workItem from="1745785170875" duration="11676000" />
       <workItem from="1745849442584" duration="14039000" />
       <workItem from="1745950011848" duration="40027000" />
-      <workItem from="1746098124747" duration="1683000" />
+      <workItem from="1746098124747" duration="20153000" />
+      <workItem from="1746125794869" duration="3844000" />
     </task>
     <task id="LOCAL-00001" summary="done with error show">
       <option name="closed" value="true" />
@@ -126,7 +128,23 @@
       <option name="project" value="LOCAL" />
       <updated>1746029234922</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="login page view complete">
+      <option name="closed" value="true" />
+      <created>1746099859108</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1746099859108</updated>
+    </task>
+    <task id="LOCAL-00005" summary="at last login verify to dashboard&#10;and logout">
+      <option name="closed" value="true" />
+      <created>1746130692146</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1746130692146</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -149,6 +167,8 @@
     <MESSAGE value="done with error show" />
     <MESSAGE value="want to add dashboard" />
     <MESSAGE value="want to add dashboard2" />
-    <option name="LAST_COMMIT_MESSAGE" value="want to add dashboard2" />
+    <MESSAGE value="login page view complete" />
+    <MESSAGE value="at last login verify to dashboard&#10;and logout" />
+    <option name="LAST_COMMIT_MESSAGE" value="at last login verify to dashboard&#10;and logout" />
   </component>
 </project>
