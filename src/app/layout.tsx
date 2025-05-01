@@ -10,6 +10,7 @@ import { cookies } from 'next/headers';
 import {getCart} from "@/lib/shopify";
 import {CartProvider} from "@/components/cart/cart-context";
 
+import { Toaster } from "@/components/ui/sonner"
 
 export const metadata: Metadata = {
     metadataBase: new URL(siteConfig.url),
@@ -65,7 +66,7 @@ export default async function RootLayout(props: {
           {props.children}
           {props.modal}
           <div id="modal-root"/>
-
+          <Toaster />
       </CartProvider>
       </body>
       </html>

@@ -13,7 +13,7 @@ import {Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandL
 import {Popover, PopoverContent, PopoverTrigger,} from "@/components/ui/popover"
 import LocationSelector from "@/components/ui/location-input"
 import {Select, SelectContent, SelectItem, SelectTrigger, SelectValue} from "@/components/ui/select"
-import {PhoneInput} from "@/components/ui/phone-input";
+import {PhoneInputComponent} from "@/components/ui/phone-input-component";
 
 import {InputPlate} from "@/components/ui/input-plate";
 import persian from "react-date-object/calendars/persian"
@@ -226,7 +226,7 @@ export default function ManualBimeRegister() {
                         <FormItem className="flex flex-col items-start">
                             <FormLabel>mobileNumber</FormLabel>
                             <FormControl className="w-full">
-                                <PhoneInput
+                                <PhoneInputComponent
                                     placeholder="Placeholder"
                                     {...field}
                                     defaultCountry="IR"

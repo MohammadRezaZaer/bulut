@@ -1,11 +1,19 @@
 'use client';
 
 import {useFormState} from 'react-dom';
-import {sendOtpAction} from './actions';
+import {sendOtpAction, verifyOtpAction} from './actions';
 import {Button} from "@/components/ui/button";
+import {Input} from "@/components/ui/input";
+import PhoneForm from "@/components/PhoneForm";
+import {useState} from "react";
+import RhfWithAction from "@/components/RhfWithAction";
+import OtpForm from "@/components/OtpForm";
 
 export default function LoginPage() {
-    const [state, action] = useFormState(sendOtpAction, null);
+
+
+    const [step, setStep] = useState<'phone' | 'otp'>('phone');
+    const [mobile, setMobile] = useState('');
 
     return (
 
@@ -32,33 +40,39 @@ export default function LoginPage() {
                             className="logo m-auto mb-6 mt-4 w-[180px]" src="/images/fake-logo.png"
                         />
                     </a>
+
                     <section className="flex w-[310px]  overflow-hidden">
                         <section
                             className="flex w-[1200px] min-w-[1200px] gap-5 transition-all duration-500 ease-in-out"
                         >
-                            <section
+                            {step === 'phone' ?
+                                ( <section
                                 className="h-[325px] w-[300px] text-center transition-all duration-700 ease-in-out"><h2
                                 className="mb-[20px] text-[30px] font-semibold text-brand text-center">خوش آمدید!</h2>
                                 <section className="mb-[9px] flex gap-1 justify-center text-lg"><span
                                     className=" ">ورود</span><span>|</span> <span>ثبت نام</span></section>
-                                <form
-                                    className="mx-auto mb-8 flex w-[90%] max-w-full flex-col items-start md:w-full xl:mb-[181px] xl:w-[280px]">
-                                    <h2 className="text-xl w-full mb-[35px] text-center">لطفا شماره موبایل خود را وارد
-                                        کنید</h2>
-                                    <section className="relative w-full">
-                                        <input
-                                            placeholder="شماره موبایل خود را وارد کنید"
-                                            className=" false mx-0 h-[48px] w-full rounded-[4px] border-[1px] border-[#C2C2C2] p-[15px] text-xs outline-none transition-all duration-300 focus:border-[#0165e1] undefined"/>
-                                    </section>
-                                    <Button type="submit" variant={"default"}
-                                            className="relative flex h-12  items-center justify-center rounded-md bg-brand  px-5 transition-all duration-700 disabled:opacity-50 w-full mt-7 hover:shadow-2xl focus:shadow-none">تایید
-                                        و دریافت کد
-                                        <div className="btnLoader">
+                               <PhoneForm
 
-                                        </div>
-                                    </Button>
-                                </form>
-                            </section>
+
+                                   onSuccess={(phone: string) => {
+                                       setMobile(phone);
+                                       setStep('otp');
+                                   }}
+                               />
+
+
+                            </section>):(
+
+                            <section className="relative h-[325px] w-[300px] text-center">
+                                <OtpForm
+
+                                    mobile={mobile}
+                                    onBack={() => setStep('phone')}
+                                    // onSuccess={}
+                                />
+                            </section>)
+
+                            }
                         </section>
                     </section>
                 </section>

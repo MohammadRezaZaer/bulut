@@ -29,7 +29,7 @@ type PhoneInputProps = Omit<
     onChange?: (value: RPNInput.Value) => void;
 };
 
-const PhoneInput: React.ForwardRefExoticComponent<PhoneInputProps> =
+const PhoneInputComponent: React.ForwardRefExoticComponent<PhoneInputProps> =
     React.forwardRef<React.ElementRef<typeof RPNInput.default>, PhoneInputProps>(
         ({ className, onChange, ...props }, ref) => {
             return (
@@ -56,7 +56,7 @@ const PhoneInput: React.ForwardRefExoticComponent<PhoneInputProps> =
             );
         },
     );
-PhoneInput.displayName = "PhoneInput";
+PhoneInputComponent.displayName = "PhoneInput";
 
 const InputComponent = React.forwardRef<
     HTMLInputElement,
@@ -148,4 +148,4 @@ const FlagComponent = ({ country, countryName }: RPNInput.FlagProps) => {
     );
 };
 
-export { PhoneInput };
+export { PhoneInputComponent };

@@ -2,20 +2,67 @@
 import { z } from 'zod';
 import { redirect } from 'next/navigation';
 import { generateOTP, saveOtp, sendOtpToPhone } from '@/lib/otp';
+import {
+    FormDataSchema,
+    Inputs,
+    OtpInputInfer,
+    OtpInputInferForBackValidate,
+    otpSchema,
+    PhoneInputInfer,
+    phoneSchema
+} from "@/app/lib/validation";
+import {setLoginCookie} from "@/lib/auth";
 
-const phoneSchema = z.object({
-    phone: z.string().min(8),
-});
 
-export async function sendOtpAction(_: any, formData: FormData) {
-    const parsed = phoneSchema.safeParse({ phone: formData.get('phone') });
 
-    if (!parsed.success) return { error: 'Invalid phone' };
+export async function addEntry(data: Inputs) {
+    const result = FormDataSchema.safeParse(data)
 
-    const phone = parsed.data.phone;
-    const otp = generateOTP();
-    saveOtp(phone, otp);
-    sendOtpToPhone(phone, otp);
+    if (result.success) {
+        return { success: true, data: result.data }
+    }
 
-    redirect(`/verify?phone=${phone}`);
+    if (result.error) {
+        return { success: false, error: result.error.format() }
+    }
+}
+
+
+export async function sendOtpAction( data: PhoneInputInfer) {
+
+    const result = phoneSchema.safeParse(data)
+
+     console.log({data,result})
+
+    // Mock sending SMS here
+
+
+    if (result.success) {
+        // console.log(`Sending OTP to ${result?.data.mobileNumber}`);
+
+        return { success: true, data: result.data }
+    }
+
+    if (result.error) {
+        return { success: false, error: result.error.format() }
+    }
+
+
+
+}
+
+export async function verifyOtpAction( formData: OtpInputInfer) {
+
+    const parsed = otpSchema.safeParse(formData);
+    console.log({formData,parsed})
+    if (!parsed.success) {
+        return { success: false, error: parsed.error.flatten().fieldErrors };
+    }
+    const isOtpCorrect = formData.otp === '1234'; // demo
+
+    if (!isOtpCorrect) {
+        return { success: false, error: { otp: ['کد اشتباه است'] } };
+    }
+    setLoginCookie(parsed.data.mobile);
+    return { success: true };
 }
