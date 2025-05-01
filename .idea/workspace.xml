@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8407cdba-7ec5-42fd-9274-72c9660efa8b" name="Changes" comment="want to add dashboard2">
-      <change afterPath="$PROJECT_DIR$/public/images/login-hero-image.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/actions/manual-bime.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/login-logo.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/login/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/login/page.tsx" afterDir="false" />
     </list>
@@ -46,7 +44,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "pnpm",
-    "npm.dev.executor": "Debug",
+    "npm.dev.executor": "Run",
     "ts.external.directory.path": "F:\\ready code\\bulut\\ts-pnpm\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
@@ -102,6 +100,7 @@
       <workItem from="1745785170875" duration="11676000" />
       <workItem from="1745849442584" duration="14039000" />
       <workItem from="1745950011848" duration="40027000" />
+      <workItem from="1746098124747" duration="1683000" />
     </task>
     <task id="LOCAL-00001" summary="done with error show">
       <option name="closed" value="true" />
