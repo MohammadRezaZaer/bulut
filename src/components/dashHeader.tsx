@@ -95,10 +95,10 @@ export function DashHeader( {
                 <div className="hidden lg:flex h-16 shrink-0 items-center justify-center">
                     <img
                         className="h-8 w-auto"
-                        src="/images/logo.png"
+                        src="/images/fake-logo.png"
                         alt="Your Company"
                     />
-                    <span className="px-4">پروژه تستی</span>
+                    <span className="px-4">بیمه مدد</span>
                 </div>
             </div>
         </div>)

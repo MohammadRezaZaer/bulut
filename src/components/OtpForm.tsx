@@ -24,7 +24,7 @@ export default function OtpForm({mobile, onBack, onSuccess}: any) {
     })
     const processForm: SubmitHandler<OtpInputInfer> = async data => {
         console.log({data})
-        const result = await verifyOtpAction({ ...data, mobile });
+        const result = await verifyOtpAction(data);
         console.log({result})
         if (!result) {
             console.log('Something went wrong')
@@ -35,19 +35,18 @@ export default function OtpForm({mobile, onBack, onSuccess}: any) {
             // set local error state
             toast.error(result.error.otp);
             console.log(result.error)
-            return
-        }
-        if (!result.success) {
-            if (result.error) {
+
+
                 for (const key in result.error) {
                     form.setError(key as keyof OtpInputInfer, {
                         message: result.error[key]?.[0] || 'خطا',
                         type: 'manual'
                     })
                 }
-            }
+
             return
         }
+
         if (result.success) {
             // onSuccess()
             console.log("suuuu")
@@ -57,7 +56,7 @@ export default function OtpForm({mobile, onBack, onSuccess}: any) {
     }
 
     return (<>
-            <button onClick={onBack} className=" mr-auto  flex items-center justify-center text-black">
+            <button onClick={onBack} className=" mr-auto  flex  justify-center text-black">
                 <span>بازگشت</span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                      fill="none" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"
@@ -66,7 +65,7 @@ export default function OtpForm({mobile, onBack, onSuccess}: any) {
                 </svg>
             </button>
             <Form {...form} >
-                <form /*action={action}*/ className="flex  flex-col items-center justify-center"
+                <form /*action={action}*/ className="flex  flex-col  gap-y-4 justify-center py-4"
                                           onSubmit={form.handleSubmit(processForm)}>
                     <h2
                         className="title text-[16px]">کد فعالسازی را وارد نمایید</h2>
@@ -76,7 +75,6 @@ export default function OtpForm({mobile, onBack, onSuccess}: any) {
                         name={FIELDS.OTP}
                         render={({field}) => (
                             <FormItem>
-                                <FormLabel>otp</FormLabel>
                                 <FormControl>
                                     <Input
                                         placeholder="otp"
@@ -84,13 +82,12 @@ export default function OtpForm({mobile, onBack, onSuccess}: any) {
                                         type=""
                                         {...field} />
                                 </FormControl>
-                                <FormDescription>otp</FormDescription>
                                 <FormMessage/>
                             </FormItem>
                         )}
                     />
                     {/* Hidden mobile field */}
-                    <input type="hidden" {...form.register(FIELDS.MOBILE)} />
+                    <input type="hidden" {...form.register(FIELDS.MOBILE)}  value={mobile}/>
 
 
                     <Button

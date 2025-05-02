@@ -4,7 +4,7 @@ import React, {Fragment} from "react";
 import Link from "next/link";
 import {cn} from "@/lib/utils";
 
-export function ContextMenu({id}) {
+export function PlateContextMenu({id}) {
     return <Menu as="div" className="relative inline-block text-left">
         <div>
             <Menu.Button
@@ -29,7 +29,7 @@ export function ContextMenu({id}) {
                     <Menu.Item>
                         {({active}) => (
                             <Link
-                                href={`/book/edit/${id}`} passHref
+                                href={`/dashboard/Inquiry/plates/edit/${id}`} passHref
                                 className={cn(
                                     active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
                                     'group flex items-center px-4 py-2 text-sm'
@@ -46,7 +46,7 @@ export function ContextMenu({id}) {
                     <Menu.Item>
                         {({active}) => (
                             <Link
-                                href={`/book/delete/${id}`} passHref
+                                href={`/dashboard/Inquiry/plates/delete/${id}`} passHref
 
                                 className={cn(
                                     active ? 'bg-gray-100 text-gray-700' : ' text-red-500',

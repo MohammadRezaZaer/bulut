@@ -47,7 +47,7 @@ export default function LoginPage() {
                         >
                             {step === 'phone' ?
                                 ( <section
-                                className="h-[325px] w-[300px] text-center transition-all duration-700 ease-in-out"><h2
+                                className="h-[325px] w-[300px] text-center transition-all duration-700 ease-in-out p-2"><h2
                                 className="mb-[20px] text-[30px] font-semibold text-brand text-center">خوش آمدید!</h2>
                                 <section className="mb-[9px] flex gap-1 justify-center text-lg"><span
                                     className=" ">ورود</span><span>|</span> <span>ثبت نام</span></section>
@@ -63,7 +63,7 @@ export default function LoginPage() {
 
                             </section>):(
 
-                            <section className="relative h-[325px] w-[300px] text-center">
+                            <section className="relative h-[325px] w-[300px] text-center p-2">
                                 <OtpForm
 
                                     mobile={mobile}

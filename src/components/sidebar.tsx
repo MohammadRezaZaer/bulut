@@ -11,9 +11,9 @@ import {Dialog, Transition} from "@headlessui/react";
 import {Fragment} from "react";
 
 export const navigation = [
-    {name: 'داشبورد', href: '/', icon: HomeIcon, current: true},
-    {name: 'مدیریت کتاب‌ها', href: '/manage-books', icon: UsersIcon, current: false},
-    {name: 'فروشگاه', href: '/shop', icon: FolderIcon, current: false},
+    {name: 'داشبورد', href: '/dashboard', icon: HomeIcon, current: true},
+    {name: 'معرفی شدگان', href: '/referrals', icon: UsersIcon, current: false},
+    {name: 'لیست بیمه نامه ه', href: '/insurance-list', icon: FolderIcon, current: false},
 ]
 
 export function Sidebar(props: {
@@ -69,7 +69,7 @@ export function Sidebar(props: {
                             <div className="flex h-16 shrink-0 items-center">
                                 <img
                                     className="h-8 w-auto"
-                                    src="/images/logo.png"
+                                    src="/images/fake-logo.png"
                                     alt="Your Company"
                                 />
                             </div>
