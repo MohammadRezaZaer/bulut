@@ -5,8 +5,8 @@ export const dynamicParams = false;
 import {type ElementRef, Fragment, useEffect, useRef, useState} from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { CheckIcon } from '@heroicons/react/24/outline'
-import {DialogShell} from "@/app/components/dialog-shell";
-import {DeletePlate} from "@/app/components/deletePlate";
+import {DialogShell} from "@/components/dialog-shell";
+import {DeletePlate} from "@/components/deletePlate";
 
 export default function DeletePage({
                                            params,

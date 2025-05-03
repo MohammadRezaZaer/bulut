@@ -1,8 +1,8 @@
 "use client"
 
 import {type ElementRef, useEffect, useRef, useState} from 'react'
-import {DialogShell} from "@/app/components/dialog-shell";
-import {DeletePlate} from "@/app/components/deletePlate";
+import {DialogShell} from "@/components/dialog-shell";
+import {DeletePlate} from "@/components/deletePlate";
 
 export default  function PhotoModal() {
 

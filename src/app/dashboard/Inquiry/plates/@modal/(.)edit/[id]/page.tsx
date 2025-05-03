@@ -10,7 +10,7 @@ export default async function PhotoModal({
   return <Modal>
 
     <div className="w-full mx-auto mt-10 bg-white p-6  rounded-lg">
-      <h1 className="text-xl font-bold mb-6">افزودن کتاب</h1>
+      <h1 className="text-xl font-bold mb-6">ویرایش پلاک</h1>
       <AddBookForm/>
     </div>
 

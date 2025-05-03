@@ -4,45 +4,42 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8407cdba-7ec5-42fd-9274-72c9660efa8b" name="Changes" comment="at last login verify to dashboard&#10;and logout">
-      <change afterPath="$PROJECT_DIR$/src/app/book/@modal/(.)delete/[id]/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/book/default.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/book/delete/[id]/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/book/error.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/book/layout.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/book/not-found.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/book/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/dashboard/Inquiry/plates/@modal/(.)delete/[id]/modal.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/dashboard/Inquiry/plates/@modal/(.)edit/[id]/modal.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/dashboard/Inquiry/plates/@modal/(.)edit/[id]/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/dashboard/Inquiry/plates/@modal/default.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/dashboard/Inquiry/plates/add/[id]/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/dashboard/Inquiry/plates/edit/[id]/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/dashboard/Inquiry/plates/layout.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/dashboard/Inquiry/plates/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/dashboard/layout.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/dashboard/searchMe.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Back-Link.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/DashboardCard.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/layouts/dashboard-shell.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/plate-card.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/plateContextMenu.tsx" afterDir="false" />
+    <list default="true" id="8407cdba-7ec5-42fd-9274-72c9660efa8b" name="Changes" comment="done with add delete edit plate&#10;add isAuthenticated from cookie">
+      <change afterPath="$PROJECT_DIR$/src/app/login/layout.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/buttons/LoginButton.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/@modal/(.)delete/[id]/modal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/book/@modal/(.)delete/[id]/modal.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/@modal/(.)delete/[id]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/dashboard/Inquiry/plates/@modal/(.)delete/[id]/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/@modal/(.)edit/[id]/modal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/book/@modal/(.)edit/[id]/modal.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/@modal/(.)edit/[id]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/book/@modal/(.)edit/[id]/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/@modal/default.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/book/@modal/default.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/dashboard/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/dashboard/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/delete/[id]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/dashboard/Inquiry/plates/delete/[id]/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/edit/[id]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/book/edit/[id]/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/book/@modal/(.)delete/[id]/modal.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/book/@modal/(.)delete/[id]/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/book/@modal/(.)edit/[id]/modal.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/book/@modal/(.)edit/[id]/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/book/@modal/default.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/book/default.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/book/delete/[id]/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/book/edit/[id]/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/book/error.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/book/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(home)/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/book/not-found.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/book/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/addOrEditPlate.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/addOrEditPlate.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/deletePlate.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/deletePlate.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/dialog-shell.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dialog-shell.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/dashboard/Inquiry/plates/@modal/(.)add/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/dashboard/Inquiry/plates/@modal/(.)add/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/dashboard/Inquiry/plates/@modal/(.)delete/[id]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/dashboard/Inquiry/plates/@modal/(.)delete/[id]/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/dashboard/Inquiry/plates/@modal/(.)edit/[id]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/dashboard/Inquiry/plates/@modal/(.)edit/[id]/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/dashboard/Inquiry/plates/add/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/dashboard/Inquiry/plates/add/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/dashboard/Inquiry/plates/delete/[id]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/dashboard/Inquiry/plates/delete/[id]/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/dashboard/Inquiry/plates/edit/[id]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/dashboard/Inquiry/plates/edit/[id]/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/dashboard/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/dashboard/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/dashboard/logout-form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/dashboard/logout-form.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/login/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/login/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(home)/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/temp/page.tsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/OtpForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/OtpForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/contextMenu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/contextMenu.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/dashHeader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dashHeader.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/sidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sidebar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ui/form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/form.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/middleware.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/middleware.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PhoneForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PhoneForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profileComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profileComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/constants.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/constants.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +70,7 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "F:/ready code/bulut/ts-pnpm/src/app/dashboard/Inquiry/plates",
+    "last_opened_file_path": "F:/ready code/bulut/ts-pnpm/src/app/(home)",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -87,21 +84,25 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="F:\ready code\bulut\ts-pnpm\src\app\dashboard\Inquiry\plates" />
-      <recent name="F:\ready code\bulut\ts-pnpm\src\app\book" />
+      <recent name="F:\ready code\bulut\ts-pnpm\src\app\(home)" />
+      <recent name="F:\ready code\bulut\ts-pnpm\src\app\login" />
+      <recent name="F:\ready code\bulut\ts-pnpm\src\components\layouts" />
       <recent name="F:\ready code\bulut\ts-pnpm\src\components" />
-      <recent name="F:\ready code\bulut\ts-pnpm\src\app\dashboard" />
-      <recent name="F:\ready code\bulut\ts-pnpm\src\app\components" />
+      <recent name="F:\ready code\bulut\ts-pnpm\src\app\dashboard\Inquiry\plates\@modal" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\ready code\bulut\ts-pnpm\src\components" />
+      <recent name="F:\ready code\bulut\ts-pnpm\src\app\dashboard\Inquiry\plates\@modal\(.)add" />
+      <recent name="F:\ready code\bulut\ts-pnpm\src\app\dashboard\Inquiry\plates\add" />
       <recent name="F:\ready code\bulut\ts-pnpm\src\app\book" />
       <recent name="F:\ready code\bulut\ts-pnpm\src\app\dashboard\Inquiry\plates\edit\[id]" />
-      <recent name="F:\ready code\bulut\ts-pnpm\src\app\dashboard\Inquiry\plates\edit" />
-      <recent name="F:\ready code\bulut\ts-pnpm\src\components" />
-      <recent name="F:\ready code\bulut\ts-pnpm\src\app" />
     </key>
     <key name="es6.move.members.recent.items">
-      <recent name="F:\ready code\bulut\ts-pnpm\src\app\dashboard\searchMe.tsx" />
+      <recent name="F:\ready code\bulut\ts-pnpm\src\components\notificationComponent.tsx" />
+      <recent name="F:\ready code\bulut\ts-pnpm\src\utils\navigations.ts" />
+      <recent name="F:\ready code\bulut\ts-pnpm\src\components\profileComponent.tsx" />
+      <recent name="F:\ready code\bulut\ts-pnpm\src\app\components\addOrEditPlate.tsx" />
+      <recent name="F:\ready code\bulut\ts-pnpm\src\app\components\deletePlate.tsx" />
     </key>
   </component>
   <component name="RunManager">
@@ -143,7 +144,9 @@
       <workItem from="1745950011848" duration="40027000" />
       <workItem from="1746098124747" duration="20153000" />
       <workItem from="1746125794869" duration="6497000" />
-      <workItem from="1746165456898" duration="8393000" />
+      <workItem from="1746165456898" duration="17471000" />
+      <workItem from="1746275295919" duration="316000" />
+      <workItem from="1746279955250" duration="5529000" />
     </task>
     <task id="LOCAL-00001" summary="done with error show">
       <option name="closed" value="true" />
@@ -193,7 +196,31 @@
       <option name="project" value="LOCAL" />
       <updated>1746131051665</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="working in dashboard and intercept routes">
+      <option name="closed" value="true" />
+      <created>1746180564371</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1746180564371</updated>
+    </task>
+    <task id="LOCAL-00008" summary="working in dashboard and intercept routes2">
+      <option name="closed" value="true" />
+      <created>1746180586412</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1746180586412</updated>
+    </task>
+    <task id="LOCAL-00009" summary="done with add delete edit plate&#10;add isAuthenticated from cookie">
+      <option name="closed" value="true" />
+      <created>1746280116703</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1746280116703</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -218,6 +245,9 @@
     <MESSAGE value="want to add dashboard2" />
     <MESSAGE value="login page view complete" />
     <MESSAGE value="at last login verify to dashboard&#10;and logout" />
-    <option name="LAST_COMMIT_MESSAGE" value="at last login verify to dashboard&#10;and logout" />
+    <MESSAGE value="working in dashboard and intercept routes" />
+    <MESSAGE value="working in dashboard and intercept routes2" />
+    <MESSAGE value="done with add delete edit plate&#10;add isAuthenticated from cookie" />
+    <option name="LAST_COMMIT_MESSAGE" value="done with add delete edit plate&#10;add isAuthenticated from cookie" />
   </component>
 </project>

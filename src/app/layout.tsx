@@ -63,12 +63,10 @@ export default async function RootLayout(props: {
   return (
       <html lang="fa" dir={"rtl"}>
       <body>
-      <HomeShell>
           {props.children}
           {props.modal}
           <div id="modal-root"/>
           <Toaster />
-      </HomeShell>
       </body>
       </html>
   );

@@ -1,6 +1,6 @@
 "use client"
 import React from "react";
-import {AddOrEditPlate} from "@/app/components/addOrEditPlate";
+import {AddOrEditPlate} from "@/components/addOrEditPlate";
 
 export default function Page() {
 

@@ -51,17 +51,17 @@ export default function PhoneForm({  onSuccess}: any) {
                 name={FIELDS.MOBILE}
                 render={({ field }) => (
                     <FormItem className="flex flex-col items-start">
-                        <FormLabel>mobileNumber</FormLabel>
+                        <FormLabel>شماره همراه</FormLabel>
                         <FormControl className="w-full">
                             <PhoneInputComponent
-                                placeholder="Placeholder"
+                                placeholder="09141234123"
                                 {...field}
                                 defaultCountry="IR"
                                 countries={["IR"]} // restricts to only IR
                                 international={false}
                             />
                         </FormControl>
-                        <FormDescription>Enter your mobile Number.</FormDescription>
+                        <FormDescription>لطفا شماره همراه خود را وارد نمایید.</FormDescription>
                         <FormMessage />
                     </FormItem>
                 )}
@@ -78,23 +78,7 @@ export default function PhoneForm({  onSuccess}: any) {
         </form>
 
         </Form>
-        // <form
-        //     className="mx-auto mb-8 flex w-[90%] max-w-full flex-col items-start md:w-full xl:mb-[181px] xl:w-[280px]">
-        //     <h2 className="text-xl w-full mb-[35px] text-center">لطفا شماره موبایل خود را وارد
-        //         کنید</h2>
-        //     <section className="relative w-full">
-        //         <input
-        //             placeholder="شماره موبایل خود را وارد کنید"
-        //             className=" false mx-0 h-[48px] w-full rounded-[4px] border-[1px] border-[#C2C2C2] p-[15px] text-xs outline-none transition-all duration-300 focus:border-[#0165e1] undefined"/>
-        //     </section>
-        //     <Button type="submit" variant={"default"}
-        //             className="relative flex h-12  items-center justify-center rounded-md bg-brand  px-5 transition-all duration-700 disabled:opacity-50 w-full mt-7 hover:shadow-2xl focus:shadow-none">تایید
-        //         و دریافت کد
-        //         <div className="btnLoader">
-        //
-        //         </div>
-        //     </Button>
-        // </form>
+
     )
         ;
 }

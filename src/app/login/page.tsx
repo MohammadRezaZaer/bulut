@@ -1,12 +1,8 @@
 'use client';
 
-import {useFormState} from 'react-dom';
-import {sendOtpAction, verifyOtpAction} from './actions';
-import {Button} from "@/components/ui/button";
-import {Input} from "@/components/ui/input";
+
 import PhoneForm from "@/components/PhoneForm";
 import {useState} from "react";
-import RhfWithAction from "@/components/RhfWithAction";
 import OtpForm from "@/components/OtpForm";
 
 export default function LoginPage() {

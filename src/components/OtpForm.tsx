@@ -77,7 +77,7 @@ export default function OtpForm({mobile, onBack, onSuccess}: any) {
                             <FormItem>
                                 <FormControl>
                                     <Input
-                                        placeholder="otp"
+                                        placeholder="کد 5 رقمی"
 
                                         type=""
                                         {...field} />

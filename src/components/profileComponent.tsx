@@ -2,10 +2,12 @@ import {Menu, Transition} from "@headlessui/react";
 import {ChevronDownIcon} from "@heroicons/react/20/solid";
 import React, {Fragment} from "react";
 import {cn} from "@/lib/utils";
+import {Text_tokens} from "@/lib/constants";
+import LogoutForm from "@/app/dashboard/logout-form";
 
 const userNavigation = [
     {name: 'Your profile', href: '#'},
-    {name: 'Sign out', href: '#'},
+    {name: Text_tokens.Sign_out, href: '#'},
 ]
 
 export function ProfileComponent() {
@@ -39,19 +41,24 @@ export function ProfileComponent() {
                     className="absolute right-0 z-10 mt-2.5 w-32 origin-top-right rounded-md bg-white py-2 shadow-lg ring-1 ring-gray-900/5 focus:outline-none">
                     {userNavigation.map((item) => (
                         <Menu.Item key={item.name}>
-                            {({active}) => (
-                                <a
-                                    href={item.href}
-                                    className={cn(
-                                        active ? 'bg-gray-50' : '',
-                                        'block px-3 py-1 text-sm leading-6 text-gray-900'
-                                    )}
-                                >
-                                    {item.name}
-                                </a>
-                            )}
+                            {({ active }) =>
+                                item.name === Text_tokens.Sign_out ? (
+                                    <LogoutForm />
+                                ) : (
+                                    <a
+                                        href={item.href}
+                                        className={cn(
+                                            active ? 'bg-gray-50' : '',
+                                            'block px-3 py-1 text-sm leading-6 text-gray-900'
+                                        )}
+                                    >
+                                        {item.name}
+                                    </a>
+                                )
+                            }
                         </Menu.Item>
                     ))}
+
                 </Menu.Items>
             </Transition>
         </Menu>

@@ -2,7 +2,6 @@
 import { Metadata } from 'next';
 import * as React from 'react';
 
-import '@/styles/colors.css';
 
 export const metadata: Metadata = {
   title: 'Components',
@@ -17,14 +16,14 @@ export default function DashboardLayout(props: {
     modal: React.ReactNode;
 }) {
 
-    const auth_token = isAuthenticated();
 
-    return <DashboardShell isAuthenticated={auth_token}>
-
+    return <main className="flex h-screen items-center justify-center bg-gray-100">
         {props.children}
         {props.modal}
         <div id="modal-root"/>
-    </DashboardShell>;
+    </main>
+
+
 }
 
 
