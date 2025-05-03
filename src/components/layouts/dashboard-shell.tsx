@@ -6,6 +6,7 @@ import { Header } from '@/components/header';
 import { DeskSideBar } from '@/components/deskSideBar';
 import { cn } from '@/lib/utils';
 import {BackLink} from "@/components/Back-Link";
+import {navigation} from "@/utils/navigations-and_other_sets";
 
 type Props = {
     children: React.ReactNode;
@@ -21,7 +22,7 @@ export default function DashboardShell({ children ,isAuthenticated }: Props) {
                 show={mobSidebarOpen}
                 onClose={setMobSidebarOpen}
                 onClick={() => setMobSidebarOpen(false)}
-
+items={navigation}
             />
 
             <Header setMobSidebarOpen={setMobSidebarOpen} isAuthenticated={isAuthenticated} />

@@ -1,7 +1,8 @@
 import { LucideIcon } from 'lucide-react';
 import * as React from 'react';
-import { IconType } from 'react-icons';
-import { ImSpinner2 } from 'react-icons/im';
+
+import { Loader2 } from 'lucide-react';
+
 
 import { cn } from '@/lib/utils';
 
@@ -13,8 +14,7 @@ type ButtonProps = {
   isDarkBg?: boolean;
   variant?: (typeof ButtonVariant)[number];
   size?: (typeof ButtonSize)[number];
-  leftIcon?: IconType | LucideIcon;
-  rightIcon?: IconType | LucideIcon;
+
   classNames?: {
     leftIcon?: string;
     rightIcon?: string;
@@ -31,8 +31,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       variant = 'primary',
       size = 'base',
       isDarkBg = false,
-      leftIcon: LeftIcon,
-      rightIcon: RightIcon,
+
       classNames,
       ...rest
     },
@@ -110,49 +109,13 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
               }
             )}
           >
-            <ImSpinner2 className='animate-spin' />
+              <Loader2 className='animate-spin' />
           </div>
         )}
 
-          {RightIcon && (
-              <div
-                  className={cn([
-                      size === 'base' && 'mx-1',
-                      size === 'sm' && 'mx-1.5',
-                  ])}
-              >
-                  <RightIcon
-                      size='1em'
-                      className={cn(
-                          [
-                              size === 'base' && 'text-md md:text-md',
-                              size === 'sm' && 'md:text-md text-sm',
-                          ],
-                          classNames?.rightIcon
-                      )}
-                  />
-              </div>
-          )}
+
         {children}
-          {LeftIcon && (
-              <div
-                  className={cn([
-                      size === 'base' && 'mr-1',
-                      size === 'sm' && 'mr-1.5',
-                  ])}
-              >
-                  <LeftIcon
-                      size='1em'
-                      className={cn(
-                          [
-                              size === 'base' && 'md:text-md text-md',
-                              size === 'sm' && 'md:text-md text-sm',
-                          ],
-                          classNames?.leftIcon
-                      )}
-                  />
-              </div>
-          )}
+
       </button>
     );
   }

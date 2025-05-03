@@ -246,7 +246,7 @@ export default function ManualBimeRegister() {
     )
 }
 
-function CustomInput({onFocus, value, onChange}) {
+export function CustomInput({onFocus, value, onChange}) {
 
 
     const toEnglishDigits = (str: string) =>

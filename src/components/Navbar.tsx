@@ -1,6 +1,6 @@
 import { NavLink } from "@/components/NavLink";
+import {navLinks} from "@/utils/navigations-and_other_sets";
 
-import {navLinks} from "@/utils/navigations";
 
 export function Navbar() {
     return (

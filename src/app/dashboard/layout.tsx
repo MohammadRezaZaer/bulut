@@ -14,7 +14,7 @@ import {isAuthenticated} from "@/lib/auth";
 
 export default function DashboardLayout(props: {
     children: React.ReactNode;
-    modal: React.ReactNode;
+
 }) {
 
     const auth_token = isAuthenticated();
@@ -22,8 +22,8 @@ export default function DashboardLayout(props: {
     return <DashboardShell isAuthenticated={auth_token}>
 
         {props.children}
-        {props.modal}
-        <div id="modal-root"/>
+
+
     </DashboardShell>;
 }
 

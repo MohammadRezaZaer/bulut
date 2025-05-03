@@ -2,13 +2,12 @@ import {XMarkIcon} from "@heroicons/react/24/outline";
 import {Dialog, Transition} from "@headlessui/react";
 import {Fragment} from "react";
 import {cn} from "@/lib/utils";
-import {navigation} from "@/utils/navigations";
 
 export function Sidebar(props: {
     show: boolean,
     onClose: (value: (((prevState: boolean) => boolean) | boolean)) => void,
     onClick: () => void,
-
+items:[]
 }) {
     return <Transition.Root show={props.show} as={Fragment}>
         <Dialog as="div" className="relative z-50 lg:hidden" onClose={props.onClose}>
@@ -63,7 +62,7 @@ export function Sidebar(props: {
                             </div>
                             <nav className="flex flex-1 flex-col">
                                 <ul role="list" className="-mx-2 flex-1 space-y-1">
-                                    {navigation.map((item) => (
+                                    {props.items.map((item) => (
                                         <li key={item.name}>
                                             <a
                                                 href={item.href}
@@ -74,8 +73,9 @@ export function Sidebar(props: {
                                                     'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold'
                                                 )}
                                             >
-                                                {item.name}
+
                                                 <item.icon className="h-6 w-6 shrink-0" aria-hidden="true" />
+                                                {item.name}
                                             </a>
                                         </li>
                                     ))}

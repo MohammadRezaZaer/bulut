@@ -1,18 +1,13 @@
 
 import '@/styles/globals.css';
-// !STARTERCONF This is for demo purposes, remove @/styles/colors.css import immediately
 import '@/styles/colors.css';
 
 import { siteConfig } from '@/constant/config';
 import './global.css';
 import {Metadata} from "next";
-import { cookies } from 'next/headers';
-import {getCart} from "@/lib/shopify";
-import {CartProvider} from "@/components/cart/cart-context";
 
 import { Toaster } from "@/components/ui/sonner"
-import DashboardShell from "@/components/layouts/dashboard-shell";
-import HomeShell from "@/components/layouts/home-shell";
+import TopLoader from "@/components/top-loader";
 
 export const metadata: Metadata = {
     metadataBase: new URL(siteConfig.url),
@@ -57,15 +52,16 @@ export const metadata: Metadata = {
 
 export default async function RootLayout(props: {
   children: React.ReactNode;
-  modal: React.ReactNode;
 }) {
 
   return (
       <html lang="fa" dir={"rtl"}>
+
       <body>
+      <TopLoader />
           {props.children}
-          {props.modal}
-          <div id="modal-root"/>
+
+
           <Toaster />
       </body>
       </html>

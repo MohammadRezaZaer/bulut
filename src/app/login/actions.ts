@@ -1,12 +1,8 @@
 'use server';
-import { z } from 'zod';
-import { redirect } from 'next/navigation';
-import { generateOTP, saveOtp, sendOtpToPhone } from '@/lib/otp';
 import {
     FormDataSchema,
     Inputs,
     OtpInputInfer,
-    OtpInputInferForBackValidate,
     otpSchema,
     PhoneInputInfer,
     phoneSchema

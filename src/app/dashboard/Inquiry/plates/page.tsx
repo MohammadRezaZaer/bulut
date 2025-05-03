@@ -3,13 +3,9 @@
 import React, {Fragment} from 'react'
 import {ChevronRight, Plus} from "lucide-react";
 import Button from "@/components/buttons/Button";
-import NextImage from "@/components/NextImage";
-import {ContextMenu} from "@/components/contextMenu";
-import {AddOrUpdate} from "@/components/addOrUpdate";
-import {books} from "@/app/page";
+
 import {PlateCard} from "@/components/plate-card";
-import {SelectItem} from "@/components/ui/select";
-import {cn} from "@/lib/utils";
+
 import Link from "next/link";
 
 
@@ -22,7 +18,7 @@ export default function Page() {
                 <div className="flex items-center justify-between w-full"> <span>پلاک های من
 </span>
                     <Button
-                        rightIcon={Plus}>
+                        >
 
                         <Link
                             href={"/dashboard/Inquiry/plates/add"}

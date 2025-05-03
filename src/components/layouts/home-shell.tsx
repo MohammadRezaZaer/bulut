@@ -1,14 +1,15 @@
 'use client';
 
-import { useState } from 'react';
-import { Sidebar } from '@/components/sidebar';
-import { Header } from '@/components/header';
-import { DeskSideBar } from '@/components/deskSideBar';
-import { cn } from '@/lib/utils';
-import {BackLink} from "@/components/Back-Link";
+import {useState} from 'react';
+import {Sidebar} from '@/components/sidebar';
+import {Header} from '@/components/header';
+import {navLinks} from "@/utils/navigations-and_other_sets";
 
-
-export default function HomeShell({ children }: { children: React.ReactNode }) {
+type Props = {
+    children: React.ReactNode;
+    isAuthenticated: boolean;
+};
+export default function HomeShell({children, isAuthenticated}: Props) {
     const [mobSidebarOpen, setMobSidebarOpen] = useState(false);
     const [SidebarOpen, setSidebarOpen] = useState(false);
 
@@ -18,10 +19,10 @@ export default function HomeShell({ children }: { children: React.ReactNode }) {
                 show={mobSidebarOpen}
                 onClose={setMobSidebarOpen}
                 onClick={() => setMobSidebarOpen(false)}
-
+                items={navLinks}
             />
 
-            <Header setMobSidebarOpen={setMobSidebarOpen} />
+            <Header setMobSidebarOpen={setMobSidebarOpen} isAuthenticated={isAuthenticated}/>
 
             <main className="bg-[#F0F1F1]">
                 <div className="flex">

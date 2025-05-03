@@ -9,6 +9,8 @@ export const ROUTES = {
     LOGIN: '/login',
     DASHBOARD: '/dashboard',
     PROFILE: '/profile',
+    INSURANCE_SIGNUP: '/insurance-signup',
+
     // Add other routes here
 };
 export const Text_tokens = {

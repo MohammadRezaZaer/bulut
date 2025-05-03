@@ -1,6 +1,6 @@
 import {cn} from "@/lib/utils";
 import React from "react";
-import {navigation} from "@/utils/navigations";
+import {navigation} from "@/utils/navigations-and_other_sets";
 
 export function DeskSideBar(props: { sidebarOpen: boolean, onClick: () => void}) {
     return <>
