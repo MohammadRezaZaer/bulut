@@ -25,7 +25,7 @@ export function AddOrEditPlate() {
 
     function onSubmit(values: z.infer<typeof formSchema>) {
         try {
-            console.log(values);
+            // console.log(values);
             toast(
                 <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
           <code className="text-white">{JSON.stringify(values, null, 2)}</code>
@@ -82,7 +82,7 @@ export function AddOrEditPlate() {
 
                     render={({field}) => (
                         <FormItem>
-                            <FormLabel>Plate Number</FormLabel>
+                            <FormLabel>شماره پلاک</FormLabel>
                             <FormControl>
                                 <InputPlate value={field.value} onChange={field.onChange}/>
 
@@ -103,7 +103,7 @@ export function AddOrEditPlate() {
                             </FormLabel>
                             <FormControl>
                                 <Input
-                                    placeholder="plateTitle"
+                                    placeholder="عنوان پلاک"
 
                                     type=""
                                     {...field} />

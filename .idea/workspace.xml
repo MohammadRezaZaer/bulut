@@ -4,54 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8407cdba-7ec5-42fd-9274-72c9660efa8b" name="Changes" comment="لایوت های مختلف برای خانه و داشبورد که &#10;wrap&#10;نشوند">
-      <change afterPath="$PROJECT_DIR$/src/app/insurance-signup/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ManualBimeRegister2.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/step-form/OnboardingFlowForm2.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/step-form/steppedContactSection.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ui/azad-input-plate.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/next.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(home)/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(home)/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(home)/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(home)/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/api/login/route.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/api/logout/route.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/layout.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/page.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/dashboard/Inquiry/plates/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/dashboard/Inquiry/plates/page.tsx" afterDir="false" />
+    <list default="true" id="8407cdba-7ec5-42fd-9274-72c9660efa8b" name="Changes" comment=" واخ واخ">
+      <change beforePath="$PROJECT_DIR$/src/app/dashboard/Inquiry/plates/@modal/(.)add/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/dashboard/Inquiry/plates/@modal/(.)add/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/dashboard/Inquiry/plates/@modal/(.)edit/[id]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/dashboard/Inquiry/plates/@modal/(.)edit/[id]/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/dashboard/Inquiry/plates/edit/[id]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/dashboard/Inquiry/plates/edit/[id]/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/dashboard/Inquiry/plates/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/dashboard/Inquiry/plates/layout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/dashboard/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/dashboard/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/error.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/error.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/global.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/global.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/lib/otp.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/top-loader.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/login/actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/login/actions.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/login/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/login/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/not-found.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/not-found.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/verify/actions.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/verify/page.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ManualBimeRegister.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ManualBimeRegister.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/NavLink.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NavLink.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/addOrUpdate.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/buttons/Button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/buttons/Button.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/buttons/IconButton.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/cart.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/cart/actions.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/cart/add-to-cart.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/cart/cart-context.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/cart/close-cart.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/cart/delete-item-button.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/cart/edit-item-quantity-button.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/cart/open-cart.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/deskSideBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/deskSideBar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/layouts/dashboard-shell.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/layouts/dashboard-shell.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/layouts/home-shell.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/layouts/home-shell.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/sidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sidebar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/constants.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/constants.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/otp.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/navigations.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/navigations-and_other_sets.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/lib/otp.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/addOrEditPlate.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/addOrEditPlate.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/input-plate.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/input-plate.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/colors.css" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,23 +42,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "F:/ready code/bulut/ts-pnpm/src/components/ui",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "pnpm",
-    "npm.build.executor": "Run",
-    "npm.dev.executor": "Run",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "ts.external.directory.path": "F:\\ready code\\bulut\\ts-pnpm\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;F:/ready code/bulut/ts-pnpm/src/components/ui&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;pnpm&quot;,
+    &quot;npm.build.executor&quot;: &quot;Run&quot;,
+    &quot;npm.dev.executor&quot;: &quot;Run&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;F:\\ready code\\bulut\\ts-pnpm\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="F:\ready code\bulut\ts-pnpm\src\components\ui" />
@@ -118,7 +82,7 @@
       <recent name="F:\ready code\bulut\ts-pnpm\src\app\components\deletePlate.tsx" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.build">
+  <component name="RunManager" selected="npm.dev">
     <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -141,8 +105,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.build" />
         <item itemvalue="npm.dev" />
+        <item itemvalue="npm.build" />
       </list>
     </recent_temporary>
   </component>
@@ -170,7 +134,7 @@
       <workItem from="1746125794869" duration="6497000" />
       <workItem from="1746165456898" duration="17471000" />
       <workItem from="1746275295919" duration="316000" />
-      <workItem from="1746279955250" duration="20476000" />
+      <workItem from="1746279955250" duration="22045000" />
     </task>
     <task id="LOCAL-00001" summary="done with error show">
       <option name="closed" value="true" />
@@ -260,7 +224,15 @@
       <option name="project" value="LOCAL" />
       <updated>1746287639302</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary=" واخ واخ">
+      <option name="closed" value="true" />
+      <created>1746305920185</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1746305920185</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -291,6 +263,7 @@
     <MESSAGE value="refactor" />
     <MESSAGE value="refactor2" />
     <MESSAGE value="لایوت های مختلف برای خانه و داشبورد که &#10;wrap&#10;نشوند" />
-    <option name="LAST_COMMIT_MESSAGE" value="لایوت های مختلف برای خانه و داشبورد که &#10;wrap&#10;نشوند" />
+    <MESSAGE value=" واخ واخ" />
+    <option name="LAST_COMMIT_MESSAGE" value=" واخ واخ" />
   </component>
 </project>

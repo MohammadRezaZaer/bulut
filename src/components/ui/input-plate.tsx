@@ -16,23 +16,7 @@ interface InputPlateProps {
 
 export const InputPlate = ({value, onChange}: InputPlateProps) => {
     const [digits, setDigits] = React.useState(["", "الف", "", ""]) // 4 pieces: [2 digits, 1 letter, 3 digits, 2 digits]
-    // console.log({digits})
 
-    // Split incoming value into local state
-    // React.useEffect(() => {
-    //     if (value) {
-            // console.log({value})
-            // const matched = value.match(/^(\d{0,2})(.?)(\d{0,3})(\d{0,2})$/)
-            // if (matched) {
-            //     setDigits([
-            //         matched[1] || "",
-            //         matched[2] || "",
-            //         matched[3] || "",
-            //         matched[4] || ""
-            //     ])
-            // }
-    //     }
-    // }, [value])
 
     const updatePiece = (index: number, val: string) => {
         const newDigits = [...digits]
@@ -49,7 +33,7 @@ export const InputPlate = ({value, onChange}: InputPlateProps) => {
     }
 
     return (
-        <div className="mx-auto flex h-[48px]  w-full max-w-full rounded-xl">
+        <div className="mx-auto flex h-[48px]  w-full max-w-full rounded-xl ">
             <div className=" flex rounded-r border-y-[0.4px] border-r-[0.4px] border-solid border-[#A6A9BD] ">
                 <div
                     className="flex h-full w-[46px] items-center justify-center border-l-[0.4px] border-solid border-[#A6A9BD] ">
@@ -136,7 +120,7 @@ export const InputDigits = React.forwardRef<HTMLInputElement, InputDigitsProps>(
                     type="text"
                     inputMode="numeric"
                     className={cn(
-                        "outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 rounded-md text-center",
+                        " outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 rounded-md text-center",
                         className
                     )}
                     onChange={handleChange}

@@ -1,9 +1,10 @@
 
 import '@/styles/globals.css';
-import '@/styles/colors.css';
+
+import './global.css';
 
 import { siteConfig } from '@/constant/config';
-import './global.css';
+
 import {Metadata} from "next";
 
 import { Toaster } from "@/components/ui/sonner"
