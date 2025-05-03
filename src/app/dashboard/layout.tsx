@@ -11,12 +11,16 @@ export const metadata: Metadata = {
 };
 
 import DashboardShell from '@/components/layouts/dashboard-shell';
+import {isAuthenticated} from "@/lib/auth";
 
 export default function DashboardLayout(props: {
     children: React.ReactNode;
     modal: React.ReactNode;
 }) {
-    return <DashboardShell>
+
+    const auth_token = isAuthenticated();
+
+    return <DashboardShell isAuthenticated={auth_token}>
 
         {props.children}
         {props.modal}

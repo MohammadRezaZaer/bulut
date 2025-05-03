@@ -3,7 +3,7 @@ import type { NextRequest } from 'next/server';
 import {FIELDS} from "@/lib/constants";
 
 export function middleware(req: NextRequest) {
-    const mobile = req.cookies.get(FIELDS.MOBILE);
+    const mobile = req.cookies.get(FIELDS.AUTH_TOKEN);
 
     if (req.nextUrl.pathname.startsWith('/dashboard') && !mobile) {
         return NextResponse.redirect(new URL('/login', req.url));

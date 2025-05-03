@@ -7,11 +7,8 @@ import { DeskSideBar } from '@/components/deskSideBar';
 import { cn } from '@/lib/utils';
 import {BackLink} from "@/components/Back-Link";
 
-type Props = {
-    children: React.ReactNode;
-    isAuthenticated: boolean;
-};
-export default function DashboardShell({ children ,isAuthenticated }: Props) {
+
+export default function HomeShell({ children }: { children: React.ReactNode }) {
     const [mobSidebarOpen, setMobSidebarOpen] = useState(false);
     const [SidebarOpen, setSidebarOpen] = useState(false);
 
@@ -24,16 +21,13 @@ export default function DashboardShell({ children ,isAuthenticated }: Props) {
 
             />
 
-            <Header setMobSidebarOpen={setMobSidebarOpen} isAuthenticated={isAuthenticated} />
+            <Header setMobSidebarOpen={setMobSidebarOpen} />
 
             <main className="bg-[#F0F1F1]">
                 <div className="flex">
-                    <DeskSideBar
-                        sidebarOpen={SidebarOpen}
-                        onClick={() => setSidebarOpen((prev) => !prev)}
-                    />
+
                     <section className="py-10 px-12 w-full bg-white m-4 rounded-xl">
-                        <BackLink href="../" />
+
                         {children}
                     </section>
                 </div>

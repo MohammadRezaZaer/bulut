@@ -3,7 +3,7 @@
 import React, {Fragment, useState} from 'react'
 import {cn} from "@/lib/utils";
 import {Sidebar} from "@/components/sidebar";
-import {DashHeader} from "@/components/dashHeader";
+import {Header} from "@/components/header";
 import {DeskSideBar} from "@/components/deskSideBar";
 import Button from "@/components/buttons/Button";
 import {Plus} from "lucide-react";
@@ -61,7 +61,7 @@ export default function Page() {
                          )}/>
 
 
-                <DashHeader setMobSidebarOpen={setMobSidebarOpen}/>
+                <Header setMobSidebarOpen={setMobSidebarOpen}/>
 
 
                 <main className="bg-[#F0F1F1] ">

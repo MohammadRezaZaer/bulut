@@ -11,6 +11,8 @@ import {getCart} from "@/lib/shopify";
 import {CartProvider} from "@/components/cart/cart-context";
 
 import { Toaster } from "@/components/ui/sonner"
+import DashboardShell from "@/components/layouts/dashboard-shell";
+import HomeShell from "@/components/layouts/home-shell";
 
 export const metadata: Metadata = {
     metadataBase: new URL(siteConfig.url),
@@ -61,13 +63,12 @@ export default async function RootLayout(props: {
   return (
       <html lang="fa" dir={"rtl"}>
       <body>
-      <CartProvider >
-
+      <HomeShell>
           {props.children}
           {props.modal}
           <div id="modal-root"/>
           <Toaster />
-      </CartProvider>
+      </HomeShell>
       </body>
       </html>
   );

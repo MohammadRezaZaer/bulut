@@ -1,26 +1,14 @@
-import {
-    CalendarIcon,
-    ChartPieIcon,
-    DocumentDuplicateIcon,
-    FolderIcon,
-    HomeIcon,
-    UsersIcon,
-    XMarkIcon
-} from "@heroicons/react/24/outline";
+import {XMarkIcon} from "@heroicons/react/24/outline";
 import {Dialog, Transition} from "@headlessui/react";
 import {Fragment} from "react";
-
-export const navigation = [
-    {name: 'داشبورد', href: '/dashboard', icon: HomeIcon, current: true},
-    {name: 'معرفی شدگان', href: '/referrals', icon: UsersIcon, current: false},
-    {name: 'لیست بیمه نامه ه', href: '/insurance-list', icon: FolderIcon, current: false},
-]
+import {cn} from "@/lib/utils";
+import {navigation} from "@/utils/navigations";
 
 export function Sidebar(props: {
     show: boolean,
     onClose: (value: (((prevState: boolean) => boolean) | boolean)) => void,
     onClick: () => void,
-    callbackfn: (item) => JSX.Element
+
 }) {
     return <Transition.Root show={props.show} as={Fragment}>
         <Dialog as="div" className="relative z-50 lg:hidden" onClose={props.onClose}>
@@ -75,7 +63,22 @@ export function Sidebar(props: {
                             </div>
                             <nav className="flex flex-1 flex-col">
                                 <ul role="list" className="-mx-2 flex-1 space-y-1">
-                                    {navigation.map(props.callbackfn)}
+                                    {navigation.map((item) => (
+                                        <li key={item.name}>
+                                            <a
+                                                href={item.href}
+                                                className={cn(
+                                                    item.current
+                                                        ? 'bg-gray-800 text-white'
+                                                        : 'text-gray-400 hover:text-white hover:bg-gray-800',
+                                                    'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold'
+                                                )}
+                                            >
+                                                {item.name}
+                                                <item.icon className="h-6 w-6 shrink-0" aria-hidden="true" />
+                                            </a>
+                                        </li>
+                                    ))}
                                 </ul>
                             </nav>
                         </div>
