@@ -1,14 +1,15 @@
 // components/LoginButton.tsx
-import { ArrowRightIcon } from '@heroicons/react/24/outline'; // You can use any icon
+import { ArrowRightIcon } from '@heroicons/react/24/outline';
+import {cn} from "@/lib/utils"; // You can use any icon
 
 interface LoginButtonProps {
   href: string;
   text: string;
 }
 
-export const LoginButton: React.FC<LoginButtonProps> = ({ href, text }) => {
+export const LoginButton: React.FC<LoginButtonProps> = ({ className,href, text }) => {
   return (
-    <div className="hidden flex-row items-center justify-between lg:flex lg:gap-5">
+    <div className={cn("hidden flex-row items-center justify-between lg:flex lg:gap-5",className)}>
       <a
         href={href}
         className="flex h-9 min-w-[154px] items-center justify-center gap-2 rounded-full bg-primary px-4 py-[10px] font-medium leading-normal text-white md:h-[42px] md:w-[154px] dark:text-darkText-500 dark:hover:bg-darkBtn-200"

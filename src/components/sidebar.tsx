@@ -1,7 +1,9 @@
 import {XMarkIcon} from "@heroicons/react/24/outline";
 import {Dialog, Transition} from "@headlessui/react";
-import {Fragment} from "react";
+import React, {Fragment} from "react";
 import {cn} from "@/lib/utils";
+import {LoginButton} from "@/components/buttons/LoginButton";
+import {ROUTES} from "@/lib/constants";
 
 export function Sidebar(props: {
     show: boolean,
@@ -81,6 +83,7 @@ items:[]
                                     ))}
                                 </ul>
                             </nav>
+                            <LoginButton className="flex mx-auto" href={ROUTES.LOGIN} text="ورود | ثبت نام" />
                         </div>
                     </Dialog.Panel>
                 </Transition.Child>
