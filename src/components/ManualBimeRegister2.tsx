@@ -21,7 +21,6 @@ import {
 import {
     Form,
     FormControl,
-    FormDescription,
     FormField,
     FormItem,
     FormLabel,
@@ -99,10 +98,10 @@ function ChangablePelaktoAzad(props: {
     form: any
 }) {
     return <>
-        <section className="flex items-center gap-2 mr-2"><span>نوع پلاک:</span><span
-            className="bg-[whitesmoke] text-black rounded-md p-1 border border-[gray] cursor-pointer">پلاک عادی</span><span
-            className="bg-red text-white rounded-md border p-1 border-[gray] cursor-pointer">پلاک مناطق آزاد</span>
-        </section>
+        {/*<section className="flex items-center gap-2 mr-2"><span>نوع پلاک:</span><span*/}
+        {/*    className="bg-[whitesmoke] text-black rounded-md p-1 border border-[gray] cursor-pointer">پلاک عادی</span><span*/}
+        {/*    className="bg-red text-white rounded-md border p-1 border-[gray] cursor-pointer">پلاک مناطق آزاد</span>*/}
+        {/*</section>*/}
         <div className="col-span-4">
             <FormField
                 control={props.form.control}
@@ -121,24 +120,24 @@ function ChangablePelaktoAzad(props: {
                 )}
             />
         </div>
-        <div className="col-span-4">
-            <FormField
-                control={props.form.control}
-                name="pelakazad"
+        {/*<div className="col-span-4">*/}
+        {/*    <FormField*/}
+        {/*        control={props.form.control}*/}
+        {/*        name="pelakazad"*/}
 
-                render={({field}) => (
-                    <FormItem>
-                        <FormLabel>azad Plate Number</FormLabel>
-                        <FormControl>
-                            <AzadInputPlate value={field.value} onChange={field.onChange}/>
+        {/*        render={({field}) => (*/}
+        {/*            <FormItem>*/}
+        {/*                <FormLabel>azad Plate Number</FormLabel>*/}
+        {/*                <FormControl>*/}
+        {/*                    <AzadInputPlate value={field.value} onChange={field.onChange}/>*/}
 
 
-                        </FormControl>
-                        <FormMessage/>
-                    </FormItem>
-                )}
-            />
-        </div>
+        {/*                </FormControl>*/}
+        {/*                <FormMessage/>*/}
+        {/*            </FormItem>*/}
+        {/*        )}*/}
+        {/*    />*/}
+        {/*</div>*/}
     </>;
 }
 
@@ -191,7 +190,7 @@ export default function ManualBimeRegister() {
                                             type="text"
                                             {...field} />
                                     </FormControl>
-                                    <FormDescription>This is your public display name.</FormDescription>
+                                    {/*<FormDescription>This is your public display name.</FormDescription>*/}
                                     <FormMessage/>
                                 </FormItem>
                             )}
@@ -213,7 +212,7 @@ export default function ManualBimeRegister() {
                                             type=""
                                             {...field} />
                                     </FormControl>
-                                    <FormDescription>This is your public display name.</FormDescription>
+                                    {/*<FormDescription>This is your public display name.</FormDescription>*/}
                                     <FormMessage/>
                                 </FormItem>
                             )}
@@ -235,7 +234,7 @@ export default function ManualBimeRegister() {
                                             type="text"
                                             {...field} />
                                     </FormControl>
-                                    <FormDescription>This is your public display name.</FormDescription>
+                                    {/*<FormDescription>This is your public display name.</FormDescription>*/}
                                     <FormMessage/>
                                 </FormItem>
                             )}
@@ -282,7 +281,7 @@ export default function ManualBimeRegister() {
                                             />
                                         </PopoverContent>
                                     </Popover>
-                                    <FormDescription>Your date of birth is used to calculate your age.</FormDescription>
+                                    {/*<FormDescription>Your date of birth is used to calculate your age.</FormDescription>*/}
                                     <FormMessage/>
                                 </FormItem>
                             )}
@@ -306,7 +305,7 @@ export default function ManualBimeRegister() {
                                             international={false}
                                         />
                                     </FormControl>
-                                    <FormDescription>Enter your mobile Number.</FormDescription>
+                                    {/*<FormDescription>Enter your mobile Number.</FormDescription>*/}
                                     <FormMessage/>
                                 </FormItem>
                             )}
@@ -387,7 +386,7 @@ export default function ManualBimeRegister() {
                                             type=""
                                             {...field} />
                                     </FormControl>
-                                    <FormDescription>This is your public display name.</FormDescription>
+                                    {/*<FormDescription>This is your public display name.</FormDescription>*/}
                                     <FormMessage/>
                                 </FormItem>
                             )}

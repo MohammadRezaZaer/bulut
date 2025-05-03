@@ -4,18 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8407cdba-7ec5-42fd-9274-72c9660efa8b" name="Changes" comment=" واخ واخ">
-      <change beforePath="$PROJECT_DIR$/src/app/dashboard/Inquiry/plates/@modal/(.)add/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/dashboard/Inquiry/plates/@modal/(.)add/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/dashboard/Inquiry/plates/@modal/(.)edit/[id]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/dashboard/Inquiry/plates/@modal/(.)edit/[id]/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/dashboard/Inquiry/plates/edit/[id]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/dashboard/Inquiry/plates/edit/[id]/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/dashboard/Inquiry/plates/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/dashboard/Inquiry/plates/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/dashboard/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/dashboard/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/global.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/global.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/lib/otp.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/addOrEditPlate.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/addOrEditPlate.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ui/input-plate.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/input-plate.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/colors.css" beforeDir="false" />
+    <list default="true" id="8407cdba-7ec5-42fd-9274-72c9660efa8b" name="Changes" comment="confilict in style and ui">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ManualBimeRegister2.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ManualBimeRegister2.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,7 +125,7 @@
       <workItem from="1746125794869" duration="6497000" />
       <workItem from="1746165456898" duration="17471000" />
       <workItem from="1746275295919" duration="316000" />
-      <workItem from="1746279955250" duration="22045000" />
+      <workItem from="1746279955250" duration="22424000" />
     </task>
     <task id="LOCAL-00001" summary="done with error show">
       <option name="closed" value="true" />
@@ -232,7 +223,23 @@
       <option name="project" value="LOCAL" />
       <updated>1746305920185</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="confilict in style and ui">
+      <option name="closed" value="true" />
+      <created>1746307436141</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1746307436141</updated>
+    </task>
+    <task id="LOCAL-00014" summary="confilict in style and ui">
+      <option name="closed" value="true" />
+      <created>1746307562061</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1746307562061</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -264,6 +271,7 @@
     <MESSAGE value="refactor2" />
     <MESSAGE value="لایوت های مختلف برای خانه و داشبورد که &#10;wrap&#10;نشوند" />
     <MESSAGE value=" واخ واخ" />
-    <option name="LAST_COMMIT_MESSAGE" value=" واخ واخ" />
+    <MESSAGE value="confilict in style and ui" />
+    <option name="LAST_COMMIT_MESSAGE" value="confilict in style and ui" />
   </component>
 </project>
