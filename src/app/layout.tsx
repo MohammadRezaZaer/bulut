@@ -3,7 +3,7 @@ import '@/styles/globals.css';
 
 import './global.css';
 
-import { siteConfig } from '@/constant/config';
+import { siteConfig } from '@/lib/constant/config';
 
 import {Metadata} from "next";
 

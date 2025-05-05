@@ -4,12 +4,40 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8407cdba-7ec5-42fd-9274-72c9660efa8b" name="Changes" comment="in the middle of location refacttor">
+    <list default="true" id="8407cdba-7ec5-42fd-9274-72c9660efa8b" name="Changes" comment="validation of location is now ok">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ManualBimeRegister.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ManualBimeRegister.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(home)/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(home)/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/lib/validation.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/lib/validation.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/OtpForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/OtpForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PhoneForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PhoneForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/notificationComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/notificationComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profileComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profileComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sidebar.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/step-form/ManualBimeRegister2.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/step-form/ManualBimeRegister2.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ui/form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/form.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/car-brand-selector.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/car-brand-selector.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/ui/location-input.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/location-input.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/constant/config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/constant/config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/constant/env.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/constant/env.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/__tests__/og.test.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/auth.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/auth.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/constants.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/constant/constants.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/logger.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/logger.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/shopify/fragments/cart.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/shopify/fragments/image.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/shopify/fragments/product.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/shopify/fragments/seo.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/shopify/index.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/shopify/mutations/cart.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/shopify/queries/cart.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/shopify/queries/collection.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/shopify/queries/menu.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/shopify/queries/page.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/shopify/queries/product.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/shopify/types.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/middleware.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/middleware.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/navigations-and_other_sets.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/navigations-and_other_sets.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,23 +67,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;F:/ready code/bulut/ts-pnpm/src/components/ui&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;pnpm&quot;,
-    &quot;npm.build.executor&quot;: &quot;Run&quot;,
-    &quot;npm.dev.executor&quot;: &quot;Run&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;F:\\ready code\\bulut\\ts-pnpm\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "F:/ready code/bulut/ts-pnpm/src/constant",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "pnpm",
+    "npm.build.executor": "Run",
+    "npm.dev.executor": "Run",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "ts.external.directory.path": "F:\\ready code\\bulut\\ts-pnpm\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="F:\ready code\bulut\ts-pnpm\src\components\ui" />
@@ -65,11 +93,11 @@
       <recent name="F:\ready code\bulut\ts-pnpm\src\app\insurance-signup" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\ready code\bulut\ts-pnpm\src\lib\constant" />
+      <recent name="F:\ready code\bulut\ts-pnpm\src\lib" />
+      <recent name="F:\ready code\bulut\ts-pnpm\src\constant" />
       <recent name="F:\ready code\bulut\ts-pnpm\src\components" />
       <recent name="F:\ready code\bulut\ts-pnpm\src\app\dashboard\Inquiry\plates\@modal\(.)add" />
-      <recent name="F:\ready code\bulut\ts-pnpm\src\app\dashboard\Inquiry\plates\add" />
-      <recent name="F:\ready code\bulut\ts-pnpm\src\app\book" />
-      <recent name="F:\ready code\bulut\ts-pnpm\src\app\dashboard\Inquiry\plates\edit\[id]" />
     </key>
     <key name="es6.move.members.recent.items">
       <recent name="F:\ready code\bulut\ts-pnpm\src\components\step-form\ChangablePelaktoAzad.tsx" />
@@ -132,7 +160,7 @@
       <workItem from="1746165456898" duration="17471000" />
       <workItem from="1746275295919" duration="316000" />
       <workItem from="1746279955250" duration="23364000" />
-      <workItem from="1746365944844" duration="30722000" />
+      <workItem from="1746365944844" duration="34191000" />
     </task>
     <task id="LOCAL-00001" summary="done with error show">
       <option name="closed" value="true" />
@@ -270,7 +298,15 @@
       <option name="project" value="LOCAL" />
       <updated>1746431328930</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="validation of location is now ok">
+      <option name="closed" value="true" />
+      <created>1746440825796</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1746440825796</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -305,6 +341,7 @@
     <MESSAGE value="confilict in style and ui" />
     <MESSAGE value="confilict in style and ui2" />
     <MESSAGE value="in the middle of location refacttor" />
-    <option name="LAST_COMMIT_MESSAGE" value="in the middle of location refacttor" />
+    <MESSAGE value="validation of location is now ok" />
+    <option name="LAST_COMMIT_MESSAGE" value="validation of location is now ok" />
   </component>
 </project>

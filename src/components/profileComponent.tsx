@@ -2,7 +2,7 @@ import {Menu, Transition} from "@headlessui/react";
 import {ChevronDownIcon} from "@heroicons/react/20/solid";
 import React, {Fragment} from "react";
 import {cn} from "@/lib/utils";
-import {Text_tokens} from "@/lib/constants";
+import {Text_tokens} from "@/lib/constant/constants";
 import LogoutForm from "@/app/dashboard/logout-form";
 
 const userNavigation = [

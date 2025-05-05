@@ -6,7 +6,7 @@ import {
     HomeIcon,
     UsersIcon
 } from "@heroicons/react/24/outline";
-import {ROUTES} from "@/lib/constants";
+import {ROUTES} from "@/lib/constant/constants";
 
 export const navigation = [
     {name: 'داشبورد', href: '/dashboard', icon: HomeIcon, current: true},

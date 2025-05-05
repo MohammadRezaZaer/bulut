@@ -10,6 +10,7 @@ import { FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/comp
 // Import JSON data directly
 import states from "@/data/states.json";
 import cities from "@/data/cities.json";
+import {LOCATION_STATE_FIELD} from "@/lib/constant/constants";
 
 interface CityProps {
     id: number;
@@ -31,8 +32,7 @@ interface LocationSelectorProps {
     form: any;
 }
 
-// Constants for form field names
-const LOCATION_STATE_FIELD = "location-state";
+
 const STATE_FIELD = `${LOCATION_STATE_FIELD}.state`;
 const CITY_FIELD = `${LOCATION_STATE_FIELD}.city`;
 

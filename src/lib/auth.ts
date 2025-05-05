@@ -1,6 +1,6 @@
 // lib/auth.ts
 import { cookies } from 'next/headers';
-import {FIELDS} from "@/lib/constants";
+import {FIELDS} from "@/lib/constant/constants";
 
 export function loginUser(phone: string) {
     cookies().set(FIELDS.AUTH_TOKEN, phone, { httpOnly: true });

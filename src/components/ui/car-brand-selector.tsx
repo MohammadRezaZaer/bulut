@@ -1,31 +1,32 @@
-"use client";
-import React, {useState} from "react";
-import {Check, ChevronsUpDown} from "lucide-react";
-import {Button} from "@/components/ui/button";
-import {ScrollArea, ScrollBar} from "@/components/ui/scroll-area";
-import {Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList,} from "@/components/ui/command";
-import {Popover, PopoverContent, PopoverTrigger,} from "@/components/ui/popover";
-import {cn} from "@/lib/utils";
+import React, { useState } from "react";
+import { Check, ChevronsUpDown } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
+import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "@/components/ui/command";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import { cn } from "@/lib/utils";
+import { FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 
 // Import JSON data directly
 import brands from "@/data/car-brands.json";
 import models from "@/data/car-models.json";
 import years from "@/data/car-years.json";
 import types from "@/data/car-types.json";
+import {CAR_BRAND, CAR_DETAIL, CAR_MODEL, CAR_TYPE, CAR_YEAR, LOCATION_STATE_FIELD} from "@/lib/constant/constants";
 
 interface BrandProps {
-    "id": number,
-    "name": string,
-    "brandEnglishName": string
+    id: number;
+    name: string;
+    brandEnglishName: string;
 }
 
 interface ModelProps {
-    "id": number,
-    "name": string,
-    "englishName": string,
-    "vehicleTypeEnum": null,
-    "deviceType": string,
-    "brandId": number
+    id: number;
+    name: string;
+    englishName: string;
+    vehicleTypeEnum: null;
+    deviceType: string;
+    brandId: number;
 }
 
 interface YearProps {
@@ -34,27 +35,20 @@ interface YearProps {
 }
 
 interface TypeProps {
-    "id": number,
-    "carModelId": number,
-    "year": number,
-    "name": string,
-    "englishName": string
+    id: number;
+    carModelId: number;
+    year: number;
+    name: string;
+    englishName: string;
 }
+
 interface CarSelectorProps {
     disabled?: boolean;
-    onBrandChange?: (brand: BrandProps | null) => void;
-    onModelChange?: (model: ModelProps | null) => void;
-    onYearChange?: (year: YearProps | null) => void;
-    onTypeChange?: (type: TypeProps | null) => void;
-    form: any;  // Add the form prop here
+    form: any;
 }
 
 const CarSelector = ({
                          disabled,
-                         onBrandChange,
-                         onModelChange,
-                         onYearChange,
-                         onTypeChange,
                          form,
                      }: CarSelectorProps) => {
     const [selectedBrand, setSelectedBrand] = useState<BrandProps | null>(null);
@@ -67,248 +61,327 @@ const CarSelector = ({
     const [openYearDropdown, setOpenYearDropdown] = useState(false);
     const [openTypeDropdown, setOpenTypeDropdown] = useState(false);
 
-    // Filter models for the selected brand
+
+    const CAR_BRAND_FIELD = `${CAR_DETAIL}.${CAR_BRAND}`;
+    const CAR_MODEL_FIELD = `${CAR_DETAIL}.${CAR_MODEL}`;
+    const CAR_YEAR_FIELD = `${CAR_DETAIL}.${CAR_YEAR}`;
+    const CAR_TYPE_FIELD = `${CAR_DETAIL}.${CAR_TYPE}`;
+
+
+
+
     const availableModels = models.filter(
         (model) => model.brandId === selectedBrand?.id
     );
 
+    // Manage internal state changes instead of passing callbacks from parent
+    const handleBrandChange = (brand: BrandProps | null) => {
+        setSelectedBrand(brand);
+        setSelectedModel(null);
+        setSelectedYear(null);
+        setSelectedType(null);
+
+        form.setValue(CAR_BRAND_FIELD, brand?.name || ""); // Update form value for state dynamically
+        form.clearErrors(CAR_BRAND_FIELD); // Clear state error dynamically
+        form.trigger(CAR_BRAND_FIELD); // Re-validate state field dynamically
+    };
+
+    const handleModelChange = (model: ModelProps | null) => {
+        setSelectedModel(model);
+        setSelectedYear(null);
+        setSelectedType(null);
+
+        form.setValue(CAR_MODEL_FIELD, model?.name || ""); // Update form value for state dynamically
+        form.clearErrors(CAR_MODEL_FIELD); // Clear state error dynamically
+        form.trigger(CAR_MODEL_FIELD); // Re-validate state field dynamically
+    };
+
+    const handleYearChange = (year: YearProps | null) => {
+        setSelectedYear(year);
+        setSelectedType(null);
+
+        form.setValue(CAR_YEAR_FIELD, year?.years?.[0] || ""); // Update form value for state dynamically
+        form.clearErrors(CAR_YEAR_FIELD); // Clear state error dynamically
+        form.trigger(CAR_YEAR_FIELD); // Re-validate state field dynamically
+    };
+
+    const handleTypeChange = (type: TypeProps | null) => {
+        setSelectedType(type);
+
+        form.setValue(CAR_TYPE_FIELD, type?.name || ""); // Update form value for state dynamically
+        form.clearErrors(CAR_TYPE_FIELD); // Clear state error dynamically
+        form.trigger(CAR_TYPE_FIELD); // Re-validate state field dynamically
+    };
+
     return (
         <div className="flex gap-4">
             {/* Brand Selector */}
-            <Popover open={openBrandDropdown} onOpenChange={setOpenBrandDropdown}>
-                <PopoverTrigger asChild>
-                    <Button
-                        variant="outline"
-                        role="combobox"
-                        aria-expanded={openBrandDropdown}
-                        disabled={disabled}
-                        className="w-full justify-between"
-                    >
-                        {selectedBrand ? (
-                            <span>{selectedBrand.name}</span>
-                        ) : (
-                            <span>انتخاب برند</span>
-                        )}
-                        <ChevronsUpDown className="h-4 w-4 shrink-0 opacity-50"/>
-                    </Button>
-                </PopoverTrigger>
-                <PopoverContent className="w-[300px] p-0">
-                    <Command>
-                        <CommandInput placeholder="جستجوی برند..."/>
-                        <CommandList>
-                            <CommandEmpty>برندی یافت نشد.</CommandEmpty>
-                            <CommandGroup>
-                                <ScrollArea className="h-[280px]">
-                                    {brands.map((brand) => (
-                                        <CommandItem
-                                            key={brand.id}
-                                            value={brand.name}
-                                            onSelect={() => {
-                                                setSelectedBrand(brand);
-                                                setSelectedModel(null); // Reset model when brand changes
-                                                setSelectedYear(null); // Reset year when brand changes
-                                                setSelectedType(null); // Reset type when brand changes
-                                                onBrandChange?.(brand);
-                                                onModelChange?.(null);
-                                                onYearChange?.(null);
-                                                onTypeChange?.(null);
-                                                setOpenBrandDropdown(false);
-                                            }}
-                                            className="flex cursor-pointer items-center justify-between text-sm"
-                                        >
-                                            <span>{brand.name}</span>
-                                            <Check
-                                                className={cn(
-                                                    "h-4 w-4",
-                                                    selectedBrand?.id === brand.id ? "opacity-100" : "opacity-0"
-                                                )}
-                                            />
-                                        </CommandItem>
-                                    ))}
-                                    <ScrollBar orientation="vertical"/>
-                                </ScrollArea>
-                            </CommandGroup>
-                        </CommandList>
-                    </Command>
-                </PopoverContent>
-            </Popover>
-            {form.errors.brand && (
-                <p className="text-red-500 text-sm">{form.errors.brand.message}</p>
-            )}
+            <FormField
+                control={form.control}
+                name={CAR_BRAND_FIELD}
+                render={({ field }) => (
+                    <FormItem>
+                        <FormLabel>انتخاب برند</FormLabel>
+                        <FormControl>
+                            <Popover open={openBrandDropdown} onOpenChange={setOpenBrandDropdown}>
+                                <PopoverTrigger asChild>
+                                    <Button
+                                        variant="outline"
+                                        role="combobox"
+                                        aria-expanded={openBrandDropdown}
+                                        disabled={disabled}
+                                        className="w-full justify-between"
+                                    >
+                                        {selectedBrand ? (
+                                            <span>{selectedBrand.name}</span>
+                                        ) : (
+                                            <span>انتخاب برند</span>
+                                        )}
+                                        <ChevronsUpDown className="h-4 w-4 shrink-0 opacity-50" />
+                                    </Button>
+                                </PopoverTrigger>
+                                <PopoverContent className="w-[300px] p-0">
+                                    <Command>
+                                        <CommandInput placeholder="جستجوی برند..." />
+                                        <CommandList>
+                                            <CommandEmpty>برندی یافت نشد.</CommandEmpty>
+                                            <CommandGroup>
+                                                <ScrollArea className="h-[280px]">
+                                                    {brands.map((brand) => (
+                                                        <CommandItem
+                                                            key={brand.id}
+                                                            value={brand.name}
+                                                            onSelect={() => {
+                                                                handleBrandChange(brand);
+                                                                setOpenBrandDropdown(false);
+                                                            }}
+                                                            className="flex cursor-pointer items-center justify-between text-sm"
+                                                        >
+                                                            <span>{brand.name}</span>
+                                                            <Check
+                                                                className={cn(
+                                                                    "h-4 w-4",
+                                                                    selectedBrand?.id === brand.id ? "opacity-100" : "opacity-0"
+                                                                )}
+                                                            />
+                                                        </CommandItem>
+                                                    ))}
+                                                    <ScrollBar orientation="vertical" />
+                                                </ScrollArea>
+                                            </CommandGroup>
+                                        </CommandList>
+                                    </Command>
+                                </PopoverContent>
+                            </Popover>
+                        </FormControl>
+                        <FormMessage />
+                    </FormItem>
+                )}
+            />
 
             {/* Model Selector */}
-            <Popover open={openModelDropdown} onOpenChange={setOpenModelDropdown}>
-                <PopoverTrigger asChild>
-                    <Button
-                        variant="outline"
-                        role="combobox"
-                        aria-expanded={openModelDropdown}
-                        disabled={!selectedBrand}
-                        className="w-full justify-between"
-                    >
-                        {selectedModel ? (
-                            <span>{selectedModel.name}</span>
-                        ) : (
-                            <span>مدل</span>
-                        )}
-                        <ChevronsUpDown className="h-4 w-4 shrink-0 opacity-50"/>
-                    </Button>
-                </PopoverTrigger>
-                <PopoverContent className="w-[300px] p-0">
-                    <Command>
-                        <CommandInput placeholder="جستجوی مدل"/>
-                        <CommandList>
-                            <CommandEmpty>مدلی یافت نشد...</CommandEmpty>
-                            <CommandGroup>
-                                <ScrollArea className="h-[280px]">
-                                    {availableModels.map((model) => (
-                                        <CommandItem
-                                            key={model.id}
-                                            value={model.name}
-                                            onSelect={() => {
-                                                setSelectedModel(model);
-                                                setOpenModelDropdown(false);
-                                                onModelChange?.(model);
-                                            }}
-                                            className="flex cursor-pointer items-center justify-between text-sm"
-                                        >
-                                            <span>{model.name}</span>
-                                            <Check
-                                                className={cn(
-                                                    "h-4 w-4",
-                                                    selectedModel?.id === model.id ? "opacity-100" : "opacity-0"
-                                                )}
-                                            />
-                                        </CommandItem>
-                                    ))}
-                                    <ScrollBar orientation="vertical"/>
-                                </ScrollArea>
-                            </CommandGroup>
-                        </CommandList>
-                    </Command>
-                </PopoverContent>
-            </Popover>
-            {form.errors.model && (
-                <p className="text-red-500 text-sm">{form.errors.model.message}</p>
-            )}
+            <FormField
+                control={form.control}
+                name={CAR_MODEL_FIELD}
+                render={({ field }) => (
+                    <FormItem>
+                        <FormLabel>مدل</FormLabel>
+                        <FormControl>
+                            <Popover open={openModelDropdown} onOpenChange={setOpenModelDropdown}>
+                                <PopoverTrigger asChild>
+                                    <Button
+                                        variant="outline"
+                                        role="combobox"
+                                        aria-expanded={openModelDropdown}
+                                        disabled={!selectedBrand}
+                                        className="w-full justify-between"
+                                    >
+                                        {selectedModel ? (
+                                            <span>{selectedModel.name}</span>
+                                        ) : (
+                                            <span>مدل</span>
+                                        )}
+                                        <ChevronsUpDown className="h-4 w-4 shrink-0 opacity-50" />
+                                    </Button>
+                                </PopoverTrigger>
+                                <PopoverContent className="w-[300px] p-0">
+                                    <Command>
+                                        <CommandInput placeholder="جستجوی مدل" />
+                                        <CommandList>
+                                            <CommandEmpty>مدلی یافت نشد...</CommandEmpty>
+                                            <CommandGroup>
+                                                <ScrollArea className="h-[280px]">
+                                                    {availableModels.map((model) => (
+                                                        <CommandItem
+                                                            key={model.id}
+                                                            value={model.name}
+                                                            onSelect={() => {
+                                                                handleModelChange(model);
+                                                                setOpenModelDropdown(false);
+                                                            }}
+                                                            className="flex cursor-pointer items-center justify-between text-sm"
+                                                        >
+                                                            <span>{model.name}</span>
+                                                            <Check
+                                                                className={cn(
+                                                                    "h-4 w-4",
+                                                                    selectedModel?.id === model.id ? "opacity-100" : "opacity-0"
+                                                                )}
+                                                            />
+                                                        </CommandItem>
+                                                    ))}
+                                                    <ScrollBar orientation="vertical" />
+                                                </ScrollArea>
+                                            </CommandGroup>
+                                        </CommandList>
+                                    </Command>
+                                </PopoverContent>
+                            </Popover>
+                        </FormControl>
+                        <FormMessage />
+                    </FormItem>
+                )}
+            />
 
             {/* Year Selector */}
-            <Popover open={openYearDropdown} onOpenChange={setOpenYearDropdown}>
-                <PopoverTrigger asChild>
-                    <Button
-                        variant="outline"
-                        role="combobox"
-                        aria-expanded={openYearDropdown}
-                        disabled={!selectedModel}
-                        className="w-full justify-between"
-                    >
-                        {selectedYear ? (
-                            <span>{selectedYear.years.join(", ")}</span> // Display years array as a comma-separated string
-                        ) : (
-                            <span>انتخاب سال ساخت</span>
-                        )}
-                        <ChevronsUpDown className="h-4 w-4 shrink-0 opacity-50"/>
-                    </Button>
-                </PopoverTrigger>
-                <PopoverContent className="w-[300px] p-0">
-                    <Command>
-                        <CommandInput placeholder="جستجوی سال..."/>
-                        <CommandList>
-                            <CommandEmpty>یافت نشد</CommandEmpty>
-                            <CommandGroup>
-                                <ScrollArea className="h-[280px]">
-                                    {years
-                                        .filter((modelyear) => modelyear.model_id === selectedModel?.id) // Filter years for the selected model
-                                        .map((modelyear) => (
-                                            modelyear.years.map((year) => (
-                                                <CommandItem
-                                                    key={year} // Use year as key
-                                                    value={year.toString()}
-                                                    onSelect={() => {
-                                                        setSelectedYear({model_id: modelyear.model_id, years: [year]}); // Set selected year
-                                                        setOpenYearDropdown(false);
-                                                        onYearChange?.({model_id: modelyear.model_id, years: [year]}); // Update parent state
-                                                    }}
-                                                    className="flex cursor-pointer items-center justify-between text-sm"
-                                                >
-                                                    <span>{year}</span>
-                                                    <Check
-                                                        className={cn(
-                                                            "h-4 w-4",
-                                                            selectedYear?.years.includes(year) ? "opacity-100" : "opacity-0" // Check if this year is selected
+            <FormField
+                control={form.control}
+                name={CAR_YEAR_FIELD}
+                render={({ field }) => (
+                    <FormItem>
+                        <FormLabel>انتخاب سال ساخت</FormLabel>
+                        <FormControl>
+                            <Popover open={openYearDropdown} onOpenChange={setOpenYearDropdown}>
+                                <PopoverTrigger asChild>
+                                    <Button
+                                        variant="outline"
+                                        role="combobox"
+                                        aria-expanded={openYearDropdown}
+                                        disabled={!selectedModel}
+                                        className="w-full justify-between"
+                                    >
+                                        {selectedYear ? (
+                                            <span>{selectedYear.years.join(", ")}</span>
+                                        ) : (
+                                            <span>انتخاب سال ساخت</span>
+                                        )}
+                                        <ChevronsUpDown className="h-4 w-4 shrink-0 opacity-50" />
+                                    </Button>
+                                </PopoverTrigger>
+                                <PopoverContent className="w-[300px] p-0">
+                                    <Command>
+                                        <CommandInput placeholder="جستجوی سال..." />
+                                        <CommandList>
+                                            <CommandEmpty>یافت نشد</CommandEmpty>
+                                            <CommandGroup>
+                                                <ScrollArea className="h-[280px]">
+                                                    {years
+                                                        .filter((modelyear) => modelyear.model_id === selectedModel?.id)
+                                                        .map((modelyear) =>
+                                                            modelyear.years.map((year) => (
+                                                                <CommandItem
+                                                                    key={year.toString()} // Ensure key is also a string
+                                                                    value={year.toString()} // Ensure value is a string
+                                                                    onSelect={() => {
+                                                                        handleYearChange({ model_id: modelyear.model_id, years: [year] });
+                                                                        setOpenYearDropdown(false);
+                                                                    }}
+                                                                    className="flex cursor-pointer items-center justify-between text-sm"
+                                                                >
+                                                                    <span>{year}</span>
+                                                                    <Check
+                                                                        className={cn(
+                                                                            "h-4 w-4",
+                                                                            selectedYear?.years.includes(year.toString()) ? "opacity-100" : "opacity-0" // Ensure comparison is with string
+                                                                        )}
+                                                                    />
+                                                                </CommandItem>
+                                                            ))
                                                         )}
-                                                    />
-                                                </CommandItem>
-                                            ))
-                                        ))}
-                                    <ScrollBar orientation="vertical"/>
-                                </ScrollArea>
-                            </CommandGroup>
-                        </CommandList>
-                    </Command>
-                </PopoverContent>
-            </Popover>
-            {form.errors.year && (
-                <p className="text-red-500 text-sm">{form.errors.year.message}</p>
-            )}
+                                                    <ScrollBar orientation="vertical" />
+                                                </ScrollArea>
+                                            </CommandGroup>
+                                        </CommandList>
+                                    </Command>
+                                </PopoverContent>
+
+
+                            </Popover>
+                        </FormControl>
+                        <FormMessage />
+                    </FormItem>
+                )}
+            />
 
             {/* Type Selector */}
-            <Popover open={openTypeDropdown} onOpenChange={setOpenTypeDropdown}>
-                <PopoverTrigger asChild>
-                    <Button
-                        variant="outline"
-                        role="combobox"
-                        aria-expanded={openTypeDropdown}
-                        disabled={!selectedYear} // Ensuring the year is selected before choosing the type
-                        className="w-full justify-between"
-                    >
-                        {selectedType ? (
-                            <span>{selectedType.name}</span> // Display selected type's name
-                        ) : (
-                            <span>انتخاب تیپ</span> // Default text in Persian (Select Type)
-                        )}
-                        <ChevronsUpDown className="h-4 w-4 shrink-0 opacity-50"/>
-                    </Button>
-                </PopoverTrigger>
-                <PopoverContent className="w-[300px] p-0">
-                    <Command>
-                        <CommandInput placeholder="Search type..."/>
-                        <CommandList>
-                            <CommandEmpty>تیپی یافت نشد</CommandEmpty> {/* Message when no types found */}
-                            <CommandGroup>
-                                <ScrollArea className="h-[280px]">
-                                    {types
-                                        .filter((type) => type.carModelId === selectedModel?.id && type.year === selectedYear?.years[0]) // Filter types based on selected model and year
-                                        .map((type) => (
-                                            <CommandItem
-                                                key={type.id} // Use type's ID as the key
-                                                value={type.name}
-                                                onSelect={() => {
-                                                    setSelectedType(type); // Set the selected type
-                                                    setOpenTypeDropdown(false); // Close dropdown
-                                                    onTypeChange?.(type); // Callback function for type change
-                                                }}
-                                                className="flex cursor-pointer items-center justify-between text-sm"
-                                            >
-                                                <span>{type.name}</span> {/* Display the name of the type */}
-                                                <Check
-                                                    className={cn(
-                                                        "h-4 w-4",
-                                                        selectedType?.id === type.id ? "opacity-100" : "opacity-0" // Show check icon for selected type
-                                                    )}
-                                                />
-                                            </CommandItem>
-                                        ))}
-                                    <ScrollBar orientation="vertical"/>
-                                </ScrollArea>
-                            </CommandGroup>
-                        </CommandList>
-                    </Command>
-                </PopoverContent>
-            </Popover>
-            {form.errors.type && (
-                <p className="text-red-500 text-sm">{form.errors.type.message}</p>
-            )}
+            <FormField
+                control={form.control}
+                name={CAR_TYPE_FIELD}
+                render={({ field }) => (
+                    <FormItem>
+                        <FormLabel>انتخاب تیپ</FormLabel>
+                        <FormControl>
+                            <Popover open={openTypeDropdown} onOpenChange={setOpenTypeDropdown}>
+                                <PopoverTrigger asChild>
+                                    <Button
+                                        variant="outline"
+                                        role="combobox"
+                                        aria-expanded={openTypeDropdown}
+                                        disabled={!selectedYear}
+                                        className="w-full justify-between"
+                                    >
+                                        {selectedType ? (
+                                            <span>{selectedType.name}</span>
+                                        ) : (
+                                            <span>انتخاب تیپ</span>
+                                        )}
+                                        <ChevronsUpDown className="h-4 w-4 shrink-0 opacity-50" />
+                                    </Button>
+                                </PopoverTrigger>
+                                <PopoverContent className="w-[300px] p-0">
+                                    <Command>
+                                        <CommandInput placeholder="جستجو" />
+                                        <CommandList>
+                                            <CommandEmpty>تیپی یافت نشد</CommandEmpty>
+                                            <CommandGroup>
+                                                <ScrollArea className="h-[280px]">
+                                                    {types
+                                                        .filter(
+                                                            (type) =>
+                                                                type.carModelId === selectedModel?.id &&
+                                                                type.year === selectedYear?.years[0]
+                                                        )
+                                                        .map((type) => (
+                                                            <CommandItem
+                                                                key={type.id}
+                                                                value={type.name}
+                                                                onSelect={() => {
+                                                                    handleTypeChange(type);
+                                                                    setOpenTypeDropdown(false);
+                                                                }}
+                                                                className="flex cursor-pointer items-center justify-between text-sm"
+                                                            >
+                                                                <span>{type.name}</span>
+                                                                <Check
+                                                                    className={cn(
+                                                                        "h-4 w-4",
+                                                                        selectedType?.id === type.id ? "opacity-100" : "opacity-0"
+                                                                    )}
+                                                                />
+                                                            </CommandItem>
+                                                        ))}
+                                                    <ScrollBar orientation="vertical" />
+                                                </ScrollArea>
+                                            </CommandGroup>
+                                        </CommandList>
+                                    </Command>
+                                </PopoverContent>
+                            </Popover>
+                        </FormControl>
+                        <FormMessage />
+                    </FormItem>
+                )}
+            />
         </div>
     );
 };

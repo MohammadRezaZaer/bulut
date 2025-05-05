@@ -17,13 +17,16 @@ import {CustomInput} from "@/components/ManualBimeRegister";
 import {carColors} from "@/utils/navigations-and_other_sets";
 import {ChangablePelaktoAzad} from "@/components/step-form/ChangablePelaktoAzad";
 import CarSelector from "@/components/ui/car-brand-selector";
-import PopoverSelect from "@/components/ui/PopoverSelect";
-import brands from "@/data/car-brands.json";
-import {Popover, PopoverContent, PopoverTrigger} from "@/components/ui/popover";
-import {Check, ChevronsUpDown} from "lucide-react";
-import {Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList} from "@/components/ui/command";
-import {ScrollArea, ScrollBar} from "@/components/ui/scroll-area";
-import {cn} from "@/lib/utils";
+
+import {
+    CAR_BRAND,
+    CAR_DETAIL,
+    CAR_MODEL,
+    CAR_TYPE,
+    CAR_YEAR, CITY,
+    LOCATION_STATE_FIELD,
+    STATE
+} from "@/lib/constant/constants";
 
 // Form schema validation using zod
 const formSchema = z.object({
@@ -53,9 +56,16 @@ const formSchema = z.object({
     // vin_number: z.string().min(1),
     // bime_thaleth: z.string().min(1),
     // bime_thaleth_expire: z.coerce.date(),
-    "location-state": z.object({
-        state: z.string(),
-        city: z.string()
+    [LOCATION_STATE_FIELD]: z.object({
+        [STATE]: z.string(),
+        [CITY]: z.string()
+
+    }),
+    [CAR_DETAIL]: z.object({
+        [CAR_BRAND]: z.string(),
+        [CAR_MODEL]: z.string(),
+        [CAR_YEAR]: z.number(),
+        [CAR_TYPE]: z.string()
 
     }),
     // coverageAmount: z.string(),
@@ -111,39 +121,12 @@ export default function ManualBimeRegister() {
 
 
 
-                {/* car_brand  car_model car_year car_type*/}
-                {/*<FormField*/}
-                {/*    control={form.control}*/}
-                {/*    name="brand"*/}
-                {/*    render={({field}) => (*/}
-                {/*        <FormItem>*/}
-                {/*            <FormLabel>برند</FormLabel>*/}
-                {/*            <FormControl>*/}
 
-                {/*                <CarSelector*/}
-                {/*                    onBrandChange={(car_brand) => {*/}
-                {/*                        setCarBrandName(car_brand?.name || '');*/}
-                {/*                        form.setValue(field.name, [car_brand?.name || '', CarBrand || '']);*/}
-                {/*                    }}*/}
-                {/*                    onModelChange={(car_model) => {*/}
-                {/*                        setCarModelName(car_model?.name || '');*/}
-                {/*                        form.setValue(field.name, [form.getValues(field.name)[0] || '', car_model?.name || '']);*/}
-                {/*                    }}*/}
-                {/*                    onYearChange={(car_year) => {*/}
-                {/*                        setCarYearName(car_year?.years?.[0] || '');*/}
-                {/*                        form.setValue(field.name, [form.getValues(field.name)[1] || '', car_year?.years?.[0] || '']);*/}
-                {/*                    }}*/}
-                {/*                    onTypeChange={(car_type) => {*/}
-                {/*                        setCarTypeName(car_type?.name || '');*/}
-                {/*                        form.setValue(field.name, [form.getValues(field.name)[2] || '', car_type?.name || '']);*/}
-                {/*                    }}*/}
-                {/*                    form={form}*/}
-                {/*                />*/}
-                {/*            </FormControl>*/}
-                {/*            <FormMessage/>*/}
-                {/*        </FormItem>*/}
-                {/*    )}*/}
-                {/*/>*/}
+                                <CarSelector
+
+                                    form={form}
+                                />
+
 
                 {/* Car Details */}
                 <div className="grid grid-cols-12 gap-4">

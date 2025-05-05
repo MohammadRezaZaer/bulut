@@ -7,7 +7,7 @@ import Timer from "./Timer";
 import {OtpInputInfer, otpSchema} from "@/app/lib/validation";
 import {verifyOtpAction} from "@/app/login/actions";
 import {Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage} from "@/components/ui/form";
-import {FIELDS} from "@/lib/constants";
+import {FIELDS} from "@/lib/constant/constants";
 import * as z from "zod";
 import {zodResolver} from "@hookform/resolvers/zod";
 import {toast} from "sonner";

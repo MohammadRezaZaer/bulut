@@ -3,7 +3,7 @@ import {Dialog, Transition} from "@headlessui/react";
 import React, {Fragment} from "react";
 import {cn} from "@/lib/utils";
 import {LoginButton} from "@/components/ui/buttons/LoginButton";
-import {ROUTES} from "@/lib/constants";
+import {ROUTES} from "@/lib/constant/constants";
 
 export function Sidebar(props: {
     show: boolean,

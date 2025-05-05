@@ -10,7 +10,7 @@ import * as z from "zod";
 import {zodResolver} from "@hookform/resolvers/zod";
 import {PhoneInputComponent} from "@/components/ui/phone-input-component";
 import {sendOtpAction} from "@/app/login/actions";
-import {FIELDS} from "@/lib/constants";
+import {FIELDS} from "@/lib/constant/constants";
 
 export default function PhoneForm({  onSuccess}: any) {
 

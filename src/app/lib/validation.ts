@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import {FIELDS} from "@/lib/constants";
+import {FIELDS} from "@/lib/constant/constants";
 
 export const phoneSchema = z.object({
     [FIELDS.MOBILE]: z

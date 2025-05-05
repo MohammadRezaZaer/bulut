@@ -5,7 +5,7 @@ import NextImage from "@/components/NextImage";
 import {ContextMenu} from "@/components/contextMenu";
 import Link from "next/link";
 import {  Wrench, DollarSign, FileText, PhoneCall, Users, Shield,  FileCheck2, AlertTriangle } from 'lucide-react';
-import {ROUTES} from "@/lib/constants";
+import {ROUTES} from "@/lib/constant/constants";
 
 
 const menuItems = [

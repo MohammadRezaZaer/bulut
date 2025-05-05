@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
-import {FIELDS} from "@/lib/constants";
+import {FIELDS} from "@/lib/constant/constants";
 
 export function middleware(req: NextRequest) {
     const mobile = req.cookies.get(FIELDS.AUTH_TOKEN);
