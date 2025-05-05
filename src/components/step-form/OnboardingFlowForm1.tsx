@@ -15,13 +15,7 @@ const StepTwo = ({ goToNext }) => (
         <button onClick={() => goToNext({ age: 50 })}>Next</button>
     </>
 );
-const StepThree = ({ goToNext }) => (
-    <>
-        <h1>Step 3</h1>
-        <p>Congratulations! You qualify for our senior discount</p>
-        <button onClick={() => goToNext({})}>Next</button>
-    </>
-);
+
 const StepFour = ({ goToNext }) => (
     <>
         <h1>Step 4</h1>
@@ -37,18 +31,23 @@ function OnboardingFlow() {
         setOnboardingData({ ...onboardingData, ...stepData });
         setCurrentIndex(currentIndex + 1);
     }
-
+    const onPrev = (stepData) => {
+        setOnboardingData({ ...onboardingData, ...stepData });
+        setCurrentIndex(currentIndex -1);
+    }
     return (
         <ControlledOnboardingFlow
             currentIndex={currentIndex}
             onNext={onNext}
+            onPrev={onPrev}
+            onboardingData={onboardingData}
         >
 
             <FreeTowingInfo/>
             <ManualBimeRegister/>
             <StepOne />
             <StepTwo />
-            {onboardingData.age >= 62 && <StepThree />}
+
             <StepFour />
         </ControlledOnboardingFlow>
     );
@@ -56,15 +55,19 @@ function OnboardingFlow() {
 
 export default OnboardingFlow;
 
-export const ControlledOnboardingFlow = ({ children, onFinish, currentIndex, onNext }) => {
+export const ControlledOnboardingFlow = ({ children, onFinish, currentIndex,onboardingData, onNext,onPrev }) => {
     const goToNext = stepData => {
         onNext(stepData);
+    }
+    const goToPrev = (stepData) => {
+        console.log({onboardingData})
+        onPrev(stepData);
     }
 
     const currentChild = React.Children.toArray(children)[currentIndex];
 
     if (React.isValidElement(currentChild)) {
-        return React.cloneElement(currentChild, { goToNext });
+        return React.cloneElement(currentChild, { goToNext ,goToPrev,onboardingData});
     }
 
     return currentChild;

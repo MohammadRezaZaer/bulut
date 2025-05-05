@@ -23,8 +23,13 @@ export const Text_tokens = {
 export const LOCATION_STATE_FIELD = "location-state";
 export const STATE="state"
 export const CITY="city"
+
 export const CAR_DETAIL = "car-detail";
 export const CAR_BRAND = "car_brand"
 export const CAR_MODEL = "car_model"
 export const CAR_YEAR = "car_year"
 export const CAR_TYPE = "car_type"
+
+export const PELAK = "pelak"
+export const PELAK_AZAD = "pelak-azad"
+

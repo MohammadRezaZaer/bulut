@@ -2,6 +2,7 @@
 
 import * as React from "react"
 import {cn} from "@/lib/utils"
+import {Select, SelectContent, SelectItem, SelectTrigger} from "@/components/ui/select";
 
 type InputPlateContextType = {
     slots: React.RefObject<HTMLInputElement | HTMLSelectElement>[]
@@ -10,11 +11,11 @@ type InputPlateContextType = {
 const InputPlateContext = React.createContext<InputPlateContextType | null>(null)
 
 interface InputPlateProps {
-    value: string
+
     onChange: (value: { iranNumber: string, leftNumber: string, rightNumber: string, letter: string }) => void
 }
 
-export const InputPlate = ({value, onChange}: InputPlateProps) => {
+export const InputPlate = ({ onChange}: InputPlateProps) => {
     const [digits, setDigits] = React.useState(["", "الف", "", ""]) // 4 pieces: [2 digits, 1 letter, 3 digits, 2 digits]
 
 
@@ -56,8 +57,10 @@ export const InputPlate = ({value, onChange}: InputPlateProps) => {
                     />
 
                     <InputLetter
-                        value={digits[1]}
-                        onChange={(e) => updatePiece(1, e.target.value)}
+                        value={digits[1]} // Pass the current value
+                        onValueChange={(value) => {
+                            updatePiece(1, value); // Update the state with the new value
+                        }}
                     />
 
                     <InputDigits
@@ -142,30 +145,25 @@ const letterOptions = [
     "ک", "گ", "ل", "م", "ن", "و", "ه", "ی",
     "معلولین", "تشریفات", "خاص", "D", "S"
 ];
-export const InputLetter = React.forwardRef<HTMLSelectElement, InputLetterProps>(
-    ({value, onChange, ...props}, ref) => {
-        // console.log({value})
-        return (
-            <div className="flex h-[32px] w-[52px] justify-center rounded-[6px] border border-solid border-[#8B929A36]">
-                <select
-                    ref={ref}
-                    value={value}
-                    onChange={onChange}
-                    className="w-[48px] focus:outline-none"
-                    {...props}
-                >
-                    <option value="">--</option>
+
+export const InputLetter = React.forwardRef<HTMLSelectElement, InputLetterProps>((
+    { value,  ...props }, ref) => {
+    return (
+        <div className="flex h-[32px] w-[52px] justify-center rounded-[6px] border border-solid border-[#8B929A36]">
+            <Select defaultValue={value}  {...props}>
+                <SelectTrigger className="w-[48px] focus:outline-none h-8 p-1">
+                    <span>{value || '--'}</span>
+                </SelectTrigger>
+                <SelectContent>
                     {letterOptions.map((letter) => (
-                        <option key={letter} value={letter}>
+                        <SelectItem key={letter} value={letter}>
                             {letter}
-                        </option>
+                        </SelectItem>
                     ))}
-                </select>
-
-            </div>
-
-        )
-    }
-)
+                </SelectContent>
+            </Select>
+        </div>
+    );
+});
 
 InputLetter.displayName = "InputLetter"

@@ -67,7 +67,7 @@ const LocationSelector = ({ disabled, form }: LocationSelectorProps) => {
     };
 
     return (
-        <div className="flex gap-4">
+        <div className="max-lg:flex-col flex gap-4">
             {/* State Selector */}
             <FormField
                 control={form.control}

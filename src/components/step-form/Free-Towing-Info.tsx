@@ -54,7 +54,7 @@ export default function FreeTowingInfo({
                     <Button
                         disabled={!agreed}
                         className='w-full max-w-[500px]'
-                        onClick={goToNext}
+                        onClick={()=>goToNext(null)}
                     >
                         مرحله بعد
                     </Button>
