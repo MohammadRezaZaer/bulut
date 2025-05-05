@@ -1,13 +1,9 @@
 "use client"
 
-import React, {Fragment} from 'react'
-import NextImage from "@/components/NextImage";
-import {ContextMenu} from "@/components/contextMenu";
-import Link from "next/link";
-import {  Wrench, DollarSign, FileText, PhoneCall, Users, Shield,  FileCheck2, AlertTriangle } from 'lucide-react';
-import {ROUTES} from "@/lib/constants";
-import {SteppedContactSection} from "@/components/step-form/steppedContactSection";
-import ManualBimeRegister from "@/components/ManualBimeRegister2";
+import React from 'react'
+import ManualBimeRegister from "@/components/step-form/ManualBimeRegister2";
+import FreeTowingInfo from "@/components/step-form/Free-Towing-Info";
+import OnboardingFlow from "@/components/step-form/OnboardingFlowForm1";
 
 
 
@@ -15,9 +11,8 @@ export default function Page() {
 
 
     return (<>
+            <OnboardingFlow/>
 
-
-            <ManualBimeRegister/>
 
         </>
 

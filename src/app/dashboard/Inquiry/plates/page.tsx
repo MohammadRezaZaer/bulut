@@ -1,12 +1,11 @@
 "use client"
 
 import React, {Fragment} from 'react'
-import {ChevronRight, Plus} from "lucide-react";
-import Button from "@/components/buttons/Button";
 
 import {PlateCard} from "@/components/plate-card";
 
 import Link from "next/link";
+import {Button} from "@/components/ui/button";
 
 
 export default function Page() {

@@ -1,0 +1,3626 @@
+[
+  {
+    "id": 689,
+    "name": "لونا GRE",
+    "englishName": "luna gre",
+    "vehicleTypeEnum": null,
+    "deviceType": "CAR",
+    "brandId": 1
+  },
+  {
+    "id": 688,
+    "name": "ری‌را",
+    "englishName": "reera",
+    "vehicleTypeEnum": null,
+    "deviceType": "CAR",
+    "brandId": 1
+  },
+  {
+    "id": 32,
+    "name": "ویتارا ایران خودرو",
+    "englishName": "grandvitarairankhodro",
+    "vehicleTypeEnum": "TANKER_AND_NAFTKESH",
+    "deviceType": "CAR",
+    "brandId": 1
+  },
+  {
+    "id": 31,
+    "name": "وانت آریسان 2",
+    "englishName": "arisun 2",
+    "vehicleTypeEnum": "OTOBOS_AND_KAMION_2MEHVAR",
+    "deviceType": "CAR",
+    "brandId": 1
+  },
+  {
+    "id": 30,
+    "name": "وانت آریسان",
+    "englishName": "arisanpickup",
+    "vehicleTypeEnum": "OTOBOS_AND_KAMION_2MEHVAR",
+    "deviceType": "CAR",
+    "brandId": 1
+  },
+  {
+    "id": 29,
+    "name": "سورن",
+    "englishName": "soren",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 1
+  },
+  {
+    "id": 28,
+    "name": "سمند معمولی",
+    "englishName": "samand",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 1
+  },
+  {
+    "id": 27,
+    "name": "سمند LX",
+    "englishName": "samandlx",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 1
+  },
+  {
+    "id": 26,
+    "name": "سریر",
+    "englishName": "sarir",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 1
+  },
+  {
+    "id": 25,
+    "name": "رانا",
+    "englishName": "runna",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 1
+  },
+  {
+    "id": 24,
+    "name": "دنا پلاس ",
+    "englishName": "denaplus",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 1
+  },
+  {
+    "id": 23,
+    "name": "دنا",
+    "englishName": "dena",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 1
+  },
+  {
+    "id": 22,
+    "name": "تندر پیکاپ",
+    "englishName": "tondarpickup",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 1
+  },
+  {
+    "id": 21,
+    "name": "تندر 90 پلاس",
+    "englishName": "tondar90plusirankhodro",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 1
+  },
+  {
+    "id": 20,
+    "name": "تندر 90 ایران خودرو",
+    "englishName": "renaulttondar90",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 1
+  },
+  {
+    "id": 19,
+    "name": "تارا",
+    "englishName": "tara",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 1
+  },
+  {
+    "id": 18,
+    "name": "پیکان",
+    "englishName": "peykan",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 1
+  },
+  {
+    "id": 17,
+    "name": "پژو پارس",
+    "englishName": "peugeotpars",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 1
+  },
+  {
+    "id": 16,
+    "name": "پژو 405 SLX",
+    "englishName": "405slx",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 1
+  },
+  {
+    "id": 15,
+    "name": "پژو 405",
+    "englishName": "peugeot405",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 1
+  },
+  {
+    "id": 14,
+    "name": "پژو 207 صندوقدار",
+    "englishName": "207sd",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 1
+  },
+  {
+    "id": 13,
+    "name": "پژو 207 MC",
+    "englishName": "peugeot 207 mc",
+    "vehicleTypeEnum": "KAMIYON",
+    "deviceType": "CAR",
+    "brandId": 1
+  },
+  {
+    "id": 12,
+    "name": "پژو 207",
+    "englishName": "peugeot207",
+    "vehicleTypeEnum": "KAMIYON",
+    "deviceType": "CAR",
+    "brandId": 1
+  },
+  {
+    "id": 11,
+    "name": "پژو 206 صندوقدار",
+    "englishName": "peugeot206sedan",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 1
+  },
+  {
+    "id": 10,
+    "name": "پژو 206",
+    "englishName": "peugeot206",
+    "vehicleTypeEnum": "KAMIYON",
+    "deviceType": "CAR",
+    "brandId": 1
+  },
+  {
+    "id": 9,
+    "name": "پژو 2008",
+    "englishName": "peguet2008",
+    "vehicleTypeEnum": "MINI_BUSS_AND_VANET",
+    "deviceType": "CAR",
+    "brandId": 1
+  },
+  {
+    "id": 8,
+    "name": "S7 توربو",
+    "englishName": "s7turbo",
+    "vehicleTypeEnum": "MINI_BUSS_AND_VANET",
+    "deviceType": "CAR",
+    "brandId": 1
+  },
+  {
+    "id": 7,
+    "name": "S7",
+    "englishName": "s7",
+    "vehicleTypeEnum": "MINI_BUSS_AND_VANET",
+    "deviceType": "CAR",
+    "brandId": 1
+  },
+  {
+    "id": 6,
+    "name": "S5",
+    "englishName": "haimas5",
+    "vehicleTypeEnum": "MINI_BUSS_AND_VANET",
+    "deviceType": "CAR",
+    "brandId": 1
+  },
+  {
+    "id": 5,
+    "name": "S30",
+    "englishName": "s30",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 1
+  },
+  {
+    "id": 4,
+    "name": "Roa G2",
+    "englishName": "roag2",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 1
+  },
+  {
+    "id": 3,
+    "name": "Roa",
+    "englishName": "roa",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 1
+  },
+  {
+    "id": 2,
+    "name": "RD",
+    "englishName": "rd",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 1
+  },
+  {
+    "id": 1,
+    "name": "H30 cross",
+    "englishName": "h30cross",
+    "vehicleTypeEnum": "KAMIYON",
+    "deviceType": "CAR",
+    "brandId": 1
+  },
+  {
+    "id": 690,
+    "name": "سهند",
+    "englishName": "sahand",
+    "vehicleTypeEnum": null,
+    "deviceType": "CAR",
+    "brandId": 2
+  },
+  {
+    "id": 628,
+    "name": "اطلس",
+    "englishName": "atlas",
+    "vehicleTypeEnum": null,
+    "deviceType": "CAR",
+    "brandId": 2
+  },
+  {
+    "id": 627,
+    "name": "CS55 پلاس",
+    "englishName": "cs55 plus",
+    "vehicleTypeEnum": null,
+    "deviceType": "CAR",
+    "brandId": 2
+  },
+  {
+    "id": 54,
+    "name": "وانت کارون",
+    "englishName": "pickup caroon",
+    "vehicleTypeEnum": "OTOBOS_AND_KAMION_2MEHVAR",
+    "deviceType": "CAR",
+    "brandId": 2
+  },
+  {
+    "id": 53,
+    "name": "وانت زامیاد",
+    "englishName": "zamyadpickup",
+    "vehicleTypeEnum": "OTOBOS_AND_KAMION_2MEHVAR",
+    "deviceType": "CAR",
+    "brandId": 2
+  },
+  {
+    "id": 52,
+    "name": "وانت پادرا پلاس",
+    "englishName": "padera",
+    "vehicleTypeEnum": "OTOBOS_AND_KAMION_2MEHVAR",
+    "deviceType": "CAR",
+    "brandId": 2
+  },
+  {
+    "id": 51,
+    "name": "کیا ریو مونتاژ",
+    "englishName": "kiario",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 2
+  },
+  {
+    "id": 50,
+    "name": "کوییک",
+    "englishName": "quick",
+    "vehicleTypeEnum": "KAMIYON",
+    "deviceType": "CAR",
+    "brandId": 2
+  },
+  {
+    "id": 49,
+    "name": "شاهین",
+    "englishName": "shahin",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 2
+  },
+  {
+    "id": 48,
+    "name": "سراتو سایپا",
+    "englishName": "kiacerato",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 2
+  },
+  {
+    "id": 47,
+    "name": "ساینا",
+    "englishName": "saina",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 2
+  },
+  {
+    "id": 46,
+    "name": "زانتیا",
+    "englishName": "xantia",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 2
+  },
+  {
+    "id": 45,
+    "name": "تیبا 2",
+    "englishName": "tiba2",
+    "vehicleTypeEnum": "KAMIYON",
+    "deviceType": "CAR",
+    "brandId": 2
+  },
+  {
+    "id": 44,
+    "name": "تیبا",
+    "englishName": "tiba",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 2
+  },
+  {
+    "id": 43,
+    "name": "پراید نسیم",
+    "englishName": "pridenasim",
+    "vehicleTypeEnum": "KAMIYON",
+    "deviceType": "CAR",
+    "brandId": 2
+  },
+  {
+    "id": 42,
+    "name": "پراید صبا",
+    "englishName": "pridesaba",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 2
+  },
+  {
+    "id": 41,
+    "name": "پراید 151",
+    "englishName": "pride151",
+    "vehicleTypeEnum": "OTOBOS_AND_KAMION_2MEHVAR",
+    "deviceType": "CAR",
+    "brandId": 2
+  },
+  {
+    "id": 40,
+    "name": "پراید 141",
+    "englishName": "pride141",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 2
+  },
+  {
+    "id": 39,
+    "name": "پراید 132",
+    "englishName": "pride132",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 2
+  },
+  {
+    "id": 38,
+    "name": "پراید 131",
+    "englishName": "pride131",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 2
+  },
+  {
+    "id": 37,
+    "name": "پراید 111",
+    "englishName": "pride111",
+    "vehicleTypeEnum": "KAMIYON",
+    "deviceType": "CAR",
+    "brandId": 2
+  },
+  {
+    "id": 36,
+    "name": "آریو سایپا (S300)",
+    "englishName": "arios300",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 2
+  },
+  {
+    "id": 35,
+    "name": "DL5",
+    "englishName": "dl5",
+    "vehicleTypeEnum": null,
+    "deviceType": "CAR",
+    "brandId": 2
+  },
+  {
+    "id": 34,
+    "name": "CS35 سایپا",
+    "englishName": "cs35saipa",
+    "vehicleTypeEnum": "MINI_BUSS_AND_VANET",
+    "deviceType": "CAR",
+    "brandId": 2
+  },
+  {
+    "id": 33,
+    "name": "CS35 پلاس",
+    "englishName": "cs35 plus",
+    "vehicleTypeEnum": "MINI_BUSS_AND_VANET",
+    "deviceType": "CAR",
+    "brandId": 2
+  },
+  {
+    "id": 57,
+    "name": "508",
+    "englishName": "508",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 3
+  },
+  {
+    "id": 56,
+    "name": "407",
+    "englishName": "407",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 3
+  },
+  {
+    "id": 55,
+    "name": "301",
+    "englishName": "301",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 3
+  },
+  {
+    "id": 74,
+    "name": "مگان پارس خودرو",
+    "englishName": "meganparskhodro",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 4
+  },
+  {
+    "id": 73,
+    "name": "مگان",
+    "englishName": "megan",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 4
+  },
+  {
+    "id": 72,
+    "name": "لتیتود",
+    "englishName": "latitude",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 4
+  },
+  {
+    "id": 71,
+    "name": "کولیوس",
+    "englishName": "koleos",
+    "vehicleTypeEnum": "TANKER_AND_NAFTKESH",
+    "deviceType": "CAR",
+    "brandId": 4
+  },
+  {
+    "id": 70,
+    "name": "کپچر",
+    "englishName": "captur",
+    "vehicleTypeEnum": "MINI_BUSS_AND_VANET",
+    "deviceType": "CAR",
+    "brandId": 4
+  },
+  {
+    "id": 69,
+    "name": "فلوئنس",
+    "englishName": "fluence",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 4
+  },
+  {
+    "id": 68,
+    "name": "سیمبل",
+    "englishName": "symbol",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 4
+  },
+  {
+    "id": 67,
+    "name": "سفران",
+    "englishName": "safrane",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 4
+  },
+  {
+    "id": 66,
+    "name": "ساندرو استپ وی",
+    "englishName": "sanderostepwayparskhodro",
+    "vehicleTypeEnum": "KAMIYON",
+    "deviceType": "CAR",
+    "brandId": 4
+  },
+  {
+    "id": 65,
+    "name": "ساندرو",
+    "englishName": "sanderoparskhodro",
+    "vehicleTypeEnum": "KAMIYON",
+    "deviceType": "CAR",
+    "brandId": 4
+  },
+  {
+    "id": 64,
+    "name": "داستر",
+    "englishName": "duster",
+    "vehicleTypeEnum": "TANKER_AND_NAFTKESH",
+    "deviceType": "CAR",
+    "brandId": 4
+  },
+  {
+    "id": 63,
+    "name": "تندر 90 پارس خودرو",
+    "englishName": "tondar90parskhodro",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 4
+  },
+  {
+    "id": 62,
+    "name": "تلیسمان",
+    "englishName": "talisman",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 4
+  },
+  {
+    "id": 61,
+    "name": "پی کی",
+    "englishName": "pk",
+    "vehicleTypeEnum": "KAMIYON",
+    "deviceType": "CAR",
+    "brandId": 4
+  },
+  {
+    "id": 60,
+    "name": "پارس تندر",
+    "englishName": "tondar90",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 4
+  },
+  {
+    "id": 59,
+    "name": "اسکالا کروک",
+    "englishName": "scalaconvertible",
+    "vehicleTypeEnum": "OTOBOS_AND_KAMION_3MEHVAR",
+    "deviceType": "CAR",
+    "brandId": 4
+  },
+  {
+    "id": 58,
+    "name": "اسکالا",
+    "englishName": "scala",
+    "vehicleTypeEnum": "KAMIYON",
+    "deviceType": "CAR",
+    "brandId": 4
+  },
+  {
+    "id": 691,
+    "name": "کونا",
+    "englishName": "kona",
+    "vehicleTypeEnum": null,
+    "deviceType": "CAR",
+    "brandId": 5
+  },
+  {
+    "id": 97,
+    "name": "ولستر",
+    "englishName": "veloster",
+    "vehicleTypeEnum": "KAMIYON",
+    "deviceType": "CAR",
+    "brandId": 5
+  },
+  {
+    "id": 96,
+    "name": "ورنا ",
+    "englishName": "vernakermanmotor",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 5
+  },
+  {
+    "id": 95,
+    "name": "وراکروز",
+    "englishName": "veracruz",
+    "vehicleTypeEnum": "TANKER_AND_NAFTKESH",
+    "deviceType": "CAR",
+    "brandId": 5
+  },
+  {
+    "id": 94,
+    "name": "کوپه",
+    "englishName": "coupe",
+    "vehicleTypeEnum": "SAVARI_BOMI",
+    "deviceType": "CAR",
+    "brandId": 5
+  },
+  {
+    "id": 93,
+    "name": "کرتا",
+    "englishName": "creta",
+    "vehicleTypeEnum": null,
+    "deviceType": "CAR",
+    "brandId": 5
+  },
+  {
+    "id": 92,
+    "name": "سوناتا هیبرید",
+    "englishName": "sonatahybrid",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 5
+  },
+  {
+    "id": 91,
+    "name": "سوناتا",
+    "englishName": "sonata",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 5
+  },
+  {
+    "id": 90,
+    "name": "سنتنیال",
+    "englishName": "centennial",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 5
+  },
+  {
+    "id": 89,
+    "name": "سانتافه",
+    "englishName": "santafe",
+    "vehicleTypeEnum": "TANKER_AND_NAFTKESH",
+    "deviceType": "CAR",
+    "brandId": 5
+  },
+  {
+    "id": 88,
+    "name": "جنسیس کوپه",
+    "englishName": "genesiscoupe",
+    "vehicleTypeEnum": "SAVARI_BOMI",
+    "deviceType": "CAR",
+    "brandId": 5
+  },
+  {
+    "id": 87,
+    "name": "جنسیس",
+    "englishName": "genesis",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 5
+  },
+  {
+    "id": 86,
+    "name": "توسان",
+    "englishName": "tucson",
+    "vehicleTypeEnum": "MINI_BUSS_AND_VANET",
+    "deviceType": "CAR",
+    "brandId": 5
+  },
+  {
+    "id": 85,
+    "name": "النترا",
+    "englishName": "elantra",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 5
+  },
+  {
+    "id": 84,
+    "name": "اکسنت کرمان موتور",
+    "englishName": "accentkermanmotor",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 5
+  },
+  {
+    "id": 83,
+    "name": "اکسنت",
+    "englishName": "accent",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 5
+  },
+  {
+    "id": 82,
+    "name": "آوانته",
+    "englishName": "avantekermanmotor",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 5
+  },
+  {
+    "id": 81,
+    "name": "آزرا",
+    "englishName": "azera",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 5
+  },
+  {
+    "id": 80,
+    "name": "i40 استیشن",
+    "englishName": "i40wagon",
+    "vehicleTypeEnum": "SAVARI_OMOMI",
+    "deviceType": "CAR",
+    "brandId": 5
+  },
+  {
+    "id": 79,
+    "name": "i40",
+    "englishName": "i40",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 5
+  },
+  {
+    "id": 78,
+    "name": "i30",
+    "englishName": "i30",
+    "vehicleTypeEnum": "KAMIYON",
+    "deviceType": "CAR",
+    "brandId": 5
+  },
+  {
+    "id": 77,
+    "name": "i20 کرمان موتور",
+    "englishName": "i20kermanmotor",
+    "vehicleTypeEnum": "KAMIYON",
+    "deviceType": "CAR",
+    "brandId": 5
+  },
+  {
+    "id": 76,
+    "name": "i20",
+    "englishName": "i20",
+    "vehicleTypeEnum": "KAMIYON",
+    "deviceType": "CAR",
+    "brandId": 5
+  },
+  {
+    "id": 75,
+    "name": "i10 کرمان موتور",
+    "englishName": "i10kermanmotor",
+    "vehicleTypeEnum": "KAMIYON",
+    "deviceType": "CAR",
+    "brandId": 5
+  },
+  {
+    "id": 630,
+    "name": "سونت",
+    "englishName": "sonet",
+    "vehicleTypeEnum": null,
+    "deviceType": "CAR",
+    "brandId": 6
+  },
+  {
+    "id": 629,
+    "name": "K5",
+    "englishName": "k5",
+    "vehicleTypeEnum": null,
+    "deviceType": "CAR",
+    "brandId": 6
+  },
+  {
+    "id": 113,
+    "name": "موهاوی",
+    "englishName": "mohave",
+    "vehicleTypeEnum": "TANKER_AND_NAFTKESH",
+    "deviceType": "CAR",
+    "brandId": 6
+  },
+  {
+    "id": 112,
+    "name": "کارنز",
+    "englishName": "carens",
+    "vehicleTypeEnum": "TEREILY",
+    "deviceType": "CAR",
+    "brandId": 6
+  },
+  {
+    "id": 111,
+    "name": "کارناوال",
+    "englishName": "carnival",
+    "vehicleTypeEnum": "TEREILY",
+    "deviceType": "CAR",
+    "brandId": 6
+  },
+  {
+    "id": 110,
+    "name": "کادنزا",
+    "englishName": "cadenza",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 6
+  },
+  {
+    "id": 109,
+    "name": "سول",
+    "englishName": "soul",
+    "vehicleTypeEnum": "KAMIYON",
+    "deviceType": "CAR",
+    "brandId": 6
+  },
+  {
+    "id": 108,
+    "name": "سورنتو",
+    "englishName": "sorento",
+    "vehicleTypeEnum": "TANKER_AND_NAFTKESH",
+    "deviceType": "CAR",
+    "brandId": 6
+  },
+  {
+    "id": 107,
+    "name": "سلتوس",
+    "englishName": "seltos",
+    "vehicleTypeEnum": null,
+    "deviceType": "CAR",
+    "brandId": 6
+  },
+  {
+    "id": 106,
+    "name": "سراتو کوپه",
+    "englishName": "ceratokoup",
+    "vehicleTypeEnum": "SAVARI_BOMI",
+    "deviceType": "CAR",
+    "brandId": 6
+  },
+  {
+    "id": 105,
+    "name": "سراتو",
+    "englishName": "cerato",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 6
+  },
+  {
+    "id": 104,
+    "name": "ریو هاچ بک",
+    "englishName": "riohatchback",
+    "vehicleTypeEnum": "KAMIYON",
+    "deviceType": "CAR",
+    "brandId": 6
+  },
+  {
+    "id": 103,
+    "name": "ریو صندوقدار",
+    "englishName": "riosedan",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 6
+  },
+  {
+    "id": 102,
+    "name": "پیکانتو",
+    "englishName": "picanto",
+    "vehicleTypeEnum": "KAMIYON",
+    "deviceType": "CAR",
+    "brandId": 6
+  },
+  {
+    "id": 101,
+    "name": "اسپورتیج",
+    "englishName": "sportage",
+    "vehicleTypeEnum": "TANKER_AND_NAFTKESH",
+    "deviceType": "CAR",
+    "brandId": 6
+  },
+  {
+    "id": 100,
+    "name": "اپیروس",
+    "englishName": "opirus",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 6
+  },
+  {
+    "id": 99,
+    "name": "اپتیما هیبرید",
+    "englishName": "optimahybrid",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 6
+  },
+  {
+    "id": 98,
+    "name": "اپتیما",
+    "englishName": "optima",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 6
+  },
+  {
+    "id": 693,
+    "name": "T9",
+    "englishName": "t9",
+    "vehicleTypeEnum": null,
+    "deviceType": "CAR",
+    "brandId": 7
+  },
+  {
+    "id": 692,
+    "name": "E50A",
+    "englishName": "e50a",
+    "vehicleTypeEnum": null,
+    "deviceType": "CAR",
+    "brandId": 7
+  },
+  {
+    "id": 121,
+    "name": "T8",
+    "englishName": "t8",
+    "vehicleTypeEnum": "OTOBOS_AND_KAMION_2MEHVAR",
+    "deviceType": "CAR",
+    "brandId": 7
+  },
+  {
+    "id": 120,
+    "name": "S5 ",
+    "englishName": "s5kermanmotor",
+    "vehicleTypeEnum": "MINI_BUSS_AND_VANET",
+    "deviceType": "CAR",
+    "brandId": 7
+  },
+  {
+    "id": 119,
+    "name": "S3",
+    "englishName": "s3kermanmotor",
+    "vehicleTypeEnum": "MINI_BUSS_AND_VANET",
+    "deviceType": "CAR",
+    "brandId": 7
+  },
+  {
+    "id": 118,
+    "name": "J7",
+    "englishName": "j7",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 7
+  },
+  {
+    "id": 117,
+    "name": "J5 ",
+    "englishName": "j5kermanmotor",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 7
+  },
+  {
+    "id": 116,
+    "name": "J4",
+    "englishName": "j4kermanmotor",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 7
+  },
+  {
+    "id": 115,
+    "name": "J3 هاچ بک",
+    "englishName": "j3hatchbackkermanmotor",
+    "vehicleTypeEnum": "KAMIYON",
+    "deviceType": "CAR",
+    "brandId": 7
+  },
+  {
+    "id": 114,
+    "name": "J3 صندوق دار",
+    "englishName": "j3sedan",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 7
+  },
+  {
+    "id": 694,
+    "name": "Q5 E-tron",
+    "englishName": "q5 e-tron",
+    "vehicleTypeEnum": null,
+    "deviceType": "CAR",
+    "brandId": 8
+  },
+  {
+    "id": 123,
+    "name": "TT کوپه",
+    "englishName": "ttcoupe",
+    "vehicleTypeEnum": "SAVARI_BOMI",
+    "deviceType": "CAR",
+    "brandId": 8
+  },
+  {
+    "id": 122,
+    "name": "Q5",
+    "englishName": "q5",
+    "vehicleTypeEnum": "TANKER_AND_NAFTKESH",
+    "deviceType": "CAR",
+    "brandId": 8
+  },
+  {
+    "id": 126,
+    "name": "میتو",
+    "englishName": "mito",
+    "vehicleTypeEnum": "KAMIYON",
+    "deviceType": "CAR",
+    "brandId": 9
+  },
+  {
+    "id": 125,
+    "name": "جولیتا",
+    "englishName": "giulietta",
+    "vehicleTypeEnum": "KAMIYON",
+    "deviceType": "CAR",
+    "brandId": 9
+  },
+  {
+    "id": 124,
+    "name": "4C",
+    "englishName": "4c",
+    "vehicleTypeEnum": "SAVARI_BOMI",
+    "deviceType": "CAR",
+    "brandId": 9
+  },
+  {
+    "id": 127,
+    "name": "دو کابین آسنا",
+    "englishName": "2cabinsasena",
+    "vehicleTypeEnum": "OTOBOS_AND_KAMION_2MEHVAR",
+    "deviceType": "CAR",
+    "brandId": 10
+  },
+  {
+    "id": 130,
+    "name": "کورسا",
+    "englishName": "corsa",
+    "vehicleTypeEnum": "KAMIYON",
+    "deviceType": "CAR",
+    "brandId": 11
+  },
+  {
+    "id": 129,
+    "name": "آسترا",
+    "englishName": "astra",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 11
+  },
+  {
+    "id": 128,
+    "name": " آسترا هاچ بک",
+    "englishName": "astrahatchback",
+    "vehicleTypeEnum": "KAMIYON",
+    "deviceType": "CAR",
+    "brandId": 11
+  },
+  {
+    "id": 132,
+    "name": "g01f",
+    "englishName": "g01f",
+    "vehicleTypeEnum": "MINI_BUSS_AND_VANET",
+    "deviceType": "CAR",
+    "brandId": 12
+  },
+  {
+    "id": 131,
+    "name": "g01",
+    "englishName": "g01",
+    "vehicleTypeEnum": "MINI_BUSS_AND_VANET",
+    "deviceType": "CAR",
+    "brandId": 12
+  },
+  {
+    "id": 732,
+    "name": "ام جی 5",
+    "englishName": "5",
+    "vehicleTypeEnum": null,
+    "deviceType": "CAR",
+    "brandId": 13
+  },
+  {
+    "id": 141,
+    "name": "ام جی RX5",
+    "englishName": "mgrx5",
+    "vehicleTypeEnum": "MINI_BUSS_AND_VANET",
+    "deviceType": "CAR",
+    "brandId": 13
+  },
+  {
+    "id": 140,
+    "name": "ام جی GT",
+    "englishName": "mggt",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 13
+  },
+  {
+    "id": 139,
+    "name": "ام جی GS",
+    "englishName": "mggs",
+    "vehicleTypeEnum": "MINI_BUSS_AND_VANET",
+    "deviceType": "CAR",
+    "brandId": 13
+  },
+  {
+    "id": 138,
+    "name": "ام جی 6 مگنت",
+    "englishName": "mg6magnet",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 13
+  },
+  {
+    "id": 137,
+    "name": "ام جی 6",
+    "englishName": "mg6liftback",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 13
+  },
+  {
+    "id": 136,
+    "name": "ام جی 550",
+    "englishName": "mg550",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 13
+  },
+  {
+    "id": 135,
+    "name": "ام جی 360",
+    "englishName": "mg360",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 13
+  },
+  {
+    "id": 134,
+    "name": "ام جی 350",
+    "englishName": "mg350",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 13
+  },
+  {
+    "id": 133,
+    "name": "ام جی 3",
+    "englishName": "mg3",
+    "vehicleTypeEnum": "KAMIYON",
+    "deviceType": "CAR",
+    "brandId": 13
+  },
+  {
+    "id": 153,
+    "name": "ام وی ام x55 پرو",
+    "englishName": "x55 pro",
+    "vehicleTypeEnum": "MINI_BUSS_AND_VANET",
+    "deviceType": "CAR",
+    "brandId": 14
+  },
+  {
+    "id": 152,
+    "name": "ام وی ام x55",
+    "englishName": "mvmx55",
+    "vehicleTypeEnum": "MINI_BUSS_AND_VANET",
+    "deviceType": "CAR",
+    "brandId": 14
+  },
+  {
+    "id": 151,
+    "name": "ام وی ام x33",
+    "englishName": "mvmx33",
+    "vehicleTypeEnum": "MINI_BUSS_AND_VANET",
+    "deviceType": "CAR",
+    "brandId": 14
+  },
+  {
+    "id": 150,
+    "name": "ام وی ام x22",
+    "englishName": "mvmx22",
+    "vehicleTypeEnum": "MINI_BUSS_AND_VANET",
+    "deviceType": "CAR",
+    "brandId": 14
+  },
+  {
+    "id": 149,
+    "name": "ام وی ام 550",
+    "englishName": "mvm550",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 14
+  },
+  {
+    "id": 148,
+    "name": "ام وی ام 530",
+    "englishName": "mvm530",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 14
+  },
+  {
+    "id": 147,
+    "name": "ام وی ام 315 هاچ بک",
+    "englishName": "mvm315hatchback",
+    "vehicleTypeEnum": "KAMIYON",
+    "deviceType": "CAR",
+    "brandId": 14
+  },
+  {
+    "id": 146,
+    "name": "ام وی ام 315 صندوق دار",
+    "englishName": "mvm315sedan",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 14
+  },
+  {
+    "id": 145,
+    "name": "ام وی ام 110s",
+    "englishName": "mvm110s",
+    "vehicleTypeEnum": "KAMIYON",
+    "deviceType": "CAR",
+    "brandId": 14
+  },
+  {
+    "id": 144,
+    "name": "ام وی ام 110",
+    "englishName": "mvm110",
+    "vehicleTypeEnum": "KAMIYON",
+    "deviceType": "CAR",
+    "brandId": 14
+  },
+  {
+    "id": 143,
+    "name": "ام وی ام  x33 s",
+    "englishName": "mvmx33s",
+    "vehicleTypeEnum": "MINI_BUSS_AND_VANET",
+    "deviceType": "CAR",
+    "brandId": 14
+  },
+  {
+    "id": 142,
+    "name": "X33 کراس",
+    "englishName": "x33 cross",
+    "vehicleTypeEnum": null,
+    "deviceType": "CAR",
+    "brandId": 14
+  },
+  {
+    "id": 695,
+    "name": "بیجینگ X7",
+    "englishName": "beijing x7",
+    "vehicleTypeEnum": null,
+    "deviceType": "CAR",
+    "brandId": 15
+  },
+  {
+    "id": 157,
+    "name": "سنوا",
+    "englishName": "senova",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 15
+  },
+  {
+    "id": 156,
+    "name": "سابرینا دیار خودرو",
+    "englishName": "sabrinadiarkhodro",
+    "vehicleTypeEnum": "KAMIYON",
+    "deviceType": "CAR",
+    "brandId": 15
+  },
+  {
+    "id": 155,
+    "name": "سابرینا",
+    "englishName": "sabrina",
+    "vehicleTypeEnum": "KAMIYON",
+    "deviceType": "CAR",
+    "brandId": 15
+  },
+  {
+    "id": 154,
+    "name": "X25 دیار خودرو",
+    "englishName": "x25",
+    "vehicleTypeEnum": "MINI_BUSS_AND_VANET",
+    "deviceType": "CAR",
+    "brandId": 15
+  },
+  {
+    "id": 163,
+    "name": "برلیانس V5",
+    "englishName": "brilliancev5",
+    "vehicleTypeEnum": "MINI_BUSS_AND_VANET",
+    "deviceType": "CAR",
+    "brandId": 16
+  },
+  {
+    "id": 162,
+    "name": "برلیانس H330",
+    "englishName": "h330parskhodro",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 16
+  },
+  {
+    "id": 161,
+    "name": "برلیانس H320",
+    "englishName": "h320parskhodro",
+    "vehicleTypeEnum": "KAMIYON",
+    "deviceType": "CAR",
+    "brandId": 16
+  },
+  {
+    "id": 160,
+    "name": "برلیانس H230",
+    "englishName": "h230parskhodro",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 16
+  },
+  {
+    "id": 159,
+    "name": "برلیانس H220",
+    "englishName": "h220parskhodro",
+    "vehicleTypeEnum": "KAMIYON",
+    "deviceType": "CAR",
+    "brandId": 16
+  },
+  {
+    "id": 158,
+    "name": "برلیانس c3 کراس",
+    "englishName": "ccross",
+    "vehicleTypeEnum": "KAMIYON",
+    "deviceType": "CAR",
+    "brandId": 16
+  },
+  {
+    "id": 166,
+    "name": "بسترن B50F",
+    "englishName": "besturnb50f",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 17
+  },
+  {
+    "id": 165,
+    "name": "بسترن B50",
+    "englishName": "besturnb50",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 17
+  },
+  {
+    "id": 164,
+    "name": "بسترن B30",
+    "englishName": "besternb30",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 17
+  },
+  {
+    "id": 184,
+    "name": "ستاره ایران",
+    "englishName": "eclasstopkhodro",
+    "vehicleTypeEnum": null,
+    "deviceType": "CAR",
+    "brandId": 18
+  },
+  {
+    "id": 183,
+    "name": "SLK",
+    "englishName": "slkclass",
+    "vehicleTypeEnum": "SAVARI_BOMI",
+    "deviceType": "CAR",
+    "brandId": 18
+  },
+  {
+    "id": 182,
+    "name": "SL",
+    "englishName": "slclass",
+    "vehicleTypeEnum": "OTOBOS_AND_KAMION_3MEHVAR",
+    "deviceType": "CAR",
+    "brandId": 18
+  },
+  {
+    "id": 181,
+    "name": "S",
+    "englishName": "sclass",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 18
+  },
+  {
+    "id": 180,
+    "name": "ML",
+    "englishName": "mlclass",
+    "vehicleTypeEnum": "TANKER_AND_NAFTKESH",
+    "deviceType": "CAR",
+    "brandId": 18
+  },
+  {
+    "id": 179,
+    "name": "GLK",
+    "englishName": "glk",
+    "vehicleTypeEnum": "TANKER_AND_NAFTKESH",
+    "deviceType": "CAR",
+    "brandId": 18
+  },
+  {
+    "id": 178,
+    "name": "GLA",
+    "englishName": "gla",
+    "vehicleTypeEnum": "MINI_BUSS_AND_VANET",
+    "deviceType": "CAR",
+    "brandId": 18
+  },
+  {
+    "id": 177,
+    "name": "E کوپه",
+    "englishName": "eclasscoupe",
+    "vehicleTypeEnum": "SAVARI_BOMI",
+    "deviceType": "CAR",
+    "brandId": 18
+  },
+  {
+    "id": 176,
+    "name": "E کروک",
+    "englishName": "eclassconvertible",
+    "vehicleTypeEnum": "OTOBOS_AND_KAMION_3MEHVAR",
+    "deviceType": "CAR",
+    "brandId": 18
+  },
+  {
+    "id": 175,
+    "name": "E",
+    "englishName": "eclass",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 18
+  },
+  {
+    "id": 174,
+    "name": "CLS",
+    "englishName": "clsclass",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 18
+  },
+  {
+    "id": 173,
+    "name": "CLK کوپه",
+    "englishName": "clkclasscoupe",
+    "vehicleTypeEnum": "SAVARI_BOMI",
+    "deviceType": "CAR",
+    "brandId": 18
+  },
+  {
+    "id": 172,
+    "name": "CLK کروک",
+    "englishName": "clkclassconvertible",
+    "vehicleTypeEnum": "OTOBOS_AND_KAMION_3MEHVAR",
+    "deviceType": "CAR",
+    "brandId": 18
+  },
+  {
+    "id": 171,
+    "name": "CLA",
+    "englishName": "claclass",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 18
+  },
+  {
+    "id": 170,
+    "name": "CL",
+    "englishName": "clclass",
+    "vehicleTypeEnum": "SAVARI_BOMI",
+    "deviceType": "CAR",
+    "brandId": 18
+  },
+  {
+    "id": 169,
+    "name": "C",
+    "englishName": "cclass",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 18
+  },
+  {
+    "id": 168,
+    "name": "B",
+    "englishName": "bclass",
+    "vehicleTypeEnum": "KAMIYON",
+    "deviceType": "CAR",
+    "brandId": 18
+  },
+  {
+    "id": 167,
+    "name": "A",
+    "englishName": "aclass",
+    "vehicleTypeEnum": "KAMIYON",
+    "deviceType": "CAR",
+    "brandId": 18
+  },
+  {
+    "id": 186,
+    "name": "BX7",
+    "englishName": "bx7",
+    "vehicleTypeEnum": "MINI_BUSS_AND_VANET",
+    "deviceType": "CAR",
+    "brandId": 19
+  },
+  {
+    "id": 185,
+    "name": "BX5",
+    "englishName": "borgward-bx5",
+    "vehicleTypeEnum": "MINI_BUSS_AND_VANET",
+    "deviceType": "CAR",
+    "brandId": 19
+  },
+  {
+    "id": 209,
+    "name": "سری i",
+    "englishName": "i8",
+    "vehicleTypeEnum": "SAVARI_BOMI",
+    "deviceType": "CAR",
+    "brandId": 20
+  },
+  {
+    "id": 208,
+    "name": "سری 7",
+    "englishName": "7series",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 20
+  },
+  {
+    "id": 207,
+    "name": "سری 6 گرن کوپه",
+    "englishName": "6seriesgrancoupe",
+    "vehicleTypeEnum": "SAVARI_BOMI",
+    "deviceType": "CAR",
+    "brandId": 20
+  },
+  {
+    "id": 206,
+    "name": "سری 6 کوپه",
+    "englishName": "6seriescoupe",
+    "vehicleTypeEnum": "SAVARI_BOMI",
+    "deviceType": "CAR",
+    "brandId": 20
+  },
+  {
+    "id": 205,
+    "name": "سری 6 کروک",
+    "englishName": "6seriesconvertible",
+    "vehicleTypeEnum": "OTOBOS_AND_KAMION_3MEHVAR",
+    "deviceType": "CAR",
+    "brandId": 20
+  },
+  {
+    "id": 204,
+    "name": "سری 5",
+    "englishName": "5series",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 20
+  },
+  {
+    "id": 203,
+    "name": "سری 4 گرن کوپه",
+    "englishName": "4seriesgrancoupe",
+    "vehicleTypeEnum": "SAVARI_BOMI",
+    "deviceType": "CAR",
+    "brandId": 20
+  },
+  {
+    "id": 202,
+    "name": "سری 4 کوپه",
+    "englishName": "4seriescoupe",
+    "vehicleTypeEnum": "SAVARI_BOMI",
+    "deviceType": "CAR",
+    "brandId": 20
+  },
+  {
+    "id": 201,
+    "name": "سری 4 کروک",
+    "englishName": "4seriesconvertible",
+    "vehicleTypeEnum": "OTOBOS_AND_KAMION_3MEHVAR",
+    "deviceType": "CAR",
+    "brandId": 20
+  },
+  {
+    "id": 200,
+    "name": "سری 3 کوپه",
+    "englishName": "3seriescoupe",
+    "vehicleTypeEnum": "SAVARI_BOMI",
+    "deviceType": "CAR",
+    "brandId": 20
+  },
+  {
+    "id": 199,
+    "name": "سری 3 کروک",
+    "englishName": "3seriesconvertible",
+    "vehicleTypeEnum": "OTOBOS_AND_KAMION_3MEHVAR",
+    "deviceType": "CAR",
+    "brandId": 20
+  },
+  {
+    "id": 198,
+    "name": "سری 3",
+    "englishName": "3series",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 20
+  },
+  {
+    "id": 197,
+    "name": "سری 2 کوپه",
+    "englishName": "series2coupe",
+    "vehicleTypeEnum": "SAVARI_BOMI",
+    "deviceType": "CAR",
+    "brandId": 20
+  },
+  {
+    "id": 196,
+    "name": "سری 2 اکتیوتورر",
+    "englishName": "seri2",
+    "vehicleTypeEnum": "KAMIYON",
+    "deviceType": "CAR",
+    "brandId": 20
+  },
+  {
+    "id": 195,
+    "name": "سری 1 کوپه",
+    "englishName": "1seriescoupe",
+    "vehicleTypeEnum": "SAVARI_BOMI",
+    "deviceType": "CAR",
+    "brandId": 20
+  },
+  {
+    "id": 194,
+    "name": "سری 1 کروک",
+    "englishName": "1seriesconvertible",
+    "vehicleTypeEnum": "OTOBOS_AND_KAMION_3MEHVAR",
+    "deviceType": "CAR",
+    "brandId": 20
+  },
+  {
+    "id": 193,
+    "name": "سری 1",
+    "englishName": "1series",
+    "vehicleTypeEnum": "KAMIYON",
+    "deviceType": "CAR",
+    "brandId": 20
+  },
+  {
+    "id": 192,
+    "name": "Z4",
+    "englishName": "z4",
+    "vehicleTypeEnum": "OTOBOS_AND_KAMION_3MEHVAR",
+    "deviceType": "CAR",
+    "brandId": 20
+  },
+  {
+    "id": 191,
+    "name": "X6",
+    "englishName": "x6",
+    "vehicleTypeEnum": "MINI_BUSS_AND_VANET",
+    "deviceType": "CAR",
+    "brandId": 20
+  },
+  {
+    "id": 190,
+    "name": "X5",
+    "englishName": "x5",
+    "vehicleTypeEnum": "MINI_BUSS_AND_VANET",
+    "deviceType": "CAR",
+    "brandId": 20
+  },
+  {
+    "id": 189,
+    "name": "X4",
+    "englishName": "x4",
+    "vehicleTypeEnum": "MINI_BUSS_AND_VANET",
+    "deviceType": "CAR",
+    "brandId": 20
+  },
+  {
+    "id": 188,
+    "name": "X3",
+    "englishName": "x3",
+    "vehicleTypeEnum": "MINI_BUSS_AND_VANET",
+    "deviceType": "CAR",
+    "brandId": 20
+  },
+  {
+    "id": 187,
+    "name": "X1",
+    "englishName": "x1",
+    "vehicleTypeEnum": "MINI_BUSS_AND_VANET",
+    "deviceType": "CAR",
+    "brandId": 20
+  },
+  {
+    "id": 733,
+    "name": "سانگ پلاس",
+    "englishName": "song plus",
+    "vehicleTypeEnum": null,
+    "deviceType": "CAR",
+    "brandId": 21
+  },
+  {
+    "id": 211,
+    "name": "S6",
+    "englishName": "s6",
+    "vehicleTypeEnum": "MINI_BUSS_AND_VANET",
+    "deviceType": "CAR",
+    "brandId": 21
+  },
+  {
+    "id": 210,
+    "name": "F3",
+    "englishName": "f3",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 21
+  },
+  {
+    "id": 212,
+    "name": "T3",
+    "englishName": "t3",
+    "vehicleTypeEnum": "MINI_BUSS_AND_VANET",
+    "deviceType": "CAR",
+    "brandId": 22
+  },
+  {
+    "id": 219,
+    "name": "وانت ریچ",
+    "englishName": "rich",
+    "vehicleTypeEnum": "OTOBOS_AND_KAMION_2MEHVAR",
+    "deviceType": "CAR",
+    "brandId": 23
+  },
+  {
+    "id": 218,
+    "name": "قشقایی پارس خودرو",
+    "englishName": "qashqaiparskhodro",
+    "vehicleTypeEnum": "MINI_BUSS_AND_VANET",
+    "deviceType": "CAR",
+    "brandId": 23
+  },
+  {
+    "id": 217,
+    "name": "سرانزا",
+    "englishName": "seranzaparskhodro",
+    "vehicleTypeEnum": "TANKER_AND_NAFTKESH",
+    "deviceType": "CAR",
+    "brandId": 23
+  },
+  {
+    "id": 216,
+    "name": "رونیز",
+    "englishName": "ronizparskhodro",
+    "vehicleTypeEnum": "TANKER_AND_NAFTKESH",
+    "deviceType": "CAR",
+    "brandId": 23
+  },
+  {
+    "id": 215,
+    "name": "تیانا پارس خودرو",
+    "englishName": "teanaparskhodro",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 23
+  },
+  {
+    "id": 214,
+    "name": "پاترول دو درب",
+    "englishName": "patrol2drparskhodro",
+    "vehicleTypeEnum": "TANKER_AND_NAFTKESH",
+    "deviceType": "CAR",
+    "brandId": 23
+  },
+  {
+    "id": 213,
+    "name": "پاترول چهار درب",
+    "englishName": "patrol4drparskhodro",
+    "vehicleTypeEnum": "TANKER_AND_NAFTKESH",
+    "deviceType": "CAR",
+    "brandId": 23
+  },
+  {
+    "id": 222,
+    "name": "ویرا",
+    "englishName": "viera",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 25
+  },
+  {
+    "id": 221,
+    "name": "جن تو",
+    "englishName": "gen2",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 25
+  },
+  {
+    "id": 220,
+    "name": "ایمپیان",
+    "englishName": "impian",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 25
+  },
+  {
+    "id": 228,
+    "name": "ماکان",
+    "englishName": "macan",
+    "vehicleTypeEnum": "TANKER_AND_NAFTKESH",
+    "deviceType": "CAR",
+    "brandId": 26
+  },
+  {
+    "id": 227,
+    "name": "کیمن",
+    "englishName": "cayman",
+    "vehicleTypeEnum": "SAVARI_BOMI",
+    "deviceType": "CAR",
+    "brandId": 26
+  },
+  {
+    "id": 226,
+    "name": "کاین",
+    "englishName": "cayenne",
+    "vehicleTypeEnum": "TANKER_AND_NAFTKESH",
+    "deviceType": "CAR",
+    "brandId": 26
+  },
+  {
+    "id": 225,
+    "name": "پانامرا",
+    "englishName": "panamera",
+    "vehicleTypeEnum": "SAVARI_BOMI",
+    "deviceType": "CAR",
+    "brandId": 26
+  },
+  {
+    "id": 224,
+    "name": "باکستر",
+    "englishName": "boxster",
+    "vehicleTypeEnum": "OTOBOS_AND_KAMION_3MEHVAR",
+    "deviceType": "CAR",
+    "brandId": 26
+  },
+  {
+    "id": 223,
+    "name": "911",
+    "englishName": "911",
+    "vehicleTypeEnum": "SAVARI_BOMI",
+    "deviceType": "CAR",
+    "brandId": 26
+  },
+  {
+    "id": 696,
+    "name": "کرولا کراس",
+    "englishName": "corolla cross",
+    "vehicleTypeEnum": null,
+    "deviceType": "CAR",
+    "brandId": 27
+  },
+  {
+    "id": 631,
+    "name": "لوین",
+    "englishName": "levin",
+    "vehicleTypeEnum": null,
+    "deviceType": "CAR",
+    "brandId": 27
+  },
+  {
+    "id": 248,
+    "name": "یاریس هاچ بک",
+    "englishName": "yarishatchback",
+    "vehicleTypeEnum": "KAMIYON",
+    "deviceType": "CAR",
+    "brandId": 27
+  },
+  {
+    "id": 247,
+    "name": "یاریس",
+    "englishName": "yaris",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 27
+  },
+  {
+    "id": 246,
+    "name": "هایلوکس دو کابین",
+    "englishName": "hilux4door",
+    "vehicleTypeEnum": "OTOBOS_AND_KAMION_2MEHVAR",
+    "deviceType": "CAR",
+    "brandId": 27
+  },
+  {
+    "id": 245,
+    "name": "هایلوکس تک کابین",
+    "englishName": "hilux2door",
+    "vehicleTypeEnum": "OTOBOS_AND_KAMION_2MEHVAR",
+    "deviceType": "CAR",
+    "brandId": 27
+  },
+  {
+    "id": 244,
+    "name": "هایس",
+    "englishName": "Hiace",
+    "vehicleTypeEnum": "TEREILY",
+    "deviceType": "CAR",
+    "brandId": 27
+  },
+  {
+    "id": 243,
+    "name": "لندکروز ",
+    "englishName": "landcruiser",
+    "vehicleTypeEnum": "TANKER_AND_NAFTKESH",
+    "deviceType": "CAR",
+    "brandId": 27
+  },
+  {
+    "id": 242,
+    "name": "کمری هیبرید",
+    "englishName": "camryhybrid",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 27
+  },
+  {
+    "id": 241,
+    "name": "کمری",
+    "englishName": "camry",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 27
+  },
+  {
+    "id": 240,
+    "name": "کرولا",
+    "englishName": "corolla",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 27
+  },
+  {
+    "id": 239,
+    "name": "فورچونر",
+    "englishName": "furtuner",
+    "vehicleTypeEnum": "TANKER_AND_NAFTKESH",
+    "deviceType": "CAR",
+    "brandId": 27
+  },
+  {
+    "id": 238,
+    "name": "سولارا",
+    "englishName": "solara",
+    "vehicleTypeEnum": "SAVARI_BOMI",
+    "deviceType": "CAR",
+    "brandId": 27
+  },
+  {
+    "id": 237,
+    "name": "راو 4",
+    "englishName": "rav4",
+    "vehicleTypeEnum": "TANKER_AND_NAFTKESH",
+    "deviceType": "CAR",
+    "brandId": 27
+  },
+  {
+    "id": 236,
+    "name": "پریوس",
+    "englishName": "prius",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 27
+  },
+  {
+    "id": 235,
+    "name": "پرادو دو در",
+    "englishName": "prado2door",
+    "vehicleTypeEnum": "TANKER_AND_NAFTKESH",
+    "deviceType": "CAR",
+    "brandId": 27
+  },
+  {
+    "id": 234,
+    "name": "پرادو چهار در",
+    "englishName": "prado4door",
+    "vehicleTypeEnum": "TANKER_AND_NAFTKESH",
+    "deviceType": "CAR",
+    "brandId": 27
+  },
+  {
+    "id": 233,
+    "name": "اف جی کروز",
+    "englishName": "fjcruiser",
+    "vehicleTypeEnum": "TANKER_AND_NAFTKESH",
+    "deviceType": "CAR",
+    "brandId": 27
+  },
+  {
+    "id": 232,
+    "name": "آریون",
+    "englishName": "aurion",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 27
+  },
+  {
+    "id": 231,
+    "name": "gt 86",
+    "englishName": "gt86",
+    "vehicleTypeEnum": "OTOBOS_AND_KAMION_3MEHVAR",
+    "deviceType": "CAR",
+    "brandId": 27
+  },
+  {
+    "id": 230,
+    "name": "CHR هیبرید",
+    "englishName": "chrhybrid",
+    "vehicleTypeEnum": "MINI_BUSS_AND_VANET",
+    "deviceType": "CAR",
+    "brandId": 27
+  },
+  {
+    "id": 229,
+    "name": "CHR",
+    "englishName": "chr",
+    "vehicleTypeEnum": "MINI_BUSS_AND_VANET",
+    "deviceType": "CAR",
+    "brandId": 27
+  },
+  {
+    "id": 249,
+    "name": "X35",
+    "englishName": "x35",
+    "vehicleTypeEnum": "MINI_BUSS_AND_VANET",
+    "deviceType": "CAR",
+    "brandId": 28
+  },
+  {
+    "id": 632,
+    "name": "آزکارا",
+    "englishName": "azkarra",
+    "vehicleTypeEnum": null,
+    "deviceType": "CAR",
+    "brandId": 29
+  },
+  {
+    "id": 253,
+    "name": "امگرند X7",
+    "englishName": "emgrandx7",
+    "vehicleTypeEnum": "MINI_BUSS_AND_VANET",
+    "deviceType": "CAR",
+    "brandId": 29
+  },
+  {
+    "id": 252,
+    "name": "امگرند RV-7",
+    "englishName": "emgrandrv7",
+    "vehicleTypeEnum": "KAMIYON",
+    "deviceType": "CAR",
+    "brandId": 29
+  },
+  {
+    "id": 251,
+    "name": "امگرند 7",
+    "englishName": "emgrand7",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 29
+  },
+  {
+    "id": 250,
+    "name": "GC6",
+    "englishName": "gc6",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 29
+  },
+  {
+    "id": 255,
+    "name": "ایدو",
+    "englishName": "eado",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 30
+  },
+  {
+    "id": 254,
+    "name": "CS35",
+    "englishName": "cs35",
+    "vehicleTypeEnum": "MINI_BUSS_AND_VANET",
+    "deviceType": "CAR",
+    "brandId": 30
+  },
+  {
+    "id": 720,
+    "name": "آریزو 8",
+    "englishName": "arrizo 8",
+    "vehicleTypeEnum": null,
+    "deviceType": "CAR",
+    "brandId": 31
+  },
+  {
+    "id": 697,
+    "name": "چری آریزو 8",
+    "englishName": "arizzo 8",
+    "vehicleTypeEnum": null,
+    "deviceType": "CAR",
+    "brandId": 31
+  },
+  {
+    "id": 262,
+    "name": "چری ویانا",
+    "englishName": "cheryviana",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 31
+  },
+  {
+    "id": 261,
+    "name": "چری تیگو 7",
+    "englishName": "cherytiggo7",
+    "vehicleTypeEnum": "MINI_BUSS_AND_VANET",
+    "deviceType": "CAR",
+    "brandId": 31
+  },
+  {
+    "id": 260,
+    "name": "چری تیگو 5",
+    "englishName": "tiggo5",
+    "vehicleTypeEnum": "MINI_BUSS_AND_VANET",
+    "deviceType": "CAR",
+    "brandId": 31
+  },
+  {
+    "id": 259,
+    "name": "چری آریزو 6",
+    "englishName": "arizzio 6",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 31
+  },
+  {
+    "id": 258,
+    "name": "چری آریزو 5 FL",
+    "englishName": "arrizo 5fl",
+    "vehicleTypeEnum": null,
+    "deviceType": "CAR",
+    "brandId": 31
+  },
+  {
+    "id": 257,
+    "name": "چری آریزو 5",
+    "englishName": "cheryarizo5",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 31
+  },
+  {
+    "id": 256,
+    "name": "چری A15 (کوین)",
+    "englishName": "cherya15",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 31
+  },
+  {
+    "id": 263,
+    "name": "ایکس 7",
+    "englishName": "x7",
+    "vehicleTypeEnum": "MINI_BUSS_AND_VANET",
+    "deviceType": "CAR",
+    "brandId": 32
+  },
+  {
+    "id": 265,
+    "name": "شاین مکس",
+    "englishName": "shine max",
+    "vehicleTypeEnum": null,
+    "deviceType": "CAR",
+    "brandId": 33
+  },
+  {
+    "id": 264,
+    "name": "دیگنیتی",
+    "englishName": "dignity",
+    "vehicleTypeEnum": "MINI_BUSS_AND_VANET",
+    "deviceType": "CAR",
+    "brandId": 33
+  },
+  {
+    "id": 267,
+    "name": "y7",
+    "englishName": "y7",
+    "vehicleTypeEnum": null,
+    "deviceType": "CAR",
+    "brandId": 34
+  },
+  {
+    "id": 266,
+    "name": "Y5",
+    "englishName": "y5",
+    "vehicleTypeEnum": "MINI_BUSS_AND_VANET",
+    "deviceType": "CAR",
+    "brandId": 34
+  },
+  {
+    "id": 269,
+    "name": "ماتیز",
+    "englishName": "matizkermanmotor",
+    "vehicleTypeEnum": "KAMIYON",
+    "deviceType": "CAR",
+    "brandId": 35
+  },
+  {
+    "id": 268,
+    "name": "سیلو",
+    "englishName": "cielokermanmotor",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 35
+  },
+  {
+    "id": 274,
+    "name": "دی اس 7",
+    "englishName": "ds7",
+    "vehicleTypeEnum": "MINI_BUSS_AND_VANET",
+    "deviceType": "CAR",
+    "brandId": 36
+  },
+  {
+    "id": 273,
+    "name": "دی اس 6WR",
+    "englishName": "ds6wr",
+    "vehicleTypeEnum": "MINI_BUSS_AND_VANET",
+    "deviceType": "CAR",
+    "brandId": 36
+  },
+  {
+    "id": 272,
+    "name": "دی اس 5LS",
+    "englishName": "ds5ls",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 36
+  },
+  {
+    "id": 271,
+    "name": "دی اس 5",
+    "englishName": "ds5",
+    "vehicleTypeEnum": "KAMIYON",
+    "deviceType": "CAR",
+    "brandId": 36
+  },
+  {
+    "id": 270,
+    "name": "دی اس 3",
+    "englishName": "ds3",
+    "vehicleTypeEnum": "KAMIYON",
+    "deviceType": "CAR",
+    "brandId": 36
+  },
+  {
+    "id": 275,
+    "name": "سوئیست",
+    "englishName": "soueast",
+    "vehicleTypeEnum": "MINI_BUSS_AND_VANET",
+    "deviceType": "CAR",
+    "brandId": 37
+  },
+  {
+    "id": 277,
+    "name": "ولکس C30",
+    "englishName": "voleexc30kermanmotor",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 38
+  },
+  {
+    "id": 276,
+    "name": "ولا V5",
+    "englishName": "velav5",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 38
+  },
+  {
+    "id": 278,
+    "name": "Z300",
+    "englishName": "zotyez300",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 39
+  },
+  {
+    "id": 633,
+    "name": "رکستون مونتاژ",
+    "englishName": "rexton",
+    "vehicleTypeEnum": null,
+    "deviceType": "CAR",
+    "brandId": 40
+  },
+  {
+    "id": 287,
+    "name": "نیو کوراندو",
+    "englishName": "korando",
+    "vehicleTypeEnum": "TANKER_AND_NAFTKESH",
+    "deviceType": "CAR",
+    "brandId": 40
+  },
+  {
+    "id": 286,
+    "name": "موسو",
+    "englishName": "mussomoratabkhodro",
+    "vehicleTypeEnum": "TANKER_AND_NAFTKESH",
+    "deviceType": "CAR",
+    "brandId": 40
+  },
+  {
+    "id": 285,
+    "name": "کوراندو بن رو",
+    "englishName": "korandobonro",
+    "vehicleTypeEnum": "TANKER_AND_NAFTKESH",
+    "deviceType": "CAR",
+    "brandId": 40
+  },
+  {
+    "id": 284,
+    "name": "کایرون",
+    "englishName": "kyron",
+    "vehicleTypeEnum": "TANKER_AND_NAFTKESH",
+    "deviceType": "CAR",
+    "brandId": 40
+  },
+  {
+    "id": 283,
+    "name": "رکستون",
+    "englishName": "rexton",
+    "vehicleTypeEnum": "TANKER_AND_NAFTKESH",
+    "deviceType": "CAR",
+    "brandId": 40
+  },
+  {
+    "id": 282,
+    "name": "چیرمن 600 بن رو",
+    "englishName": "chairman600bonro",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 40
+  },
+  {
+    "id": 281,
+    "name": "تیوولی مونتاژ",
+    "englishName": "tivoliramak",
+    "vehicleTypeEnum": "MINI_BUSS_AND_VANET",
+    "deviceType": "CAR",
+    "brandId": 40
+  },
+  {
+    "id": 280,
+    "name": "تیوولی",
+    "englishName": "tivoli",
+    "vehicleTypeEnum": "MINI_BUSS_AND_VANET",
+    "deviceType": "CAR",
+    "brandId": 40
+  },
+  {
+    "id": 279,
+    "name": "اکتیون",
+    "englishName": "actyon",
+    "vehicleTypeEnum": "TANKER_AND_NAFTKESH",
+    "deviceType": "CAR",
+    "brandId": 40
+  },
+  {
+    "id": 288,
+    "name": "آتکا",
+    "englishName": "ateca",
+    "vehicleTypeEnum": null,
+    "deviceType": "CAR",
+    "brandId": 41
+  },
+  {
+    "id": 290,
+    "name": "لگاسی",
+    "englishName": "legacy",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 42
+  },
+  {
+    "id": 289,
+    "name": "فارستر",
+    "englishName": "forester",
+    "vehicleTypeEnum": "TANKER_AND_NAFTKESH",
+    "deviceType": "CAR",
+    "brandId": 42
+  },
+  {
+    "id": 712,
+    "name": "فرانکس",
+    "englishName": "fronx",
+    "vehicleTypeEnum": null,
+    "deviceType": "CAR",
+    "brandId": 43
+  },
+  {
+    "id": 698,
+    "name": "جیمنی",
+    "englishName": "jimny",
+    "vehicleTypeEnum": null,
+    "deviceType": "CAR",
+    "brandId": 43
+  },
+  {
+    "id": 635,
+    "name": "سیاز",
+    "englishName": "ciaz",
+    "vehicleTypeEnum": null,
+    "deviceType": "CAR",
+    "brandId": 43
+  },
+  {
+    "id": 634,
+    "name": "بالنو",
+    "englishName": "baleno",
+    "vehicleTypeEnum": null,
+    "deviceType": "CAR",
+    "brandId": 43
+  },
+  {
+    "id": 292,
+    "name": "ویتارا",
+    "englishName": "vitara",
+    "vehicleTypeEnum": "TANKER_AND_NAFTKESH",
+    "deviceType": "CAR",
+    "brandId": 43
+  },
+  {
+    "id": 291,
+    "name": "کیزاشی",
+    "englishName": "kizashi",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 43
+  },
+  {
+    "id": 294,
+    "name": "C5",
+    "englishName": "c5",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 44
+  },
+  {
+    "id": 293,
+    "name": "C3",
+    "englishName": "c3",
+    "vehicleTypeEnum": "KAMIYON",
+    "deviceType": "CAR",
+    "brandId": 44
+  },
+  {
+    "id": 298,
+    "name": "سوبا M4",
+    "englishName": "suba",
+    "vehicleTypeEnum": "MINI_BUSS_AND_VANET",
+    "deviceType": "CAR",
+    "brandId": 45
+  },
+  {
+    "id": 297,
+    "name": "T5",
+    "englishName": "t5",
+    "vehicleTypeEnum": "MINI_BUSS_AND_VANET",
+    "deviceType": "CAR",
+    "brandId": 45
+  },
+  {
+    "id": 296,
+    "name": "SX5",
+    "englishName": "sx5",
+    "vehicleTypeEnum": "MINI_BUSS_AND_VANET",
+    "deviceType": "CAR",
+    "brandId": 45
+  },
+  {
+    "id": 295,
+    "name": "511",
+    "englishName": "511",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 45
+  },
+  {
+    "id": 301,
+    "name": "ساوانا",
+    "englishName": "suavana",
+    "vehicleTypeEnum": "TANKER_AND_NAFTKESH",
+    "deviceType": "CAR",
+    "brandId": 46
+  },
+  {
+    "id": 300,
+    "name": "تونلند G7",
+    "englishName": "tunland g7",
+    "vehicleTypeEnum": "OTOBOS_AND_KAMION_2MEHVAR",
+    "deviceType": "CAR",
+    "brandId": 46
+  },
+  {
+    "id": 299,
+    "name": "پیکاپ دوکابین",
+    "englishName": "pickup2kabins",
+    "vehicleTypeEnum": "OTOBOS_AND_KAMION_2MEHVAR",
+    "deviceType": "CAR",
+    "brandId": 46
+  },
+  {
+    "id": 721,
+    "name": "تی راک",
+    "englishName": "t-roc",
+    "vehicleTypeEnum": null,
+    "deviceType": "CAR",
+    "brandId": 47
+  },
+  {
+    "id": 699,
+    "name": "ID4",
+    "englishName": "id4",
+    "vehicleTypeEnum": null,
+    "deviceType": "CAR",
+    "brandId": 47
+  },
+  {
+    "id": 307,
+    "name": "گلف GTI",
+    "englishName": "golfgti",
+    "vehicleTypeEnum": "MINI_BUSS_AND_VANET",
+    "deviceType": "CAR",
+    "brandId": 47
+  },
+  {
+    "id": 306,
+    "name": "گل",
+    "englishName": "golkermanmotor",
+    "vehicleTypeEnum": "MINI_BUSS_AND_VANET",
+    "deviceType": "CAR",
+    "brandId": 47
+  },
+  {
+    "id": 305,
+    "name": "تیگوان",
+    "englishName": "tiguan",
+    "vehicleTypeEnum": "MINI_BUSS_AND_VANET",
+    "deviceType": "CAR",
+    "brandId": 47
+  },
+  {
+    "id": 304,
+    "name": "پاسات",
+    "englishName": "pasat",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 47
+  },
+  {
+    "id": 303,
+    "name": "بیتل کروک",
+    "englishName": "beetleconvertible",
+    "vehicleTypeEnum": "OTOBOS_AND_KAMION_3MEHVAR",
+    "deviceType": "CAR",
+    "brandId": 47
+  },
+  {
+    "id": 302,
+    "name": "بیتل",
+    "englishName": "beetle",
+    "vehicleTypeEnum": "KAMIYON",
+    "deviceType": "CAR",
+    "brandId": 47
+  },
+  {
+    "id": 700,
+    "name": "آریزو 6 جی تی ",
+    "englishName": "arrizo 6 gt",
+    "vehicleTypeEnum": null,
+    "deviceType": "CAR",
+    "brandId": 48
+  },
+  {
+    "id": 311,
+    "name": "تیگو 8  پرو",
+    "englishName": "tiggo 8 pro",
+    "vehicleTypeEnum": "MINI_BUSS_AND_VANET",
+    "deviceType": "CAR",
+    "brandId": 48
+  },
+  {
+    "id": 310,
+    "name": "تیگو 7 پرو",
+    "englishName": "tiggo 7 pro",
+    "vehicleTypeEnum": "MINI_BUSS_AND_VANET",
+    "deviceType": "CAR",
+    "brandId": 48
+  },
+  {
+    "id": 309,
+    "name": "آریزو 6 پرو",
+    "englishName": "arrizo 6 pro",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 48
+  },
+  {
+    "id": 308,
+    "name": "FX",
+    "englishName": "fx",
+    "vehicleTypeEnum": "MINI_BUSS_AND_VANET",
+    "deviceType": "CAR",
+    "brandId": 48
+  },
+  {
+    "id": 701,
+    "name": "500",
+    "englishName": "500",
+    "vehicleTypeEnum": null,
+    "deviceType": "CAR",
+    "brandId": 49
+  },
+  {
+    "id": 312,
+    "name": "سی ینا",
+    "englishName": "siena",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 49
+  },
+  {
+    "id": 703,
+    "name": "X3",
+    "englishName": "x3",
+    "vehicleTypeEnum": null,
+    "deviceType": "CAR",
+    "brandId": 50
+  },
+  {
+    "id": 702,
+    "name": "J7 EV",
+    "englishName": "j7 ev",
+    "vehicleTypeEnum": null,
+    "deviceType": "CAR",
+    "brandId": 50
+  },
+  {
+    "id": 636,
+    "name": "X5",
+    "englishName": "x5",
+    "vehicleTypeEnum": null,
+    "deviceType": "CAR",
+    "brandId": 50
+  },
+  {
+    "id": 320,
+    "name": "هافی لوبو",
+    "englishName": "hafeilobo",
+    "vehicleTypeEnum": "KAMIYON",
+    "deviceType": "CAR",
+    "brandId": 50
+  },
+  {
+    "id": 319,
+    "name": "لیفان X60",
+    "englishName": "x60kermanmotor",
+    "vehicleTypeEnum": "MINI_BUSS_AND_VANET",
+    "deviceType": "CAR",
+    "brandId": 50
+  },
+  {
+    "id": 318,
+    "name": "لیفان X50",
+    "englishName": "x50kermanmotor",
+    "vehicleTypeEnum": "KAMIYON",
+    "deviceType": "CAR",
+    "brandId": 50
+  },
+  {
+    "id": 317,
+    "name": "لیفان 820",
+    "englishName": "820kermanmotor",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 50
+  },
+  {
+    "id": 316,
+    "name": "لیفان 620",
+    "englishName": "620kermanmotor",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 50
+  },
+  {
+    "id": 315,
+    "name": "لیفان 520i",
+    "englishName": "520i",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 50
+  },
+  {
+    "id": 314,
+    "name": "لیفان 520",
+    "englishName": "520kermanmotor",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 50
+  },
+  {
+    "id": 313,
+    "name": "K7",
+    "englishName": "k7",
+    "vehicleTypeEnum": "MINI_BUSS_AND_VANET",
+    "deviceType": "CAR",
+    "brandId": 50
+  },
+  {
+    "id": 321,
+    "name": "T210",
+    "englishName": "t210",
+    "vehicleTypeEnum": "MINI_BUSS_AND_VANET",
+    "deviceType": "CAR",
+    "brandId": 51
+  },
+  {
+    "id": 338,
+    "name": "ون اینرودز",
+    "englishName": "inroads",
+    "vehicleTypeEnum": null,
+    "deviceType": "CAR",
+    "brandId": 53
+  },
+  {
+    "id": 337,
+    "name": "وانت مزدا دو کابین",
+    "englishName": "pickup4drbahmangroup",
+    "vehicleTypeEnum": "OTOBOS_AND_KAMION_2MEHVAR",
+    "deviceType": "CAR",
+    "brandId": 53
+  },
+  {
+    "id": 336,
+    "name": "وانت مزدا تک کابین",
+    "englishName": "pickup2drbahmangroup",
+    "vehicleTypeEnum": "OTOBOS_AND_KAMION_2MEHVAR",
+    "deviceType": "CAR",
+    "brandId": 53
+  },
+  {
+    "id": 335,
+    "name": "وانت کارا دو کابین",
+    "englishName": "carapickup4door",
+    "vehicleTypeEnum": "OTOBOS_AND_KAMION_2MEHVAR",
+    "deviceType": "CAR",
+    "brandId": 53
+  },
+  {
+    "id": 334,
+    "name": "وانت کارا تک کابین",
+    "englishName": "carapickup2door",
+    "vehicleTypeEnum": "OTOBOS_AND_KAMION_2MEHVAR",
+    "deviceType": "CAR",
+    "brandId": 53
+  },
+  {
+    "id": 333,
+    "name": "هاوال H2",
+    "englishName": "havalh2",
+    "vehicleTypeEnum": "MINI_BUSS_AND_VANET",
+    "deviceType": "CAR",
+    "brandId": 53
+  },
+  {
+    "id": 332,
+    "name": "مزدا 323",
+    "englishName": "323bahmangroup",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 53
+  },
+  {
+    "id": 331,
+    "name": "مزدا 3 جدید هاچ بک",
+    "englishName": "3newhatchbackbahmangroup",
+    "vehicleTypeEnum": "KAMIYON",
+    "deviceType": "CAR",
+    "brandId": 53
+  },
+  {
+    "id": 330,
+    "name": "مزدا 3 جدید ",
+    "englishName": "3newbahmangroup",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 53
+  },
+  {
+    "id": 329,
+    "name": "مزدا 3 ",
+    "englishName": "3bahmangroup",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 53
+  },
+  {
+    "id": 328,
+    "name": "مزدا 2 ",
+    "englishName": "2bahmangroup",
+    "vehicleTypeEnum": "KAMIYON",
+    "deviceType": "CAR",
+    "brandId": 53
+  },
+  {
+    "id": 327,
+    "name": "لندمارک V7",
+    "englishName": "landmarkv7",
+    "vehicleTypeEnum": "TANKER_AND_NAFTKESH",
+    "deviceType": "CAR",
+    "brandId": 53
+  },
+  {
+    "id": 326,
+    "name": "کاپرا دو کابین",
+    "englishName": "capra4door",
+    "vehicleTypeEnum": "OTOBOS_AND_KAMION_2MEHVAR",
+    "deviceType": "CAR",
+    "brandId": 53
+  },
+  {
+    "id": 325,
+    "name": "کاپرا تک کابین",
+    "englishName": "capra2door",
+    "vehicleTypeEnum": "OTOBOS_AND_KAMION_2MEHVAR",
+    "deviceType": "CAR",
+    "brandId": 53
+  },
+  {
+    "id": 324,
+    "name": "فیدلیتی",
+    "englishName": "fidelity",
+    "vehicleTypeEnum": "MINI_BUSS_AND_VANET",
+    "deviceType": "CAR",
+    "brandId": 53
+  },
+  {
+    "id": 323,
+    "name": "رسپکت",
+    "englishName": "respect",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 53
+  },
+  {
+    "id": 322,
+    "name": "پیکاپ G9",
+    "englishName": "pickup g9",
+    "vehicleTypeEnum": null,
+    "deviceType": "CAR",
+    "brandId": 53
+  },
+  {
+    "id": 734,
+    "name": "تانک 300",
+    "englishName": "tank 300",
+    "vehicleTypeEnum": null,
+    "deviceType": "CAR",
+    "brandId": 54
+  },
+  {
+    "id": 704,
+    "name": "H6",
+    "englishName": "h6",
+    "vehicleTypeEnum": null,
+    "deviceType": "CAR",
+    "brandId": 54
+  },
+  {
+    "id": 345,
+    "name": "وینگل 5",
+    "englishName": "wingle5",
+    "vehicleTypeEnum": "OTOBOS_AND_KAMION_2MEHVAR",
+    "deviceType": "CAR",
+    "brandId": 54
+  },
+  {
+    "id": 344,
+    "name": "هاوال M4 دیار خودرو",
+    "englishName": "havalm4co",
+    "vehicleTypeEnum": "MINI_BUSS_AND_VANET",
+    "deviceType": "CAR",
+    "brandId": 54
+  },
+  {
+    "id": 343,
+    "name": "هاوال M4",
+    "englishName": "havalm4",
+    "vehicleTypeEnum": "MINI_BUSS_AND_VANET",
+    "deviceType": "CAR",
+    "brandId": 54
+  },
+  {
+    "id": 342,
+    "name": "هاوال H9",
+    "englishName": "havalh9",
+    "vehicleTypeEnum": "MINI_BUSS_AND_VANET",
+    "deviceType": "CAR",
+    "brandId": 54
+  },
+  {
+    "id": 341,
+    "name": "هاوال H8",
+    "englishName": "haval h8",
+    "vehicleTypeEnum": null,
+    "deviceType": "CAR",
+    "brandId": 54
+  },
+  {
+    "id": 340,
+    "name": "هاوال H6 دیار خودرو",
+    "englishName": "havalh6diarkhodro",
+    "vehicleTypeEnum": "MINI_BUSS_AND_VANET",
+    "deviceType": "CAR",
+    "brandId": 54
+  },
+  {
+    "id": 339,
+    "name": "هاوال H6",
+    "englishName": "havalh6",
+    "vehicleTypeEnum": "MINI_BUSS_AND_VANET",
+    "deviceType": "CAR",
+    "brandId": 54
+  },
+  {
+    "id": 714,
+    "name": "امزوم GS3",
+    "englishName": "emzoom gs3",
+    "vehicleTypeEnum": null,
+    "deviceType": "CAR",
+    "brandId": 55
+  },
+  {
+    "id": 713,
+    "name": "امپو",
+    "englishName": "empow",
+    "vehicleTypeEnum": null,
+    "deviceType": "CAR",
+    "brandId": 55
+  },
+  {
+    "id": 711,
+    "name": "امکو",
+    "englishName": "emkoo",
+    "vehicleTypeEnum": null,
+    "deviceType": "CAR",
+    "brandId": 55
+  },
+  {
+    "id": 347,
+    "name": "گونو GX5",
+    "englishName": "g5",
+    "vehicleTypeEnum": "MINI_BUSS_AND_VANET",
+    "deviceType": "CAR",
+    "brandId": 55
+  },
+  {
+    "id": 346,
+    "name": "ترامپچی GA3S",
+    "englishName": "tarmpchiga3s",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 55
+  },
+  {
+    "id": 348,
+    "name": "ایما",
+    "englishName": "eama",
+    "vehicleTypeEnum": "MINI_BUSS_AND_VANET",
+    "deviceType": "CAR",
+    "brandId": 56
+  },
+  {
+    "id": 358,
+    "name": "RX",
+    "englishName": "rx",
+    "vehicleTypeEnum": "TANKER_AND_NAFTKESH",
+    "deviceType": "CAR",
+    "brandId": 57
+  },
+  {
+    "id": 357,
+    "name": "NX هیبرید",
+    "englishName": "nxhybrid",
+    "vehicleTypeEnum": "TANKER_AND_NAFTKESH",
+    "deviceType": "CAR",
+    "brandId": 57
+  },
+  {
+    "id": 356,
+    "name": "NX ",
+    "englishName": "nx",
+    "vehicleTypeEnum": "TANKER_AND_NAFTKESH",
+    "deviceType": "CAR",
+    "brandId": 57
+  },
+  {
+    "id": 355,
+    "name": "LX570",
+    "englishName": "lx",
+    "vehicleTypeEnum": "TANKER_AND_NAFTKESH",
+    "deviceType": "CAR",
+    "brandId": 57
+  },
+  {
+    "id": 354,
+    "name": "LS",
+    "englishName": "ls",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 57
+  },
+  {
+    "id": 353,
+    "name": "IS C",
+    "englishName": "isc",
+    "vehicleTypeEnum": "OTOBOS_AND_KAMION_3MEHVAR",
+    "deviceType": "CAR",
+    "brandId": 57
+  },
+  {
+    "id": 352,
+    "name": "IS",
+    "englishName": "is",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 57
+  },
+  {
+    "id": 351,
+    "name": "GS",
+    "englishName": "gs",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 57
+  },
+  {
+    "id": 350,
+    "name": "ES",
+    "englishName": "es",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 57
+  },
+  {
+    "id": 349,
+    "name": "CT",
+    "englishName": "ct",
+    "vehicleTypeEnum": "KAMIYON",
+    "deviceType": "CAR",
+    "brandId": 57
+  },
+  {
+    "id": 359,
+    "name": "الیزه",
+    "englishName": "elise",
+    "vehicleTypeEnum": "OTOBOS_AND_KAMION_3MEHVAR",
+    "deviceType": "CAR",
+    "brandId": 58
+  },
+  {
+    "id": 360,
+    "name": "U6",
+    "englishName": "u6",
+    "vehicleTypeEnum": "MINI_BUSS_AND_VANET",
+    "deviceType": "CAR",
+    "brandId": 59
+  },
+  {
+    "id": 361,
+    "name": "لیفان X70",
+    "englishName": "x70kermanmotor",
+    "vehicleTypeEnum": "MINI_BUSS_AND_VANET",
+    "deviceType": "CAR",
+    "brandId": 60
+  },
+  {
+    "id": 365,
+    "name": "گیبلی",
+    "englishName": "ghibli",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 61
+  },
+  {
+    "id": 364,
+    "name": "گرن کابریو",
+    "englishName": "grancabrio",
+    "vehicleTypeEnum": "OTOBOS_AND_KAMION_3MEHVAR",
+    "deviceType": "CAR",
+    "brandId": 61
+  },
+  {
+    "id": 363,
+    "name": "گرن توریسمو",
+    "englishName": "granturismo",
+    "vehicleTypeEnum": "SAVARI_BOMI",
+    "deviceType": "CAR",
+    "brandId": 61
+  },
+  {
+    "id": 362,
+    "name": "کواتروپورته",
+    "englishName": "quattroporte",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 61
+  },
+  {
+    "id": 367,
+    "name": "کلوت",
+    "englishName": "kalut",
+    "vehicleTypeEnum": "OTOBOS_AND_KAMION_2MEHVAR",
+    "deviceType": "CAR",
+    "brandId": 64
+  },
+  {
+    "id": 366,
+    "name": "تیارا",
+    "englishName": "tiara",
+    "vehicleTypeEnum": "MINI_BUSS_AND_VANET",
+    "deviceType": "CAR",
+    "brandId": 64
+  },
+  {
+    "id": 375,
+    "name": "میراژ",
+    "englishName": "mirage",
+    "vehicleTypeEnum": "KAMIYON",
+    "deviceType": "CAR",
+    "brandId": 65
+  },
+  {
+    "id": 374,
+    "name": "لنسر",
+    "englishName": "lancer",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 65
+  },
+  {
+    "id": 373,
+    "name": "پاجرو گروه بهمن",
+    "englishName": "pajerobahmangroup",
+    "vehicleTypeEnum": "TANKER_AND_NAFTKESH",
+    "deviceType": "CAR",
+    "brandId": 65
+  },
+  {
+    "id": 372,
+    "name": "پاجرو دو درب",
+    "englishName": "pajero2door",
+    "vehicleTypeEnum": "TANKER_AND_NAFTKESH",
+    "deviceType": "CAR",
+    "brandId": 65
+  },
+  {
+    "id": 371,
+    "name": "پاجرو چهار درب",
+    "englishName": "pajero4door",
+    "vehicleTypeEnum": "TANKER_AND_NAFTKESH",
+    "deviceType": "CAR",
+    "brandId": 65
+  },
+  {
+    "id": 370,
+    "name": "اوتلندر هیبرید",
+    "englishName": "outlanderphevhybrid",
+    "vehicleTypeEnum": "TANKER_AND_NAFTKESH",
+    "deviceType": "CAR",
+    "brandId": 65
+  },
+  {
+    "id": 369,
+    "name": "اوتلندر",
+    "englishName": "outlander",
+    "vehicleTypeEnum": "TANKER_AND_NAFTKESH",
+    "deviceType": "CAR",
+    "brandId": 65
+  },
+  {
+    "id": 368,
+    "name": "ASX",
+    "englishName": "asx",
+    "vehicleTypeEnum": "MINI_BUSS_AND_VANET",
+    "deviceType": "CAR",
+    "brandId": 65
+  },
+  {
+    "id": 376,
+    "name": "کوپر",
+    "englishName": "cooper",
+    "vehicleTypeEnum": "KAMIYON",
+    "deviceType": "CAR",
+    "brandId": 66
+  },
+  {
+    "id": 722,
+    "name": "ترا",
+    "englishName": "terra",
+    "vehicleTypeEnum": null,
+    "deviceType": "CAR",
+    "brandId": 67
+  },
+  {
+    "id": 705,
+    "name": "سیلفی",
+    "englishName": "sylphy",
+    "vehicleTypeEnum": null,
+    "deviceType": "CAR",
+    "brandId": 67
+  },
+  {
+    "id": 637,
+    "name": "سانی",
+    "englishName": "sunny",
+    "vehicleTypeEnum": null,
+    "deviceType": "CAR",
+    "brandId": 67
+  },
+  {
+    "id": 383,
+    "name": "مورانو",
+    "englishName": "murano",
+    "vehicleTypeEnum": "TANKER_AND_NAFTKESH",
+    "deviceType": "CAR",
+    "brandId": 67
+  },
+  {
+    "id": 382,
+    "name": "ماکسیما",
+    "englishName": "maximaparskhodro",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 67
+  },
+  {
+    "id": 381,
+    "name": "قشقایی",
+    "englishName": "qashqai",
+    "vehicleTypeEnum": "MINI_BUSS_AND_VANET",
+    "deviceType": "CAR",
+    "brandId": 67
+  },
+  {
+    "id": 380,
+    "name": "جوک",
+    "englishName": "juke",
+    "vehicleTypeEnum": "MINI_BUSS_AND_VANET",
+    "deviceType": "CAR",
+    "brandId": 67
+  },
+  {
+    "id": 379,
+    "name": "تیانا",
+    "englishName": "teana",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 67
+  },
+  {
+    "id": 378,
+    "name": "پیکاپ دو کابین",
+    "englishName": "pickup4drparskhodro",
+    "vehicleTypeEnum": "OTOBOS_AND_KAMION_2MEHVAR",
+    "deviceType": "CAR",
+    "brandId": 67
+  },
+  {
+    "id": 377,
+    "name": "ایکس تریل",
+    "englishName": "xtrail",
+    "vehicleTypeEnum": "TANKER_AND_NAFTKESH",
+    "deviceType": "CAR",
+    "brandId": 67
+  },
+  {
+    "id": 388,
+    "name": "XC90",
+    "englishName": "xc90",
+    "vehicleTypeEnum": "TANKER_AND_NAFTKESH",
+    "deviceType": "CAR",
+    "brandId": 68
+  },
+  {
+    "id": 387,
+    "name": "XC60",
+    "englishName": "xc60",
+    "vehicleTypeEnum": "TANKER_AND_NAFTKESH",
+    "deviceType": "CAR",
+    "brandId": 68
+  },
+  {
+    "id": 386,
+    "name": "V40",
+    "englishName": "v40",
+    "vehicleTypeEnum": "KAMIYON",
+    "deviceType": "CAR",
+    "brandId": 68
+  },
+  {
+    "id": 385,
+    "name": "C70",
+    "englishName": "c70",
+    "vehicleTypeEnum": "OTOBOS_AND_KAMION_3MEHVAR",
+    "deviceType": "CAR",
+    "brandId": 68
+  },
+  {
+    "id": 384,
+    "name": "C30",
+    "englishName": "c30",
+    "vehicleTypeEnum": "KAMIYON",
+    "deviceType": "CAR",
+    "brandId": 68
+  },
+  {
+    "id": 390,
+    "name": "S8",
+    "englishName": "s8",
+    "vehicleTypeEnum": "MINI_BUSS_AND_VANET",
+    "deviceType": "CAR",
+    "brandId": 69
+  },
+  {
+    "id": 389,
+    "name": "7x",
+    "englishName": "7x",
+    "vehicleTypeEnum": null,
+    "deviceType": "CAR",
+    "brandId": 69
+  },
+  {
+    "id": 723,
+    "name": "سیتی",
+    "englishName": "city",
+    "vehicleTypeEnum": null,
+    "deviceType": "CAR",
+    "brandId": 71
+  },
+  {
+    "id": 707,
+    "name": "وزل",
+    "englishName": "vezel",
+    "vehicleTypeEnum": null,
+    "deviceType": "CAR",
+    "brandId": 71
+  },
+  {
+    "id": 706,
+    "name": "ENS1",
+    "englishName": "ens1",
+    "vehicleTypeEnum": null,
+    "deviceType": "CAR",
+    "brandId": 71
+  },
+  {
+    "id": 393,
+    "name": "سیویک",
+    "englishName": "civic",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 71
+  },
+  {
+    "id": 392,
+    "name": "آکورد",
+    "englishName": "accord",
+    "vehicleTypeEnum": "SAVARI",
+    "deviceType": "CAR",
+    "brandId": 71
+  },
+  {
+    "id": 391,
+    "name": "CR-V",
+    "englishName": "crv",
+    "vehicleTypeEnum": "MINI_BUSS_AND_VANET",
+    "deviceType": "CAR",
+    "brandId": 71
+  },
+  {
+    "id": 394,
+    "name": "پاتریوت",
+    "englishName": "patriot",
+    "vehicleTypeEnum": "TANKER_AND_NAFTKESH",
+    "deviceType": "CAR",
+    "brandId": 72
+  },
+  {
+    "id": 735,
+    "name": "نات",
+    "englishName": "nat",
+    "vehicleTypeEnum": null,
+    "deviceType": "CAR",
+    "brandId": 115
+  },
+  {
+    "id": 638,
+    "name": "T77",
+    "englishName": "t77",
+    "vehicleTypeEnum": null,
+    "deviceType": "CAR",
+    "brandId": 115
+  },
+  {
+    "id": 640,
+    "name": "VS7",
+    "englishName": "vs7",
+    "vehicleTypeEnum": null,
+    "deviceType": "CAR",
+    "brandId": 117
+  },
+  {
+    "id": 639,
+    "name": "VS5 ",
+    "englishName": "vs5 ",
+    "vehicleTypeEnum": null,
+    "deviceType": "CAR",
+    "brandId": 117
+  },
+  {
+    "id": 708,
+    "name": "A5",
+    "englishName": "a5",
+    "vehicleTypeEnum": null,
+    "deviceType": "CAR",
+    "brandId": 118
+  },
+  {
+    "id": 709,
+    "name": "D60 پلاس",
+    "englishName": "d60",
+    "vehicleTypeEnum": null,
+    "deviceType": "CAR",
+    "brandId": 121
+  },
+  {
+    "id": 641,
+    "name": "وی-آنلاین",
+    "englishName": "v-online",
+    "vehicleTypeEnum": null,
+    "deviceType": "CAR",
+    "brandId": 121
+  },
+  {
+    "id": 643,
+    "name": "X7",
+    "englishName": "x7",
+    "vehicleTypeEnum": null,
+    "deviceType": "CAR",
+    "brandId": 122
+  },
+  {
+    "id": 642,
+    "name": "X5",
+    "englishName": "x5",
+    "vehicleTypeEnum": null,
+    "deviceType": "CAR",
+    "brandId": 122
+  },
+  {
+    "id": 724,
+    "name": "E-MQ5",
+    "englishName": "e-mq5",
+    "vehicleTypeEnum": null,
+    "deviceType": "CAR",
+    "brandId": 123
+  },
+  {
+    "id": 644,
+    "name": "H5",
+    "englishName": "h5",
+    "vehicleTypeEnum": null,
+    "deviceType": "CAR",
+    "brandId": 123
+  },
+  {
+    "id": 726,
+    "name": "TXL",
+    "englishName": "txl",
+    "vehicleTypeEnum": null,
+    "deviceType": "CAR",
+    "brandId": 127
+  },
+  {
+    "id": 725,
+    "name": "LX",
+    "englishName": "lx",
+    "vehicleTypeEnum": null,
+    "deviceType": "CAR",
+    "brandId": 127
+  },
+  {
+    "id": 710,
+    "name": "VX",
+    "englishName": "vx",
+    "vehicleTypeEnum": null,
+    "deviceType": "CAR",
+    "brandId": 127
+  },
+  {
+    "id": 727,
+    "name": "سوپرب",
+    "englishName": "super b",
+    "vehicleTypeEnum": null,
+    "deviceType": "CAR",
+    "brandId": 130
+  },
+  {
+    "id": 736,
+    "name": "ET5",
+    "englishName": "et5",
+    "vehicleTypeEnum": null,
+    "deviceType": "CAR",
+    "brandId": 131
+  },
+  {
+    "id": 737,
+    "name": "L7",
+    "englishName": "l7",
+    "vehicleTypeEnum": null,
+    "deviceType": "CAR",
+    "brandId": 132
+  }
+]

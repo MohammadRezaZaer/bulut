@@ -3,7 +3,7 @@
 import * as React from 'react';
 import { AlertTriangle } from 'lucide-react';
 
-import TextButton from '@/components/buttons/TextButton';
+import TextButton from '@/components/ui/buttons/TextButton';
 
 export default function Error({
                                 error,

@@ -1,0 +1,412 @@
+[
+  {
+    "id": 1,
+    "name": "ایران خودرو",
+    "brandEnglishName": "irankhodro"
+  },
+  {
+    "id": 2,
+    "name": "سایپا",
+    "brandEnglishName": "saipa"
+  },
+  {
+    "id": 3,
+    "name": "پژو",
+    "brandEnglishName": "peugeot"
+  },
+  {
+    "id": 4,
+    "name": "رنو",
+    "brandEnglishName": "renault"
+  },
+  {
+    "id": 5,
+    "name": "هیوندای",
+    "brandEnglishName": "hyundai"
+  },
+  {
+    "id": 6,
+    "name": "کیا",
+    "brandEnglishName": "kia"
+  },
+  {
+    "id": 7,
+    "name": "جک",
+    "brandEnglishName": "jac"
+  },
+  {
+    "id": 8,
+    "name": "آئودی",
+    "brandEnglishName": "audi"
+  },
+  {
+    "id": 9,
+    "name": "آلفارومئو",
+    "brandEnglishName": "alfaromeo"
+  },
+  {
+    "id": 10,
+    "name": "آمیکو",
+    "brandEnglishName": "amico"
+  },
+  {
+    "id": 11,
+    "name": "اپل",
+    "brandEnglishName": "opel"
+  },
+  {
+    "id": 12,
+    "name": "اس دبلیو ام",
+    "brandEnglishName": "swm"
+  },
+  {
+    "id": 13,
+    "name": "ام جی",
+    "brandEnglishName": "mg"
+  },
+  {
+    "id": 14,
+    "name": "ام وی ام",
+    "brandEnglishName": "mvm"
+  },
+  {
+    "id": 15,
+    "name": "بایک",
+    "brandEnglishName": "baic"
+  },
+  {
+    "id": 16,
+    "name": "برلیانس",
+    "brandEnglishName": "brilliance"
+  },
+  {
+    "id": 17,
+    "name": "بسترن",
+    "brandEnglishName": "besturn"
+  },
+  {
+    "id": 18,
+    "name": "بنز",
+    "brandEnglishName": "mercedesbenz"
+  },
+  {
+    "id": 19,
+    "name": "بورگوارد",
+    "brandEnglishName": "borgward"
+  },
+  {
+    "id": 20,
+    "name": "بی ام و",
+    "brandEnglishName": "bmw"
+  },
+  {
+    "id": 21,
+    "name": "بی وای دی",
+    "brandEnglishName": "byd"
+  },
+  {
+    "id": 22,
+    "name": "بیسو",
+    "brandEnglishName": "bisu"
+  },
+  {
+    "id": 23,
+    "name": "پارس خودرو",
+    "brandEnglishName": "parskhodro"
+  },
+  {
+    "id": 25,
+    "name": "پروتون",
+    "brandEnglishName": "proton"
+  },
+  {
+    "id": 26,
+    "name": "پورشه",
+    "brandEnglishName": "porsche"
+  },
+  {
+    "id": 27,
+    "name": "تویوتا",
+    "brandEnglishName": "toyota"
+  },
+  {
+    "id": 28,
+    "name": "تیگارد",
+    "brandEnglishName": "tigard"
+  },
+  {
+    "id": 29,
+    "name": "جیلی",
+    "brandEnglishName": "geely"
+  },
+  {
+    "id": 30,
+    "name": "چانگان",
+    "brandEnglishName": "changan"
+  },
+  {
+    "id": 31,
+    "name": "چری",
+    "brandEnglishName": "chery"
+  },
+  {
+    "id": 32,
+    "name": "دامای",
+    "brandEnglishName": "domy"
+  },
+  {
+    "id": 33,
+    "name": "دانگ فنگ",
+    "brandEnglishName": "dongfeng"
+  },
+  {
+    "id": 34,
+    "name": "دایون",
+    "brandEnglishName": "dayun"
+  },
+  {
+    "id": 35,
+    "name": "دوو",
+    "brandEnglishName": "daewoo"
+  },
+  {
+    "id": 36,
+    "name": "دی اس",
+    "brandEnglishName": "ds"
+  },
+  {
+    "id": 37,
+    "name": "دیار خودرو",
+    "brandEnglishName": "diarkhodro"
+  },
+  {
+    "id": 38,
+    "name": "راین",
+    "brandEnglishName": "rayen"
+  },
+  {
+    "id": 39,
+    "name": "زوتی",
+    "brandEnglishName": "zotye"
+  },
+  {
+    "id": 40,
+    "name": "سانگ یانگ",
+    "brandEnglishName": "ssangyong"
+  },
+  {
+    "id": 41,
+    "name": "سئات",
+    "brandEnglishName": "seat"
+  },
+  {
+    "id": 42,
+    "name": "سوبارو",
+    "brandEnglishName": "subaru"
+  },
+  {
+    "id": 43,
+    "name": "سوزوکی",
+    "brandEnglishName": "suzuki"
+  },
+  {
+    "id": 44,
+    "name": "سیتروئن",
+    "brandEnglishName": "citroen"
+  },
+  {
+    "id": 45,
+    "name": "فردا موتورز",
+    "brandEnglishName": "fardamotors"
+  },
+  {
+    "id": 46,
+    "name": "فوتون",
+    "brandEnglishName": "foton"
+  },
+  {
+    "id": 47,
+    "name": "فولکس",
+    "brandEnglishName": "volkswagen"
+  },
+  {
+    "id": 48,
+    "name": "فونیکس",
+    "brandEnglishName": "fownix"
+  },
+  {
+    "id": 49,
+    "name": "فیات",
+    "brandEnglishName": "fiat"
+  },
+  {
+    "id": 50,
+    "name": "کرمان موتور",
+    "brandEnglishName": "kermanmotor"
+  },
+  {
+    "id": 51,
+    "name": "کوپا",
+    "brandEnglishName": "coupa"
+  },
+  {
+    "id": 53,
+    "name": "گروه بهمن",
+    "brandEnglishName": "bahmangroup"
+  },
+  {
+    "id": 54,
+    "name": "گریت وال",
+    "brandEnglishName": "greatwall"
+  },
+  {
+    "id": 55,
+    "name": "گک",
+    "brandEnglishName": "gakgono"
+  },
+  {
+    "id": 56,
+    "name": "لاماری",
+    "brandEnglishName": "lamari"
+  },
+  {
+    "id": 57,
+    "name": "لکسوس",
+    "brandEnglishName": "lexus"
+  },
+  {
+    "id": 58,
+    "name": "لوتوس",
+    "brandEnglishName": "lotus"
+  },
+  {
+    "id": 59,
+    "name": "لوکسژن",
+    "brandEnglishName": "luxgen"
+  },
+  {
+    "id": 60,
+    "name": "لیفان",
+    "brandEnglishName": "lifan"
+  },
+  {
+    "id": 61,
+    "name": "مازراتی",
+    "brandEnglishName": "maserati"
+  },
+  {
+    "id": 64,
+    "name": "مکث موتور ",
+    "brandEnglishName": "max motor"
+  },
+  {
+    "id": 65,
+    "name": "میتسوبیشی",
+    "brandEnglishName": "mitsubishi"
+  },
+  {
+    "id": 66,
+    "name": "مینی",
+    "brandEnglishName": "mini"
+  },
+  {
+    "id": 67,
+    "name": "نیسان",
+    "brandEnglishName": "nissan"
+  },
+  {
+    "id": 68,
+    "name": "ولوو",
+    "brandEnglishName": "volvo"
+  },
+  {
+    "id": 69,
+    "name": "هایما",
+    "brandEnglishName": "haima"
+  },
+  {
+    "id": 71,
+    "name": "هوندا",
+    "brandEnglishName": "honda"
+  },
+  {
+    "id": 72,
+    "name": "یوآز",
+    "brandEnglishName": "uaz"
+  },
+  {
+    "id": 115,
+    "name": "بستیون",
+    "brandEnglishName": "bestune "
+  },
+  {
+    "id": 116,
+    "name": "پراید",
+    "brandEnglishName": "pride"
+  },
+  {
+    "id": 117,
+    "name": "جتا",
+    "brandEnglishName": "getta"
+  },
+  {
+    "id": 118,
+    "name": "کی ام سی ",
+    "brandEnglishName": "kmc"
+  },
+  {
+    "id": 119,
+    "name": "مدیران خودرو",
+    "brandEnglishName": "modirankhodro"
+  },
+  {
+    "id": 120,
+    "name": "مزدا",
+    "brandEnglishName": "mazda"
+  },
+  {
+    "id": 121,
+    "name": "ونوسیا",
+    "brandEnglishName": "venucia"
+  },
+  {
+    "id": 122,
+    "name": "هن تنگ",
+    "brandEnglishName": "hantengautos"
+  },
+  {
+    "id": 123,
+    "name": "هونگچی",
+    "brandEnglishName": "hongqi"
+  },
+  {
+    "id": 127,
+    "name": "اکستریم",
+    "brandEnglishName": "xtrim"
+  },
+  {
+    "id": 128,
+    "name": "بک",
+    "brandEnglishName": "bac"
+  },
+  {
+    "id": 129,
+    "name": "هاوال",
+    "brandEnglishName": "haval"
+  },
+  {
+    "id": 130,
+    "name": "اشکودا",
+    "brandEnglishName": "škoda"
+  },
+  {
+    "id": 131,
+    "name": "اسکای‌ول",
+    "brandEnglishName": "skywell"
+  },
+  {
+    "id": 132,
+    "name": "لوکانو",
+    "brandEnglishName": "lucano"
+  }
+]

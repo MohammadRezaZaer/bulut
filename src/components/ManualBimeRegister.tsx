@@ -167,7 +167,7 @@ export default function ManualBimeRegister() {
                     name="location-state"
                     render={({ field }) => (
                         <FormItem>
-                            <FormLabel>Select Country</FormLabel>
+                            <FormLabel>انتخاب استان</FormLabel>
                             <FormControl>
                                 <LocationSelector
                                     onCountryChange={(state) => {

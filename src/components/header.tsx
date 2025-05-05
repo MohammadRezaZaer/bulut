@@ -3,7 +3,7 @@ import React from "react";
 import {ProfileComponent} from "@/components/profileComponent";
 import {Navbar} from "@/components/Navbar";
 import {NotificationComponent} from "@/components/notificationComponent";
-import {LoginButton} from "@/components/buttons/LoginButton";
+import {LoginButton} from "@/components/ui/buttons/LoginButton";
 import {ROUTES} from "@/lib/constants";
 
 

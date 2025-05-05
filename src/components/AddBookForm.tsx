@@ -9,8 +9,8 @@ import {Form, FormControl, FormDescription, FormField, FormItem, FormLabel, Form
 import {Input} from "@/components/ui/input"
 import {CloudUpload, Paperclip} from "lucide-react"
 import {FileInput, FileUploader, FileUploaderContent, FileUploaderItem} from "@/components/ui/extension/file-upload"
-import Button from "@/components/buttons/Button";
 import {useRouter} from "next/navigation";
+import {Button} from "@/components/ui/button";
 
 const formSchema = z.object({
     book_name: z.string(),

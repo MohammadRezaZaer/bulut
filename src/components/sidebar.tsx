@@ -2,7 +2,7 @@ import {XMarkIcon} from "@heroicons/react/24/outline";
 import {Dialog, Transition} from "@headlessui/react";
 import React, {Fragment} from "react";
 import {cn} from "@/lib/utils";
-import {LoginButton} from "@/components/buttons/LoginButton";
+import {LoginButton} from "@/components/ui/buttons/LoginButton";
 import {ROUTES} from "@/lib/constants";
 
 export function Sidebar(props: {
