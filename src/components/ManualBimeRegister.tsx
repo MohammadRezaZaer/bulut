@@ -254,7 +254,7 @@ export function CustomInput({onFocus, value, onChange}) {
             .replace(/[\u0660-\u0669]/g, (d) => String.fromCharCode(d.charCodeAt(0) - 1584));
 
 
-    console.log({val: value.toString()})
+    // console.log({val: value.toString()})
 
     let raw = toEnglishDigits(value.toString());
 

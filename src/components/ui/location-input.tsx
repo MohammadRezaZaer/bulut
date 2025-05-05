@@ -1,94 +1,78 @@
-import React, {useState} from "react"
-import {Check, ChevronsUpDown} from "lucide-react"
-import {Button} from "@/components/ui/button"
-import {ScrollArea, ScrollBar} from "@/components/ui/scroll-area"
-import {Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList,} from "@/components/ui/command"
-import {Popover, PopoverContent, PopoverTrigger,} from "@/components/ui/popover"
-import {cn} from "@/lib/utils"
+import React, { useState } from "react";
+import { Check, ChevronsUpDown } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
+import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "@/components/ui/command";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import { cn } from "@/lib/utils";
+import { FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 
 // Import JSON data directly
-import states from "@/data/states.json"
-import cities from "@/data/cities.json"
-import {FormControl, FormField, FormItem, FormLabel, FormMessage} from "@/components/ui/form";
-
-interface Timezone {
-    zoneName: string
-    gmtOffset: number
-    gmtOffsetName: string
-    abbreviation: string
-    tzName: string
-}
+import states from "@/data/states.json";
+import cities from "@/data/cities.json";
 
 interface CityProps {
-    "id": number,
-    "name": string,
-    "enable": true,
-    "slug": string,
-    "provinceId": number
+    id: number;
+    name: string;
+    enable: true;
+    slug: string;
+    provinceId: number;
 }
 
 interface StateMeProps {
-    "id": number,
-    "name": string,
-    "amarCode": string,
-    "enable": true
+    id: number;
+    name: string;
+    amarCode: string;
+    enable: true;
 }
 
 interface LocationSelectorProps {
-    disabled?: boolean
-
-    form: any
+    disabled?: boolean;
+    form: any;
 }
 
-const LocationSelector = ({
-                              disabled,
-                              onCountryChange,
-                              onStateChange,
-                              form
-                          }: LocationSelectorProps) => {
-    const [selectedState, setSelectedState] = useState<StateMeProps | null>(
-        null,
-    )
-    const [selectedCity, setSelectedCity] = useState<CityProps | null>(null)
-    const [openCountryDropdown, setOpenCountryDropdown] = useState(false)
-    const [openStateDropdown, setOpenStateDropdown] = useState(false)
+// Constants for form field names
+const LOCATION_STATE_FIELD = "location-state";
+const STATE_FIELD = `${LOCATION_STATE_FIELD}.state`;
+const CITY_FIELD = `${LOCATION_STATE_FIELD}.city`;
+
+const LocationSelector = ({ disabled, form }: LocationSelectorProps) => {
+    const [selectedState, setSelectedState] = useState<StateMeProps | null>(null);
+    const [selectedCity, setSelectedCity] = useState<CityProps | null>(null);
+    const [openCountryDropdown, setOpenCountryDropdown] = useState(false);
+    const [openStateDropdown, setOpenStateDropdown] = useState(false);
 
     // Cast imported JSON data to their respective types
-    const statesData = states as StateMeProps[]
-    const citiesData = cities as CityProps[]
+    const statesData = states as StateMeProps[];
+    const citiesData = cities as CityProps[];
 
-    // Filter states for selected country
+    // Filter cities for selected state
     const availableCities = citiesData.filter(
-        (city) => city.provinceId === selectedState?.id,
-    )
+        (city) => city.provinceId === selectedState?.id
+    );
 
-    onStateChange={(city) => {
-        setCityName(city?.title || '');
-        form.setValue(field.name, [form.getValues(field.name)[0] || '', city?.title || '']);
-    }}
-    const handleCountrySelect = (country: StateMeProps | null) => {
-        setSelectedState(country)
-        setSelectedCity(null) // Reset state when country changes
-        onCountryChange?.{(state) => {
-            setStateName(state?.title || '');
-            form.setValue(field.name, [state?.title || '', stateName || '']);
-        }}
-        onStateChange?.(null)
-    }
+    const handleCountrySelect = (state: StateMeProps | null) => {
+        setSelectedState(state);
+        setSelectedCity(null); // Reset city when state changes
+        form.setValue(STATE_FIELD, state?.name || ""); // Update form value for state dynamically
+        form.clearErrors(STATE_FIELD); // Clear state error dynamically
+        form.trigger(STATE_FIELD); // Re-validate state field dynamically
+    };
 
-    const handleStateSelect = (state: CityProps | null) => {
-        setSelectedCity(state)
-        onStateChange?.(state)
-    }
+    const handleStateSelect = (city: CityProps | null) => {
+        setSelectedCity(city);
+        form.setValue(CITY_FIELD, city?.name || ""); // Update form value for city dynamically
+        form.clearErrors(CITY_FIELD); // Clear city error dynamically
+        form.trigger(CITY_FIELD); // Re-validate city field dynamically
+    };
 
     return (
         <div className="flex gap-4">
-            {/* Country Selector */}
-            {/* ostan Selection */}
+            {/* State Selector */}
             <FormField
                 control={form.control}
-                name="location-state"
-                render={({field}) => (
+                name={STATE_FIELD} // Use dynamic field name
+                render={({ field }) => (
                     <FormItem>
                         <FormLabel>انتخاب استان</FormLabel>
                         <FormControl>
@@ -103,18 +87,17 @@ const LocationSelector = ({
                                     >
                                         {selectedState ? (
                                             <div className="flex items-center gap-2">
-                                                {/*<span>{selectedState.emoji}</span>*/}
                                                 <span>{selectedState.name}</span>
                                             </div>
                                         ) : (
                                             <span>انتخاب استان...</span>
                                         )}
-                                        <ChevronsUpDown className="h-4 w-4 shrink-0 opacity-50"/>
+                                        <ChevronsUpDown className="h-4 w-4 shrink-0 opacity-50" />
                                     </Button>
                                 </PopoverTrigger>
                                 <PopoverContent className="w-[300px] p-0">
                                     <Command>
-                                        <CommandInput placeholder="جستجو"/>
+                                        <CommandInput placeholder="جستجو" />
                                         <CommandList>
                                             <CommandEmpty>استانی یافت نشد</CommandEmpty>
                                             <CommandGroup>
@@ -124,47 +107,43 @@ const LocationSelector = ({
                                                             key={state.id}
                                                             value={state.name}
                                                             onSelect={() => {
-                                                                handleCountrySelect(state)
-                                                                setOpenCountryDropdown(false)
+                                                                handleCountrySelect(state);
+                                                                setOpenCountryDropdown(false);
                                                             }}
                                                             className="flex cursor-pointer items-center justify-between text-sm"
                                                         >
                                                             <div className="flex items-center gap-2">
-                                                                {/*<span>{state.emoji}</span>*/}
                                                                 <span>{state.name}</span>
                                                             </div>
                                                             <Check
                                                                 className={cn(
-                                                                    "'h-4 w-4'",
+                                                                    "h-4 w-4",
                                                                     selectedState?.id === state.id
-                                                                        ? "'opacity-100'"
-                                                                        : "'opacity-0'",
+                                                                        ? "opacity-100"
+                                                                        : "opacity-0"
                                                                 )}
                                                             />
-
-
                                                         </CommandItem>
                                                     ))}
-                                                    <ScrollBar orientation="vertical"/>
+                                                    <ScrollBar orientation="vertical" />
                                                 </ScrollArea>
                                             </CommandGroup>
                                         </CommandList>
                                     </Command>
                                 </PopoverContent>
                             </Popover>
-
-
                         </FormControl>
-                        <FormMessage/>
+                        <FormMessage />
                     </FormItem>
                 )}
             />
 
-            {/* State Selector - Only shown if selected country has states */}
-            {(<FormField
+            {/* City Selector */}
+            { (
+                <FormField
                     control={form.control}
-                    name="location-city"
-                    render={({field}) => (
+                    name={CITY_FIELD} // Use dynamic field name
+                    render={({ field }) => (
                         <FormItem>
                             <FormLabel>انتخاب شهر</FormLabel>
                             <FormControl>
@@ -182,56 +161,52 @@ const LocationSelector = ({
                                             ) : (
                                                 <span>انتخاب شهر</span>
                                             )}
-                                            <ChevronsUpDown className="h-4 w-4 shrink-0 opacity-50"/>
+                                            <ChevronsUpDown className="h-4 w-4 shrink-0 opacity-50" />
                                         </Button>
                                     </PopoverTrigger>
                                     <PopoverContent className="w-[300px] p-0">
                                         <Command>
-                                            <CommandInput placeholder="Search state..."/>
+                                            <CommandInput placeholder="جستجو" />
                                             <CommandList>
-                                                <CommandEmpty>No state found.</CommandEmpty>
+                                                <CommandEmpty>شهر یافت نشد</CommandEmpty>
                                                 <CommandGroup>
                                                     <ScrollArea className="h-[280px]">
-                                                        {availableCities.map((state) => (
+                                                        {availableCities.map((city) => (
                                                             <CommandItem
-                                                                key={state.id}
-                                                                value={state.name}
+                                                                key={city.id}
+                                                                value={city.name}
                                                                 onSelect={() => {
-                                                                    handleStateSelect(state)
-                                                                    setOpenStateDropdown(false)
+                                                                    handleStateSelect(city);
+                                                                    setOpenStateDropdown(false);
                                                                 }}
                                                                 className="flex cursor-pointer items-center justify-between text-sm"
                                                             >
-                                                                <span>{state.name}</span>
+                                                                <span>{city.name}</span>
                                                                 <Check
                                                                     className={cn(
-                                                                        "'h-4 w-4'",
-                                                                        selectedCity?.id === state.id
-                                                                            ? "'opacity-100'"
-                                                                            : "'opacity-0'",
+                                                                        "h-4 w-4",
+                                                                        selectedCity?.id === city.id
+                                                                            ? "opacity-100"
+                                                                            : "opacity-0"
                                                                     )}
                                                                 />
-
-
                                                             </CommandItem>
                                                         ))}
-                                                        <ScrollBar orientation="vertical"/>
+                                                        <ScrollBar orientation="vertical" />
                                                     </ScrollArea>
                                                 </CommandGroup>
                                             </CommandList>
                                         </Command>
                                     </PopoverContent>
                                 </Popover>
-
                             </FormControl>
-                            <FormMessage/>
+                            <FormMessage />
                         </FormItem>
                     )}
                 />
             )}
-
         </div>
-    )
-}
+    );
+};
 
-export default LocationSelector
+export default LocationSelector;

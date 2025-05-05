@@ -4,34 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8407cdba-7ec5-42fd-9274-72c9660efa8b" name="Changes" comment="confilict in style and ui2">
-      <change afterPath="$PROJECT_DIR$/src/components/step-form/ChangablePelaktoAzad.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/step-form/Free-Towing-Info.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/step-form/OnboardingFlowForm1.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ui/PopoverSelect.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ui/car-brand-selector.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ui/checkbox.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/car-brands.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/car-models.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/car-types.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/car-years.json" afterDir="false" />
+    <list default="true" id="8407cdba-7ec5-42fd-9274-72c9660efa8b" name="Changes" comment="in the middle of location refacttor">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/dashboard/Inquiry/plates/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/dashboard/Inquiry/plates/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/error.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/error.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/insurance-signup/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/insurance-signup/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AddBookForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AddBookForm.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/ManualBimeRegister.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ManualBimeRegister.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ManualBimeRegister2.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/step-form/ManualBimeRegister2.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/buttons/Button.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/buttons/LoginButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/buttons/LoginButton.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/buttons/TextButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/buttons/TextButton.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/sidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sidebar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/step-form/ManualBimeRegister2.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/step-form/ManualBimeRegister2.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/form.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/ui/location-input.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/location-input.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/cities.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/cities.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/states.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/states.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,23 +39,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "F:/ready code/bulut/ts-pnpm/src/components/ui",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "pnpm",
-    "npm.build.executor": "Run",
-    "npm.dev.executor": "Run",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "ts.external.directory.path": "F:\\ready code\\bulut\\ts-pnpm\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;F:/ready code/bulut/ts-pnpm/src/components/ui&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;pnpm&quot;,
+    &quot;npm.build.executor&quot;: &quot;Run&quot;,
+    &quot;npm.dev.executor&quot;: &quot;Run&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;F:\\ready code\\bulut\\ts-pnpm\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="F:\ready code\bulut\ts-pnpm\src\components\ui" />
@@ -154,7 +132,7 @@
       <workItem from="1746165456898" duration="17471000" />
       <workItem from="1746275295919" duration="316000" />
       <workItem from="1746279955250" duration="23364000" />
-      <workItem from="1746365944844" duration="23635000" />
+      <workItem from="1746365944844" duration="30722000" />
     </task>
     <task id="LOCAL-00001" summary="done with error show">
       <option name="closed" value="true" />
@@ -276,7 +254,23 @@
       <option name="project" value="LOCAL" />
       <updated>1746307859782</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="in the middle of location refacttor">
+      <option name="closed" value="true" />
+      <created>1746431322075</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1746431322075</updated>
+    </task>
+    <task id="LOCAL-00017" summary="in the middle of location refacttor">
+      <option name="closed" value="true" />
+      <created>1746431328930</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1746431328930</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -310,6 +304,7 @@
     <MESSAGE value=" واخ واخ" />
     <MESSAGE value="confilict in style and ui" />
     <MESSAGE value="confilict in style and ui2" />
-    <option name="LAST_COMMIT_MESSAGE" value="confilict in style and ui2" />
+    <MESSAGE value="in the middle of location refacttor" />
+    <option name="LAST_COMMIT_MESSAGE" value="in the middle of location refacttor" />
   </component>
 </project>

@@ -27,50 +27,41 @@ import {cn} from "@/lib/utils";
 
 // Form schema validation using zod
 const formSchema = z.object({
-    pelak: z.object({
-        leftNumber: z.string(),
-        letter: z.string(),
-        rightNumber: z.string(),
-        iranNumber: z.string(),
-    }).refine((data) => {
-        return (
-            /^\d{2}$/.test(data.leftNumber) &&
-            /^[\u0600-\u06FFa-zA-Z]+$/.test(data.letter) &&
-            /^\d{3}$/.test(data.rightNumber) &&
-            /^\d{2}$/.test(data.iranNumber)
-        );
-    }, {
-        message: "Please fill all pelak fields correctly.",
-        path: [],
-    }),
-    name: z.string().min(1),
-    last_name: z.string().min(1),
-    national_number: z.string().min(1),
-    birthdate: z.coerce.date(),
-    mobile_number: z.string(),
-    brand: z.string(),
-    car_color: z.string(),
-    vin_number: z.string().min(1),
-    bime_thaleth: z.string().min(1),
-    bime_thaleth_expire: z.coerce.date(),
+    // pelak: z.object({
+    //     leftNumber: z.string(),
+    //     letter: z.string(),
+    //     rightNumber: z.string(),
+    //     iranNumber: z.string(),
+    // }).refine((data) => {
+    //     return (
+    //         /^\d{2}$/.test(data.leftNumber) &&
+    //         /^[\u0600-\u06FFa-zA-Z]+$/.test(data.letter) &&
+    //         /^\d{3}$/.test(data.rightNumber) &&
+    //         /^\d{2}$/.test(data.iranNumber)
+    //     );
+    // }, {
+    //     message: "Please fill all pelak fields correctly.",
+    //     path: [],
+    // }),
+    // name: z.string().min(1),
+    // last_name: z.string().min(1),
+    // national_number: z.string().min(1),
+    // birthdate: z.coerce.date(),
+    // mobile_number: z.string(),
+    // brand: z.string(),
+    // car_color: z.string(),
+    // vin_number: z.string().min(1),
+    // bime_thaleth: z.string().min(1),
+    // bime_thaleth_expire: z.coerce.date(),
     "location-state": z.object({
-        state: z.string().nonempty(' is required.'),
-        city: z.string().nonempty(' is required.'),
+        state: z.string(),
+        city: z.string()
 
     }),
-    coverageAmount: z.string(),
+    // coverageAmount: z.string(),
 });
 
 export default function ManualBimeRegister() {
-    const [stateName, setStateName] = useState<string>('');
-    const [cityName, setCityName] = useState<string>('');
-
-
-    const [CarBrand, setCarBrandName] = useState<string>('');
-    const [CarModel, setCarModelName] = useState<string>('');
-    const [CarYear, setCarYearName] = useState<string>('');
-    const [CarType, setCarTypeName] = useState<string>('');
-
 
     // Form initialization using react-hook-form
     const form = useForm<z.infer<typeof formSchema>>({
@@ -179,7 +170,7 @@ export default function ManualBimeRegister() {
                 {/* Coverage Amount */}
                 <FormSelectControl colSpan={12} label="Coverage Amount" name="coverageAmount"
                                    options={Array.from({length: 25}, (_, i) => ({
-                                       value: (i + 1) * 1000000,
+                                       value: ((i + 1) * 1000000).toString(),
                                        label: ((i + 1) * 1000000).toLocaleString()
                                    }))} form={form}/>
 
