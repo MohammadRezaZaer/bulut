@@ -1,5 +1,5 @@
 import { useAtom } from "jotai";
-import {PELAK, PELAK_AZAD} from "@/lib/constant/constants";
+import {AZAD_OR_NORMAL, PELAK, PELAK_AZAD} from "@/lib/constant/constants";
 import {setShowAzadPlateAtom, showAzadPlateAtom} from "@/lib/atoms/showAzadPlateAtom";
 import {FormControl, FormField, FormItem, FormMessage} from "@/components/ui/form";
 import {InputPlate} from "@/components/ui/input-plate";
@@ -15,11 +15,14 @@ export function ChangablePelaktoAzad(props: { form: any }) {
         setShowAzadPlate(isAzadPlate); // Update the local state
         setPlateType(isAzadPlate); // Sync with localStorage
 
+
+        props.form.setValue(AZAD_OR_NORMAL, isAzadPlate )
+        console.log(props.form.getValues())
         // Reset the form values and errors when toggling
-        props.form.reset({
-            [PELAK]: {}, // Clear normal plate field value
-            [PELAK_AZAD]: {} // Clear Azad plate field value
-        });
+        // props.form.reset({
+        //     [PELAK]: {}, // Clear normal plate field value
+        //     [PELAK_AZAD]: {} // Clear Azad plate field value
+        // });
         props.form.clearErrors(PELAK);
         props.form.clearErrors(PELAK_AZAD);
     };

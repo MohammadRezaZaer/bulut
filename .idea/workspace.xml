@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8407cdba-7ec5-42fd-9274-72c9660efa8b" name="Changes" comment="working on field values saving on navigation">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/addOrEditPlate.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/addOrEditPlate.tsx" afterDir="false" />
+    <list default="true" id="8407cdba-7ec5-42fd-9274-72c9660efa8b" name="Changes" comment="add setShowAzadPlateAtom using jotai">
+      <change afterPath="$PROJECT_DIR$/src/lib/schema/schemas.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/step-form/ChangablePelaktoAzad.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/step-form/ChangablePelaktoAzad.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ui/input-plate.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/input-plate.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/step-form/ManualBimeRegister2.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/step-form/ManualBimeRegister2.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/step-form/OnboardingFlowForm1.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/step-form/OnboardingFlowForm1.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/constant/constants.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/constant/constants.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,7 +135,7 @@
       <workItem from="1746365944844" duration="38721000" />
       <workItem from="1746467482599" duration="8998000" />
       <workItem from="1746480156239" duration="6787000" />
-      <workItem from="1746541669161" duration="6668000" />
+      <workItem from="1746541669161" duration="16066000" />
     </task>
     <task id="LOCAL-00001" summary="done with error show">
       <option name="closed" value="true" />
@@ -320,7 +321,15 @@
       <option name="project" value="LOCAL" />
       <updated>1746554088027</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="add setShowAzadPlateAtom using jotai">
+      <option name="closed" value="true" />
+      <created>1746554952266</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1746554952266</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -360,6 +369,7 @@
     <MESSAGE value="done with manual form and step navigation&#10;in save data on steps" />
     <MESSAGE value="datefns problem" />
     <MESSAGE value="working on field values saving on navigation" />
-    <option name="LAST_COMMIT_MESSAGE" value="working on field values saving on navigation" />
+    <MESSAGE value="add setShowAzadPlateAtom using jotai" />
+    <option name="LAST_COMMIT_MESSAGE" value="add setShowAzadPlateAtom using jotai" />
   </component>
 </project>

@@ -33,3 +33,4 @@ export const CAR_TYPE = "car_type"
 export const PELAK = "pelak"
 export const PELAK_AZAD = "pelak-azad"
 
+export const AZAD_OR_NORMAL ="azadOrNormal"

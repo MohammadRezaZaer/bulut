@@ -3,13 +3,8 @@ import React, { useState } from 'react';
 import FreeTowingInfo from "@/components/step-form/Free-Towing-Info";
 import ManualBimeRegister from "@/components/step-form/ManualBimeRegister2";
 
-const StepOne = ({ goToNext }) => (
-    <>
-        <h1>Step 1</h1>
-        <button onClick={() => goToNext({ name: 'John Doe' })}>Next</button>
-    </>
-);
-const StepTwo = ({ goToNext }) => (
+
+const StepThree = ({ goToNext }) => (
     <>
         <h1>Step 2</h1>
         <button onClick={() => goToNext({ age: 50 })}>Next</button>
@@ -45,10 +40,10 @@ function OnboardingFlow() {
             onboardingData={onboardingData}
         >
 
-            <FreeTowingInfo/>
+            {/*<FreeTowingInfo/>*/}
             <ManualBimeRegister/>
-            <StepOne />
-            <StepTwo />
+
+            <StepThree />
 
             <StepFour />
         </ControlledOnboardingFlow>
@@ -59,10 +54,11 @@ export default OnboardingFlow;
 
 export const ControlledOnboardingFlow = ({ children, onFinish, currentIndex,onboardingData, onNext,onPrev }) => {
     const goToNext = stepData => {
+        console.log({onboardingData})
+
         onNext(stepData);
     }
     const goToPrev = (stepData) => {
-        console.log({onboardingData})
         onPrev(stepData);
     }
 
