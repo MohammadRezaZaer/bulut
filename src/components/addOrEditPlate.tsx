@@ -84,7 +84,7 @@ export function AddOrEditPlate() {
                         <FormItem>
                             <FormLabel>شماره پلاک</FormLabel>
                             <FormControl>
-                                <InputPlate value={field.value} onChange={field.onChange}/>
+                                <InputPlate form={form} onChange={field.onChange}/>
 
 
                             </FormControl>

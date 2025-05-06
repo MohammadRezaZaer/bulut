@@ -138,7 +138,7 @@ export const InputLetter = React.forwardRef<HTMLSelectElement, InputLetterProps>
                                                                                       value, ...props
                                                                                   }, ref) => {
     return (
-        <div className="flex h-[32px] w-[52px] justify-center rounded-[6px] border border-solid border-[#8B929A36]">
+        <div className="flex h-[32px] w-[52px] justify-center rounded-[6px] ">
             <Select defaultValue={value} {...props}>
                 <SelectTrigger className="w-[48px] focus:outline-none h-8 p-1">
                     <span>{value || '--'}</span>

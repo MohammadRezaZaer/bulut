@@ -1,24 +1,29 @@
-import {useState} from "react";
+import { useAtom } from "jotai";
+import {PELAK, PELAK_AZAD} from "@/lib/constant/constants";
+import {setShowAzadPlateAtom, showAzadPlateAtom} from "@/lib/atoms/showAzadPlateAtom";
 import {FormControl, FormField, FormItem, FormMessage} from "@/components/ui/form";
 import {InputPlate} from "@/components/ui/input-plate";
-import {AzadPlateInput} from "@/components/ui/azad-plate-input";
-import {PELAK, PELAK_AZAD} from "@/lib/constant/constants";
+import {AzadPlateInput} from "@/components/ui/azad-plate-input"; // Import atoms
 
 export function ChangablePelaktoAzad(props: { form: any }) {
-    // State to manage the active input field
-    const [showAzadPlate, setShowAzadPlate] = useState(false);
+    // Get the state and setter for the plate type using Jotai atoms
+    const [showAzadPlate, setShowAzadPlate] = useAtom(showAzadPlateAtom);
+    const [, setPlateType] = useAtom(setShowAzadPlateAtom);
+
     // Function to handle the plate type toggle
     const handlePlateTypeToggle = (isAzadPlate: boolean) => {
-        setShowAzadPlate(isAzadPlate);
+        setShowAzadPlate(isAzadPlate); // Update the local state
+        setPlateType(isAzadPlate); // Sync with localStorage
 
         // Reset the form values and errors when toggling
-        // props.form.reset({
-        //     [PELAK]: {}, // Clear normal plate field value
-        //     [PELAK_AZAD]: {} // Clear Azad plate field value
-        // });
+        props.form.reset({
+            [PELAK]: {}, // Clear normal plate field value
+            [PELAK_AZAD]: {} // Clear Azad plate field value
+        });
         props.form.clearErrors(PELAK);
         props.form.clearErrors(PELAK_AZAD);
     };
+
     return (
         <div className="relative flex flex-col col-span-full mx-auto">
             <section className="flex items-center gap-2 h-4 text-sm top-0 right-0 mb-3">
@@ -26,14 +31,14 @@ export function ChangablePelaktoAzad(props: { form: any }) {
                 <button
                     className={` text-black rounded-md p-1 border whitespace-nowrap cursor-pointer ${!showAzadPlate ? 'bg-red-600 text-white' : ''}`}
                     onClick={() => handlePlateTypeToggle(false)} // Switch to normal plate
-                    type={"button"}
+                    type="button"
                 >
                     پلاک عادی
                 </button>
                 <button
                     className={`bg-red  rounded-md border p-1 whitespace-nowrap cursor-pointer ${showAzadPlate ? 'bg-red-600 text-white' : ''}`}
                     onClick={() => handlePlateTypeToggle(true)} // Switch to Azad plate
-                    type={"button"}
+                    type="button"
                 >
                     پلاک مناطق آزاد
                 </button>
@@ -45,13 +50,13 @@ export function ChangablePelaktoAzad(props: { form: any }) {
                     <FormField
                         control={props.form.control}
                         name={PELAK}
-                        render={({field}) => (
+                        render={({ field }) => (
                             <FormItem>
 
                                 <FormControl>
-                                    <InputPlate form={props.form} onChange={field.onChange}/>
+                                    <InputPlate form={props.form} onChange={field.onChange} />
                                 </FormControl>
-                                <FormMessage/>
+                                <FormMessage />
                             </FormItem>
                         )}
                     />
@@ -64,13 +69,13 @@ export function ChangablePelaktoAzad(props: { form: any }) {
                     <FormField
                         control={props.form.control}
                         name={PELAK_AZAD}
-                        render={({field}) => (
+                        render={({ field }) => (
                             <FormItem>
 
                                 <FormControl>
-                                    <AzadPlateInput  form={props.form} onChange={field.onChange}/>
+                                    <AzadPlateInput form={props.form} onChange={field.onChange} />
                                 </FormControl>
-                                <FormMessage/>
+                                <FormMessage />
                             </FormItem>
                         )}
                     />
