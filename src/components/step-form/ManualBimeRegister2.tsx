@@ -64,29 +64,30 @@ const formSchema = z.object({
         message: "Please fill all pelak fields correctly.",
         path: [],
     }),
-    // name: z.string().min(1),
-    // last_name: z.string().min(1),
-    // national_number: z.string().min(1),
-    // birthdate: z.coerce.date(),
-    // mobile_number: z.string(),
-    // brand: z.string(),
-    // car_color: z.string(),
-    // vin_number: z.string().min(1),
-    // bime_thaleth: z.string().min(1),
-    // bime_thaleth_expire: z.coerce.date(),
+    name: z.string().min(1),
+    last_name: z.string().min(1),
+    national_number: z.string().min(1),
+    birthdate: z.coerce.date(),
+    mobile_number: z.string(),
+    brand: z.string(),
+    car_color: z.string(),
+    vin_number: z.string().min(1),
+    bime_thaleth: z.string().min(1),
+    bime_thaleth_expire: z.coerce.date(),
     [LOCATION_STATE_FIELD]: z.object({
         [STATE]: z.string(),
         [CITY]: z.string()
 
     }),
+
     [CAR_DETAIL]: z.object({
-        [CAR_BRAND]: z.string(),
-        [CAR_MODEL]: z.string(),
+        [CAR_BRAND]: z.string().nonempty(),
+        [CAR_MODEL]: z.string().nonempty(),
         [CAR_YEAR]: z.number(),
-        [CAR_TYPE]: z.string()
+        [CAR_TYPE]: z.string().nonempty()
 
     }),
-    // coverageAmount: z.string(),
+     coverageAmount: z.string().nonempty(),
 });
 
 export default function ManualBimeRegister({goToNext,goToPrev,onboardingData}) {

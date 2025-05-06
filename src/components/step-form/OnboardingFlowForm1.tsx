@@ -32,6 +32,7 @@ function OnboardingFlow() {
         setCurrentIndex(currentIndex + 1);
     }
     const onPrev = (stepData) => {
+        console.log({stepData})
         setOnboardingData({ ...onboardingData, ...stepData });
         setCurrentIndex(currentIndex -1);
     }
