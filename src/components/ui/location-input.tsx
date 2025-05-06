@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Check, ChevronsUpDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
@@ -10,8 +10,9 @@ import { FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/comp
 // Import JSON data directly
 import states from "@/data/states.json";
 import cities from "@/data/cities.json";
-import {LOCATION_STATE_FIELD} from "@/lib/constant/constants";
+import { LOCATION_STATE_FIELD } from "@/lib/constant/constants";
 
+// Define types for state and city
 interface CityProps {
     id: number;
     name: string;
@@ -32,7 +33,6 @@ interface LocationSelectorProps {
     form: any;
 }
 
-
 const STATE_FIELD = `${LOCATION_STATE_FIELD}.state`;
 const CITY_FIELD = `${LOCATION_STATE_FIELD}.city`;
 
@@ -51,6 +51,26 @@ const LocationSelector = ({ disabled, form }: LocationSelectorProps) => {
         (city) => city.provinceId === selectedState?.id
     );
 
+    // useEffect to initialize the selected values from the form
+    useEffect(() => {
+        const locationState = form.getValues(LOCATION_STATE_FIELD); // Get current state and city from the form
+        const currentState = locationState?.state || null;
+        const currentCity = locationState?.city || null;
+
+        if (currentState) {
+            // Set the selected state if it exists in the form values
+            const state = statesData.find((s) => s.name === currentState);
+            setSelectedState(state || null);
+        }
+
+        if (currentCity) {
+            // Set the selected city if it exists in the form values
+            const city = citiesData.find((c) => c.name === currentCity);
+            setSelectedCity(city || null);
+        }
+    }, [form]); // Re-run this effect when the form state changes
+
+    // Handle state change and update form value
     const handleCountrySelect = (state: StateMeProps | null) => {
         setSelectedState(state);
         setSelectedCity(null); // Reset city when state changes
@@ -59,6 +79,7 @@ const LocationSelector = ({ disabled, form }: LocationSelectorProps) => {
         form.trigger(STATE_FIELD); // Re-validate state field dynamically
     };
 
+    // Handle city change and update form value
     const handleStateSelect = (city: CityProps | null) => {
         setSelectedCity(city);
         form.setValue(CITY_FIELD, city?.name || ""); // Update form value for city dynamically
@@ -139,72 +160,70 @@ const LocationSelector = ({ disabled, form }: LocationSelectorProps) => {
             />
 
             {/* City Selector */}
-            { (
-                <FormField
-                    control={form.control}
-                    name={CITY_FIELD} // Use dynamic field name
-                    render={({ field }) => (
-                        <FormItem>
-                            <FormLabel>انتخاب شهر</FormLabel>
-                            <FormControl>
-                                <Popover open={openStateDropdown} onOpenChange={setOpenStateDropdown}>
-                                    <PopoverTrigger asChild>
-                                        <Button
-                                            variant="outline"
-                                            role="combobox"
-                                            aria-expanded={openStateDropdown}
-                                            disabled={!selectedState}
-                                            className="w-full justify-between"
-                                        >
-                                            {selectedCity ? (
-                                                <span>{selectedCity.name}</span>
-                                            ) : (
-                                                <span>انتخاب شهر</span>
-                                            )}
-                                            <ChevronsUpDown className="h-4 w-4 shrink-0 opacity-50" />
-                                        </Button>
-                                    </PopoverTrigger>
-                                    <PopoverContent className="w-[300px] p-0">
-                                        <Command>
-                                            <CommandInput placeholder="جستجو" />
-                                            <CommandList>
-                                                <CommandEmpty>شهر یافت نشد</CommandEmpty>
-                                                <CommandGroup>
-                                                    <ScrollArea className="h-[280px]">
-                                                        {availableCities.map((city) => (
-                                                            <CommandItem
-                                                                key={city.id}
-                                                                value={city.name}
-                                                                onSelect={() => {
-                                                                    handleStateSelect(city);
-                                                                    setOpenStateDropdown(false);
-                                                                }}
-                                                                className="flex cursor-pointer items-center justify-between text-sm"
-                                                            >
-                                                                <span>{city.name}</span>
-                                                                <Check
-                                                                    className={cn(
-                                                                        "h-4 w-4",
-                                                                        selectedCity?.id === city.id
-                                                                            ? "opacity-100"
-                                                                            : "opacity-0"
-                                                                    )}
-                                                                />
-                                                            </CommandItem>
-                                                        ))}
-                                                        <ScrollBar orientation="vertical" />
-                                                    </ScrollArea>
-                                                </CommandGroup>
-                                            </CommandList>
-                                        </Command>
-                                    </PopoverContent>
-                                </Popover>
-                            </FormControl>
-                            <FormMessage />
-                        </FormItem>
-                    )}
-                />
-            )}
+            <FormField
+                control={form.control}
+                name={CITY_FIELD} // Use dynamic field name
+                render={({ field }) => (
+                    <FormItem>
+                        <FormLabel>انتخاب شهر</FormLabel>
+                        <FormControl>
+                            <Popover open={openStateDropdown} onOpenChange={setOpenStateDropdown}>
+                                <PopoverTrigger asChild>
+                                    <Button
+                                        variant="outline"
+                                        role="combobox"
+                                        aria-expanded={openStateDropdown}
+                                        disabled={!selectedState}
+                                        className="w-full justify-between"
+                                    >
+                                        {selectedCity ? (
+                                            <span>{selectedCity.name}</span>
+                                        ) : (
+                                            <span>انتخاب شهر</span>
+                                        )}
+                                        <ChevronsUpDown className="h-4 w-4 shrink-0 opacity-50" />
+                                    </Button>
+                                </PopoverTrigger>
+                                <PopoverContent className="w-[300px] p-0">
+                                    <Command>
+                                        <CommandInput placeholder="جستجو" />
+                                        <CommandList>
+                                            <CommandEmpty>شهر یافت نشد</CommandEmpty>
+                                            <CommandGroup>
+                                                <ScrollArea className="h-[280px]">
+                                                    {availableCities.map((city) => (
+                                                        <CommandItem
+                                                            key={city.id}
+                                                            value={city.name}
+                                                            onSelect={() => {
+                                                                handleStateSelect(city);
+                                                                setOpenStateDropdown(false);
+                                                            }}
+                                                            className="flex cursor-pointer items-center justify-between text-sm"
+                                                        >
+                                                            <span>{city.name}</span>
+                                                            <Check
+                                                                className={cn(
+                                                                    "h-4 w-4",
+                                                                    selectedCity?.id === city.id
+                                                                        ? "opacity-100"
+                                                                        : "opacity-0"
+                                                                )}
+                                                            />
+                                                        </CommandItem>
+                                                    ))}
+                                                    <ScrollBar orientation="vertical" />
+                                                </ScrollArea>
+                                            </CommandGroup>
+                                        </CommandList>
+                                    </Command>
+                                </PopoverContent>
+                            </Popover>
+                        </FormControl>
+                        <FormMessage />
+                    </FormItem>
+                )}
+            />
         </div>
     );
 };

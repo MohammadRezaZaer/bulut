@@ -1,6 +1,3 @@
-import AddBookForm from "@/components/AddBookForm";
-import ManualBimeRegister from "@/components/ManualBimeRegister";
-import PlateForm from "@/components/Pelak";
 import {AddOrEditPlate} from "@/components/addOrEditPlate";
 import React from "react";
 

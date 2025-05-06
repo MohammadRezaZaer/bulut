@@ -87,10 +87,10 @@ const formSchema = z.object({
         [CAR_TYPE]: z.string().nonempty()
 
     }),
-     coverageAmount: z.string().nonempty(),
+    coverageAmount: z.string().nonempty(),
 });
 
-export default function ManualBimeRegister({goToNext,goToPrev,onboardingData}) {
+export default function ManualBimeRegister({goToNext, goToPrev, onboardingData}) {
 
     console.log({onboardingData})
     // Form initialization using react-hook-form
@@ -100,7 +100,9 @@ export default function ManualBimeRegister({goToNext,goToPrev,onboardingData}) {
 
 
             ...onboardingData, // Use the saved data to set default values in the form
-
+            // "car-detail": {
+            //     "car_brand": "کیا"
+            // },
         },
     });
 
@@ -175,8 +177,7 @@ export default function ManualBimeRegister({goToNext,goToPrev,onboardingData}) {
                 <section className="xl:col-span-4 mt-5"><span
                     className="text-[24px] font-bold">تعیین سقف پوشش خدمات:</span></section>
                 {/* Coverage Amount */}
-                <FormSelectControl label="میزان تعهدات درخواست امداد حمل رایگان را مشخص نمائید (تومان)
-" name="coverageAmount"
+                <FormSelectControl label="میزان تعهدات درخواست امداد حمل رایگان را مشخص نمائید (تومان)" name="coverageAmount"
                                    options={Array.from({length: 25}, (_, i) => ({
                                        value: ((i + 1) * 1000000).toString(),
                                        label: ((i + 1) * 1000000).toLocaleString()
@@ -186,7 +187,7 @@ export default function ManualBimeRegister({goToNext,goToPrev,onboardingData}) {
                 <div className="flex w-full gap-4">
 
                     <Button onClick={() => goToPrev(form.getValues())} variant={"outline"} type="button">مرحله
-                    قبل</Button>
+                        قبل</Button>
                     <Button className="w-full" type="submit">ذخیره</Button></div>
             </form>
         </Form>

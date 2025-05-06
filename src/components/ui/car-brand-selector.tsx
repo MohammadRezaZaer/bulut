@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {useEffect, useState} from "react";
 import { Check, ChevronsUpDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
@@ -67,7 +67,37 @@ const CarSelector = ({
     const CAR_YEAR_FIELD = `${CAR_DETAIL}.${CAR_YEAR}`;
     const CAR_TYPE_FIELD = `${CAR_DETAIL}.${CAR_TYPE}`;
 
+    useEffect(() => {
+        // Get the current car details from the form
+        const carDetail = form.getValues(CAR_DETAIL);
 
+        // Check if carDetail exists and has data
+        if (carDetail) {
+            // Set the selected brand if it exists in carDetail
+            if (carDetail[CAR_BRAND]) {
+                const brand = brands.find((b) => b.name === carDetail[CAR_BRAND]);
+                setSelectedBrand(brand); // Update the selected brand state
+            }
+
+            // Set the selected model if it exists in carDetail
+            if (carDetail[CAR_MODEL]) {
+                const model = models.find((m) => m.name === carDetail[CAR_MODEL]);
+                setSelectedModel(model); // Update the selected model state
+            }
+
+            // Set the selected year if it exists in carDetail
+            if (carDetail[CAR_YEAR]) {
+                const year = years.find((y) => y.years.includes(carDetail[CAR_YEAR]));
+                setSelectedYear(year); // Update the selected year state
+            }
+
+            // Set the selected type if it exists in carDetail
+            if (carDetail[CAR_TYPE]) {
+                const type = types.find((t) => t.name === carDetail[CAR_TYPE]);
+                setSelectedType(type); // Update the selected type state
+            }
+        }
+    }, [form]); // Re-run this effect when the form changes
 
 
     const availableModels = models.filter(

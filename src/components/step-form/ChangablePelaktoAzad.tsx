@@ -49,7 +49,7 @@ export function ChangablePelaktoAzad(props: { form: any }) {
                             <FormItem>
 
                                 <FormControl>
-                                    <InputPlate onChange={field.onChange}/>
+                                    <InputPlate form={props.form} onChange={field.onChange}/>
                                 </FormControl>
                                 <FormMessage/>
                             </FormItem>
@@ -68,7 +68,7 @@ export function ChangablePelaktoAzad(props: { form: any }) {
                             <FormItem>
 
                                 <FormControl>
-                                    <AzadPlateInput onChange={field.onChange}/>
+                                    <AzadPlateInput  form={props.form} onChange={field.onChange}/>
                                 </FormControl>
                                 <FormMessage/>
                             </FormItem>

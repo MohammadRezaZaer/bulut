@@ -4,8 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8407cdba-7ec5-42fd-9274-72c9660efa8b" name="Changes" comment="done with manual form and step navigation&#10;in save data on steps">
+    <list default="true" id="8407cdba-7ec5-42fd-9274-72c9660efa8b" name="Changes" comment="datefns problem">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/dashboard/Inquiry/plates/edit/[id]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/dashboard/Inquiry/plates/edit/[id]/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ManualBimeRegister.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/step-form/ChangablePelaktoAzad.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/step-form/ChangablePelaktoAzad.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/step-form/Free-Towing-Info.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/step-form/Free-Towing-Info.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/step-form/ManualBimeRegister2.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/step-form/ManualBimeRegister2.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/step-form/OnboardingFlowForm1.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/step-form/OnboardingFlowForm1.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/car-brand-selector.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/car-brand-selector.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/input-plate.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/input-plate.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/location-input.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/location-input.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +85,7 @@
       <recent name="F:\ready code\bulut\ts-pnpm\src\components\profileComponent.tsx" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.build">
+  <component name="RunManager" selected="npm.dev">
     <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -98,8 +108,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.build" />
         <item itemvalue="npm.dev" />
+        <item itemvalue="npm.build" />
       </list>
     </recent_temporary>
   </component>
@@ -130,7 +140,8 @@
       <workItem from="1746279955250" duration="23364000" />
       <workItem from="1746365944844" duration="38721000" />
       <workItem from="1746467482599" duration="8998000" />
-      <workItem from="1746480156239" duration="6001000" />
+      <workItem from="1746480156239" duration="6787000" />
+      <workItem from="1746541669161" duration="5917000" />
     </task>
     <task id="LOCAL-00001" summary="done with error show">
       <option name="closed" value="true" />
@@ -300,7 +311,15 @@
       <option name="project" value="LOCAL" />
       <updated>1746507752243</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="datefns problem">
+      <option name="closed" value="true" />
+      <created>1746508305586</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1746508305586</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -338,6 +357,7 @@
     <MESSAGE value="validation of location is now ok" />
     <MESSAGE value="done with 4 selects validation" />
     <MESSAGE value="done with manual form and step navigation&#10;in save data on steps" />
-    <option name="LAST_COMMIT_MESSAGE" value="done with manual form and step navigation&#10;in save data on steps" />
+    <MESSAGE value="datefns problem" />
+    <option name="LAST_COMMIT_MESSAGE" value="datefns problem" />
   </component>
 </project>

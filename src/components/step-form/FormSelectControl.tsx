@@ -7,8 +7,8 @@ import {PhoneInputComponent} from "@/components/ui/phone-input-component";
 import DatePicker from "react-multi-date-picker";
 import persian from "react-date-object/calendars/persian";
 import persian_fa from "react-date-object/locales/persian_fa";
-import {CustomInput} from "@/components/ManualBimeRegister";
 import {Select, SelectContent, SelectItem, SelectTrigger, SelectValue} from "@/components/ui/select";
+import {CustomInput} from "@/components/CustomInput";
 
 export function FormFieldControl({className, label, name, placeholder, form}: any) {
     return (

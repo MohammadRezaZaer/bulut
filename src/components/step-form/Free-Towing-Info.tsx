@@ -1,19 +1,47 @@
 'use client';
-
 import * as React from 'react';
+import { toast } from 'sonner';
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import * as z from 'zod';
+import { Button } from '@/components/ui/button';
 import { Checkbox } from '@/components/ui/checkbox';
-import {Button} from "@/components/ui/button";
+
+const formSchema = z.object({
+    agreed: z.boolean().refine((val) => val, {
+        message: 'You must agree to the terms.',
+    }),
+});
+
 
 interface FreeTowingInfoProps {
-    onAccept?: () => void;
-    goToNext?: () => void;
+    onboardingData: Record<string, any>; // onboardingData holds key-value pairs of data
+    onAccept?: () => void; // onAccept doesn't take any parameters
+    goToNext?: (stepData: Record<string, any>) => void; // goToNext takes stepData as an argument
+    onPrev?: (stepData: Record<string, any>) => void; // onPrev takes stepData as an argument
 }
-
 export default function FreeTowingInfo({
                                            onAccept,
                                            goToNext,
+                                           onboardingData
                                        }: FreeTowingInfoProps) {
-    const [agreed, setAgreed] = React.useState(false);
+    const form = useForm<z.infer<typeof formSchema>>({
+        resolver: zodResolver(formSchema),
+        defaultValues: {
+            agreed: false,
+            ...onboardingData
+        },
+    });
+
+    // Submit handler
+    const onSubmit = (values: z.infer<typeof formSchema>) => {
+        if (values.agreed) {
+            toast.success('You have agreed to the terms.');
+            goToNext?.(form.getValues());
+        } else {
+            toast.error('Please agree to the terms.');
+        }
+    };
 
     return (
         <section dir='rtl' className='block'>
@@ -36,29 +64,26 @@ export default function FreeTowingInfo({
                     </li>
                 </ul>
 
-                <div className='mt-6'>
+                <form onSubmit={form.handleSubmit(onSubmit)} className='mt-6'>
                     <label className='flex items-center space-x-2 space-x-reverse'>
                         <Checkbox
                             id='agree'
-                            checked={agreed}
-                            onCheckedChange={(value) => {
-                                setAgreed(!!value);
-                                onAccept?.();
-                            }}
+                            checked={form.watch('agreed')}
+                            onCheckedChange={(value) => form.setValue('agreed', !!value)}
                         />
                         <span className='text-sm'>با تمام قوانین بالا موافقم</span>
                     </label>
-                </div>
 
-                <div className='flex justify-center mt-10'>
-                    <Button
-                        disabled={!agreed}
-                        className='w-full max-w-[500px]'
-                        onClick={()=>goToNext(null)}
-                    >
-                        مرحله بعد
-                    </Button>
-                </div>
+                    <div className='flex justify-center mt-10'>
+                        <Button
+                            disabled={!form.watch('agreed')}
+                            className='w-full max-w-[500px]'
+                            type='submit'
+                        >
+                            مرحله بعد
+                        </Button>
+                    </div>
+                </form>
             </section>
         </section>
     );
