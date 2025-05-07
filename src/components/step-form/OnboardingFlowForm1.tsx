@@ -5,17 +5,19 @@ import BimeForm from "@/components/step-form/BimeForm";
 import {DynamicStepSVGCounting} from "@/components/step-form/DynamicStepSVGCounting";
 
 
-const StepThree = ({goToNext}) => (
+const StepThree = ({goToNext,goToPrev}) => (
     <>
-        <h1>Step 2</h1>
+        <h1>Step 3</h1>
         <button onClick={() => goToNext({age: 50})}>Next</button>
+        <button onClick={() => goToPrev({age: 50})}>prev</button>
     </>
 );
 
-const StepFour = ({goToNext}) => (
+const StepFour = ({goToNext,goToPrev}) => (
     <>
         <h1>Step 4</h1>
         <button onClick={() => goToNext({hairColor: 'brown'})}>Next</button>
+        <button onClick={() => goToPrev({hairColor: 'brown'})}>prev</button>
     </>
 );
 
