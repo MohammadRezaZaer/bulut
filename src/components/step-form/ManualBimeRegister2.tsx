@@ -13,14 +13,14 @@ import CarSelector from "@/components/ui/car-brand-selector";
 
 
 import {
-    FormDateControl,
-    FormFieldControl,
-    FormPhoneControl,
     FormSelectControl
 } from "@/components/step-form/FormSelectControl";
 import {formSchema} from "@/lib/schema/schemas";
 import {useAtom} from "jotai/index";
 import {showAzadPlateAtom} from "@/lib/atoms/showAzadPlateAtom";
+import {FormPhoneControl} from "@/components/step-form/FormPhoneControl";
+import {FormDateControl} from "@/components/step-form/FormDateControl";
+import {FormFieldControl} from "@/components/step-form/FormFieldControl";
 
 
 

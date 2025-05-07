@@ -1,75 +1,7 @@
 // Helper components for field controls
-import {cn} from "@/lib/utils";
 import {FormControl, FormField, FormItem, FormLabel, FormMessage} from "@/components/ui/form";
-import {Input} from "@/components/ui/input";
 import React from "react";
-import {PhoneInputComponent} from "@/components/ui/phone-input-component";
-import DatePicker, {DateObject} from "react-multi-date-picker";
-import persian from "react-date-object/calendars/persian";
-import persian_fa from "react-date-object/locales/persian_fa";
 import {Select, SelectContent, SelectItem, SelectTrigger, SelectValue} from "@/components/ui/select";
-import {CustomInput} from "@/components/CustomInput";
-
-export function FormFieldControl({className, label, name, placeholder, form}: any) {
-    return (
-        <div className={cn("col-span-full lg:col-span-4", className)}>
-            <FormField control={form.control} name={name} render={({field}) => (
-                <FormItem>
-                    <FormLabel>{label}</FormLabel>
-                    <FormControl>
-                        <Input placeholder={placeholder} {...field} />
-                    </FormControl>
-                    <FormMessage/>
-                </FormItem>
-            )}/>
-        </div>
-    );
-}
-
-export function FormDateControl({className, name, label, form}: any) {
-    return (
-        <div className={cn("col-span-full", className)}>
-            <FormField control={form.control} name={name} render={({field}) => (
-                <FormItem>
-                    <FormLabel>{label}</FormLabel>
-                    <FormControl>
-                        <div className="flex w-full flex-col gap-[2px] text-sm xl:col-span-2">
-                            <DatePicker
-                                value={field.value || ""}
-                                onChange={(date) => field.onChange(date?.isValid ? date.toDate() : "")}
-                                format="YYYY/MM/DD"
-                                calendar={persian}
-
-                                locale={persian_fa}
-                                calendarPosition="bottom-right"
-                                render={<CustomInput/>}
-                            />
-                        </div>
-                    </FormControl>
-                    <FormMessage/>
-                </FormItem>
-            )}/>
-        </div>
-    );
-}
-
-export function FormPhoneControl({className, name, form}: any) {
-    return (
-        <div className={cn("col-span-full", className)}>
-            <FormField control={form.control} name={name} render={({field}) => (
-                <FormItem>
-                    <FormLabel>تلفن همراه
-                    </FormLabel>
-                    <FormControl>
-                        <PhoneInputComponent placeholder="تلفن همراه را وارد کنید" {...field} defaultCountry="IR"
-                                             countries={["IR"]} international={false}/>
-                    </FormControl>
-                    <FormMessage/>
-                </FormItem>
-            )}/>
-        </div>
-    );
-}
 
 export function FormSelectControl({label, name, options, form}: any) {
     return (
