@@ -30,6 +30,7 @@ export function CustomInput({onFocus, value, onChange}) {
             onFocus={onFocus}
             value={formatted}
             onChange={onChange}
+            placeholder="روز / ماه / سال"
         />
     )
 }

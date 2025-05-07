@@ -4,7 +4,7 @@ import {FormControl, FormField, FormItem, FormLabel, FormMessage} from "@/compon
 import {Input} from "@/components/ui/input";
 import React from "react";
 import {PhoneInputComponent} from "@/components/ui/phone-input-component";
-import DatePicker from "react-multi-date-picker";
+import DatePicker, {DateObject} from "react-multi-date-picker";
 import persian from "react-date-object/calendars/persian";
 import persian_fa from "react-date-object/locales/persian_fa";
 import {Select, SelectContent, SelectItem, SelectTrigger, SelectValue} from "@/components/ui/select";
@@ -36,9 +36,10 @@ export function FormDateControl({className, name, label, form}: any) {
                         <div className="flex w-full flex-col gap-[2px] text-sm xl:col-span-2">
                             <DatePicker
                                 value={field.value || ""}
-                                onChange={(date) => field.onChange(date?.isValid ? date : "")}
-                                format={"YYYY/MM/DD"}
+                                onChange={(date) => field.onChange(date?.isValid ? date.toDate() : "")}
+                                format="YYYY/MM/DD"
                                 calendar={persian}
+
                                 locale={persian_fa}
                                 calendarPosition="bottom-right"
                                 render={<CustomInput/>}

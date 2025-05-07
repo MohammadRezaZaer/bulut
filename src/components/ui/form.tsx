@@ -149,7 +149,7 @@ const FormMessage = React.forwardRef<
   const { error, formMessageId } = useFormField()
   // console.log({error})
   const body = error ? String(error?.message) : children
-  // console.log({error,formMessageId,body})
+  console.log({error,formMessageId,body})
   if (!body) {
     return null
   }
