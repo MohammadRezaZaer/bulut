@@ -35,7 +35,12 @@ export default {
   			dark: '#222222'
   		},
   		keyframes: {
+			"caret-blink": {
+				'0%,70%,100%': { opacity: '1' },
+				"20%,50%": { opacity: "0" },
+			},
   			flicker: {
+
   				'0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100%': {
   					opacity: '0.99',
   					filter: 'drop-shadow(0 0 1px rgba(252, 211, 77)) drop-shadow(0 0 15px rgba(245, 158, 11)) drop-shadow(0 0 1px rgba(252, 211, 77))'
@@ -56,8 +61,10 @@ export default {
   		},
   		animation: {
   			flicker: 'flicker 3s linear infinite',
-  			shimmer: 'shimmer 1.3s linear infinite'
-  		},
+  			shimmer: 'shimmer 1.3s linear infinite',
+			"caret-blink": "caret-blink 1.25s ease-out infinite",
+
+		},
   		borderRadius: {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',

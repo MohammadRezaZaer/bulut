@@ -55,6 +55,7 @@ export default function PhoneForm({  onSuccess}: any) {
                         <FormControl className="w-full">
                             <PhoneInputComponent
                                 placeholder="09141234123"
+                                maxLength={13}
                                 {...field}
                                 defaultCountry="IR"
                                 countries={["IR"]} // restricts to only IR

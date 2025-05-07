@@ -12,10 +12,8 @@ import {ChangablePelaktoAzad} from "@/components/step-form/ChangablePelaktoAzad"
 import CarSelector from "@/components/ui/car-brand-selector";
 
 
-import {
-    FormSelectControl
-} from "@/components/step-form/FormSelectControl";
-import {formSchema} from "@/lib/schema/schemas";
+import {FormSelectControl} from "@/components/step-form/FormSelectControl";
+import {ManualRegisterformSchema} from "@/lib/schema/schemas";
 import {useAtom} from "jotai/index";
 import {showAzadPlateAtom} from "@/lib/atoms/showAzadPlateAtom";
 import {FormPhoneControl} from "@/components/step-form/FormPhoneControl";
@@ -23,17 +21,16 @@ import {FormDateControl} from "@/components/step-form/FormDateControl";
 import {FormFieldControl} from "@/components/step-form/FormFieldControl";
 
 
-
 export default function ManualBimeRegister({goToNext, goToPrev, onboardingData}) {
     const [showAzadPlate] = useAtom(showAzadPlateAtom);
 
     console.log({onboardingData})
     // Form initialization using react-hook-form
-    const form = useForm<z.infer<typeof formSchema>>({
-        resolver: zodResolver(formSchema),
+    const form = useForm<z.infer<typeof ManualRegisterformSchema>>({
+        resolver: zodResolver(ManualRegisterformSchema),
         defaultValues: {
 
-            azadOrNormal:showAzadPlate,
+            azadOrNormal: showAzadPlate,
             ...onboardingData, // Use the saved data to set default values in the form
             // "car-detail": {
             //     "car_brand": "کیا"
@@ -42,7 +39,7 @@ export default function ManualBimeRegister({goToNext, goToPrev, onboardingData})
     });
 
     // Submit form handler
-    function onSubmit(values: z.infer<typeof formSchema>) {
+    function onSubmit(values: z.infer<typeof ManualRegisterformSchema>) {
         try {
             goToNext?.(form.getValues());
             console.log(values);
@@ -58,8 +55,9 @@ export default function ManualBimeRegister({goToNext, goToPrev, onboardingData})
     }
 
     return (
+        <div className="space-y-8 max-w-3xl mx-auto py-10 max-lg:px-2">
         <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 max-w-3xl mx-auto py-10 max-lg:px-2">
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
                 {/* Personal Information */}
                 <section className="mt-5"><span className="text-[24px] font-bold">اطلاعات فردی:</span>
                 </section>
@@ -125,10 +123,39 @@ export default function ManualBimeRegister({goToNext, goToPrev, onboardingData})
 
                     <Button onClick={() => goToPrev(form.getValues())} variant={"outline"} type="button">مرحله
                         قبل</Button>
-                    <Button className="w-full" type="submit">ذخیره</Button></div>
+
+                    <Button className="w-full" type="submit">ذخیره</Button>
+                </div>
             </form>
         </Form>
-    );
+    <section className="xl:col-span-4 border-[4px] p-5"><h1 className="font-bold text-[20px]">صاحبان و مالکین خودرو لطفا به
+        موارد ذیل توجه فرمایید:</h1>
+        <ul className="text-[14px] list-decimal leading-10 pr-[10px] xl:pr-[40px] text-justify">
+            <li>در انتخاب تعهدات بیمه دقت نمایید هر مبلغی را که به عنوان بیمه امداد مشخص می‌کنید برای استفاده در طول سال
+                است. پیشنهاد برای انتخاب تعهدات:
+                <ul>
+                    <li>الف) برای خودروهای ایرانی از ۵ تا ۱۰ میلیون تومان یا بیشتر پوشش تعهدات انتخاب شود، مثال
+                        محاسباتی: برای ۵ میلیون پوشش تعهدات بیمه فقط مبلغ ۲۵۰ هزار تومان پرداخت می‌شود (یعنی ۵٪ تعهدات)
+                    </li>
+                    <li>ب) برای خودروهای شاسی خارجی و چینی و ایرانی از ۱۵ تا ۲۵ میلیون تومان پوشش تعهدات انتخاب شود.
+                        مثال محاسباتی: برای ۲۵ میلیون تومان پوشش تعهدات فقط مبلغ ۱۲۵۰۰۰۰ حق بیمه امداد پرداخت می‌شود
+                    </li>
+                </ul>
+            </li>
+            <li>حق بیمه ۵٪ از هزینه تعهدات تا پایان سال ۱۴۰۳ می‌باشد از شروع سال جدید ۱۴۰۴ به حق بیمه ۱۰٪ افزایش خواهد
+                یافت پس دقت نمایید قبل از سال جدید تعهدات بیمه امداد خود را خریداری نمایید. (در نظر داشته باشید این
+                تخفیف فقط به مناسبت ۲۲ بهمن و عید نوروز می‌باشد)
+            </li>
+            <li>طرح بیمه امداد در حمل خودرو برای اولین بار راه اندازی شده و هدف آن کوتاه کردن دستان افراد سودجو می‌باشد
+                تا شما هزینه‌های هنگفت در زمان حمل به اجبار پرداخت ننمایید.
+            </li>
+            <li>تنها سامانه پیامکی <a className="text-blue underline" href="https://emdadkhodro1593.ir/">امدادخودرو</a>کشور
+                98500031401 بوده و سایر پیامک‌های از سامانه‌های دیگر فاقد اعتبار می‌باشد.
+            </li>
+        </ul>
+    </section></div>
+)
+    ;
 }
 
 

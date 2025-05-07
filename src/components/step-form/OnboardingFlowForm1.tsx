@@ -1,20 +1,21 @@
 "use client"
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import FreeTowingInfo from "@/components/step-form/Free-Towing-Info";
-import ManualBimeRegister from "@/components/step-form/ManualBimeRegister2";
+import BimeForm from "@/components/step-form/BimeForm";
+import {DynamicStepSVGCounting} from "@/components/step-form/DynamicStepSVGCounting";
 
 
-const StepThree = ({ goToNext }) => (
+const StepThree = ({goToNext}) => (
     <>
         <h1>Step 2</h1>
-        <button onClick={() => goToNext({ age: 50 })}>Next</button>
+        <button onClick={() => goToNext({age: 50})}>Next</button>
     </>
 );
 
-const StepFour = ({ goToNext }) => (
+const StepFour = ({goToNext}) => (
     <>
         <h1>Step 4</h1>
-        <button onClick={() => goToNext({ hairColor: 'brown' })}>Next</button>
+        <button onClick={() => goToNext({hairColor: 'brown'})}>Next</button>
     </>
 );
 
@@ -23,36 +24,48 @@ function OnboardingFlow() {
     const [currentIndex, setCurrentIndex] = useState(0);
 
     const onNext = stepData => {
-        console.log({onboardingData,stepData})
-        setOnboardingData({ ...onboardingData, ...stepData });
+        console.log({onboardingData, stepData})
+        setOnboardingData({...onboardingData, ...stepData});
         setCurrentIndex(currentIndex + 1);
     }
     const onPrev = (stepData) => {
-        console.log({onboardingData,stepData})
-        setOnboardingData({ ...onboardingData, ...stepData });
-        setCurrentIndex(currentIndex -1);
+        console.log({onboardingData, stepData})
+        setOnboardingData({...onboardingData, ...stepData});
+        setCurrentIndex(currentIndex - 1);
     }
-    return (
-        <ControlledOnboardingFlow
-            currentIndex={currentIndex}
-            onNext={onNext}
-            onPrev={onPrev}
-            onboardingData={onboardingData}
-        >
+    return (<>
+            <section
+                className="xl:my-[40px]  flex xl:h-[150px] h-[100px] w-full items-center justify-center bg-brand font-bold">
+                <h1 className="xl:text-[40px] text-[24px] font-bold text-center text-white px-10">ثبت نام بیمه امداد حمل
+                    رایگان</h1></section>
 
-            {/*<FreeTowingInfo/>*/}
-            <ManualBimeRegister/>
+            <div className="flex mx-auto w-full max-w-xl p-8 pt-4">
+                <DynamicStepSVGCounting stepsConfig={4}
+                                        currentIndex={currentIndex}/>
+            </div>
+            <ControlledOnboardingFlow
+                currentIndex={currentIndex}
+                onNext={onNext}
+                onPrev={onPrev}
+                onboardingData={onboardingData}
+            >
 
-            <StepThree />
+                <FreeTowingInfo/>
 
-            <StepFour />
-        </ControlledOnboardingFlow>
+                <BimeForm/>
+
+                <StepThree/>
+
+                <StepFour/>
+            </ControlledOnboardingFlow>
+
+        </>
     );
 }
 
 export default OnboardingFlow;
 
-export const ControlledOnboardingFlow = ({ children, onFinish, currentIndex,onboardingData, onNext,onPrev }) => {
+export const ControlledOnboardingFlow = ({children, onFinish, currentIndex, onboardingData, onNext, onPrev}) => {
     const goToNext = stepData => {
         console.log({onboardingData})
 
@@ -65,7 +78,7 @@ export const ControlledOnboardingFlow = ({ children, onFinish, currentIndex,onbo
     const currentChild = React.Children.toArray(children)[currentIndex];
 
     if (React.isValidElement(currentChild)) {
-        return React.cloneElement(currentChild, { goToNext ,goToPrev,onboardingData});
+        return React.cloneElement(currentChild, {goToNext, goToPrev, onboardingData});
     }
 
     return currentChild;

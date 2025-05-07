@@ -36,7 +36,7 @@ export default function FreeTowingInfo({
     // Submit handler
     const onSubmit = (values: z.infer<typeof formSchema>) => {
         if (values.agreed) {
-            toast.success('You have agreed to the terms.');
+            toast.success('شما قوانین را قبول کردید.');
             goToNext?.(form.getValues());
         } else {
             toast.error('Please agree to the terms.');

@@ -3,16 +3,16 @@
 import {SubmitHandler, useForm} from "react-hook-form";
 import {Button} from "@/components/ui/button";
 import {Input} from "@/components/ui/input";
-import Timer from "./Timer";
 import {OtpInputInfer, otpSchema} from "@/app/lib/validation";
 import {verifyOtpAction} from "@/app/login/actions";
-import {Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage} from "@/components/ui/form";
+import {Form, FormControl, FormField, FormItem, FormMessage} from "@/components/ui/form";
 import {FIELDS} from "@/lib/constant/constants";
 import * as z from "zod";
 import {zodResolver} from "@hookform/resolvers/zod";
 import {toast} from "sonner";
 import {ResendOtpButton} from "@/components/ResendOtpButton";
 import {useRouter} from "next/navigation";
+import {InputOTP, InputOTPGroup, InputOTPSeparator, InputOTPSlot} from "@/components/ui/input-otp";
 
 export default function OtpForm({mobile, onBack, onSuccess}: any) {
 
@@ -37,12 +37,12 @@ export default function OtpForm({mobile, onBack, onSuccess}: any) {
             console.log(result.error)
 
 
-                for (const key in result.error) {
-                    form.setError(key as keyof OtpInputInfer, {
-                        message: result.error[key]?.[0] || 'خطا',
-                        type: 'manual'
-                    })
-                }
+            for (const key in result.error) {
+                form.setError(key as keyof OtpInputInfer, {
+                    message: result.error[key]?.[0] || 'خطا',
+                    type: 'manual'
+                })
+            }
 
             return
         }
@@ -74,20 +74,35 @@ export default function OtpForm({mobile, onBack, onSuccess}: any) {
                         control={form.control}
                         name={FIELDS.OTP}
                         render={({field}) => (
-                            <FormItem>
+                            <FormItem className="direction-ltr flex flex-col items-center justify-center">
                                 <FormControl>
-                                    <Input
-                                        placeholder="کد 4 رقمی"
+                                    {/*<Input*/}
+                                    {/*    className={"text-center"}*/}
+                                    {/*    placeholder="کد 4 رقمی"*/}
+                                    {/*    maxLength={4}*/}
+                                    {/*    type=""*/}
+                                    {/*    {...field} />*/}
+                                    <InputOTP className="" maxLength={4} onComplete={form.handleSubmit(processForm)} {...field}>
+                                        <InputOTPGroup>
+                                            <InputOTPSlot index={0} />
+                                            <InputOTPSlot index={1} />
 
-                                        type=""
-                                        {...field} />
+                                        </InputOTPGroup>
+                                        <InputOTPSeparator />
+                                        <InputOTPGroup>
+                                            <InputOTPSlot index={2} />
+                                            <InputOTPSlot index={3} />
+
+
+                                        </InputOTPGroup>
+                                    </InputOTP>
                                 </FormControl>
                                 <FormMessage/>
                             </FormItem>
                         )}
                     />
                     {/* Hidden mobile field */}
-                    <input type="hidden" {...form.register(FIELDS.MOBILE)}  value={mobile}/>
+                    <input type="hidden" {...form.register(FIELDS.MOBILE)} value={mobile}/>
 
 
                     <Button
