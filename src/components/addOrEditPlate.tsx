@@ -9,21 +9,20 @@ import {InputPlate} from "@/components/ui/input-plate";
 import {Input} from "@/components/ui/input";
 import {Button} from "@/components/ui/button";
 import React from "react";
+import {AddPlateSchema, MOTORCYCLE, PELAK, PELAK_TITLE, SAVARI, VEHICLE_TYPE} from "@/lib/schema/schemas";
 
-const formSchema = z.object({
-    'vehicle-type': z.string(),
-    'pelak': z.string(),
-    plateTitle: z.string().min(1)
-});
 
-export function AddOrEditPlate() {
 
-    const form = useForm<z.infer<typeof formSchema>>({
-        resolver: zodResolver(formSchema),
+
+
+export function AddOrEditPlate({plateID}) {
+
+    const form = useForm<z.infer<typeof AddPlateSchema>>({
+        resolver: zodResolver(AddPlateSchema),
 
     })
 
-    function onSubmit(values: z.infer<typeof formSchema>) {
+    function onSubmit(values: z.infer<typeof AddPlateSchema>) {
         try {
             // console.log(values);
             toast(
@@ -43,7 +42,7 @@ export function AddOrEditPlate() {
 
                 <FormField
                     control={form.control}
-                    name="vehicle-type"
+                    name={VEHICLE_TYPE}
                     render={({field}) => (
                         <FormItem className="space-y-3">
                             <FormLabel>نوع وسیله نقلیه
@@ -55,8 +54,8 @@ export function AddOrEditPlate() {
                                     className="flex  space-x-1"
                                 >
                                     {[
-                                        ["سواری", "savari"],
-                                        ["موتور سیکلت", "motor"],
+                                        ["سواری", SAVARI],
+                                        ["موتور سیکلت", MOTORCYCLE],
 
                                     ].map((option, index) => (
                                         <FormItem className="flex items-center space-x-3 space-y-0" key={index}>
@@ -78,7 +77,7 @@ export function AddOrEditPlate() {
 
                 <FormField
                     control={form.control}
-                    name="pelak"
+                    name={PELAK}
 
                     render={({field}) => (
                         <FormItem>
@@ -96,7 +95,7 @@ export function AddOrEditPlate() {
 
                 <FormField
                     control={form.control}
-                    name="plateTitle"
+                    name={PELAK_TITLE}
                     render={({field}) => (
                         <FormItem>
                             <FormLabel>عنوان پلاک

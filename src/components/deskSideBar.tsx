@@ -16,12 +16,12 @@ export function DeskSideBar(props: { sidebarOpen: boolean, onClick: () => void})
                          onClick={props.onClick}
                          width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect width="24" height="24" rx="4" transform="matrix(-1 0 0 1 36 12)" fill="#EBE7FF"/>
-                        <path d="M17 24H31" stroke="#6E21FF" stroke-width="1.5" stroke-linecap="round"
-                              stroke-linejoin="round"/>
-                        <path d="M22 29L17 24" stroke="#6E21FF" stroke-width="1.5" stroke-linecap="round"
-                              stroke-linejoin="round"/>
-                        <path d="M22 19L17 24" stroke="#6E21FF" stroke-width="1.5" stroke-linecap="round"
-                              stroke-linejoin="round"/>
+                        <path d="M17 24H31" stroke="#6E21FF" strokeWidth="1.5" strokeLinecap="round"
+                              strokeLinejoin="round"/>
+                        <path d="M22 29L17 24" stroke="#6E21FF" strokeWidth="1.5" strokeLinecap="round"
+                              strokeLinejoin="round"/>
+                        <path d="M22 19L17 24" stroke="#6E21FF" strokeWidth="1.5" strokeLinecap="round"
+                              strokeLinejoin="round"/>
                     </svg>
 
                     {navigation.map((item) => (

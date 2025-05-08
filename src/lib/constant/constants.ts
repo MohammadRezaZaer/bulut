@@ -7,30 +7,20 @@ export const FIELDS = {
 
 export const ROUTES = {
     LOGIN: '/login',
-    DASHBOARD: '/dashboard',
+    DASHBOARD: {
+        Dashboard:'/dashboard',
+        EditAccount:'/edit-account',
+        Referrals:'/referrals',
+        InsuranceList:'/insurance-list'
+    },
     PROFILE: '/profile',
     INSURANCE_SIGNUP: '/insurance-signup',
 
     // Add other routes here
 };
-export const Text_tokens = {
+export const TextBucket = {
 
     Sign_out: 'Sign out',
     // Add other routes here
 };
 
-// Constants for form field names
-export const LOCATION_STATE_FIELD = "location-state";
-export const STATE="state"
-export const CITY="city"
-
-export const CAR_DETAIL = "car-detail";
-export const CAR_BRAND = "car_brand"
-export const CAR_MODEL = "car_model"
-export const CAR_YEAR = "car_year"
-export const CAR_TYPE = "car_type"
-
-export const PELAK = "pelak"
-export const PELAK_AZAD = "pelak-azad"
-
-export const AZAD_OR_NORMAL ="azadOrNormal"

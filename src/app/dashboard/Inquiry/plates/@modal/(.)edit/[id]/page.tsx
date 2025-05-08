@@ -7,7 +7,8 @@ export default async function PhotoModal({
 }: {
   params: Promise<{ id: string }>;
 }) {
-  const photoId = (await params).id;
+  const Id = (await params).id;
+  console.log({Id})
   return <Modal>
 
     <div className="w-full mx-auto mt-10 bg-white p-6  rounded-lg">

@@ -12,7 +12,8 @@ import brands from "@/data/car-brands.json";
 import models from "@/data/car-models.json";
 import years from "@/data/car-years.json";
 import types from "@/data/car-types.json";
-import {CAR_BRAND, CAR_DETAIL, CAR_MODEL, CAR_TYPE, CAR_YEAR, LOCATION_STATE_FIELD} from "@/lib/constant/constants";
+
+import {CAR_BRAND, CAR_DETAIL, CAR_MODEL, CAR_TYPE, CAR_YEAR, LOCATION_STATE_FIELD} from "@/lib/schema/schemas";
 
 interface BrandProps {
     id: number;

@@ -10,7 +10,8 @@ import { FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/comp
 // Import JSON data directly
 import states from "@/data/states.json";
 import cities from "@/data/cities.json";
-import { LOCATION_STATE_FIELD } from "@/lib/constant/constants";
+
+import {LOCATION_STATE_FIELD} from "@/lib/schema/schemas";
 
 // Define types for state and city
 interface CityProps {

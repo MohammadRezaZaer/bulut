@@ -3,7 +3,8 @@
 import * as React from "react";
 import { cn } from "@/lib/utils";
 import { Select, SelectContent, SelectItem, SelectTrigger } from "@/components/ui/select";
-import {PELAK} from "@/lib/constant/constants";
+
+import {PELAK} from "@/lib/schema/schemas";
 
 type InputPlateContextType = {
     slots: React.RefObject<HTMLInputElement | HTMLSelectElement>[];

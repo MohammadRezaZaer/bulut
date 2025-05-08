@@ -1,84 +1,70 @@
-import { z } from 'zod';
-import {
-    CAR_BRAND,
-    CAR_DETAIL,
-    CAR_MODEL,
-    CAR_TYPE,
-    CAR_YEAR,
-    CITY,
-    LOCATION_STATE_FIELD,
-    PELAK,
-    PELAK_AZAD,
-    STATE
-} from "@/lib/constant/constants";
+import * as z from 'zod';
 import {DateObject} from "react-multi-date-picker";
 
 
+// Constants for form field names
+export const LOCATION_STATE_FIELD = "location-state";
+export const STATE = "state"
+export const CITY = "city"
+export const CAR_DETAIL = "car-detail";
+export const CAR_BRAND = "car_brand"
+export const CAR_MODEL = "car_model"
+export const CAR_YEAR = "car_year"
+export const CAR_TYPE = "car_type"
+export const PELAK = "pelak"
+export const PELAK_TITLE = "pelak-title"
+export const VEHICLE_TYPE = 'vehicle-type'
+export const PELAK_AZAD = "pelak-azad"
+export const AZAD_OR_NORMAL = "azadOrNormal"
+export const MOTORCYCLE = "motorcycle"
+export const SAVARI = "savari"
 
 
 export const FieldsSchemaForMarkazi = z.object({
-    // name: z.string({
-    //     required_error: "نام الزامی است.",
-    // }).min(1, "نام الزامی است."),
-    //
-    // last_name: z.string({
-    //     required_error: "نام خانوادگی الزامی است.",
-    // }).min(1, "نام خانوادگی الزامی است."),
-    //
-    // national_number: z.string({
-    //     required_error: "کد ملی الزامی است.",
-    // }).min(1, "کد ملی الزامی است."),
-    //
-    // birthdate: z.preprocess(
-    //     (val) => {
-    //         if (val instanceof DateObject) {
-    //             return val.toDate();
-    //         }
-    //         return val;
-    //     },
-    //     z
-    //         .date({
-    //             required_error: "تاریخ تولد الزامی است.",
-    //             invalid_type_error: "فرمت تاریخ اشتباه است.",
-    //         })
-    // ),
-    //
-    // //
-    // mobile_number: z.string({
-    //     required_error: "شماره موبایل الزامی است.",
-    // }).min(1, "شماره موبایل الزامی است."),
-    //
-    //
-    // [LOCATION_STATE_FIELD]: z.object({
-    //     [STATE]: z.string({
-    //         required_error: "استان الزامی است.",
-    //     }).min(1, "استان الزامی است."),
-    //
-    //     [CITY]: z.string({
-    //         required_error: "شهر الزامی است.",
-    //     }).min(1, "شهر الزامی است."),
-    // }),
-    // //
-    // [PELAK]: z.object({
-    //     leftNumber: z.string(),
-    //     letter: z.string(),
-    //     rightNumber: z.string(),
-    //     iranNumber: z.string(),
-    // }).refine((data) => {
-    //     return (
-    //         /^\d{2}$/.test(data.leftNumber) &&
-    //         /^[\u0600-\u06FFa-zA-Z]+$/.test(data.letter) &&
-    //         /^\d{3}$/.test(data.rightNumber) &&
-    //         /^\d{2}$/.test(data.iranNumber)
-    //     );
-    // }, {
-    //     message: "لطفا همه فیلدهای پلاک را بدرستی وارد نمایید.",
-    //     path: [],
-    // }),
+    name: z.string({
+        required_error: "نام الزامی است.",
+    }).min(1, "نام الزامی است."),
 
+    last_name: z.string({
+        required_error: "نام خانوادگی الزامی است.",
+    }).min(1, "نام خانوادگی الزامی است."),
 
+    national_number: z.string({
+        required_error: "کد ملی الزامی است.",
+    }).min(1, "کد ملی الزامی است."),
+
+    birthdate: z.preprocess(
+        (val) => {
+            if (val instanceof DateObject) {
+                return val.toDate();
+            }
+            return val;
+        },
+        z
+            .date({
+                required_error: "تاریخ تولد الزامی است.",
+                invalid_type_error: "فرمت تاریخ اشتباه است.",
+            })
+    ),
 
     //
+    mobile_number: z.string({
+        required_error: "شماره موبایل الزامی است.",
+    }).min(1, "شماره موبایل الزامی است."),
+
+
+    [LOCATION_STATE_FIELD]: z.object({
+        [STATE]: z.string({
+            required_error: "استان الزامی است.",
+        }).min(1, "استان الزامی است."),
+
+        [CITY]: z.string({
+            required_error: "شهر الزامی است.",
+        }).min(1, "شهر الزامی است."),
+    }),
+    //
+    [PELAK]: getZodPelak(),
+
     coverageAmount: z.string({
         required_error: "مقدار پوشش الزامی است.",
     }).nonempty("مقدار پوشش الزامی است."),
@@ -177,10 +163,8 @@ const sharedFieldsForManual = z.object({
     }).nonempty("مقدار پوشش الزامی است."),
 });
 
-// پلاک عادی
-const normalPlateSchema = sharedFieldsForManual.extend({
-    azadOrNormal: z.literal(false),
-    [PELAK]: z.preprocess((val) => {
+function getZodPelak() {
+    return z.preprocess((val) => {
             console.log({val})
             return val ?? {
                 leftNumber: "",
@@ -205,40 +189,48 @@ const normalPlateSchema = sharedFieldsForManual.extend({
             }, {
                 message: "لطفا همه فیلدهای پلاک را بدرستی وارد نمایید.",
                 path: [],
-            })),
-     [PELAK_AZAD]: z.undefined().optional(),
+            }));
+}
+
+// پلاک عادی
+const normalPlateSchema = sharedFieldsForManual.extend({
+    azadOrNormal: z.literal(false),
+    [PELAK]: getZodPelak(),
+    [PELAK_AZAD]: z.undefined().optional(),
 });
+
+function getZodAzadPelak() {
+    return z.preprocess((val) => {
+            console.log({val})
+            return val ?? {
+                azadleftNumber: "",
+                azadrightNumber: "",
+
+            };
+        },
+        z.object({
+            azadleftNumber: z.string(),
+            azadrightNumber: z.string(),
+
+        })
+            .refine((data) => {
+                return (
+                    /^\d{5}$/.test(data.azadleftNumber) &&
+
+                    /^\d{2}$/.test(data.azadrightNumber)
+
+                );
+            }, {
+                message: "لطفا همه فیلدهای پلاک را بدرستی وارد نمایید.",
+                path: [],
+            }));
+}
 
 // پلاک مناطق آزاد
 const azadPlateSchema = sharedFieldsForManual.extend({
     azadOrNormal: z.literal(true),
     [PELAK_AZAD]:
-        z.preprocess((val) => {
-                console.log({val})
-                return val ?? {
-                    azadleftNumber: "",
-                    azadrightNumber: "",
-
-                };
-            },
-            z.object({
-                azadleftNumber: z.string(),
-                azadrightNumber: z.string(),
-
-            })
-                .refine((data) => {
-                    return (
-                        /^\d{5}$/.test(data.azadleftNumber) &&
-
-                        /^\d{2}$/.test(data.azadrightNumber)
-
-                    );
-                }, {
-                    message: "لطفا همه فیلدهای پلاک را بدرستی وارد نمایید.",
-                    path: [],
-                })),
-
-
+        getZodAzadPelak(),
 
 
     [PELAK]: z.undefined().optional(),
@@ -249,3 +241,17 @@ export const ManualRegisterformSchema = z.discriminatedUnion("azadOrNormal", [
     normalPlateSchema,
     azadPlateSchema,
 ]);
+
+export const AddPlateSchema = z.object({
+    [VEHICLE_TYPE]: z.string({
+        required_error: "نوع وسیله نقلیه الزامی است.",
+        invalid_type_error: "نوع وسیله نقلیه نامعتبر است.",
+    }),
+
+    [PELAK_TITLE]: z.string({
+        required_error: "عنوان پلاک الزامی است.",
+        invalid_type_error: "عنوان پلاک نامعتبر است.",
+    }).min(1, { message: "عنوان پلاک نمی‌تواند خالی باشد." }),
+
+    [PELAK]: getZodPelak(),
+});

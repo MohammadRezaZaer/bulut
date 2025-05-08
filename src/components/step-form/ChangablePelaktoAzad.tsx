@@ -1,9 +1,9 @@
 import { useAtom } from "jotai";
-import {AZAD_OR_NORMAL, PELAK, PELAK_AZAD} from "@/lib/constant/constants";
 import {setShowAzadPlateAtom, showAzadPlateAtom} from "@/lib/atoms/showAzadPlateAtom";
 import {FormControl, FormField, FormItem, FormMessage} from "@/components/ui/form";
 import {InputPlate} from "@/components/ui/input-plate";
-import {AzadPlateInput} from "@/components/ui/azad-plate-input"; // Import atoms
+import {AzadPlateInput} from "@/components/ui/azad-plate-input";
+import {AZAD_OR_NORMAL, PELAK, PELAK_AZAD} from "@/lib/schema/schemas"; // Import atoms
 
 export function ChangablePelaktoAzad(props: { form: any }) {
     // Get the state and setter for the plate type using Jotai atoms

@@ -37,7 +37,7 @@ function OnboardingFlow() {
     }
     return (<>
             <section
-                className="xl:my-[40px]  flex xl:h-[150px] h-[100px] w-full items-center justify-center bg-brand font-bold">
+                className="xl:my-[40px] rounded flex xl:h-[150px] h-[100px] w-full items-center justify-center bg-brand font-bold">
                 <h1 className="xl:text-[40px] text-[24px] font-bold text-center text-white px-10">ثبت نام بیمه امداد حمل
                     رایگان</h1></section>
 

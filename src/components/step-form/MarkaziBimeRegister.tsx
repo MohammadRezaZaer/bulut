@@ -10,13 +10,12 @@ import {ChangablePelaktoAzad} from "@/components/step-form/ChangablePelaktoAzad"
 
 
 import {FormSelectControl} from "@/components/step-form/FormSelectControl";
-import {FieldsSchemaForMarkazi, ManualRegisterformSchema} from "@/lib/schema/schemas";
+import {FieldsSchemaForMarkazi, ManualRegisterformSchema, PELAK} from "@/lib/schema/schemas";
 import {useAtom} from "jotai/index";
 import {showAzadPlateAtom} from "@/lib/atoms/showAzadPlateAtom";
 import {FormPhoneControl} from "@/components/step-form/FormPhoneControl";
 import {FormDateControl} from "@/components/step-form/FormDateControl";
 import {FormFieldControl} from "@/components/step-form/FormFieldControl";
-import {PELAK} from "@/lib/constant/constants";
 import {InputPlate} from "@/components/ui/input-plate";
 import {Button} from "@/components/ui/button";
 
@@ -29,12 +28,7 @@ export default function MarkaziBimeRegister({goToNext, goToPrev, onboardingData}
     const form = useForm<z.infer<typeof FieldsSchemaForMarkazi>>({
         resolver: zodResolver(FieldsSchemaForMarkazi),
         defaultValues: {
-[PELAK]:{
-    leftNumber: 0,
-    letter: "الف",
-    rightNumber: 0,
-    iranNumber: 0,
-},
+
             azadOrNormal: showAzadPlate,
             ...onboardingData, // Use the saved data to set default values in the form
             // "car-detail": {

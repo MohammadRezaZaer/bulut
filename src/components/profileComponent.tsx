@@ -2,19 +2,20 @@ import {Menu, Transition} from "@headlessui/react";
 import {ChevronDownIcon} from "@heroicons/react/20/solid";
 import React, {Fragment} from "react";
 import {cn} from "@/lib/utils";
-import {Text_tokens} from "@/lib/constant/constants";
+import {ROUTES, TextBucket} from "@/lib/constant/constants";
 import LogoutForm from "@/app/dashboard/logout-form";
 
 const userNavigation = [
-    {name: 'Your profile', href: '#'},
-    {name: Text_tokens.Sign_out, href: '#'},
+    {name: 'داشبورد', href: ROUTES.DASHBOARD.Dashboard},
+    {name: 'حساب کاربری', href: ROUTES.DASHBOARD.EditAccount},
+    {name: TextBucket.Sign_out, href: '#'},
 ]
 
 export function ProfileComponent() {
     return <>
         {/* Profile dropdown */}
         <Menu as="div" className="relative">
-            <Menu.Button className="-m-1.5 flex items-center p-1.5 w-full">
+            <Menu.Button className="ml-4 flex items-center p-1.5 w-full" >
                 <span className="sr-only">Open user menu</span>
                 <img
                     className="h-8 w-8 rounded-full bg-gray-50"
@@ -42,7 +43,7 @@ export function ProfileComponent() {
                     {userNavigation.map((item) => (
                         <Menu.Item key={item.name}>
                             {({ active }) =>
-                                item.name === Text_tokens.Sign_out ? (
+                                item.name === TextBucket.Sign_out ? (
                                     <LogoutForm />
                                 ) : (
                                     <a
