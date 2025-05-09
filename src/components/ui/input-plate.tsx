@@ -85,36 +85,46 @@ export const InputPlate = ({ form, onChange }: InputPlateProps) => {
         </div>
     );
 };
+interface InputDigitsProps extends React.InputHTMLAttributes<HTMLInputElement> {
+    wrapperClassName?: string
+    __index?: number
+}
 
-// InputDigits Component
 export const InputDigits = React.forwardRef<HTMLInputElement, InputDigitsProps>(
-    ({ className, wrapperClassName, __index = 0, maxLength = 1, ...props }, ref) => {
-        const ctx = React.useContext(InputPlateContext);
-        const inputRef = React.useRef<HTMLInputElement>(null);
+    ({ className, wrapperClassName, __index = 0, maxLength = 1, onChange, ...props }, ref) => {
+        const ctx = React.useContext(InputPlateContext)
+        const localRef = React.useRef<HTMLInputElement>(null)
+
+        // Forward the ref to react-hook-form
+        React.useImperativeHandle(ref, () => localRef.current as HTMLInputElement, [])
 
         const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+            // move to next input if length exceeds
             if (e.target.value.length >= maxLength && ctx) {
-                const nextRef = ctx.slots[__index + 1];
-                nextRef?.current?.focus();
+                const nextRef = ctx.slots[__index + 1]
+                nextRef?.current?.focus()
             }
-            props.onChange?.(e);
-        };
+            onChange?.(e)
+        }
 
+        // Save slot ref
         React.useEffect(() => {
-            if (ctx && ctx.slots[__index]) {
-                ctx.slots[__index].current = inputRef.current;
+            if (ctx?.slots[__index]) {
+                ctx.slots[__index].current = localRef.current
             }
-        }, [ctx, __index]);
+        }, [ctx, __index])
 
         return (
-            <div className={cn("flex h-[32px] w-[65px] items-center justify-center rounded-[6px] border border-solid border-[#8B929A36] ", wrapperClassName)}>
+            <div
+                className={cn(
+                    "flex h-[32px] w-[65px] items-center justify-center rounded-[6px] border border-solid border-[#8B929A36]",
+                    wrapperClassName
+                )}
+            >
                 <input
-                    ref={(node) => {
-                        inputRef.current = node;
-                        if (typeof ref === "function") ref(node);
-                        else if (ref) (ref as any).current = node;
-                    }}
+                    ref={localRef}
                     maxLength={maxLength}
+                    dir="ltr"
                     type="text"
                     inputMode="numeric"
                     className={cn(
@@ -125,10 +135,12 @@ export const InputDigits = React.forwardRef<HTMLInputElement, InputDigitsProps>(
                     {...props}
                 />
             </div>
-        );
+        )
     }
-);
-InputDigits.displayName = "InputDigits";
+)
+
+InputDigits.displayName = "InputDigits"
+
 
 // InputLetter Component
 const letterOptions = [

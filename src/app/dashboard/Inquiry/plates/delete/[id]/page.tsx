@@ -14,6 +14,8 @@ export default function DeletePage({
   params: Promise<{ id: string }>;
 }) {
 
+    const Id = (await params).id;
+    console.log({Id})
 
     const dialogRef = useRef<ElementRef<'dialog'>>(null);
 

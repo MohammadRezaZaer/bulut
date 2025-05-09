@@ -15,6 +15,9 @@ export const PELAK = "pelak"
 export const PELAK_TITLE = "pelak-title"
 export const VEHICLE_TYPE = 'vehicle-type'
 export const PELAK_AZAD = "pelak-azad"
+export const PELAK_MOTOR = "pelak-motor"
+export const MOTOR_RIGHT_NUMBER ="motorRightNumber"
+export const MOTOR_LEFT_NUMBER ="motorLeftNumber"
 export const AZAD_OR_NORMAL = "azadOrNormal"
 export const MOTORCYCLE = "motorcycle"
 export const SAVARI = "savari"
@@ -199,6 +202,36 @@ const normalPlateSchema = sharedFieldsForManual.extend({
     [PELAK_AZAD]: z.undefined().optional(),
 });
 
+
+function getZodMotorPelak() {
+    return z.preprocess(
+        (val) => {
+            console.log({val})
+            return val ?? {
+                [MOTOR_LEFT_NUMBER]: "",
+                [MOTOR_RIGHT_NUMBER]: "",
+            };
+        },
+        z
+            .object({
+                [MOTOR_LEFT_NUMBER]: z.string(),
+                [MOTOR_RIGHT_NUMBER]: z.string(),
+            })
+            .refine((data) => {
+                console.log({data})
+                return (
+                    /^\d{3}$/.test(data[MOTOR_LEFT_NUMBER]) &&
+                    /^\d{5}$/.test(data[MOTOR_RIGHT_NUMBER])
+                );
+            }, {
+                message: "لطفا همه فیلدهای پلاک را بدرستی وارد نمایید.",
+                path: [],
+            })
+    );
+}
+
+
+
 function getZodAzadPelak() {
     return z.preprocess((val) => {
             console.log({val})
@@ -242,16 +275,26 @@ export const ManualRegisterformSchema = z.discriminatedUnion("azadOrNormal", [
     azadPlateSchema,
 ]);
 
-export const AddPlateSchema = z.object({
-    [VEHICLE_TYPE]: z.string({
-        required_error: "نوع وسیله نقلیه الزامی است.",
-        invalid_type_error: "نوع وسیله نقلیه نامعتبر است.",
-    }),
-
+//  اسکیما برای سواری
+const savariPlateSchema = z.object({
+    [VEHICLE_TYPE]: z.literal(SAVARI),
     [PELAK_TITLE]: z.string({
         required_error: "عنوان پلاک الزامی است.",
-        invalid_type_error: "عنوان پلاک نامعتبر است.",
     }).min(1, { message: "عنوان پلاک نمی‌تواند خالی باشد." }),
-
     [PELAK]: getZodPelak(),
 });
+
+//  اسکیما برای موتور
+const motorPlateSchema = z.object({
+    [VEHICLE_TYPE]: z.literal(MOTORCYCLE),
+    // [PELAK_TITLE]: z.string({
+    //     required_error: "عنوان پلاک الزامی است.",
+    // }).min(1, { message: "عنوان پلاک نمی‌تواند خالی باشد." }),
+    [PELAK_MOTOR]: getZodMotorPelak(),
+});
+
+//  اسکیما نهایی
+export const AddPlateSchema = z.discriminatedUnion(VEHICLE_TYPE, [
+    savariPlateSchema,
+    motorPlateSchema,
+]);

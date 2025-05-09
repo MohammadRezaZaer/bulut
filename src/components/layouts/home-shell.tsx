@@ -27,7 +27,7 @@ export default function HomeShell({children, isAuthenticated}: Props) {
             <main className="bg-[#F0F1F1]">
                 <div className="flex">
 
-                    <section className="py-10 px-12 w-full bg-white m-4 rounded-xl">
+                    <section className="p-4 xl:py-10 xl:px-12 w-full bg-white m-4 rounded-xl">
 
                         {children}
                     </section>

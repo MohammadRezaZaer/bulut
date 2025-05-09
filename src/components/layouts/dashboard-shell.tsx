@@ -33,7 +33,7 @@ items={navigation}
                         sidebarOpen={SidebarOpen}
                         onClick={() => setSidebarOpen((prev) => !prev)}
                     />
-                    <section className="py-10 px-12 w-full bg-white m-4 rounded-xl">
+                    <section className="p-4 xl:py-10 xl:px-12 w-full bg-white m-4 rounded-xl">
                         <BackLink href="../" />
                         {children}
                     </section>
