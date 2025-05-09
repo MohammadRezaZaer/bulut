@@ -9,6 +9,8 @@ import {Metadata} from "next";
 
 import { Toaster } from "@/components/ui/sonner"
 import TopLoader from "@/components/top-loader";
+// import {yekanBakh} from "~/fonts/fonts";
+
 
 export const metadata: Metadata = {
     metadataBase: new URL(siteConfig.url),
@@ -56,7 +58,7 @@ export default async function RootLayout(props: {
 }) {
 
   return (
-      <html lang="fa" dir={"rtl"}>
+      <html lang="fa" dir={"rtl"} className={""}>
 
       <body>
       <TopLoader />

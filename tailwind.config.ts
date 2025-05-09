@@ -9,7 +9,7 @@ export default {
   theme: {
   	extend: {
   		fontFamily: {
-  			primary: ['Inter', ...defaultTheme.fontFamily.sans]
+  			primary: ['YekanBakhFaNum', ...defaultTheme.fontFamily.sans]
   		},
   		colors: {
   			brand: {

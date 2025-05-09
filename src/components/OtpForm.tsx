@@ -6,7 +6,7 @@ import {Input} from "@/components/ui/input";
 import {OtpInputInfer, otpSchema} from "@/app/lib/validation";
 import {verifyOtpAction} from "@/app/login/actions";
 import {Form, FormControl, FormField, FormItem, FormMessage} from "@/components/ui/form";
-import {FIELDS} from "@/lib/constant/constants";
+import {FIELDS, ROUTES} from "@/lib/constant/constants";
 import * as z from "zod";
 import {zodResolver} from "@hookform/resolvers/zod";
 import {toast} from "sonner";
@@ -50,7 +50,7 @@ export default function OtpForm({mobile, onBack, onSuccess}: any) {
         if (result.success) {
             // onSuccess()
             console.log("suuuu")
-            router.push('/dashboard')
+            router.push(ROUTES.DASHBOARD.Dashboard)
         }
 
     }
