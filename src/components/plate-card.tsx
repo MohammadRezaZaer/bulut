@@ -29,8 +29,8 @@ export function PlateCard({ title, plate }: PlateCardProps) {
             </section>
 
             {/* Body */}
-            <section className="mx-4 mb-6 mt-4 flex items-center justify-between">
-                <p className="text-sm dark:text-white">شماره پلاک</p>
+            <section className="mx-4 mb-6 mt-4  flex items-center justify-between">
+                <p className="text-sm dark:text-white px-2">شماره پلاک</p>
 
                 <section className="flex h-[48px] w-[220px] max-w-full rounded transition-all duration-500">
                     <section className="flex rounded-r border-y-[0.4px] border-r-[0.4px] border-[#A6A9BD] bg-white dark:bg-[#3b3d42]">

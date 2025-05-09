@@ -28,12 +28,12 @@ items={navigation}
             <Header setMobSidebarOpen={setMobSidebarOpen} isAuthenticated={isAuthenticated} />
 
             <main className="bg-[#F0F1F1]">
-                <div className="flex">
+                <div className="flex min-h-[93vh] overflow-x-hidden">
                     <DeskSideBar
                         sidebarOpen={SidebarOpen}
                         onClick={() => setSidebarOpen((prev) => !prev)}
                     />
-                    <section className="p-4 xl:py-10 xl:px-12 w-full bg-white m-4 rounded-xl">
+                    <section className="p-4 xl:py-10 xl:px-12 w-full bg-white xl:m-4 rounded-xl">
                         <BackLink href="../" />
                         {children}
                     </section>

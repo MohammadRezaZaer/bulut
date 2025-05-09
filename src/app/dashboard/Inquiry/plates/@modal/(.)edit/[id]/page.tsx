@@ -11,8 +11,8 @@ export default async function PhotoModal({
   console.log({Id})
   return <Modal>
 
-    <div className="w-full mx-auto mt-10 bg-white p-6  rounded-lg">
-      <h1 className="text-xl font-bold mb-6">ویرایش پلاک</h1>
+    <div className="w-full mx-auto mt-5 xl:mt-10 xl:p-6 bg-white  rounded-lg">
+      <h1 className="text-xl font-bold mb-6 max-xl:text-center">ویرایش پلاک</h1>
       <AddOrEditPlate/>
     </div>
 
