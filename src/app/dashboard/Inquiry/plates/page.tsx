@@ -2,7 +2,7 @@
 
 import React, {Fragment} from 'react'
 
-import {PlateCard} from "@/components/plate-card";
+import {PlateCardShowing} from "@/components/plate-card-showing";
 
 import Link from "next/link";
 import {Button} from "@/components/ui/button";
@@ -34,7 +34,7 @@ export default function Page() {
             </div>
             <div className="mx-[24px] grid gap-4 md:mx-auto md:w-[80%] xl:w-full xl:grid-cols-3  xl:gap-6 ">
                 {Array.from({ length: 25 }, (_, idx) => {
-                    return (   <PlateCard
+                    return (   <PlateCardShowing
                             key={idx}
                             title="ساینا"
                             plate={{

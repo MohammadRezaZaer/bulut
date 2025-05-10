@@ -54,7 +54,7 @@ export const AzadPlateInput = ({onChange}: InputPlateProps) => {
                 <section
                     className="flex h-full w-[142px] items-center justify-center border-l-[0.4px] border-solid border-[#A6A9BD] ">
                     <section
-                        className="flex h-[32px] w-[125px] items-center justify-center rounded-[5px] border border-solid border-[#8B929A36] ">
+                        className="flex h-[32px] w-[125px] items-center justify-center rounded-[5px]  ">
 
                             <InputDigits
                                 value={digits[0]}

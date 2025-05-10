@@ -119,12 +119,12 @@ export default function ManualBimeRegister({goToNext, goToPrev, onboardingData})
                                    }))} form={form}/>
 
                 {/* Submit Button */}
-                <div className="flex w-full gap-4">
+                <div className="flex w-full gap-4 justify-center">
 
                     <Button onClick={() => goToPrev(form.getValues())} variant={"outline"} type="button">مرحله
                         قبل</Button>
 
-                    <Button className="w-full" type="submit">ذخیره</Button>
+                    <Button className="" type="submit">ذخیره</Button>
                 </div>
             </form>
         </Form>

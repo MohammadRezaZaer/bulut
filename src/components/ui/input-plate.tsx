@@ -49,7 +49,7 @@ export const InputPlate = ({ form, onChange }: InputPlateProps) => {
                     <InputDigits
                         value={digits[3]}
                         className=" h-[28px] w-[24px] pr-px "
-                        wrapperClassName=" flex h-[32px] w-[30px] items-center justify-center rounded-[6px] border border-solid border-[#8B929A36]  "
+                        wrapperClassName=" flex h-[32px] w-[30px] items-center justify-center rounded-[6px]"
                         onChange={(e) => updatePiece(3, e.target.value)}
                         maxLength={2}
                         placeholder={50}
@@ -74,7 +74,7 @@ export const InputPlate = ({ form, onChange }: InputPlateProps) => {
                     <InputDigits
                         value={digits[0]}
                         className="h-[28px] w-[33px]"
-                        wrapperClassName="flex h-[32px] w-[52px] items-center justify-center rounded-[6px] border border-solid border-[#8B929A36] "
+                        wrapperClassName="flex h-[32px] w-[52px] items-center justify-center rounded-[6px]"
                         onChange={(e) => updatePiece(0, e.target.value)}
                         maxLength={2}
                         placeholder={66}
@@ -117,7 +117,7 @@ export const InputDigits = React.forwardRef<HTMLInputElement, InputDigitsProps>(
         return (
             <div
                 className={cn(
-                    "flex h-[32px] w-[65px] items-center justify-center rounded-[6px] border border-solid border-[#8B929A36]",
+                    "flex h-[32px] w-[65px] items-center justify-center rounded-[6px] ",
                     wrapperClassName
                 )}
             >
@@ -128,7 +128,7 @@ export const InputDigits = React.forwardRef<HTMLInputElement, InputDigitsProps>(
                     type="text"
                     inputMode="numeric"
                     className={cn(
-                        "outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 rounded-md text-center",
+                        "outline-none ring-1 ring-gray-100 ring-offset-2 focus-visible:ring-2 focus-visible:ring-brand  rounded-md text-center",
                         className
                     )}
                     onChange={handleChange}

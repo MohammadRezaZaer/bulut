@@ -119,14 +119,14 @@ export default function MarkaziBimeRegister({goToNext, goToPrev, onboardingData}
                                                label: ((i + 1) * 1000000).toLocaleString()
                                            }))} form={form}/>
                         {/* Submit Button */}
-                        <div className="flex w-full gap-4">
+                        <div className="flex w-full gap-4 justify-center">
 
                             <Button onClick={() => goToPrev(form.getValues())}
                                     variant={"outline"}
                                     type="button">
                                 مرحله قبل
                             </Button>
-                            <Button className="w-full" type="submit">
+                            <Button className="" type="submit">
                                 ذخیره
                             </Button>
                         </div>

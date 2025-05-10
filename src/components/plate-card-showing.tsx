@@ -16,7 +16,7 @@ type PlateCardProps = {
     };
 };
 
-export function PlateCard({ title, plate }: PlateCardProps) {
+export function PlateCardShowing({ title, plate }: PlateCardProps) {
     return (
         <section className="relative mx-auto max-w-full rounded-[5px] border border-[#8B929A36] md:w-[80%] xl:w-[410px] dark:bg-[#2a2c31]">
             {/* Header */}

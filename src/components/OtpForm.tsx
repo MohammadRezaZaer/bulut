@@ -13,7 +13,7 @@ import {useRouter} from "next/navigation";
 import {InputOTP, InputOTPGroup, InputOTPSeparator, InputOTPSlot} from "@/components/ui/input-otp";
 import {OtpInputInfer, otpSchema} from "@/lib/schema/schemas";
 import {useState} from "react";
-import { useFormStatus } from "react-dom";
+import {useFormStatus} from "react-dom";
 import {useMutation} from "@tanstack/react-query";
 
 export default function OtpForm({mobile, onBack, onSuccess}: any) {
@@ -33,26 +33,26 @@ export default function OtpForm({mobile, onBack, onSuccess}: any) {
         mutationFn: verifyOtpAction,
 
         onSuccess: async (result) => {
-if(result.success){
-        console.log("suuuu")
-         router.push(ROUTES.DASHBOARD.Dashboard)
-}else{
-    if (result.error) {
-        // set local error state
-        toast.error(result.error.otp);
-        console.log(result.error)
+            if (result.success) {
+                console.log("suuuu")
+                router.push(ROUTES.DASHBOARD.Dashboard)
+            } else {
+                if (result.error) {
+                    // set local error state
+                    toast.error(result.error.otp);
+                    console.log(result.error)
 
 
-        for (const key in result.error) {
-            form.setError(key as keyof OtpInputInfer, {
-                message: result.error[key]?.[0] || 'خطا',
-                type: 'manual'
-            })
-        }
+                    for (const key in result.error) {
+                        form.setError(key as keyof OtpInputInfer, {
+                            message: result.error[key]?.[0] || 'خطا',
+                            type: 'manual'
+                        })
+                    }
 
-        return
-    }
-}
+                    return
+                }
+            }
 
 
         },
@@ -132,18 +132,19 @@ if(result.success){
                                     {/*    maxLength={4}*/}
                                     {/*    type=""*/}
                                     {/*    {...field} />*/}
-                                    <InputOTP className="" maxLength={5} onComplete={form.handleSubmit(processForm)} {...field}>
+                                    <InputOTP className="" maxLength={5}
+                                              onComplete={form.handleSubmit(processForm)} {...field}>
                                         <InputOTPGroup>
 
-                                            <InputOTPSlot index={0} />
-                                            <InputOTPSeparator />
-                                            <InputOTPSlot index={1} />
-                                            <InputOTPSeparator />
-                                            <InputOTPSlot index={2} />
-                                            <InputOTPSeparator />
-                                            <InputOTPSlot index={3} />
-                                            <InputOTPSeparator />
-                                            <InputOTPSlot index={4} />
+                                            <InputOTPSlot index={0}/>
+                                            <InputOTPSeparator/>
+                                            <InputOTPSlot index={1}/>
+                                            <InputOTPSeparator/>
+                                            <InputOTPSlot index={2}/>
+                                            <InputOTPSeparator/>
+                                            <InputOTPSlot index={3}/>
+                                            <InputOTPSeparator/>
+                                            <InputOTPSlot index={4}/>
 
                                         </InputOTPGroup>
 
