@@ -65,7 +65,7 @@ export default async function RootLayout(props: {
           {props.children}
 
 
-          <Toaster />
+          <Toaster richColors  position="top-right"/>
       </body>
       </html>
   );
