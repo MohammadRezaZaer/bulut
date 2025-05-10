@@ -20,7 +20,7 @@ export function NavLink({ href, children }: NavLinkProps) {
                 <Link
                     href={href}
                     className={cn(
-                        "pb-3 align-middle text-[14px] font-semibold leading-6 antialiased transition-colors text-black dark:text-darkText-200",
+                        "pb-3 align-middle whitespace-nowrap text-[12px] xl:text-[14px] font-semibold leading-6 antialiased transition-colors text-black dark:text-darkText-200",
                         "hover:text-brand hover:border-b-2 hover:border-brand active:border-brand",
                         isActive && "text-brand border-b-2 border-brand"
                     )}
