@@ -331,6 +331,8 @@ export type PhoneInputInfer = z.infer<typeof phoneSchema>;
 
 export const otpSchema = z.object({
     [FIELDS.MOBILE]: getZodPhoneValidation(),
-    [FIELDS.OTP]: z.string().min(4, 'کد کوتاه است').max(6, 'کد بلند است')
+    [FIELDS.OTP]: z.string({required_error: 'کد ارسالی الزامی است'}).min(4, 'کد کوتاه است').max(6, 'کد بلند است')
+        .nonempty('کد ارسالی را وارد کنید')
+        .regex(/^\d{5}$/, 'کد ارسالی نامعتبر است')
 });
 export type OtpInputInfer = z.infer<typeof otpSchema>;

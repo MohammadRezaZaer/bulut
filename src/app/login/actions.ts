@@ -37,7 +37,7 @@ export async function verifyOtpAction( formData: OtpInputInfer) {
     if (!parsed.success) {
         return { success: false, error: parsed.error.flatten().fieldErrors };
     }
-    const isOtpCorrect = formData.otp === '1234'; // demo
+    const isOtpCorrect = formData.otp === '12345'; // demo
 
     if (!isOtpCorrect) {
         return { success: false, error: { otp: ['کد اشتباه است'] } };

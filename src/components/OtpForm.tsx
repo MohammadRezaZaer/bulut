@@ -2,7 +2,6 @@
 
 import {SubmitHandler, useForm} from "react-hook-form";
 import {Button} from "@/components/ui/button";
-import {Input} from "@/components/ui/input";
 import {verifyOtpAction} from "@/app/login/actions";
 import {Form, FormControl, FormField, FormItem, FormMessage} from "@/components/ui/form";
 import {FIELDS, ROUTES} from "@/lib/constant/constants";
@@ -13,6 +12,9 @@ import {ResendOtpButton} from "@/components/ResendOtpButton";
 import {useRouter} from "next/navigation";
 import {InputOTP, InputOTPGroup, InputOTPSeparator, InputOTPSlot} from "@/components/ui/input-otp";
 import {OtpInputInfer, otpSchema} from "@/lib/schema/schemas";
+import {useState} from "react";
+import { useFormStatus } from "react-dom";
+import {useMutation} from "@tanstack/react-query";
 
 export default function OtpForm({mobile, onBack, onSuccess}: any) {
 
@@ -22,36 +24,83 @@ export default function OtpForm({mobile, onBack, onSuccess}: any) {
         resolver: zodResolver(otpSchema),
 
     })
+
+    const {mutate: requestOTP, isPending: isLoading} = useMutation<
+        any,
+        any,
+        any
+    >({
+        mutationFn: verifyOtpAction,
+
+        onSuccess: async (result) => {
+if(result.success){
+        console.log("suuuu")
+         router.push(ROUTES.DASHBOARD.Dashboard)
+}else{
+    if (result.error) {
+        // set local error state
+        toast.error(result.error.otp);
+        console.log(result.error)
+
+
+        for (const key in result.error) {
+            form.setError(key as keyof OtpInputInfer, {
+                message: result.error[key]?.[0] || 'خطا',
+                type: 'manual'
+            })
+        }
+
+        return
+    }
+}
+
+
+        },
+
+        onError: (error) => {
+            console.log({error})
+        },
+
+    });
+    console.log({isLoading})
+
     const processForm: SubmitHandler<OtpInputInfer> = async data => {
-        console.log({data})
-        const result = await verifyOtpAction(data);
-        console.log({result})
-        if (!result) {
-            console.log('Something went wrong')
-            return
-        }
-
-        if (result.error) {
-            // set local error state
-            toast.error(result.error.otp);
-            console.log(result.error)
 
 
-            for (const key in result.error) {
-                form.setError(key as keyof OtpInputInfer, {
-                    message: result.error[key]?.[0] || 'خطا',
-                    type: 'manual'
-                })
-            }
+        requestOTP(data)
 
-            return
-        }
-
-        if (result.success) {
-            // onSuccess()
-            console.log("suuuu")
-            router.push(ROUTES.DASHBOARD.Dashboard)
-        }
+        // setLoading(true); // حالت بارگذاری را فعال می‌کنیم
+        //
+        // const result = await verifyOtpAction(data);
+        //
+        // setLoading(false); // حالت بارگذاری را غیرفعال می‌کنیم
+        //
+        // if (!result) {
+        //     console.log('Something went wrong')
+        //     return
+        // }
+        //
+        // if (result.error) {
+        //     // set local error state
+        //     toast.error(result.error.otp);
+        //     console.log(result.error)
+        //
+        //
+        //     for (const key in result.error) {
+        //         form.setError(key as keyof OtpInputInfer, {
+        //             message: result.error[key]?.[0] || 'خطا',
+        //             type: 'manual'
+        //         })
+        //     }
+        //
+        //     return
+        // }
+        //
+        // if (result.success) {
+        //     // onSuccess()
+        //     console.log("suuuu")
+        //     // router.push(ROUTES.DASHBOARD.Dashboard)
+        // }
 
     }
 
@@ -67,8 +116,9 @@ export default function OtpForm({mobile, onBack, onSuccess}: any) {
             <Form {...form} >
                 <form /*action={action}*/ className="flex  flex-col  gap-y-4 justify-center py-4"
                                           onSubmit={form.handleSubmit(processForm)}>
-                    <h2
-                        className="title text-[16px]">کد فعالسازی را وارد نمایید</h2>
+                    <h2 className="title text-[16px]">کد فعالسازی را وارد نمایید</h2>
+                    <h3 className="title text-[16px] text-green-400">12345</h3>
+
 
                     <FormField
                         control={form.control}
@@ -82,8 +132,9 @@ export default function OtpForm({mobile, onBack, onSuccess}: any) {
                                     {/*    maxLength={4}*/}
                                     {/*    type=""*/}
                                     {/*    {...field} />*/}
-                                    <InputOTP className="" maxLength={4} onComplete={form.handleSubmit(processForm)} {...field}>
+                                    <InputOTP className="" maxLength={5} onComplete={form.handleSubmit(processForm)} {...field}>
                                         <InputOTPGroup>
+
                                             <InputOTPSlot index={0} />
                                             <InputOTPSeparator />
                                             <InputOTPSlot index={1} />
@@ -91,10 +142,11 @@ export default function OtpForm({mobile, onBack, onSuccess}: any) {
                                             <InputOTPSlot index={2} />
                                             <InputOTPSeparator />
                                             <InputOTPSlot index={3} />
-
+                                            <InputOTPSeparator />
+                                            <InputOTPSlot index={4} />
 
                                         </InputOTPGroup>
-                                      
+
 
                                     </InputOTP>
                                 </FormControl>
@@ -107,9 +159,10 @@ export default function OtpForm({mobile, onBack, onSuccess}: any) {
 
 
                     <Button
+                        isLoading={isLoading}
                         className="mt-4 w-full"
                         type="submit"
-                        disabled={form.formState.isSubmitting}
+                        disabled={isLoading}
                     >
                         ورود
                     </Button>

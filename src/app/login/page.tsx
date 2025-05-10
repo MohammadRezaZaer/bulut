@@ -59,7 +59,7 @@ export default function LoginPage() {
 
                             </section>):(
 
-                            <section className="relative h-[325px] w-[300px] text-center p-2">
+                            <section className="relative h-[425px] w-[300px] text-center p-2">
                                 <OtpForm
 
                                     mobile={mobile}

@@ -1,6 +1,7 @@
 
 import { Metadata } from 'next';
 import * as React from 'react';
+import {ReactQueryClientProvider} from "@/lib/client/ReactQueryClientProvider";
 
 
 export const metadata: Metadata = {
@@ -10,16 +11,19 @@ export const metadata: Metadata = {
 
 
 
-export default function DashboardLayout(props: {
+export default function Layout(props: {
     children: React.ReactNode;
 
 }) {
 
 
-    return <main className="flex h-screen items-center justify-center bg-gray-100">
+    return (<ReactQueryClientProvider>
+
+    <main className="flex h-screen items-center justify-center bg-gray-100">
         {props.children}
 
     </main>
+    </ReactQueryClientProvider>)
 
 
 }

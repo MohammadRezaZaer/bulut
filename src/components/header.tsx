@@ -51,7 +51,7 @@ export function Header({
                     src="/images/fake-logo.png"
                     alt="Your Company"
                 />
-                <span className="px-4">بیمه مدد</span>
+                <span className="px-4">بیمه یدک</span>
             </div>
         </div>
     </div>)
