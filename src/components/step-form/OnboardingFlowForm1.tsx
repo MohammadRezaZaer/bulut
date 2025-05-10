@@ -41,7 +41,7 @@ function OnboardingFlow() {
                 <h1 className="xl:text-[40px] text-[24px] font-bold text-center text-white px-10">ثبت نام بیمه امداد حمل
                     رایگان</h1></section>
 
-            <div className="flex mx-auto w-full max-w-xl p-4 xl:p-8 xl:pt-4">
+            <div className="flex mx-auto w-full max-w-md lg:max-w-xl p-4 xl:p-8 xl:pt-4">
                 <DynamicStepSVGCounting stepsConfig={4}
                                         currentIndex={currentIndex}/>
             </div>

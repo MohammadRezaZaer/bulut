@@ -10,7 +10,7 @@ export default function BimeForm({ goToNext, goToPrev, onboardingData }) {
 
     return (
         <div className="max-w-7xl mx-auto">
-            <section className="text-red-600 text-center bg-rose-100 p-2 mt-4 rounded-md text-[18px] py-4 m-2"><p>نکته: در صورتی
+            <section className="text-red-600 text-center bg-rose-100 p-2 mt-4 leading-normal rounded-md text-[18px] py-4 m-2"><p>نکته: در صورتی
                 که ثبت نام به کمک استعلام بیمه مرکزی با مشکل مواجه شد می توانید از ثبت نام دستی استفاده کنید.</p><p
                 className="mt-4">نکته: در صورتی که دارای پلاک مناطق آزاد هستید از ثبت نام دستی استفاده کنید.</p>
             </section>
