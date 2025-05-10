@@ -1,27 +1,10 @@
 'use server';
-import {
-    FormDataSchema,
-    Inputs,
-    OtpInputInfer,
-    otpSchema,
-    PhoneInputInfer,
-    phoneSchema
-} from "@/app/lib/validation";
 import {setLoginCookie} from "@/lib/auth";
+import {OtpInputInfer, otpSchema, PhoneInputInfer, phoneSchema} from "@/lib/schema/schemas";
 
 
 
-export async function addEntry(data: Inputs) {
-    const result = FormDataSchema.safeParse(data)
 
-    if (result.success) {
-        return { success: true, data: result.data }
-    }
-
-    if (result.error) {
-        return { success: false, error: result.error.format() }
-    }
-}
 
 
 export async function sendOtpAction( data: PhoneInputInfer) {

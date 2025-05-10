@@ -2,6 +2,13 @@ import { ReadonlyURLSearchParams } from 'next/navigation';
 import { clsx, type ClassValue } from "clsx"
 import { twMerge } from "tailwind-merge"
 
+
+export function faToEnDigits(str: string): string {
+  return str.replace(/[۰-۹]/g, (d) => String.fromCharCode(d.charCodeAt(0) - 1728));
+}
+
+
+
 /** Merge classes with tailwind-merge with clsx full feature */
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));

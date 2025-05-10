@@ -1,5 +1,6 @@
-import * as z from 'zod';
+import {z} from 'zod';
 import {DateObject} from "react-multi-date-picker";
+import {FIELDS} from "@/lib/constant/constants";
 
 
 // Constants for form field names
@@ -298,3 +299,38 @@ export const AddPlateSchema = z.discriminatedUnion(VEHICLE_TYPE, [
     savariPlateSchema,
     motorPlateSchema,
 ]);
+
+function getZodPhoneValidation() {
+    return z.preprocess(
+        (val) => {
+            if (typeof val === 'string') {
+                // تبدیل فارسی به انگلیسی و حذف نویسه‌های غیرعددی
+                const cleaned = val
+                    .replace(/[۰-۹]/g, (d) => String.fromCharCode(d.charCodeAt(0) - 1728))
+                    .replace(/\D/g, '')
+
+                // اگر با 9 شروع بشه، 09 اضافه کن
+                if (cleaned.length === 10 && cleaned.startsWith('9')) {
+                    return '0' + cleaned
+                }
+
+                return cleaned
+            }
+            return val
+        },
+        z.string({required_error: 'شماره موبایل الزامی است'})
+            .nonempty('شماره موبایل را وارد کنید')
+            .regex(/^09\d{9}$/, 'شماره موبایل نامعتبر است')
+    );
+}
+
+export const phoneSchema = z.object({
+    [FIELDS.MOBILE]: getZodPhoneValidation()
+})
+export type PhoneInputInfer = z.infer<typeof phoneSchema>;
+
+export const otpSchema = z.object({
+    [FIELDS.MOBILE]: getZodPhoneValidation(),
+    [FIELDS.OTP]: z.string().min(4, 'کد کوتاه است').max(6, 'کد بلند است')
+});
+export type OtpInputInfer = z.infer<typeof otpSchema>;

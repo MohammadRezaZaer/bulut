@@ -4,13 +4,14 @@ import {SubmitHandler, useForm} from "react-hook-form";
 import {Button} from "@/components/ui/button";
 import {Input} from "@/components/ui/input";
 import {useEffect} from "react";
-import {PhoneInputInfer, phoneSchema} from "@/app/lib/validation";
 import {Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage} from "@/components/ui/form";
 import * as z from "zod";
 import {zodResolver} from "@hookform/resolvers/zod";
 import {PhoneInputComponent} from "@/components/ui/phone-input-component";
 import {sendOtpAction} from "@/app/login/actions";
 import {FIELDS} from "@/lib/constant/constants";
+import {PhoneInputInfer, phoneSchema} from "@/lib/schema/schemas";
+import {faToEnDigits} from "@/lib/utils";
 
 export default function PhoneForm({  onSuccess}: any) {
 
@@ -53,14 +54,21 @@ export default function PhoneForm({  onSuccess}: any) {
                     <FormItem className="flex flex-col items-start">
                         <FormLabel>شماره همراه</FormLabel>
                         <FormControl className="w-full">
-                            <PhoneInputComponent
-                                placeholder="09141234123"
-                                maxLength={13}
+                            <Input
+                                type="tel"
+                                placeholder="09141234567"
+                                maxLength={11}
                                 {...field}
-                                defaultCountry="IR"
-                                countries={["IR"]} // restricts to only IR
-                                international={false}
+                                onChange={(e) => {
+                                    const raw = e.target.value
+                                    const converted = faToEnDigits(raw).replace(/\D/g, '') // فقط عدد مجاز
+                                    field.onChange(converted)
+                                }}
+                                value={field.value}
+                                dir="ltr"
                             />
+
+
                         </FormControl>
                         <FormDescription>لطفا شماره همراه خود را وارد نمایید.</FormDescription>
                         <FormMessage />

@@ -3,7 +3,6 @@
 import {SubmitHandler, useForm} from "react-hook-form";
 import {Button} from "@/components/ui/button";
 import {Input} from "@/components/ui/input";
-import {OtpInputInfer, otpSchema} from "@/app/lib/validation";
 import {verifyOtpAction} from "@/app/login/actions";
 import {Form, FormControl, FormField, FormItem, FormMessage} from "@/components/ui/form";
 import {FIELDS, ROUTES} from "@/lib/constant/constants";
@@ -13,6 +12,7 @@ import {toast} from "sonner";
 import {ResendOtpButton} from "@/components/ResendOtpButton";
 import {useRouter} from "next/navigation";
 import {InputOTP, InputOTPGroup, InputOTPSeparator, InputOTPSlot} from "@/components/ui/input-otp";
+import {OtpInputInfer, otpSchema} from "@/lib/schema/schemas";
 
 export default function OtpForm({mobile, onBack, onSuccess}: any) {
 
@@ -85,16 +85,17 @@ export default function OtpForm({mobile, onBack, onSuccess}: any) {
                                     <InputOTP className="" maxLength={4} onComplete={form.handleSubmit(processForm)} {...field}>
                                         <InputOTPGroup>
                                             <InputOTPSlot index={0} />
+                                            <InputOTPSeparator />
                                             <InputOTPSlot index={1} />
-
-                                        </InputOTPGroup>
-                                        <InputOTPSeparator />
-                                        <InputOTPGroup>
+                                            <InputOTPSeparator />
                                             <InputOTPSlot index={2} />
+                                            <InputOTPSeparator />
                                             <InputOTPSlot index={3} />
 
 
                                         </InputOTPGroup>
+                                      
+
                                     </InputOTP>
                                 </FormControl>
                                 <FormMessage/>
