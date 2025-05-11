@@ -2,6 +2,10 @@
 
 import { useEffect, useState, useCallback } from 'react'
 import { Button } from '@/components/ui/button'
+import { atom, useAtom } from 'jotai'
+
+// تعریف atom برای ذخیره مقدار شمارنده
+const countdownAtom = atom(150)
 
 interface ResendOtpButtonProps {
     duration?: number // countdown seconds
@@ -18,7 +22,8 @@ export function ResendOtpButton({
                                     label = 'ارسال مجدد کد تا',
                                     resendLabel = 'ارسال مجدد کد'
                                 }: ResendOtpButtonProps) {
-    const [secondsLeft, setSecondsLeft] = useState(0)
+    // استفاده از atom برای گرفتن مقدار شمارنده
+    const [secondsLeft, setSecondsLeft] = useAtom(countdownAtom)
 
     useEffect(() => {
         if (secondsLeft === 0) return
@@ -28,19 +33,18 @@ export function ResendOtpButton({
         }, 1000)
 
         return () => clearInterval(interval)
-    }, [secondsLeft])
+    }, []) // شمارش معکوس از ابتدا شروع می‌شود، اما وضعیت از atom می‌آید
 
     const handleClick = useCallback(() => {
         onResend()
-        setSecondsLeft(duration)
-    }, [onResend, duration])
+        setSecondsLeft(duration) // زمانی که کاربر دکمه ارسال مجدد را بزند، شمارنده دوباره شروع می‌شود
+    }, [onResend, duration, setSecondsLeft])
 
     const mins = String(Math.floor(secondsLeft / 60)).padStart(2, '0')
     const secs = String(secondsLeft % 60).padStart(2, '0')
 
     return (
         <div className={`space-y-1 text-center ${className ?? ''}`}>
-
             <Button
                 variant="link"
                 size="sm"
