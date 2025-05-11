@@ -7,7 +7,15 @@ import {PlateCardShowing} from "@/components/plate-card-showing";
 import Link from "next/link";
 import {Button} from "@/components/ui/button";
 import {ROUTES} from "@/lib/constant/constants";
-
+import {
+    Pagination,
+    PaginationContent,
+    PaginationEllipsis,
+    PaginationItem,
+    PaginationLink,
+    PaginationNext,
+    PaginationPrevious,
+} from "@/components/ui/pagination"
 
 // Plate structure
 interface Plate {
@@ -46,69 +54,113 @@ export interface VehicleRecord {
     status: Status;
 }
 
-
+import { useState } from 'react';
 export default function Page() {
+    // استیت برای نگه داشتن صفحه فعلی و تعداد کل صفحات
+    const [currentPage, setCurrentPage] = useState(1);
+    const itemsPerPage = 5; // تعداد آیتم‌ها در هر صفحه
+    const totalItems = 25; // تعداد کل آیتم‌ها
+    const totalPages = Math.ceil(totalItems / itemsPerPage); // تعداد صفحات
 
+    const handleNextPage = () => {
+        if (currentPage < totalPages) {
+            setCurrentPage(currentPage + 1);
+        }
+    };
 
-    return (<>
+    const handlePrevPage = () => {
+        if (currentPage > 1) {
+            setCurrentPage(currentPage - 1);
+        }
+    };
 
+    const handlePageClick = (page) => {
+        setCurrentPage(page);
+    };
+
+    // صفحات اطراف صفحه فعلی
+    const pageNumbers = [];
+    for (let i = totalPages; i >= 1; i--) {
+        if (i === 1 || i === totalPages || (i >= currentPage - 1 && i <= currentPage + 1)) {
+            pageNumbers.push(i);
+        }
+    }
+
+    return (
+        <>
             <div className="flex w-full items-center mb-10">
-                <div className="flex items-center justify-between w-full"> <span>لیست بیمه نامه ها
-</span>
-                    <Button
-                    >
-
-                        <Link
-                            href={ROUTES.INSURANCE_SIGNUP}
-
-                        >
-
-                            افزودن بیمه نامه جدید
-                        </Link>
-
-
+                <div className="flex items-center justify-between w-full">
+                    <span>لیست بیمه نامه ها</span>
+                    <Button>
+                        <Link href={ROUTES.INSURANCE_SIGNUP}>افزودن بیمه نامه جدید</Link>
                     </Button>
-
                 </div>
             </div>
-            <div className="mx-[24px] grid gap-4 md:mx-auto md:w-[80%] xl:w-full xl:grid-cols-3  xl:gap-6 ">
-                {Array.from({length: 25}, (_, idx) => {
-                    return (<PlateCardShowing
-                            key={idx}
-                            title="ساینا"
-                            Bime={{
-                                car: {
-                                    plate: {
-                                        first: '15',
-                                        middle: '567',
-                                        letter: 'الف',
-                                        last: '77',
-                                    },
-                                    brand: "ایران خودرو",
-                                    model: "پژو 207",
-                                    color: "سفید",
+
+            <div className="mx-[24px] grid gap-4 md:mx-auto md:w-[80%] xl:w-full xl:grid-cols-3 xl:gap-6 pb-8">
+                {Array.from({ length: itemsPerPage }, (_, idx) => (
+                    <PlateCardShowing
+                        key={idx}
+                        Bime={{
+                            title: 'ساینا',
+                            car: {
+                                plate: {
+                                    first: '15',
+                                    middle: '567',
+                                    letter: 'الف',
+                                    last: '77',
                                 },
-                                insurance: {
-                                    name: "نام",
-                                    family: "نام خانوادگی",
-                                    commitment: 5000000,
-                                    paid: 275000,
-
-                                    insuranceExpiry: "1405/02/01",
-                                },
-                                id: ++idx,
-
-                                status: "prepaid"
-                            }}
-                        />
-                    );
-                })}
-
+                                brand: 'ایران خودرو',
+                                model: 'پژو 207',
+                                color: 'سفید',
+                            },
+                            insurance: {
+                                name: 'نام',
+                                family: 'نام خانوادگی',
+                                commitment: 5000000,
+                                paid: 275000,
+                                insuranceExpiry: '1405/02/01',
+                            },
+                            id: idx + 1,
+                            status: 'prepaid',
+                        }}
+                    />
+                ))}
             </div>
 
-        </>
+            {/* پیجینیشن */}
+            <Pagination>
+                <PaginationContent>
 
+                    <PaginationItem>
+                        <PaginationNext
+                            href="#"
+                            onClick={handleNextPage}
+                            disabled={currentPage === totalPages}
+                        />
+                    </PaginationItem>
+                    {/* نمایش شماره صفحات */}
+                    {pageNumbers.map((page) => (
+                        <PaginationItem key={page}>
+                            <PaginationLink
+                                href="#"
+                                onClick={() => handlePageClick(page)}
+                                className={currentPage === page ? 'font-bold' : ''}
+                            >
+                                {page}
+                            </PaginationLink>
+                        </PaginationItem>
+                    ))}
+
+                    <PaginationItem>
+                        <PaginationPrevious
+                            href="#"
+                            onClick={handlePrevPage}
+                            disabled={currentPage === 1}
+                        />
+                    </PaginationItem>
+                </PaginationContent>
+            </Pagination>
+        </>
     );
 }
-
-
