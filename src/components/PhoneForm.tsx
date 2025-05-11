@@ -60,9 +60,30 @@ export default function PhoneForm({  onSuccess}: any) {
                                 maxLength={11}
                                 {...field}
                                 onChange={(e) => {
-                                    const raw = e.target.value
-                                    const converted = faToEnDigits(raw).replace(/\D/g, '') // فقط عدد مجاز
-                                    field.onChange(converted)
+                                    const raw = e.target.value;
+                                    const converted = faToEnDigits(raw).replace(/\D/g, '');
+                                    field.onChange(converted);
+
+                                    // اگر مقدار خالی شد، خطا را پاک کن
+                                    if (!converted) {
+                                        form.clearErrors(FIELDS.MOBILE);
+                                        return;
+                                    }
+
+                                    // اگر با 09 شروع نشد، خطا بده
+                                    if (!converted.startsWith('09')) {
+                                        form.setError(FIELDS.MOBILE, {
+                                            type: 'manual',
+                                            message: 'شماره باید با 09 شروع شود.',
+                                        });
+                                    } else {
+                                        form.clearErrors(FIELDS.MOBILE);
+                                    }
+
+                                    // وقتی طول رسید به 11، اعتبارسنجی کن
+                                    if (converted.length === 11) {
+                                        form.trigger(FIELDS.MOBILE);
+                                    }
                                 }}
                                 value={field.value}
                                 dir="ltr"

@@ -22,6 +22,8 @@ import {
     InputOTPSlot
 } from "@/components/ui/input-otp";
 
+import OtpInput from 'react-otp-input';
+
 import {verifyOtpAction} from "@/app/login/actions";
 import {ResendOtpButton} from "@/components/ResendOtpButton";
 import {FIELDS, ROUTES} from "@/lib/constant/constants";
@@ -92,23 +94,33 @@ export default function OtpForm({mobile, onBack, onSuccess}: {
                         render={({field}) => (
                             <FormItem className="direction-ltr flex flex-col items-center justify-center">
                                 <FormControl>
-                                    <InputOTP
-                                        maxLength={5}
-                                        onComplete={form.handleSubmit(handleSubmit)}
-                                        {...field}
-                                    >
-                                        <InputOTPGroup>
-                                            <InputOTPSlot index={0}/>
-                                            <InputOTPSeparator/>
-                                            <InputOTPSlot index={1}/>
-                                            <InputOTPSeparator/>
-                                            <InputOTPSlot index={2}/>
-                                            <InputOTPSeparator/>
-                                            <InputOTPSlot index={3}/>
-                                            <InputOTPSeparator/>
-                                            <InputOTPSlot index={4}/>
-                                        </InputOTPGroup>
-                                    </InputOTP>
+
+
+                                    <OtpInput
+                                        value={field.value}
+                                        onChange={ field.onChange}
+                                        numInputs={4}
+                                        renderSeparator={""}
+                                        renderInput={(props) => <input {...props} />}
+                                    />
+
+                                    {/*<InputOTP*/}
+                                    {/*    maxLength={5}*/}
+                                    {/*    onComplete={form.handleSubmit(handleSubmit)}*/}
+                                    {/*    {...field}*/}
+                                    {/*>*/}
+                                    {/*    <InputOTPGroup>*/}
+                                    {/*        <InputOTPSlot index={0}/>*/}
+                                    {/*        <InputOTPSeparator/>*/}
+                                    {/*        <InputOTPSlot index={1}/>*/}
+                                    {/*        <InputOTPSeparator/>*/}
+                                    {/*        <InputOTPSlot index={2}/>*/}
+                                    {/*        <InputOTPSeparator/>*/}
+                                    {/*        <InputOTPSlot index={3}/>*/}
+                                    {/*        <InputOTPSeparator/>*/}
+                                    {/*        <InputOTPSlot index={4}/>*/}
+                                    {/*    </InputOTPGroup>*/}
+                                    {/*</InputOTP>*/}
                                 </FormControl>
                                 <FormMessage/>
                             </FormItem>
