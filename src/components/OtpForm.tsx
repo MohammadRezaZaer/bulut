@@ -98,10 +98,18 @@ export default function OtpForm({mobile, onBack, onSuccess}: {
 
                                     <OtpInput
                                         value={field.value}
-                                        onChange={ field.onChange}
-                                        numInputs={4}
-                                        renderSeparator={""}
-                                        renderInput={(props) => <input {...props} />}
+                                        onChange={(value) => {
+                                            field.onChange(value);
+                                            // وقتی 6 رقم وارد شد، فوراً ارسال خودکار
+                                            if (value.length === 5) {
+                                                form.handleSubmit(handleSubmit)();
+                                            }
+                                        }}
+
+                                        numInputs={5}
+                                        renderSeparator={<span className="text-transparent">-</span>}
+                                        shouldAutoFocus={true}
+                                        renderInput={(props) => <input  {...props} className="!w-12 aspect-square" />}
                                     />
 
                                     {/*<InputOTP*/}
