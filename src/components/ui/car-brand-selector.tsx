@@ -1,10 +1,6 @@
-import React, {useEffect, useState} from "react";
-import { Check, ChevronsUpDown } from "lucide-react";
+import React, { useEffect, useState } from "react";
+import Select from "react-select";
 import { Button } from "@/components/ui/button";
-import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
-import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "@/components/ui/command";
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
-import { cn } from "@/lib/utils";
 import { FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 
 // Import JSON data directly
@@ -13,7 +9,7 @@ import models from "@/data/car-models.json";
 import years from "@/data/car-years.json";
 import types from "@/data/car-types.json";
 
-import {CAR_BRAND, CAR_DETAIL, CAR_MODEL, CAR_TYPE, CAR_YEAR, LOCATION_STATE_FIELD} from "@/lib/schema/schemas";
+import { CAR_BRAND, CAR_DETAIL, CAR_MODEL, CAR_TYPE, CAR_YEAR } from "@/lib/schema/schemas";
 
 interface BrandProps {
     id: number;
@@ -48,20 +44,11 @@ interface CarSelectorProps {
     form: any;
 }
 
-const CarSelector = ({
-                         disabled,
-                         form,
-                     }: CarSelectorProps) => {
+const CarSelector = ({ disabled, form }: CarSelectorProps) => {
     const [selectedBrand, setSelectedBrand] = useState<BrandProps | null>(null);
     const [selectedModel, setSelectedModel] = useState<ModelProps | null>(null);
     const [selectedYear, setSelectedYear] = useState<YearProps | null>(null);
     const [selectedType, setSelectedType] = useState<TypeProps | null>(null);
-
-    const [openBrandDropdown, setOpenBrandDropdown] = useState(false);
-    const [openModelDropdown, setOpenModelDropdown] = useState(false);
-    const [openYearDropdown, setOpenYearDropdown] = useState(false);
-    const [openTypeDropdown, setOpenTypeDropdown] = useState(false);
-
 
     const CAR_BRAND_FIELD = `${CAR_DETAIL}.${CAR_BRAND}`;
     const CAR_MODEL_FIELD = `${CAR_DETAIL}.${CAR_MODEL}`;
@@ -72,49 +59,42 @@ const CarSelector = ({
         // Get the current car details from the form
         const carDetail = form.getValues(CAR_DETAIL);
 
-        // Check if carDetail exists and has data
         if (carDetail) {
-            // Set the selected brand if it exists in carDetail
             if (carDetail[CAR_BRAND]) {
                 const brand = brands.find((b) => b.name === carDetail[CAR_BRAND]);
-                setSelectedBrand(brand); // Update the selected brand state
+                setSelectedBrand(brand);
             }
 
-            // Set the selected model if it exists in carDetail
             if (carDetail[CAR_MODEL]) {
                 const model = models.find((m) => m.name === carDetail[CAR_MODEL]);
-                setSelectedModel(model); // Update the selected model state
+                setSelectedModel(model);
             }
 
-            // Set the selected year if it exists in carDetail
             if (carDetail[CAR_YEAR]) {
                 const year = years.find((y) => y.years.includes(carDetail[CAR_YEAR]));
-                setSelectedYear(year); // Update the selected year state
+                setSelectedYear(year);
             }
 
-            // Set the selected type if it exists in carDetail
             if (carDetail[CAR_TYPE]) {
                 const type = types.find((t) => t.name === carDetail[CAR_TYPE]);
-                setSelectedType(type); // Update the selected type state
+                setSelectedType(type);
             }
         }
-    }, [form]); // Re-run this effect when the form changes
-
+    }, [form]);
 
     const availableModels = models.filter(
         (model) => model.brandId === selectedBrand?.id
     );
 
-    // Manage internal state changes instead of passing callbacks from parent
     const handleBrandChange = (brand: BrandProps | null) => {
         setSelectedBrand(brand);
         setSelectedModel(null);
         setSelectedYear(null);
         setSelectedType(null);
 
-        form.setValue(CAR_BRAND_FIELD, brand?.name || ""); // Update form value for state dynamically
-        form.clearErrors(CAR_BRAND_FIELD); // Clear state error dynamically
-        form.trigger(CAR_BRAND_FIELD); // Re-validate state field dynamically
+        form.setValue(CAR_BRAND_FIELD, brand?.name || "");
+        form.clearErrors(CAR_BRAND_FIELD);
+        form.trigger(CAR_BRAND_FIELD);
     };
 
     const handleModelChange = (model: ModelProps | null) => {
@@ -122,27 +102,32 @@ const CarSelector = ({
         setSelectedYear(null);
         setSelectedType(null);
 
-        form.setValue(CAR_MODEL_FIELD, model?.name || ""); // Update form value for state dynamically
-        form.clearErrors(CAR_MODEL_FIELD); // Clear state error dynamically
-        form.trigger(CAR_MODEL_FIELD); // Re-validate state field dynamically
+        form.setValue(CAR_MODEL_FIELD, model?.name || "");
+        form.clearErrors(CAR_MODEL_FIELD);
+        form.trigger(CAR_MODEL_FIELD);
     };
 
-    const handleYearChange = (year: YearProps | null) => {
-        setSelectedYear(year);
+    const handleYearChange = (year: number | null) => {
+        setSelectedYear({ model_id: selectedModel?.id || 0, years: [year!] });
         setSelectedType(null);
 
-        form.setValue(CAR_YEAR_FIELD, year?.years?.[0] || ""); // Update form value for state dynamically
-        form.clearErrors(CAR_YEAR_FIELD); // Clear state error dynamically
-        form.trigger(CAR_YEAR_FIELD); // Re-validate state field dynamically
+        form.setValue(CAR_YEAR_FIELD, year || "");
+        form.clearErrors(CAR_YEAR_FIELD);
+        form.trigger(CAR_YEAR_FIELD);
     };
 
     const handleTypeChange = (type: TypeProps | null) => {
         setSelectedType(type);
 
-        form.setValue(CAR_TYPE_FIELD, type?.name || ""); // Update form value for state dynamically
-        form.clearErrors(CAR_TYPE_FIELD); // Clear state error dynamically
-        form.trigger(CAR_TYPE_FIELD); // Re-validate state field dynamically
+        form.setValue(CAR_TYPE_FIELD, type?.name || "");
+        form.clearErrors(CAR_TYPE_FIELD);
+        form.trigger(CAR_TYPE_FIELD);
     };
+
+    // Prepare years options as number types
+    const yearsOptions = years
+        .filter((year) => year.model_id === selectedModel?.id)
+        .flatMap((year) => year.years.map((y) => ({ value: y, label: y.toString() })));
 
     return (
         <div className="flex flex-col lg:flex-row gap-4">
@@ -154,56 +139,17 @@ const CarSelector = ({
                     <FormItem>
                         <FormLabel>انتخاب برند</FormLabel>
                         <FormControl>
-                            <Popover open={openBrandDropdown} onOpenChange={setOpenBrandDropdown}>
-                                <PopoverTrigger asChild>
-                                    <Button
-                                        variant="outline"
-                                        role="combobox"
-                                        aria-expanded={openBrandDropdown}
-                                        disabled={disabled}
-                                        className="w-full justify-between"
-                                    >
-                                        {selectedBrand ? (
-                                            <span>{selectedBrand.name}</span>
-                                        ) : (
-                                            <span>انتخاب برند</span>
-                                        )}
-                                        <ChevronsUpDown className="h-4 w-4 shrink-0 opacity-50" />
-                                    </Button>
-                                </PopoverTrigger>
-                                <PopoverContent className="w-[300px] p-0">
-                                    <Command>
-                                        <CommandInput placeholder="جستجوی برند..." />
-                                        <CommandList>
-                                            <CommandEmpty>برندی یافت نشد.</CommandEmpty>
-                                            <CommandGroup>
-                                                <ScrollArea className="h-[280px]">
-                                                    {brands.map((brand) => (
-                                                        <CommandItem
-                                                            key={brand.id}
-                                                            value={brand.name}
-                                                            onSelect={() => {
-                                                                handleBrandChange(brand);
-                                                                setOpenBrandDropdown(false);
-                                                            }}
-                                                            className="flex cursor-pointer items-center justify-between text-sm"
-                                                        >
-                                                            <span>{brand.name}</span>
-                                                            <Check
-                                                                className={cn(
-                                                                    "h-4 w-4",
-                                                                    selectedBrand?.id === brand.id ? "opacity-100" : "opacity-0"
-                                                                )}
-                                                            />
-                                                        </CommandItem>
-                                                    ))}
-                                                    <ScrollBar orientation="vertical" />
-                                                </ScrollArea>
-                                            </CommandGroup>
-                                        </CommandList>
-                                    </Command>
-                                </PopoverContent>
-                            </Popover>
+                            <Select
+                                isDisabled={disabled}
+                                options={brands.map((brand) => ({
+                                    value: brand.name,
+                                    label: brand.name,
+                                }))}
+                                value={selectedBrand ? { value: selectedBrand.name, label: selectedBrand.name } : null}
+                                onChange={(option) => handleBrandChange(brands.find(b => b.name === option?.label) || null)}
+                                placeholder="انتخاب برند"
+                                className="w-full"
+                            />
                         </FormControl>
                         <FormMessage />
                     </FormItem>
@@ -218,56 +164,17 @@ const CarSelector = ({
                     <FormItem>
                         <FormLabel>مدل</FormLabel>
                         <FormControl>
-                            <Popover open={openModelDropdown} onOpenChange={setOpenModelDropdown}>
-                                <PopoverTrigger asChild>
-                                    <Button
-                                        variant="outline"
-                                        role="combobox"
-                                        aria-expanded={openModelDropdown}
-                                        disabled={!selectedBrand}
-                                        className="w-full justify-between"
-                                    >
-                                        {selectedModel ? (
-                                            <span>{selectedModel.name}</span>
-                                        ) : (
-                                            <span>مدل</span>
-                                        )}
-                                        <ChevronsUpDown className="h-4 w-4 shrink-0 opacity-50" />
-                                    </Button>
-                                </PopoverTrigger>
-                                <PopoverContent className="w-[300px] p-0">
-                                    <Command>
-                                        <CommandInput placeholder="جستجوی مدل" />
-                                        <CommandList>
-                                            <CommandEmpty>مدلی یافت نشد...</CommandEmpty>
-                                            <CommandGroup>
-                                                <ScrollArea className="h-[280px]">
-                                                    {availableModels.map((model) => (
-                                                        <CommandItem
-                                                            key={model.id}
-                                                            value={model.name}
-                                                            onSelect={() => {
-                                                                handleModelChange(model);
-                                                                setOpenModelDropdown(false);
-                                                            }}
-                                                            className="flex cursor-pointer items-center justify-between text-sm"
-                                                        >
-                                                            <span>{model.name}</span>
-                                                            <Check
-                                                                className={cn(
-                                                                    "h-4 w-4",
-                                                                    selectedModel?.id === model.id ? "opacity-100" : "opacity-0"
-                                                                )}
-                                                            />
-                                                        </CommandItem>
-                                                    ))}
-                                                    <ScrollBar orientation="vertical" />
-                                                </ScrollArea>
-                                            </CommandGroup>
-                                        </CommandList>
-                                    </Command>
-                                </PopoverContent>
-                            </Popover>
+                            <Select
+                                isDisabled={!selectedBrand}
+                                options={availableModels.map((model) => ({
+                                    value: model.name,
+                                    label: model.name,
+                                }))}
+                                value={selectedModel ? { value: selectedModel.name, label: selectedModel.name } : null}
+                                onChange={(option) => handleModelChange(availableModels.find(m => m.name === option?.label) || null)}
+                                placeholder="انتخاب مدل"
+                                className="w-full"
+                            />
                         </FormControl>
                         <FormMessage />
                     </FormItem>
@@ -280,64 +187,16 @@ const CarSelector = ({
                 name={CAR_YEAR_FIELD}
                 render={({ field }) => (
                     <FormItem>
-                        <FormLabel>انتخاب سال ساخت</FormLabel>
+                        <FormLabel>سال تولید</FormLabel>
                         <FormControl>
-                            <Popover open={openYearDropdown} onOpenChange={setOpenYearDropdown}>
-                                <PopoverTrigger asChild>
-                                    <Button
-                                        variant="outline"
-                                        role="combobox"
-                                        aria-expanded={openYearDropdown}
-                                        disabled={!selectedModel}
-                                        className="w-full justify-between"
-                                    >
-                                        {selectedYear ? (
-                                            <span>{selectedYear.years.join(", ")}</span>
-                                        ) : (
-                                            <span>انتخاب سال ساخت</span>
-                                        )}
-                                        <ChevronsUpDown className="h-4 w-4 shrink-0 opacity-50" />
-                                    </Button>
-                                </PopoverTrigger>
-                                <PopoverContent className="w-[300px] p-0">
-                                    <Command>
-                                        <CommandInput placeholder="جستجوی سال..." />
-                                        <CommandList>
-                                            <CommandEmpty>یافت نشد</CommandEmpty>
-                                            <CommandGroup>
-                                                <ScrollArea className="h-[280px]">
-                                                    {years
-                                                        .filter((modelyear) => modelyear.model_id === selectedModel?.id)
-                                                        .map((modelyear) =>
-                                                            modelyear.years.map((year) => (
-                                                                <CommandItem
-                                                                    key={year.toString()} // Ensure key is also a string
-                                                                    value={year.toString()} // Ensure value is a string
-                                                                    onSelect={() => {
-                                                                        handleYearChange({ model_id: modelyear.model_id, years: [year] });
-                                                                        setOpenYearDropdown(false);
-                                                                    }}
-                                                                    className="flex cursor-pointer items-center justify-between text-sm"
-                                                                >
-                                                                    <span>{year}</span>
-                                                                    <Check
-                                                                        className={cn(
-                                                                            "h-4 w-4",
-                                                                            selectedYear?.years.includes(year.toString()) ? "opacity-100" : "opacity-0" // Ensure comparison is with string
-                                                                        )}
-                                                                    />
-                                                                </CommandItem>
-                                                            ))
-                                                        )}
-                                                    <ScrollBar orientation="vertical" />
-                                                </ScrollArea>
-                                            </CommandGroup>
-                                        </CommandList>
-                                    </Command>
-                                </PopoverContent>
-
-
-                            </Popover>
+                            <Select
+                                isDisabled={!selectedModel}
+                                options={yearsOptions}
+                                value={selectedYear ? { value: selectedYear.years[0], label: selectedYear.years[0].toString() } : null}
+                                onChange={(option) => handleYearChange(option?.value || null)}
+                                placeholder="انتخاب سال تولید"
+                                className="w-full"
+                            />
                         </FormControl>
                         <FormMessage />
                     </FormItem>
@@ -350,64 +209,21 @@ const CarSelector = ({
                 name={CAR_TYPE_FIELD}
                 render={({ field }) => (
                     <FormItem>
-                        <FormLabel>انتخاب تیپ</FormLabel>
+                        <FormLabel>نوع خودرو</FormLabel>
                         <FormControl>
-                            <Popover open={openTypeDropdown} onOpenChange={setOpenTypeDropdown}>
-                                <PopoverTrigger asChild>
-                                    <Button
-                                        variant="outline"
-                                        role="combobox"
-                                        aria-expanded={openTypeDropdown}
-                                        disabled={!selectedYear}
-                                        className="w-full justify-between"
-                                    >
-                                        {selectedType ? (
-                                            <span>{selectedType.name}</span>
-                                        ) : (
-                                            <span>انتخاب تیپ</span>
-                                        )}
-                                        <ChevronsUpDown className="h-4 w-4 shrink-0 opacity-50" />
-                                    </Button>
-                                </PopoverTrigger>
-                                <PopoverContent className="w-[300px] p-0">
-                                    <Command>
-                                        <CommandInput placeholder="جستجو" />
-                                        <CommandList>
-                                            <CommandEmpty>تیپی یافت نشد</CommandEmpty>
-                                            <CommandGroup>
-                                                <ScrollArea className="h-[280px]">
-                                                    {types
-                                                        .filter(
-                                                            (type) =>
-                                                                type.carModelId === selectedModel?.id &&
-                                                                type.year === selectedYear?.years[0]
-                                                        )
-                                                        .map((type) => (
-                                                            <CommandItem
-                                                                key={type.id}
-                                                                value={type.name}
-                                                                onSelect={() => {
-                                                                    handleTypeChange(type);
-                                                                    setOpenTypeDropdown(false);
-                                                                }}
-                                                                className="flex cursor-pointer items-center justify-between text-sm"
-                                                            >
-                                                                <span>{type.name}</span>
-                                                                <Check
-                                                                    className={cn(
-                                                                        "h-4 w-4",
-                                                                        selectedType?.id === type.id ? "opacity-100" : "opacity-0"
-                                                                    )}
-                                                                />
-                                                            </CommandItem>
-                                                        ))}
-                                                    <ScrollBar orientation="vertical" />
-                                                </ScrollArea>
-                                            </CommandGroup>
-                                        </CommandList>
-                                    </Command>
-                                </PopoverContent>
-                            </Popover>
+                            <Select
+                                isDisabled={!selectedYear}
+                                options={types
+                                    .filter((type) => type.carModelId === selectedModel?.id && type.year === selectedYear?.years[0])
+                                    .map((type) => ({
+                                        value: type.name,
+                                        label: type.name,
+                                    }))}
+                                value={selectedType ? { value: selectedType.name, label: selectedType.name } : null}
+                                onChange={(option) => handleTypeChange(types.find(t => t.name === option?.label) || null)}
+                                placeholder="انتخاب نوع"
+                                className="w-full"
+                            />
                         </FormControl>
                         <FormMessage />
                     </FormItem>

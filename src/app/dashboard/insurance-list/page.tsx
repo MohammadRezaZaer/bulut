@@ -55,9 +55,13 @@ export interface VehicleRecord {
 }
 
 import { useState } from 'react';
+
+
+
 export default function Page() {
     // استیت برای نگه داشتن صفحه فعلی و تعداد کل صفحات
     const [currentPage, setCurrentPage] = useState(1);
+    const [searchQuery, setSearchQuery] = useState(''); // استیت برای جستجو
     const itemsPerPage = 5; // تعداد آیتم‌ها در هر صفحه
     const totalItems = 25; // تعداد کل آیتم‌ها
     const totalPages = Math.ceil(totalItems / itemsPerPage); // تعداد صفحات
@@ -78,6 +82,10 @@ export default function Page() {
         setCurrentPage(page);
     };
 
+    const handleSearchChange = (event) => {
+        setSearchQuery(event.target.value); // تغییر مقدار جستجو
+    };
+
     // صفحات اطراف صفحه فعلی
     const pageNumbers = [];
     for (let i = totalPages; i >= 1; i--) {
@@ -86,6 +94,51 @@ export default function Page() {
         }
     }
 
+    // داده‌های شبیه‌سازی شده
+    const data = Array.from({ length: totalItems }, (_, idx) => ({
+        title: `ساینا ${idx + 1}`,
+        car: {
+            plate: {
+                first: '15',
+                middle: '567',
+                letter: 'الف',
+                last: '77',
+            },
+            brand: 'ایران خودرو',
+            model: 'پژو 207',
+            color: 'سفید',
+        },
+        insurance: {
+            name: 'نام',
+            family: 'نام خانوادگی',
+            commitment: 5000000,
+            paid: 275000,
+            insuranceExpiry: '1405/02/01',
+        },
+        id: idx + 1,
+        status: 'prepaid',
+    }));
+
+    // فیلتر کردن داده‌ها بر اساس جستجو
+
+    // فیلتر کردن داده‌ها بر اساس جستجو در تمامی فیلدها
+    const filteredData = data.filter(item => {
+        // بررسی در تمام فیلدها و زیر فیلدها
+        return (
+            item.title.includes(searchQuery) ||
+            item.car.brand.includes(searchQuery) ||
+            item.car.model.includes(searchQuery) ||
+            item.car.color.includes(searchQuery) ||
+            item.car.plate.first.includes(searchQuery) ||
+            item.car.plate.middle.includes(searchQuery) ||
+            item.car.plate.letter.includes(searchQuery) ||
+            item.car.plate.last.includes(searchQuery) ||
+            item.insurance.name.includes(searchQuery) ||
+            item.insurance.family.includes(searchQuery) ||
+            item.insurance.insuranceExpiry.includes(searchQuery) ||
+            item.status.includes(searchQuery)
+        );
+    });
     return (
         <>
             <div className="flex w-full items-center mb-10">
@@ -97,33 +150,22 @@ export default function Page() {
                 </div>
             </div>
 
+            {/* فیلد جستجو */}
+            <div className="mb-6 w-full flex justify-center">
+                <input
+                    type="text"
+                    placeholder="جستجو..."
+                    value={searchQuery}
+                    onChange={handleSearchChange}
+                    className="w-full max-w-[80%] p-2 border border-gray-300 rounded-md"
+                />
+            </div>
+
             <div className="mx-[24px] grid gap-4 md:mx-auto md:w-[80%] xl:w-full xl:grid-cols-3 xl:gap-6 pb-8">
-                {Array.from({ length: itemsPerPage }, (_, idx) => (
+                {filteredData.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage).map((item, idx) => (
                     <PlateCardShowing
-                        key={idx}
-                        Bime={{
-                            title: 'ساینا',
-                            car: {
-                                plate: {
-                                    first: '15',
-                                    middle: '567',
-                                    letter: 'الف',
-                                    last: '77',
-                                },
-                                brand: 'ایران خودرو',
-                                model: 'پژو 207',
-                                color: 'سفید',
-                            },
-                            insurance: {
-                                name: 'نام',
-                                family: 'نام خانوادگی',
-                                commitment: 5000000,
-                                paid: 275000,
-                                insuranceExpiry: '1405/02/01',
-                            },
-                            id: idx + 1,
-                            status: 'prepaid',
-                        }}
+                        key={item.id}
+                        Bime={item}
                     />
                 ))}
             </div>
@@ -131,7 +173,6 @@ export default function Page() {
             {/* پیجینیشن */}
             <Pagination>
                 <PaginationContent>
-
                     <PaginationItem>
                         <PaginationNext
                             href="#"
