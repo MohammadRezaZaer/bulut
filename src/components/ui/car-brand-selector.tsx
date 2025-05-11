@@ -130,7 +130,7 @@ const CarSelector = ({ disabled, form }: CarSelectorProps) => {
         .flatMap((year) => year.years.map((y) => ({ value: y, label: y.toString() })));
 
     return (
-        <div className="flex flex-col lg:flex-row gap-4">
+        <div className="flex flex-col lg:grid lg:grid-cols-2 gap-4">
             {/* Brand Selector */}
             <FormField
                 control={form.control}
