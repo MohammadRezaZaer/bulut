@@ -3,6 +3,7 @@ import {EllipsisHorizontalIcon, PencilSquareIcon, TrashIcon} from "@heroicons/re
 import React, {Fragment} from "react";
 import Link from "next/link";
 import {cn} from "@/lib/utils";
+import {ROUTES} from "@/lib/constant/constants";
 
 export function PlateContextMenu({id}) {
     return <Menu as="div" className="relative inline-block text-left">
@@ -29,7 +30,7 @@ export function PlateContextMenu({id}) {
                     <Menu.Item>
                         {({active}) => (
                             <Link
-                                href={`/dashboard/Inquiry/plates/edit/${id}`} passHref
+                                href={`${ROUTES.INSURANCE_SIGNUP}/${id}`} passHref
                                 className={cn(
                                     active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
                                     'group flex items-center px-4 py-2 text-sm'
@@ -43,23 +44,23 @@ export function PlateContextMenu({id}) {
                             </Link>
                         )}
                     </Menu.Item>
-                    <Menu.Item>
-                        {({active}) => (
-                            <Link
-                                href={`/dashboard/Inquiry/plates/delete/${id}`} passHref
+                    {/*<Menu.Item>*/}
+                    {/*    {({active}) => (*/}
+                    {/*        <Link*/}
+                    {/*            href={`/dashboard/Inquiry/plates/delete/${id}`} passHref*/}
 
-                                className={cn(
-                                    active ? 'bg-gray-100 text-gray-700' : ' text-red-500',
-                                    'group flex items-center px-4 py-2 text-sm'
-                                )}
-                            >
-                                <TrashIcon
-                                    className="ml-3 h-5 w-5 text-red-500 group-hover:text-gray-500"
-                                    aria-hidden="true"/>
-                                حذف
-                            </Link>
-                        )}
-                    </Menu.Item>
+                    {/*            className={cn(*/}
+                    {/*                active ? 'bg-gray-100 text-gray-700' : ' text-red-500',*/}
+                    {/*                'group flex items-center px-4 py-2 text-sm'*/}
+                    {/*            )}*/}
+                    {/*        >*/}
+                    {/*            <TrashIcon*/}
+                    {/*                className="ml-3 h-5 w-5 text-red-500 group-hover:text-gray-500"*/}
+                    {/*                aria-hidden="true"/>*/}
+                    {/*            حذف*/}
+                    {/*        </Link>*/}
+                    {/*    )}*/}
+                    {/*</Menu.Item>*/}
 
                 </div>
             </Menu.Items>

@@ -9,14 +9,17 @@ export const ROUTES = {
     LOGIN: '/login',
     DASHBOARD: {
         Dashboard:'/dashboard',
-        EditAccount:'/edit-account',
-        Referrals:'/referrals',
-        InsuranceList:'/insurance-list'
+        EditAccount:'/dashboard/edit-account',
+        Referrals:'/dashboard/referrals',
+        InsuranceList:'/dashboard/insurance-list'
     },
     PROFILE: '/profile',
     INSURANCE_SIGNUP: '/insurance-signup',
+    REQUEST_RELIEF: "/request-relief",
 
     // Add other routes here
+    MARKETING: "/marketing",
+    ROAD_ASSISTANCE_SIGNUP: "/road-assistance-signup"
 };
 export const TextBucket = {
 
