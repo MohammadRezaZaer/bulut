@@ -4,9 +4,11 @@ import React, {Fragment} from "react";
 import {cn} from "@/lib/utils";
 import {LoginButton} from "@/components/ui/buttons/LoginButton";
 import {ROUTES} from "@/lib/constant/constants";
+import LogoutForm from "@/app/dashboard/logout-form";
 
 export function Sidebar(props: {
     show: boolean,
+    isAuthenticated: boolean,
     onClose: (value: (((prevState: boolean) => boolean) | boolean)) => void,
     onClick: () => void,
 items:[]
@@ -83,7 +85,10 @@ items:[]
                                     ))}
                                 </ul>
                             </nav>
-                            <LoginButton className="flex mx-auto" href={ROUTES.LOGIN} text="ورود | ثبت نام" />
+
+                            {props.isAuthenticated ? LogoutForm("justify-center"):
+                                <LoginButton className="flex mx-auto" href={ROUTES.LOGIN} text="ورود | ثبت نام"/>}
+
                         </div>
                     </Dialog.Panel>
                 </Transition.Child>

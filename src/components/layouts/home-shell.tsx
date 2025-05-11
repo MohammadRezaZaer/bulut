@@ -17,6 +17,7 @@ export default function HomeShell({children, isAuthenticated}: Props) {
         <div>
             <Sidebar
                 show={mobSidebarOpen}
+                isAuthenticated={isAuthenticated}
                 onClose={setMobSidebarOpen}
                 onClick={() => setMobSidebarOpen(false)}
                 items={navLinks}

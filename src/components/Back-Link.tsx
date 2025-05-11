@@ -14,7 +14,7 @@ export function BackLink({ href, label = 'بازگشت', className }: BackLinkPr
     return (
         <Link
             href={href}
-            className={cn('text-blue text-[12px] flex items-center gap-1 mb-2', className)}
+            className={cn('text-blue text-[12px] flex items-center w-fit gap-1 mb-2', className)}
         >
             <ChevronRight className="size-3" />
             <span>{label}</span>

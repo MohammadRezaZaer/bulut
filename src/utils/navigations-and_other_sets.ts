@@ -11,7 +11,7 @@ import {ROUTES} from "@/lib/constant/constants";
 export const navigation = [
     {name: 'داشبورد', href: ROUTES.DASHBOARD.Dashboard, icon: HomeIcon, current: true},
     {name: 'معرفی شدگان', href:ROUTES.DASHBOARD.Referrals , icon: UsersIcon, current: false},
-    {name: 'لیست بیمه نامه ه', href: ROUTES.DASHBOARD.InsuranceList, icon: FolderIcon, current: false},
+    {name: 'لیست بیمه نامه ها', href: ROUTES.DASHBOARD.InsuranceList, icon: FolderIcon, current: false},
 ]
 export const navLinks = [
     {name: "خانه", href: "/", icon: HomeIcon, current: false},

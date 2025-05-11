@@ -16,8 +16,9 @@ import { useTransition } from "react";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
 import {ROUTES} from "@/lib/constant/constants";
+import {cn} from "@/lib/utils";
 
-export default function LogoutForm() {
+export default function LogoutForm(className) {
     const [isPending, startTransition] = useTransition();
     const router = useRouter();
 
@@ -34,10 +35,10 @@ export default function LogoutForm() {
             <DialogTrigger asChild>
                 <button
                     type="button"
-                    className="flex items-center direction-rtl hover:bg-gray-50 text-right w-full px-3 py-1 text-sm leading-6 text-gray-900"
+                    className={cn("flex items-center direction-rtl hover:bg-gray-50 text-right w-full px-3 py-1 text-sm leading-6 text-gray-900",className)}
                 >
                     <LogOut className="w-4 h-4 ml-2" />
-                    <span>خروج</span>
+                    <span >خروج</span>
                 </button>
             </DialogTrigger>
 

@@ -5,6 +5,7 @@ import {cn} from "@/lib/utils"; // You can use any icon
 interface LoginButtonProps {
   href: string;
   text: string;
+    className: string;
 }
 
 export const LoginButton: React.FC<LoginButtonProps> = ({ className,href, text }) => {

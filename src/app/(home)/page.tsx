@@ -12,7 +12,7 @@ const menuItems = [
     {
         href: ROUTES.INSURANCE_SIGNUP,
         icon: <Wrench size={60} />, // تعمیرات و حمل رایگان
-        label: 'خرید بیمه یدک (حمل رایگان)',
+        label: 'خرید بیمه امداد (حمل رایگان)',
     },
     {
         href: '/request-relief',
@@ -75,8 +75,8 @@ function HeroSection() {
         <section className="w-full max-w-[1366px] mx-auto  px-4">
             <div className="flex flex-col items-center text-center">
                 <div className="flex items-center gap-3">
-                    <NextImage src="/images/fake-logo.png" alt="بیمه یدک" width={88} height={88} />
-                    <h1 className="text-[#303030] text-3xl xl:text-5xl font-bold">بیمه یدک</h1>
+                    <NextImage src="/images/fake-logo.png" alt="بیمه امداد" width={88} height={88} />
+                    <h1 className="text-[#303030] text-3xl xl:text-5xl font-bold">بیمه امداد</h1>
                 </div>
                 <p className="mt-4 xl:mt-7 text-[#303030] text-base xl:text-xl font-bold max-w-2xl px-4 xl:px-0">
                     معتبرترین پلتفرم درخواست بیمه‌های خاص خودرو و امداد خودرو به همراه فروش انواع بیمه‌نامه‌ها

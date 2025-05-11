@@ -20,6 +20,7 @@ export default function DashboardShell({ children ,isAuthenticated }: Props) {
         <div>
             <Sidebar
                 show={mobSidebarOpen}
+                isAuthenticated={isAuthenticated}
                 onClose={setMobSidebarOpen}
                 onClick={() => setMobSidebarOpen(false)}
 items={navigation}

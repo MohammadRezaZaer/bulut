@@ -45,14 +45,14 @@ export function Header({
                 {isAuthenticated ? <ProfileComponent /> : <LoginButton href={ROUTES.LOGIN} text="ورود | ثبت نام" />}
 
             </div>
-            <div className="flex h-16 shrink-0 items-center justify-center">
+            {!isAuthenticated &&<div className="flex h-16 shrink-0 items-center justify-center">
                 <img
                     className="h-8 w-auto"
                     src="/images/fake-logo.png"
                     alt="Your Company"
                 />
-                <span className=" lg:flex lg:px-4">بیمه یدک</span>
-            </div>
+                <span className=" lg:flex lg:px-4">بیمه امداد</span>
+            </div>}
         </div>
     </div>)
 
