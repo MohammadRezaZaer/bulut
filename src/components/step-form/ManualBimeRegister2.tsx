@@ -124,7 +124,7 @@ export default function ManualBimeRegister({goToNext, goToPrev, onboardingData})
                     <Button onClick={() => goToPrev(form.getValues())} variant={"outline"} type="button">مرحله
                         قبل</Button>
 
-                    <Button className="" type="submit">ذخیره</Button>
+                    <Button className="min-w-[160px]" type="submit">ذخیره</Button>
                 </div>
             </form>
         </Form>

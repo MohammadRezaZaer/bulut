@@ -126,7 +126,7 @@ export default function MarkaziBimeRegister({goToNext, goToPrev, onboardingData}
                                     type="button">
                                 مرحله قبل
                             </Button>
-                            <Button className="" type="submit">
+                            <Button className="min-w-[160px]" type="submit">
                                 ذخیره
                             </Button>
                         </div>

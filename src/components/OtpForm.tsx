@@ -15,12 +15,7 @@ import {
     FormItem,
     FormMessage
 } from "@/components/ui/form";
-import {
-    InputOTP,
-    InputOTPGroup,
-    InputOTPSeparator,
-    InputOTPSlot
-} from "@/components/ui/input-otp";
+
 
 import OtpInput from 'react-otp-input';
 
@@ -112,23 +107,7 @@ export default function OtpForm({mobile, onBack, onSuccess}: {
                                         renderInput={(props) => <input  {...props} className="!w-12 aspect-square" />}
                                     />
 
-                                    {/*<InputOTP*/}
-                                    {/*    maxLength={5}*/}
-                                    {/*    onComplete={form.handleSubmit(handleSubmit)}*/}
-                                    {/*    {...field}*/}
-                                    {/*>*/}
-                                    {/*    <InputOTPGroup>*/}
-                                    {/*        <InputOTPSlot index={0}/>*/}
-                                    {/*        <InputOTPSeparator/>*/}
-                                    {/*        <InputOTPSlot index={1}/>*/}
-                                    {/*        <InputOTPSeparator/>*/}
-                                    {/*        <InputOTPSlot index={2}/>*/}
-                                    {/*        <InputOTPSeparator/>*/}
-                                    {/*        <InputOTPSlot index={3}/>*/}
-                                    {/*        <InputOTPSeparator/>*/}
-                                    {/*        <InputOTPSlot index={4}/>*/}
-                                    {/*    </InputOTPGroup>*/}
-                                    {/*</InputOTP>*/}
+
                                 </FormControl>
                                 <FormMessage/>
                             </FormItem>

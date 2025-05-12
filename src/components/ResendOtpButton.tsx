@@ -3,9 +3,9 @@
 import { useEffect, useState, useCallback } from 'react'
 import { Button } from '@/components/ui/button'
 import { atom, useAtom } from 'jotai'
+import {countdownAtom} from "@/components/PhoneForm";
 
-// تعریف atom برای ذخیره مقدار شمارنده
-const countdownAtom = atom(150)
+
 
 interface ResendOtpButtonProps {
     duration?: number // countdown seconds
@@ -42,6 +42,8 @@ export function ResendOtpButton({
 
     const mins = String(Math.floor(secondsLeft / 60)).padStart(2, '0')
     const secs = String(secondsLeft % 60).padStart(2, '0')
+
+
 
     return (
         <div className={`space-y-1 text-center ${className ?? ''}`}>
