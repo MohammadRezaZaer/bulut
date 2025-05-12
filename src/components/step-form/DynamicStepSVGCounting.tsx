@@ -95,7 +95,7 @@ export const DynamicStepSVGCounting = ({
                         ref={(el) => (circleRefs.current[i] = el)}
                         cx={cx}
                         cy="30"
-                        r={IsCurrentStep(i,currentIndex) ? circleRadius : circleRadius - 2}
+                        r={IsCurrentStep(i,currentIndex) ? circleRadius-2 : circleRadius - 3}
                         fill={IsCurrentStep(i ,currentIndex) ? "#6E21FF" : isPreCurrent(i ,currentIndex)?"#28a745":"#98CEFF"  }
                     />
                     <text
