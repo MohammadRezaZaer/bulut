@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, {useEffect, useRef} from "react";
 import gsap from "gsap";
 
 interface DynamicStepSVGCountingProps {
@@ -11,7 +11,7 @@ export const DynamicStepSVGCounting = ({
                                            currentIndex,
                                        }: DynamicStepSVGCountingProps) => {
     const svgWidth = 308;
-    const circleRadius = 10;
+    const circleRadius = 13;
     const gapBetweenSteps = (svgWidth - 4 * circleRadius) / (stepsConfig - 1);
     const stepTexts = ["چاپ", "پرداخت", "ثبت بیمه", "قوانین"];
 
@@ -29,7 +29,7 @@ export const DynamicStepSVGCounting = ({
             if (path) {
                 gsap.fromTo(
                     path,
-                    { scale: 0 ,transformOrigin: "50% 50%"},
+                    {scale: 0, transformOrigin: "50% 50%"},
                     {
                         scale: 1,
                         duration: 0.5,
@@ -47,7 +47,7 @@ export const DynamicStepSVGCounting = ({
             if (circle) {
                 gsap.fromTo(
                     circle,
-                    { scale: 0 ,transformOrigin: "50% 50%"},
+                    {scale: 0, transformOrigin: "50% 50%"},
                     {
                         scale: 1,
                         duration: 0.5,
@@ -63,7 +63,7 @@ export const DynamicStepSVGCounting = ({
         texts.forEach((text, i) => {
             gsap.fromTo(
                 text,
-                { opacity: 0, y: -10 },
+                {opacity: 0, y: -10},
                 {
                     opacity: 1,
                     y: 0,
@@ -76,7 +76,7 @@ export const DynamicStepSVGCounting = ({
     }, [stepsConfig]);
 
     const renderCircles = () =>
-        Array.from({ length: stepsConfig }).map((_, i) => {
+        Array.from({length: stepsConfig}).map((_, i) => {
             const cx = 10 + (circleRadius + i * gapBetweenSteps);
             return (
                 <g key={i}>
@@ -84,28 +84,29 @@ export const DynamicStepSVGCounting = ({
                         ref={(el) => (circleRefs.current[i] = el)}
                         cx={cx}
                         cy="30"
-                        r={circleRadius}
-                        fill={isActive(i) ? "#28a745" : "#98CEFF"}
+                        r={(i - 1 !== currentIndex) ? circleRadius : circleRadius - 2}
+                        fill={isActive(i) ? (i - 1 !== currentIndex) ? "#28a745" : "#6E21FF" : "#98CEFF"}
                     />
-                    {isActive(i) && (
+                    <text
+                        x={cx}
+                        y="10"
+                        fontSize="12"
+                        textAnchor="middle"
+                        fill={isActive(i) ? (i - 1 !== currentIndex)?"#28a745":"#6E21FF" : "#98CEFF"}
+                    >
+                        {stepTexts[i]}
+                    </text>
+                    {(isActive(i)) && (
                         <>
                             <circle
                                 cx={cx}
                                 cy="30"
                                 r="13.5"
-                                stroke="#28a745"
+                                stroke={(i - 1 !== currentIndex)?"#28a745":"#6E21FF"}
                                 strokeWidth="3"
                             />
-                            <text
-                                x={cx}
-                                y="10"
-                                fontSize="12"
-                                textAnchor="middle"
-                                fill={isActive(i) ? "#28a745" : "#98CEFF"}
-                            >
-                                {stepTexts[i]}
-                            </text>
-                            <text
+
+                            {(i - 1 !== currentIndex) && <text
                                 x={cx}
                                 y="34"
                                 fontSize="16"
@@ -113,7 +114,7 @@ export const DynamicStepSVGCounting = ({
                                 fill="#fff"
                             >
                                 ✓
-                            </text>
+                            </text>}
                         </>
                     )}
                 </g>
@@ -122,7 +123,7 @@ export const DynamicStepSVGCounting = ({
 
     const renderPaths = () =>
         Array.from({length: stepsConfig - 1}).map((_, i) => {
-            const x1 = 10 + circleRadius + i * gapBetweenSteps + 10;
+            const x1 = 15 + circleRadius + i * gapBetweenSteps + 15;
             const x2 = 10 + circleRadius + (i + 1) * gapBetweenSteps - 10;
             const activePath = isActive(i) && isActive(i + 1);
 
