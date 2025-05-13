@@ -24,16 +24,8 @@ const menuItems = [
         icon: <Users size={60} />, // مشاوران
         label: 'مشاور و کارشناس فروش',
     },
-    {
-        href: '/price-calculate',
-        icon: <DollarSign size={60} />, // محاسبه قیمت
-        label: 'ارزش روز خودرو',
-    },
-    {
-        href: '/price-drop-insurance',
-        icon: <FileText size={60} />, // افت قیمت
-        label: 'محاسبه افت بیمه خودرو',
-    },
+
+
     {
         href: 'https://emdad.hafezinsurance.ir/bimeh',
         icon: <Shield size={60} />, // بیمه امدادگران
@@ -47,7 +39,7 @@ const menuItems = [
     {
         href: '#',
         icon: <AlertTriangle size={60} />, // به زودی
-        label: 'بیمه تعمیرات',
+        label: 'صدور فاکتور حمل',
         soon: true,
     },
     {
@@ -83,24 +75,40 @@ function HeroSection() {
                 </p>
             </div>
 
-            <div className="grid grid-cols-3 xl:grid-cols-4 gap-6 xl:gap-10 justify-items-center mt-8 xl:mt-10">
-                {menuItems.map(({ href, icon, label, soon }) => (
-                    <Link key={label} href={href} className="relative flex flex-col items-center text-center group hover:scale-105 group  transition-transform duration-300">
+            <div className="grid grid-cols-3 xl:grid-cols-4 gap-8 xl:gap-10 justify-items-center place-items-center mt-8 xl:mt-10">
+                {menuItems.map(({href, icon, label, soon}) => (
+
+                    <Link key={label} href={href}
+                          className=" relative p-2 flex flex-col items-center text-center group hover:scale-105 group  transition-transform duration-300">
+
+
                         {soon && (
-                            <span className="absolute top-1 left-9 bg-brand text-white text-xs px-2 py-0.5 rounded-md z-10">
+                            <span
+                                className="z-20 absolute top-1 left-9 bg-brand-secondary text-white text-xs px-2 py-0.5 rounded-md ">
                 به زودی
               </span>
                         )}
-                        <div className="relative group-hover:text-brand w-[67px] h-[67px] rotate-[330deg] flex items-center justify-center">
+                        <svg className="w-[130%] aspect-square absolute text-brand z-0 -top-3" viewBox="0 0 857 857" fill="none"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M428.5 0L731.495 125.505L857 428.5L731.495 731.495L428.5 857L125.505 731.495L0 428.5L125.505 125.505L428.5 0Z"
+                                fill="currentColor"/>
+                        </svg>
+                        <div
+                            className="relative text-white group-hover:text-brand-secondary w-[67px] h-[67px]  flex items-center justify-center">
                             <div className="z-10">
                                 {icon}
                             </div>
                         </div>
-                        <span className="mt-2 group-hover:text-brand text-[#303030] text-xs xl:text-base font-medium leading-[31px] min-w-[100px] hover:text-brand xl:w-[130px] h-[80px] flex items-center justify-center text-center">
+                        <span
+                            className="z-10  text-white group-hover:text-brand-secondary text-xs xl:text-base font-medium leading-normal min-w-[100px] hover:text-brand xl:w-[130px] h-[50px] xl:h-[80px] flex items-center justify-center text-center">
               {label}
             </span>
                     </Link>
+
                 ))}
+
+
             </div>
         </section>
     );

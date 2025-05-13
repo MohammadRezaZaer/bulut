@@ -4,6 +4,7 @@ import {useState} from 'react';
 import {Sidebar} from '@/components/sidebar';
 import {Header} from '@/components/header';
 import {navLinks} from "@/utils/navigations-and_other_sets";
+import Footer from "@/components/Footer";
 
 type Props = {
     children: React.ReactNode;
@@ -34,6 +35,7 @@ export default function HomeShell({children, isAuthenticated}: Props) {
                     </section>
                 </div>
             </main>
+            <Footer/>
         </div>
     );
 }

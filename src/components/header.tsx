@@ -42,7 +42,7 @@ export function Header({
                 {isAuthenticated && <NotificationComponent />}
 
                 {/* Show ProfileComponent if authenticated, else show LoginButton */}
-                {isAuthenticated ? <ProfileComponent /> : <LoginButton href={ROUTES.LOGIN} text="ورود | ثبت نام" />}
+                {isAuthenticated ? <ProfileComponent /> : <LoginButton className="bg-brand rounded-full [&_*]:text-white" href={ROUTES.LOGIN} text="ورود | ثبت نام" />}
 
             </div>
             {!isAuthenticated &&<div className="flex h-16 shrink-0 items-center justify-center">

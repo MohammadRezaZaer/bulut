@@ -126,3 +126,23 @@ html {
 .direction-ltr {
   direction: ltr;
 }
+
+ .hex {
+  position: relative;
+  border-radius: 1em / .5em;
+  transition: opacity .5s;
+  transform: rotate(30deg);
+   margin: 1em auto;
+   width: 3em;
+   height: 5.13em;
+   background: #f3c401;
+}
+.hex:after, .hex:before {
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  border-radius: inherit;
+  background: inherit;
+  content: "";
+}
+
