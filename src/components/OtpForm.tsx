@@ -104,7 +104,7 @@ export default function OtpForm({mobile, onBack, onSuccess}: {
                                         numInputs={5}
                                         renderSeparator={<span className="text-transparent">-</span>}
                                         shouldAutoFocus={true}
-                                        renderInput={(props) => <input  {...props} className="!w-12 aspect-square" />}
+                                        renderInput={(props) => <input   {...props} type="number" className="!w-12 aspect-square" />}
                                     />
 
 

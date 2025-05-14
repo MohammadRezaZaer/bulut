@@ -52,6 +52,7 @@ export const InputPlate = ({ form, onChange }: InputPlateProps) => {
                         wrapperClassName=" flex h-[32px] w-[30px] items-center justify-center rounded-[6px]"
                         onChange={(e) => updatePiece(3, e.target.value)}
                         maxLength={2}
+                        max="99"
                         placeholder={50}
                     />
                 </div>
@@ -97,13 +98,28 @@ export const InputDigits = React.forwardRef<HTMLInputElement, InputDigitsProps>(
         // Forward the ref to react-hook-form
         React.useImperativeHandle(ref, () => localRef.current as HTMLInputElement, [])
 
+
         const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-            // move to next input if length exceeds
-            if (e.target.value.length >= maxLength && ctx) {
+            const value = e.target.value.replace(/\D/g, '')
+
+            if (value.length >= maxLength && ctx) {
                 const nextRef = ctx.slots[__index + 1]
                 nextRef?.current?.focus()
             }
-            onChange?.(e)
+
+            // Manually set the value if sanitizing changed it
+            if (localRef.current && localRef.current.value !== value) {
+                localRef.current.value = value
+            }
+
+            onChange?.({
+                ...e,
+                target: {
+                    ...e.target,
+                    value,
+                },
+            } as React.ChangeEvent<HTMLInputElement>)
+
         }
 
         // Save slot ref
@@ -122,16 +138,20 @@ export const InputDigits = React.forwardRef<HTMLInputElement, InputDigitsProps>(
             >
                 <input
                     ref={localRef}
-                    maxLength={maxLength}
+
                     dir="ltr"
-                    type="text"
-                    inputMode="numeric"
+
+
                     className={cn(
                         "outline-none ring-1 ring-gray-100 ring-offset-2 focus-visible:ring-2 focus-visible:ring-brand  rounded-md text-center",
                         className
                     )}
                     onChange={handleChange}
                     {...props}
+                    pattern="\d*"
+                    inputMode="numeric"
+
+                    maxLength={maxLength}
                 />
             </div>
         )
