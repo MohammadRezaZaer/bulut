@@ -15,7 +15,7 @@ export default function HomeShell({children, isAuthenticated}: Props) {
     const [SidebarOpen, setSidebarOpen] = useState(false);
 
     return (
-        <div>
+        <div className="overflow-x-hidden">
             <Sidebar
                 show={mobSidebarOpen}
                 isAuthenticated={isAuthenticated}
@@ -26,7 +26,7 @@ export default function HomeShell({children, isAuthenticated}: Props) {
 
             <Header setMobSidebarOpen={setMobSidebarOpen} isAuthenticated={isAuthenticated}/>
 
-            <main className="bg-[#F0F1F1]">
+            <main className="bg-[#F0F1F1] ">
                 <div className="flex">
 
                     <section className="p-1 xl:py-10 xl:px-12 w-full bg-white xl:m-4 rounded-xl">

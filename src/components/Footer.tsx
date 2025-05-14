@@ -3,23 +3,23 @@ import React from "react";
 const Footer = () => {
     return (
         <footer
-            className="w-full  xl:pt-[56px] pr-6 pt-[32px] bg-brand xl:mt-[139px] mt-[59px]  xl:block relative rounded-t-[30px]  xl:rounded-t-[70px] h-auto max-w-full m-auto   ">
-            <button
-                className=" xl:w-[98px] w-[45px] h-[45px] flex justify-center items-center  xl:h-[98px] rounded-full   absolute -top-[2%] xl:-top-[10%] xl:left-[48%] left-[45%] ">
-                <img alt="" loading="lazy" width="40" height="40" decoding="async" data-nimg="1"
-                     className="xl:size-[40px] size-6 z-10" src="/svg/arrow-up.svg"
-                />
+            className=" w-full min-w-[385px]  xl:pt-[56px] pr-6 pt-[32px] bg-brand xl:mt-[139px] mt-[59px]  xl:block relative  h-auto max-w-full m-auto   ">
+            {/*<button*/}
+            {/*    className=" xl:w-[98px] w-[45px] h-[45px] flex justify-center items-center  xl:h-[98px] rounded-full   absolute -top-[2%] xl:-top-[10%] xl:left-[48%] left-[45%] ">*/}
+            {/*    <img alt="" loading="lazy" width="40" height="40" decoding="async" data-nimg="1"*/}
+            {/*         className="xl:size-[40px] size-6 z-10" src="/svg/arrow-up.svg"*/}
+            {/*    />*/}
 
-                <svg className="text-brand absolute" viewBox="0 0 945 945" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M480.153 25.5225L783.148 151.027L790.803 154.197L793.973 161.851L919.478 464.847L922.647 472.5L919.478 480.153L793.973 783.148L790.803 790.803L783.148 793.973L480.153 919.478L472.5 922.647L464.847 919.478L161.851 793.973L154.197 790.803L151.027 783.148L25.5225 480.153L22.3525 472.5L25.5225 464.847L151.027 161.851L154.197 154.197L161.851 151.027L464.847 25.5225L472.5 22.3525L480.153 25.5225Z"
-                        fill="currentColor" stroke="white" strokeWidth="70"/>
-                </svg>
+            {/*    <svg className="text-brand absolute" viewBox="0 0 945 945" fill="none" xmlns="http://www.w3.org/2000/svg">*/}
+            {/*        <path*/}
+            {/*            d="M480.153 25.5225L783.148 151.027L790.803 154.197L793.973 161.851L919.478 464.847L922.647 472.5L919.478 480.153L793.973 783.148L790.803 790.803L783.148 793.973L480.153 919.478L472.5 922.647L464.847 919.478L161.851 793.973L154.197 790.803L151.027 783.148L25.5225 480.153L22.3525 472.5L25.5225 464.847L151.027 161.851L154.197 154.197L161.851 151.027L464.847 25.5225L472.5 22.3525L480.153 25.5225Z"*/}
+            {/*            fill="currentColor" stroke="white" strokeWidth="70"/>*/}
+            {/*    </svg>*/}
 
 
-            </button>
+            {/*</button>*/}
             <section
-                className="[&_*]:text-white xl:flex grid xl:pb-[60px] pb-[30px] border-b  border-[#D9DBE9] xl:gap-[153px] gap-4 xl:w-[1440px] w-[90%]  mx-auto ">
+                className="overflow-x-hidden [&_*]:text-white xl:flex grid xl:pb-[60px] pb-[30px] border-b  border-[#D9DBE9] xl:gap-[143px] gap-4  w-[90%]  mx-auto ">
                 <section className="xl:w-[310px] w-[90%] "><a className="flex gap-3 items-center " href="/">
 
                     <img alt=""

@@ -11,40 +11,40 @@ import {ROUTES} from "@/lib/constant/constants";
 const menuItems = [
     {
         href: ROUTES.INSURANCE_SIGNUP,
-        icon: <Wrench size={60} />, // تعمیرات و حمل رایگان
+        icon: <Wrench  size={40}/>, // تعمیرات و حمل رایگان
         label: 'خرید بیمه امداد (حمل رایگان)',
     },
     {
         href: '/request-relief',
-        icon: <PhoneCall size={60} />, // تماس برای امداد
+        icon: <PhoneCall size={40} />, // تماس برای امداد
         label: 'درخواست امداد خودرو رایگان',
     },
     {
         href: '/marketing',
-        icon: <Users size={60} />, // مشاوران
+        icon: <Users size={40} />, // مشاوران
         label: 'مشاور و کارشناس فروش',
     },
 
 
     {
         href: 'https://emdad.hafezinsurance.ir/bimeh',
-        icon: <Shield size={60} />, // بیمه امدادگران
+        icon: <Shield size={40} />, // بیمه امدادگران
         label: 'بیمه امدادگران',
     },
     {
         href: '/assistance-invoice',
-        icon: <FileCheck2 size={60} />, // فاکتور امداد
+        icon: <FileCheck2 size={40} />, // فاکتور امداد
         label: 'صدور فاکتور امدادگر',
     },
     {
         href: '#',
-        icon: <AlertTriangle size={60} />, // به زودی
+        icon: <AlertTriangle size={40} />, // به زودی
         label: 'صدور فاکتور حمل',
         soon: true,
     },
     {
         href: '#',
-        icon: <AlertTriangle size={60} />, // به زودی
+        icon: <AlertTriangle size={40} />, // به زودی
         label: 'صدور بارنامه الکترونیکی',
         soon: true,
     },
@@ -64,9 +64,9 @@ export default function Page() {
 
 function HeroSection() {
     return (
-        <section className="w-full max-w-[1366px] mx-auto  px-4">
+        <section className="w-full  max-w-[1366px] mx-auto">
             <div className="flex flex-col items-center text-center">
-                <div className="flex items-center gap-3">
+                <div className="flex max-lg:flex-col items-center gap-3">
                     <NextImage src="/images/fake-logo.png" alt="بیمه امداد" width={88} height={88} />
                     <h1 className="text-[#303030] text-3xl xl:text-5xl font-bold">بیمه امداد</h1>
                 </div>
@@ -75,11 +75,11 @@ function HeroSection() {
                 </p>
             </div>
 
-            <div className="grid grid-cols-3 xl:grid-cols-4 gap-8 xl:gap-10 justify-items-center place-items-center mt-8 xl:mt-10">
+            <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-8 xl:gap-10 justify-items-center place-items-center mt-8 xl:mt-10 m-2">
                 {menuItems.map(({href, icon, label, soon}) => (
 
                     <Link key={label} href={href}
-                          className=" relative p-2 flex flex-col items-center text-center group hover:scale-105 group  transition-transform duration-300">
+                          className="max-xl:max-w-[130px] relative p-2 flex flex-col items-center text-center group hover:scale-105 group  transition-transform duration-300">
 
 
                         {soon && (
@@ -88,20 +88,20 @@ function HeroSection() {
                 به زودی
               </span>
                         )}
-                        <svg className="w-[130%] aspect-square absolute text-brand z-0 -top-3" viewBox="0 0 857 857" fill="none"
+                        <svg className="w-full max-xl:max-w-[150px]  xl:w-[130%] aspect-square absolute text-brand z-0 -top-3" viewBox="0 0 857 857" fill="none"
                              xmlns="http://www.w3.org/2000/svg">
                             <path
                                 d="M428.5 0L731.495 125.505L857 428.5L731.495 731.495L428.5 857L125.505 731.495L0 428.5L125.505 125.505L428.5 0Z"
                                 fill="currentColor"/>
                         </svg>
                         <div
-                            className="relative text-white group-hover:text-brand-secondary w-[67px] h-[67px]  flex items-center justify-center">
-                            <div className="z-10">
+                            className=" relative text-white group-hover:text-brand-secondary w-[67px] xl:h-[67px]  flex items-center justify-center">
+                            <div className="z-10 ">
                                 {icon}
                             </div>
                         </div>
                         <span
-                            className="z-10  text-white group-hover:text-brand-secondary text-xs xl:text-base font-medium leading-normal min-w-[100px] hover:text-brand xl:w-[130px] h-[50px] xl:h-[80px] flex items-center justify-center text-center">
+                            className="max-lg:text-[10px] z-10  text-white group-hover:text-brand-secondary text-xs xl:text-base font-medium leading-normal min-w-[100px] hover:text-brand xl:w-[130px] h-[40px] xl:h-[80px] flex items-center justify-center text-center">
               {label}
             </span>
                     </Link>
