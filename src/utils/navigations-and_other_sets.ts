@@ -7,6 +7,43 @@ import {
     UsersIcon
 } from "@heroicons/react/24/outline";
 import {ROUTES} from "@/lib/constant/constants";
+import {FileText, Home, LifeBuoy, Phone, Receipt, Users} from "lucide-react";
+
+
+
+export const DashboardNavigationItems = [
+    {
+        name: 'داشبورد',
+        href: ROUTES.DASHBOARD.Dashboard,
+        icon: Home,
+    },
+    {
+        name: 'لیست بیمه نامه ها',
+        href: ROUTES.DASHBOARD.InsuranceList,
+        icon: FileText,
+    },
+    {
+        name: 'درخواست‌های همکاری',
+        href: '/dashboard/jobs',
+        icon: Users,
+    },
+    {
+        name: 'درخواست‌های امداد',
+        href: '/dashboard/support-requests',
+        icon: LifeBuoy,
+    },
+    {
+        name: 'فاکتورهای دارای بیمه',
+        href: '/dashboard/insured-invoices',
+        icon: Receipt,
+    },
+    {
+        name: 'تماس با ما',
+        href: '/dashboard/contact',
+        icon: Phone,
+    },
+];
+
 
 export const navigation = [
     {name: 'داشبورد', href: ROUTES.DASHBOARD.Dashboard, icon: HomeIcon},

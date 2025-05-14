@@ -6,7 +6,7 @@ import { Header } from '@/components/header';
 import { DeskSideBar } from '@/components/deskSideBar';
 import { cn } from '@/lib/utils';
 import {BackLink} from "@/components/Back-Link";
-import {navigation} from "@/utils/navigations-and_other_sets";
+import {DashboardNavigationItems, navigation} from "@/utils/navigations-and_other_sets";
 
 type Props = {
     children: React.ReactNode;
@@ -33,6 +33,7 @@ items={navigation}
                     <DeskSideBar
                         sidebarOpen={SidebarOpen}
                         onClick={() => setSidebarOpen((prev) => !prev)}
+                        navigaionItems={DashboardNavigationItems}
                     />
                     <section className="p-1 xl:py-10 xl:px-12 w-full bg-white xl:m-4 rounded-xl">
                         <BackLink href="../" />
