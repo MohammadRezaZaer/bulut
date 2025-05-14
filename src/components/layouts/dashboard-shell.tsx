@@ -33,7 +33,7 @@ items={navigation}
                     <DeskSideBar
                         sidebarOpen={SidebarOpen}
                         onClick={() => setSidebarOpen((prev) => !prev)}
-                        navigaionItems={DashboardNavigationItems}
+                        navigationItems={DashboardNavigationItems}
                     />
                     <section className="p-1 xl:py-10 xl:px-12 w-full bg-white xl:m-4 rounded-xl">
                         <BackLink href="../" />
