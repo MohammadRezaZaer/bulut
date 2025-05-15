@@ -93,9 +93,18 @@ function HeroSection() {
 
                             <div
                                 className=" relative text-white group-hover:text-brand-secondary w-[67px] xl:h-[67px]  flex items-center justify-center">
-                                <div className=" relative bg-brand rounded-full p-8">
+
+                                <svg className="w-20 aspect-square text-brand absolute" viewBox="0 0 857 857"
+                                     fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M428.5 0L731.495 125.505L857 428.5L731.495 731.495L428.5 857L125.505 731.495L0 428.5L125.505 125.505L428.5 0Z"
+                                        fill="currentColor"/>
+                                </svg>
+                                <div className=" relative  p-8">
 
                                     {icon}
+
                                 </div>
                             </div>
                             <span

@@ -55,6 +55,7 @@ export interface VehicleRecord {
 }
 
 import { useState } from 'react';
+import PaginationMe from "@/components/ui/paginationMe";
 
 
 
@@ -171,37 +172,41 @@ export default function Page() {
             </div>
 
             {/* پیجینیشن */}
-            <Pagination>
-                <PaginationContent>
-                    <PaginationItem>
-                        <PaginationNext
-                            href="#"
-                            onClick={handleNextPage}
-                            disabled={currentPage === totalPages}
-                        />
-                    </PaginationItem>
-                    {/* نمایش شماره صفحات */}
-                    {pageNumbers.map((page) => (
-                        <PaginationItem key={page}>
-                            <PaginationLink
-                                href="#"
-                                onClick={() => handlePageClick(page)}
-                                className={currentPage === page ? 'font-bold' : ''}
-                            >
-                                {page}
-                            </PaginationLink>
-                        </PaginationItem>
-                    ))}
+            {/*<Pagination>*/}
+            {/*    <PaginationContent>*/}
+            {/*        <PaginationItem>*/}
+            {/*            <PaginationNext*/}
+            {/*                href="#"*/}
+            {/*                onClick={handleNextPage}*/}
+            {/*                disabled={currentPage === totalPages}*/}
+            {/*            />*/}
+            {/*        </PaginationItem>*/}
+            {/*        /!* نمایش شماره صفحات *!/*/}
+            {/*        {pageNumbers.map((page) => (*/}
+            {/*            <PaginationItem key={page}>*/}
+            {/*                <PaginationLink*/}
+            {/*                    href="#"*/}
+            {/*                    onClick={() => handlePageClick(page)}*/}
+            {/*                    className={currentPage === page ? 'font-bold' : ''}*/}
+            {/*                >*/}
+            {/*                    {page}*/}
+            {/*                </PaginationLink>*/}
+            {/*            </PaginationItem>*/}
+            {/*        ))}*/}
 
-                    <PaginationItem>
-                        <PaginationPrevious
-                            href="#"
-                            onClick={handlePrevPage}
-                            disabled={currentPage === 1}
-                        />
-                    </PaginationItem>
-                </PaginationContent>
-            </Pagination>
+            {/*        <PaginationItem>*/}
+            {/*            <PaginationPrevious*/}
+            {/*                href="#"*/}
+            {/*                onClick={handlePrevPage}*/}
+            {/*                disabled={currentPage === 1}*/}
+            {/*            />*/}
+            {/*        </PaginationItem>*/}
+            {/*    </PaginationContent>*/}
+            {/*</Pagination>*/}
+
+
+
+            <PaginationMe currentPage={currentPage} totalPages={totalPages} onPageChange={setCurrentPage}/>
         </>
     );
 }
