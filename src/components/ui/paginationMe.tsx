@@ -44,7 +44,7 @@ export default function PaginationMe({ currentPage, totalPages, onPageChange }: 
                                         onClick={() => onPageChange(page)}
                                         className={`relative inline-flex items-center px-4 py-2 text-sm font-semibold ring-1 ring-inset focus:z-20 ${
                                             page === currentPage
-                                                ? 'bg-indigo-600 text-white ring-indigo-600'
+                                                ? 'bg-brand text-white ring-brand'
                                                 : 'text-gray-900 ring-gray-300 hover:bg-gray-50'
                                         }`}
                                     >
