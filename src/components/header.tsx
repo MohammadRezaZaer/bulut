@@ -5,6 +5,7 @@ import {Navbar} from "@/components/Navbar";
 import {NotificationComponent} from "@/components/notificationComponent";
 import {LoginButton} from "@/components/ui/buttons/LoginButton";
 import {ROUTES} from "@/lib/constant/constants";
+import {cn} from "@/lib/utils";
 
 
 export function Header({
@@ -45,14 +46,14 @@ export function Header({
                 {isAuthenticated ? <ProfileComponent /> : <LoginButton className="bg-brand rounded-full [&_*]:text-white" href={ROUTES.LOGIN} text="ورود | ثبت نام" />}
 
             </div>
-            {!isAuthenticated &&<div className="flex h-16 shrink-0 items-center justify-center">
+            <div className={cn("flex h-16 shrink-0 items-center justify-center", {isAuthenticated:"max-xl:hidden"})}>
                 <img
                     className="h-8 w-auto"
                     src="/images/fake-logo.png"
                     alt="Your Company"
                 />
                 <span className=" lg:flex lg:px-4">بیمه امداد</span>
-            </div>}
+            </div>
         </div>
     </div>)
 

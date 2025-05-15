@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useMemo } from 'react';
 import {SIDEBAR_WIDTH} from "@/lib/constant/constants";
+import Avatar from '~/svg/avatar.svg';
+import EditPen from '~/svg/edit.svg';
 
 interface NavigationItem {
     name: string;
@@ -64,9 +66,27 @@ export function DeskSideBar({ sidebarOpen, onClick, navigationItems }: DeskSideB
             className={cn(
                 'hidden lg:inset-y-0 lg:end-0 lg:z-30 lg:block bg-white lg:overflow-y-auto shadow-sm border-l border-gray-200 lg:pb-4 transition-all duration-500 lg:min-h-[calc(100vh-64px)]',
                 SIDEBAR_WIDTH.collapsed,
-                { [SIDEBAR_WIDTH.expanded]: sidebarOpen }
+                {[SIDEBAR_WIDTH.expanded]: sidebarOpen}
             )}
         >
+
+            <section
+                className={cn("transition-all bg-[url('/images/rec-bg-dash.svg')] bg-[length:211px_211px] bg-[left_-1rem_top_0rem] bg-no-repeat flex  flex-col items-center border-b border-solid border-[#CCE0F9] dark:bg-[#33373d]",{"h-[173px]":sidebarOpen})}>
+
+                <Avatar className="text-brand w-12 aspect-square my-4"/>
+                {sidebarOpen &&
+                    <>
+                        <section className="mt-3"><span className="ltr ml-[14px] dark:text-white">09148925258</span>
+                            <button>
+
+                                <EditPen className="text-brand w-3 aspect-square"/>
+                            </button>
+                        </section>
+                        <span className="block mt-5 text-[14px] font-bold">به داشبورد بیمه امداد خوش آمدید</span>
+                    </>}
+            </section>
+
+
             <nav>
                 <ul role="list" className="flex flex-col items-center space-y-1 min-w-12 px-4">
                     <button
@@ -84,10 +104,13 @@ export function DeskSideBar({ sidebarOpen, onClick, navigationItems }: DeskSideB
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                         >
-                            <rect width="24" height="24" rx="4" transform="matrix(-1 0 0 1 36 12)" fill="#EBE7FF" />
-                            <path d="M17 24H31" stroke="#6E21FF" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                            <path d="M22 29L17 24" stroke="#6E21FF" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                            <path d="M22 19L17 24" stroke="#6E21FF" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                            <rect width="24" height="24" rx="4" transform="matrix(-1 0 0 1 36 12)" fill="#EBE7FF"/>
+                            <path d="M17 24H31" stroke="#6E21FF" strokeWidth="1.5" strokeLinecap="round"
+                                  strokeLinejoin="round"/>
+                            <path d="M22 29L17 24" stroke="#6E21FF" strokeWidth="1.5" strokeLinecap="round"
+                                  strokeLinejoin="round"/>
+                            <path d="M22 19L17 24" stroke="#6E21FF" strokeWidth="1.5" strokeLinecap="round"
+                                  strokeLinejoin="round"/>
                         </svg>
                     </button>
                     {navItems}

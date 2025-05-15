@@ -43,7 +43,7 @@ export default function Page() {
                 {cards.map((card, index) => (
                     <div
                         key={index}
-                        className="bg-white border-2 border-brand/80 gap-y-8 flex rounded-lg p-4 shadow hover:shadow-md transition flex-col items-center justify-center"
+                        className=" bg-[url('/images/rec-bg.svg')] bg-[length:333px_333px] bg-[left_0rem_top_-3.5rem] bg-no-repeat border-2 border-brand/80 gap-y-8 flex rounded-lg p-4 shadow hover:shadow-md transition flex-col items-center justify-center"
                     >
                         <p className="text-gray-700 text-sm mb-2">{card.title}</p>
                         <p className="text-3xl font-bold text-gray-900">{card.value}</p>

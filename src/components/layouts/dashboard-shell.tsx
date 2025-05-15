@@ -14,7 +14,7 @@ type Props = {
 };
 export default function DashboardShell({ children ,isAuthenticated }: Props) {
     const [mobSidebarOpen, setMobSidebarOpen] = useState(false);
-    const [SidebarOpen, setSidebarOpen] = useState(false);
+    const [SidebarOpen, setSidebarOpen] = useState(true);
 
     return (
         <div>
