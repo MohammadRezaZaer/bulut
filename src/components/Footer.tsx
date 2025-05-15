@@ -1,4 +1,6 @@
 import React from "react";
+import Link from "next/link";
+import {ROUTES} from "@/lib/constant/constants";
 
 const Footer = () => {
     return (
@@ -19,7 +21,7 @@ const Footer = () => {
 
             {/*</button>*/}
             <section
-                className="overflow-x-hidden [&_*]:text-white xl:flex grid xl:pb-[60px] pb-[30px] border-b  border-[#D9DBE9] xl:gap-[143px] gap-4  w-[90%]  mx-auto ">
+                className="overflow-x-hidden [&_*]:text-white flex justify-center  xl:flex-row flex-col xl:pb-[60px] pb-[30px] border-b  border-[#D9DBE9] xl:gap-[143px] gap-4  w-[90%]  mx-auto ">
                 <section className="xl:w-[310px] w-[90%] "><a className="flex gap-3 items-center " href="/">
 
                     <img alt=""
@@ -30,10 +32,11 @@ const Footer = () => {
                          className="xl:w-[113.89px] xl:h-[89px] w-[60px] h-[48px]"
                          src="/images/fake-logo.png"
 
-                />
+                    />
                     <h2 className="xl:text-[32px] text-[24px] font-bold  xl:mr-[-20px]">بیمه امداد</h2></a><p
                     className="xl:mt-6 mt-3 text-justify xl:leading-9 leading-[30px] xl:text-sm text-[12px] font-medium xl:pr-0 ">بیمه
-                    امداد یک محصول و خدمت جديد بیمه‌ای است که توسط کارگزاری رسمی بيمه برخط مباشر شماره پروانه فعالیت ١٨٧٨
+                    امداد یک محصول و خدمت جديد بیمه‌ای است که توسط کارگزاری رسمی بيمه برخط مباشر شماره پروانه فعالیت
+                    ١٨٧٨
                     تحت نظارت بیمه مرکزی‌ جمهوری اسلامی ایران با همکاری انجمن <a className="text-blue underline"
                                                                                  href="https://emdadkhodro1593.ir/">امدادخودرو</a>کشوری
                     و شرکت <a className="text-blue underline" href="https://#/">لوتوس</a> (آریانا ایده پرداز لوتوس
@@ -87,11 +90,14 @@ const Footer = () => {
                 <section><h2 className="text-[#170F49] xl:text-[16px] text-[14px] font-bold leading-[22px]">خدمات</h2>
                     <nav
                         className="xl:mt-10 mt-4 xl:flex flex-col xl:gap-6 grid gap-4 xl:text-[16px] text-[14px]  font-medium leading-[20px]">
-                        <a className="hover:opacity-50" href="/relief-signup">خرید بیمه‌نامه</a><a
-                        className="hover:opacity-50" href="/request-relief">درخواست امداد خودرو</a><a
-                        className="hover:opacity-50" href="/marketing">مشاور و کارشناس فروش</a><a
-                        className="hover:opacity-50" href="/price-calculate">ارزش روز خودرو</a><a
-                        className="hover:opacity-50" href="/price-drop-insurance">محاسبه افت بیمه خودرو</a></nav>
+
+                        <Link href={ROUTES.INSURANCE_SIGNUP}>خرید بیمه‌نامه</Link>
+                        <Link href={ROUTES.REQUEST_RELIEF}>درخواست امداد خودرو</Link>
+                        <Link href={ROUTES.MARKETING}>مشاور و کارشناس فروش</Link>
+                        <Link href={ROUTES.PRICE_CALCULATE}>ارزش روز خودرو</Link>
+                        <Link href={ROUTES.PRICE_DROP_INSURANCE}>محاسبه افت بیمه خودرو</Link>
+
+                    </nav>
                 </section>
                 <section className="xl:w-[100px]"><h2
                     className="text-[#170F49]  xl:text-[16px] text-[14px] font-bold leading-[22px]">آشنایی با ما</h2>
@@ -146,12 +152,12 @@ const Footer = () => {
                              src="/svg/emdad.jpeg"
 
 
-                    /><img
+                        /><img
                         alt="" loading="lazy" width="80" height="80" decoding="async" data-nimg="1"
                         className="xl:w-[80px] xl:h-[110px] w-[60px] h-[75px] place-self-end mt-2"
                         src="/svg/ase.webp"
                     /><img
-                        alt="" loading="lazy"  decoding="async" data-nimg="1"
+                        alt="" loading="lazy" decoding="async" data-nimg="1"
                         className="xl:h-[110px] xl:w-[110px] w-[75px]  h-[75px] place-self-end mt-2"
                         src="/svg/mobasher.webp"
                     />
@@ -201,7 +207,8 @@ const Footer = () => {
                 </section>
             </section>
             <span className="block text-white w-full text-center py-4 !border-t !border-primary">توسعه دهنده گروه برنامه نویسی بیمه امداد در <a
-                className="text-blue underline" href="https://#/">شرکت لوتوس (آریانا ایده پرداز لوتوس)</a></span></footer>
+                className="text-blue underline" href="https://#/">شرکت لوتوس (آریانا ایده پرداز لوتوس)</a></span>
+        </footer>
     );
 };
 

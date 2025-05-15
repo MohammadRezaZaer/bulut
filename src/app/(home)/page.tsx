@@ -75,40 +75,39 @@ function HeroSection() {
                 </p>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-8 xl:gap-10 justify-items-center place-items-center mt-8 xl:mt-10 m-2">
-                {menuItems.map(({href, icon, label, soon}) => (
+            <div className="w-[90%] mx-auto  xl:w-full flex justify-center gap-x-10 xl:gap-[164px] gap-y-6 xl:gap-y-[20px] xl:mt-[20px] mt-[30px] ">
+                <div
+                    className="grid grid-cols-3 gap-x-16 xl:gap-10 justify-items-center place-items-center mt-8 xl:mt-10 m-2">
+                    {menuItems.map(({href, icon, label, soon}) => (
 
-                    <Link key={label} href={href}
-                          className="max-xl:max-w-[130px] relative p-2 flex flex-col items-center text-center group hover:scale-105 group  transition-transform duration-300">
+                        <Link key={label} href={href}
+                              className="xl:w-[122px] w-[69px]  justify-center m-auto max-xl:max-w-[130px] relative p-2 flex flex-col items-center text-center group hover:scale-105 group  transition-transform duration-300">
 
 
-                        {soon && (
-                            <span
-                                className="z-20 absolute top-1 left-9 bg-brand-secondary text-white text-xs px-2 py-0.5 rounded-md ">
-                به زودی
-              </span>
-                        )}
-                        <svg className="w-full max-xl:max-w-[150px]  xl:w-[130%] aspect-square absolute text-brand z-0 -top-3" viewBox="0 0 857 857" fill="none"
-                             xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M428.5 0L731.495 125.505L857 428.5L731.495 731.495L428.5 857L125.505 731.495L0 428.5L125.505 125.505L428.5 0Z"
-                                fill="currentColor"/>
-                        </svg>
-                        <div
-                            className=" relative text-white group-hover:text-brand-secondary w-[67px] xl:h-[67px]  flex items-center justify-center">
-                            <div className="z-10 ">
-                                {icon}
+                            {soon && (
+                                <span
+                                    className="z-20 whitespace-nowrap absolute top-1 left-9 bg-brand-secondary text-white text-xs px-2 py-0.5 rounded-md ">
+                            به زودی
+                          </span>
+                            )}
+
+                            <div
+                                className=" relative text-white group-hover:text-brand-secondary w-[67px] xl:h-[67px]  flex items-center justify-center">
+                                <div className=" relative bg-brand rounded-full p-8">
+
+                                    {icon}
+                                </div>
                             </div>
-                        </div>
-                        <span
-                            className="max-lg:text-[10px] z-10  text-white group-hover:text-brand-secondary text-xs xl:text-base font-medium leading-normal min-w-[100px] hover:text-brand xl:w-[130px] h-[40px] xl:h-[80px] flex items-center justify-center text-center">
-              {label}
-            </span>
-                    </Link>
+                            <span
+                                className="text-black max-lg:text-[10px] z-10 group-hover:text-brand text-xs font-medium leading-normal min-w-[100px] hover:text-brand xl:w-[130px] h-[60px] xl:h-[80px] flex items-center justify-center text-center">
+                          {label}
+                        </span>
+                        </Link>
 
-                ))}
+                    ))}
 
 
+                </div>
             </div>
         </section>
     );

@@ -19,6 +19,8 @@ export const ROUTES = {
 
     // Add other routes here
     MARKETING: "/marketing",
+    PRICE_CALCULATE: "/price-calculate",
+    PRICE_DROP_INSURANCE: "/price-drop-insurance",
     ROAD_ASSISTANCE_SIGNUP: "/road-assistance-signup"
 };
 export const TextBucket = {
