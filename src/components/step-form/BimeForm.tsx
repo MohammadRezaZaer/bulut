@@ -28,13 +28,14 @@ export default function BimeForm({ goToNext, goToPrev, onboardingData }) {
                     className=""
                 >
                     <div className="flex items-center space-x-2 p-2 cursor-pointer">
-                        <RadioGroupItem className="ml-2" value="markazi" id="r1" />
-                        <Label  htmlFor="r1">ثبت‌نام به کمک استعلام بیمه مرکزی</Label>
+                        <RadioGroupItem className="ml-2" value="manual" id="r2"/>
+                        <Label htmlFor="r2">ثبت‌نام دستی</Label>
                     </div>
                     <div className="flex items-center space-x-2 p-2 cursor-pointer">
-                        <RadioGroupItem className="ml-2" value="manual" id="r2" />
-                        <Label  htmlFor="r2">ثبت‌نام دستی</Label>
+                        <RadioGroupItem className="ml-2" value="markazi" id="r1"/>
+                        <Label htmlFor="r1">ثبت‌نام به کمک استعلام بیمه مرکزی</Label>
                     </div>
+
                 </RadioGroup>
             </section>
 
