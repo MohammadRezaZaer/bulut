@@ -75,7 +75,7 @@ function HeroSection() {
                 </p>
             </div>
 
-            <div className="w-[90%] mx-auto  xl:w-full flex justify-center gap-x-10 xl:gap-[164px] gap-y-6 xl:gap-y-[20px] xl:mt-[20px] mt-[30px] ">
+            <div className="w-[90%] min-[350px]:mx-auto  xl:w-full flex justify-center gap-x-10 xl:gap-[164px] gap-y-6 xl:gap-y-[20px] xl:mt-[20px] mt-[30px] ">
                 <div
                     className="grid grid-cols-3 gap-x-16 xl:gap-10 justify-items-center place-items-center mt-8 xl:mt-10 m-2">
                     {menuItems.map(({href, icon, label, soon}) => (
@@ -108,7 +108,7 @@ function HeroSection() {
                                 </div>
                             </div>
                             <span
-                                className="text-black max-lg:text-[10px] z-10 group-hover:text-brand text-xs font-medium leading-normal min-w-[100px] hover:text-brand xl:w-[130px] h-[60px] xl:h-[80px] flex items-center justify-center text-center">
+                                className="text-black max-lg:text-[10px] z-10 group-hover:text-brand text-xs font-medium leading-normal min-w-[90px] hover:text-brand xl:w-[130px] h-[60px] xl:h-[80px] flex items-center justify-center text-center">
                           {label}
                         </span>
                         </Link>

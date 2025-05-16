@@ -128,7 +128,7 @@ export default function ManualBimeRegister({goToNext, goToPrev, onboardingData})
                 </div>
             </form>
         </Form>
-    <section className="xl:col-span-4 border-[4px] p-5"><h1 className="font-bold text-[20px]">صاحبان و مالکین خودرو لطفا به
+    <section className="xl:col-span-4 border-[4px] p-2"><h1 className="font-bold text-[20px]">صاحبان و مالکین خودرو لطفا به
         موارد ذیل توجه فرمایید:</h1>
         <ul className="text-[14px] list-decimal leading-10 pr-[10px] xl:pr-[40px] text-justify">
             <li>در انتخاب تعهدات بیمه دقت نمایید هر مبلغی را که به عنوان بیمه امداد مشخص می‌کنید برای استفاده در طول سال

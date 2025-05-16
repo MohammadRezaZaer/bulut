@@ -5,7 +5,7 @@ import {zodResolver} from "@hookform/resolvers/zod";
 import {toast} from "sonner";
 import {Form, FormControl, FormField, FormItem, FormLabel, FormMessage} from "@/components/ui/form";
 import {RadioGroup, RadioGroupItem} from "@/components/ui/radio-group";
-import {InputPlate} from "@/components/ui/input-plate";
+import {InputPlate} from "@/components/ui/plate/input-plate";
 import {Input} from "@/components/ui/input";
 import {Button} from "@/components/ui/button";
 import React from "react";
@@ -19,7 +19,7 @@ import {
     SAVARI,
     VEHICLE_TYPE
 } from "@/lib/schema/schemas";
-import {MotorPlateInput} from "@/components/ui/motor-plate-input";
+import {MotorPlateInput} from "@/components/ui/plate/motor-plate-input";
 
 
 

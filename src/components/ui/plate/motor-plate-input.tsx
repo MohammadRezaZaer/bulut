@@ -3,10 +3,10 @@
 import * as React from "react"
 import {cn} from "@/lib/utils"
 import {SelectContent, SelectItem, SelectTrigger} from "@/components/ui/select";
-import {InputDigits} from "@/components/ui/input-plate";
 import {MOTOR_LEFT_NUMBER, MOTOR_RIGHT_NUMBER, PELAK_MOTOR} from "@/lib/schema/schemas";
 import {useEffect} from "react";
 import {useFormContext} from "react-hook-form";
+import {InputDigits} from "@/components/ui/plate/input-digits";
 
 
 interface InputPlateProps {

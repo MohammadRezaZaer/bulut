@@ -34,7 +34,7 @@ export function Header({
         <div className="flex lg:flex-row-reverse flex-1 gap-x-4 justify-between self-stretch lg:gap-x-6 ">
 
 
-            <div className="flex items-center gap-x-4 lg:gap-x-6 mr-auto">
+            <div className="flex items-center gap-x-4 lg:gap-x-6 w-full">
 
                 <Navbar/>
                 {/* Separator */}
@@ -46,7 +46,7 @@ export function Header({
                 {isAuthenticated ? <ProfileComponent /> : <LoginButton className="bg-brand rounded-full [&_*]:text-white" href={ROUTES.LOGIN} text="ورود | ثبت نام" />}
 
             </div>
-            <div className={cn("flex h-16 shrink-0 items-center justify-center", {isAuthenticated:"max-xl:hidden"})}>
+            <div className={cn("flex h-16 shrink-0 items-center justify-center", {"max-xl:hidden":isAuthenticated})}>
                 <img
                     className="h-8 w-auto"
                     src="/images/fake-logo.png"

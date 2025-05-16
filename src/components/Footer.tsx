@@ -1,11 +1,15 @@
 import React from "react";
 import Link from "next/link";
 import {ROUTES} from "@/lib/constant/constants";
+import Email from '~/svg/Email.svg';
+import Phone from '~/svg/Phone.svg';
+import Mark from '~/svg/Mark.svg';
+
 
 const Footer = () => {
     return (
         <footer
-            className=" w-full min-w-[385px]  xl:pt-[56px] pr-6 pt-[32px] bg-brand xl:mt-[139px] mt-[59px]  xl:block relative  h-auto max-w-full m-auto   ">
+            className="p-4 w-full  xl:pt-[56px] bg-brand  xl:block relative h-auto max-w-full m-auto   ">
             {/*<button*/}
             {/*    className=" xl:w-[98px] w-[45px] h-[45px] flex justify-center items-center  xl:h-[98px] rounded-full   absolute -top-[2%] xl:-top-[10%] xl:left-[48%] left-[45%] ">*/}
             {/*    <img alt="" loading="lazy" width="40" height="40" decoding="async" data-nimg="1"*/}
@@ -21,8 +25,8 @@ const Footer = () => {
 
             {/*</button>*/}
             <section
-                className="overflow-x-hidden [&_*]:text-white flex justify-center  xl:flex-row flex-col xl:pb-[60px] pb-[30px] border-b  border-[#D9DBE9] xl:gap-[143px] gap-4  w-[90%]  mx-auto ">
-                <section className="xl:w-[310px] w-[90%] "><a className="flex gap-3 items-center " href="/">
+                className="overflow-x-hidden [&_*]:text-white flex justify-center  xl:flex-row flex-col xl:pb-[60px] pb-[30px] border-b  border-[#D9DBE9] xl:gap-[143px] gap-4 ">
+                <section className="xl:w-[310px]  "><a className="flex gap-3 items-center " href="/">
 
                     <img alt=""
                          loading="lazy"
@@ -34,7 +38,7 @@ const Footer = () => {
 
                     />
                     <h2 className="xl:text-[32px] text-[24px] font-bold  xl:mr-[-20px]">بیمه امداد</h2></a><p
-                    className="xl:mt-6 mt-3 text-justify xl:leading-9 leading-[30px] xl:text-sm text-[12px] font-medium xl:pr-0 ">بیمه
+                    className="xl:mt-6 mt-3 text-justify xl:leading-9 leading-[30px] xl:text-sm text-[12px] font-medium xl:pr-0">بیمه
                     امداد یک محصول و خدمت جديد بیمه‌ای است که توسط کارگزاری رسمی بيمه برخط مباشر شماره پروانه فعالیت
                     ١٨٧٨
                     تحت نظارت بیمه مرکزی‌ جمهوری اسلامی ایران با همکاری انجمن <a className="text-blue underline"
@@ -112,35 +116,22 @@ const Footer = () => {
                 <section className=""><h2
                     className="text-[#170F49]  xl:text-[16px] text-[14px] font-bold leading-[22px]">تماس با ما</h2>
                     <ul className="xl:mt-10 mt-4 flex flex-col xl:w-[286px] xl:gap-6 gap-4 xl:text-[16px] text-[14px]  font-medium leading-[20px]">
-                        <li className="flex xl:gap-[6px] gap-[3px] items-center"><img alt="" loading="lazy" width="30"
-                                                                                      height="30" decoding="async"
-                                                                                      data-nimg="1"
-                                                                                      className="xl:size-[30px] size-6"
-                                                                                      src="/svg/Email.svg"
+                        <li className="flex xl:gap-[6px] gap-[3px] items-center">
+                            <Email className="text-brand-secondary w-6"/>
 
 
-                        />info@emdadkhodroo.ir
+
+                       info@emdadkhodroo.ir
                         </li>
-                        <li className="flex xl:gap-[6px] gap-[3px] items-center"><img alt="" loading="lazy" width="30"
-                                                                                      height="30" decoding="async"
-                                                                                      data-nimg="1"
-                                                                                      className="xl:size-[30px] size-6"
-                                                                                      src="/svg/Phone.svg"
-
-
-                        />02190000000
+                        <li className="flex xl:gap-[6px] gap-[3px] items-center">
+                            <Phone className="text-brand-secondary w-6"/>
+                            02190000000
                         </li>
-                        <li className="flex xl:gap-[6px] gap-[3px]  items-start  leading-[32px]"><img alt=""
-                                                                                                      loading="lazy"
-                                                                                                      width="30"
-                                                                                                      height="30"
-                                                                                                      decoding="async"
-                                                                                                      data-nimg="1"
-                                                                                                      className="xl:size-[30px] size-6"
-                                                                                                      src="/svg/Mark.svg"
+                        <li className="flex xl:gap-[6px] gap-[3px]  items-start  leading-[32px]">
+                            
 
-
-                        /><span
+                            <Mark className="text-brand-secondary w-6"/>
+                            <span
                             className="xl:w-[260px] ">آدرس: میرداماد میدان مادر خیابان شاه نظری پلاک 41 طبقه 5 واحد 13</span>
                         </li>
                     </ul>
@@ -206,7 +197,7 @@ const Footer = () => {
                     /></button>
                 </section>
             </section>
-            <span className="block text-white w-full text-center py-4 !border-t !border-primary">توسعه دهنده گروه برنامه نویسی بیمه امداد در <a
+            <span className="block text-white w-full text-center py-4 border-t">توسعه دهنده گروه برنامه نویسی بیمه امداد در <a
                 className="text-blue underline" href="https://#/">شرکت لوتوس (آریانا ایده پرداز لوتوس)</a></span>
         </footer>
     );

@@ -1,7 +1,7 @@
 import { useAtom } from "jotai";
 import {setShowAzadPlateAtom, showAzadPlateAtom} from "@/lib/atoms/showAzadPlateAtom";
 import {FormControl, FormField, FormItem, FormMessage} from "@/components/ui/form";
-import {InputPlate} from "@/components/ui/input-plate";
+import {InputPlate} from "@/components/ui/plate/input-plate";
 import {AzadPlateInput} from "@/components/ui/azad-plate-input";
 import {AZAD_OR_NORMAL, PELAK, PELAK_AZAD} from "@/lib/schema/schemas"; // Import atoms
 

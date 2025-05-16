@@ -11,7 +11,7 @@ export default function BimeForm({ goToNext, goToPrev, onboardingData }) {
     const [selectedOption, setSelectedOption] = useState("manual");
 
     return (
-        <div className="max-w-7xl mx-auto px-4" >
+        <div className="max-w-7xl mx-auto xl:px-2" >
             {/* هشدار */}
             <section className="bg-rose-100 text-red-600 text-center p-4 mt-4 rounded-md text-[18px] leading-relaxed space-y-4">
                 <p>

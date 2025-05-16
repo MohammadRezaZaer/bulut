@@ -3,7 +3,8 @@
 import * as React from "react"
 import {cn} from "@/lib/utils"
 import {SelectContent, SelectItem, SelectTrigger} from "@/components/ui/select";
-import {InputDigits} from "@/components/ui/input-plate";
+
+import {InputDigits} from "@/components/ui/plate/input-digits";
 
 type InputPlateContextType = {
     slots: React.RefObject<HTMLInputElement | HTMLSelectElement>[]

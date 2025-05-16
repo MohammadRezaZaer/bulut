@@ -48,7 +48,7 @@ export default function RadioGroupsCard({value, onChange}) {
                   </span>
                 </span>
                                 <CheckCircleIcon
-                                    className={cn(!checked ? 'invisible' : '', 'h-5 w-5 text-brand')}
+                                    className={cn(!checked ? 'invisible' : '', 'h-7 w-7 text-brand')}
                                     aria-hidden="true"
                                 />
                                 <span

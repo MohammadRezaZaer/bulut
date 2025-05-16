@@ -16,7 +16,7 @@ import {showAzadPlateAtom} from "@/lib/atoms/showAzadPlateAtom";
 import {FormPhoneControl} from "@/components/step-form/FormPhoneControl";
 import {FormDateControl} from "@/components/step-form/FormDateControl";
 import {FormFieldControl} from "@/components/step-form/FormFieldControl";
-import {InputPlate} from "@/components/ui/input-plate";
+import {InputPlate} from "@/components/ui/plate/input-plate";
 import {Button} from "@/components/ui/button";
 
 
