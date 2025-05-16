@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Select from "react-select";
 import { Button } from "@/components/ui/button";
-import { FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import {FormControl, FormField, FormItem, FormLabel, FormMessage, useFormField} from "@/components/ui/form";
 
 // Import JSON data directly
 import brands from "@/data/car-brands.json";
@@ -42,6 +42,20 @@ interface TypeProps {
 interface CarSelectorProps {
     disabled?: boolean;
     form: any;
+}
+
+export function getReactSelectClassNames(fieldState: ControllerFieldState) {
+    return {
+        control: (state) =>
+            `border rounded-md  ${
+                fieldState?.error
+                    ? "text-red-500 ring-1 dark:text-red-900 ring-red-500  border-red-500 focus-visible:ring-red-500"
+                    : state?.isFocused
+                        ? "!border-brand !ring-brand !ring-1"
+                        : "border-gray-300"
+            }`,
+
+    };
 }
 
 const CarSelector = ({ disabled, form }: CarSelectorProps) => {
@@ -129,13 +143,15 @@ const CarSelector = ({ disabled, form }: CarSelectorProps) => {
         .filter((year) => year.model_id === selectedModel?.id)
         .flatMap((year) => year.years.map((y) => ({ value: y, label: y.toString() })));
 
+
+
     return (
         <div className="flex flex-col lg:grid lg:grid-cols-2 gap-4">
             {/* Brand Selector */}
             <FormField
                 control={form.control}
                 name={CAR_BRAND_FIELD}
-                render={({ field }) => (
+                render={({ field,fieldState }) => (
                     <FormItem>
                         <FormLabel>انتخاب برند</FormLabel>
                         <FormControl>
@@ -148,7 +164,8 @@ const CarSelector = ({ disabled, form }: CarSelectorProps) => {
                                 value={selectedBrand ? { value: selectedBrand.name, label: selectedBrand.name } : null}
                                 onChange={(option) => handleBrandChange(brands.find(b => b.name === option?.label) || null)}
                                 placeholder="انتخاب برند"
-                                className="w-full"
+                                className="w-full "
+                                classNames={getReactSelectClassNames(fieldState)}
                             />
                         </FormControl>
                         <FormMessage />
@@ -160,7 +177,7 @@ const CarSelector = ({ disabled, form }: CarSelectorProps) => {
             <FormField
                 control={form.control}
                 name={CAR_MODEL_FIELD}
-                render={({ field }) => (
+                render={({ field,fieldState }) => (
                     <FormItem>
                         <FormLabel>مدل</FormLabel>
                         <FormControl>
@@ -174,6 +191,7 @@ const CarSelector = ({ disabled, form }: CarSelectorProps) => {
                                 onChange={(option) => handleModelChange(availableModels.find(m => m.name === option?.label) || null)}
                                 placeholder="انتخاب مدل"
                                 className="w-full"
+                                classNames={getReactSelectClassNames(fieldState)}
                             />
                         </FormControl>
                         <FormMessage />
@@ -185,7 +203,7 @@ const CarSelector = ({ disabled, form }: CarSelectorProps) => {
             <FormField
                 control={form.control}
                 name={CAR_YEAR_FIELD}
-                render={({ field }) => (
+                render={({ field,fieldState }) => (
                     <FormItem>
                         <FormLabel>سال تولید</FormLabel>
                         <FormControl>
@@ -196,6 +214,7 @@ const CarSelector = ({ disabled, form }: CarSelectorProps) => {
                                 onChange={(option) => handleYearChange(option?.value || null)}
                                 placeholder="انتخاب سال تولید"
                                 className="w-full"
+                                classNames={getReactSelectClassNames(fieldState)}
                             />
                         </FormControl>
                         <FormMessage />
@@ -207,7 +226,7 @@ const CarSelector = ({ disabled, form }: CarSelectorProps) => {
             <FormField
                 control={form.control}
                 name={CAR_TYPE_FIELD}
-                render={({ field }) => (
+                render={({ field,fieldState }) => (
                     <FormItem>
                         <FormLabel>نوع خودرو</FormLabel>
                         <FormControl>
@@ -223,6 +242,7 @@ const CarSelector = ({ disabled, form }: CarSelectorProps) => {
                                 onChange={(option) => handleTypeChange(types.find(t => t.name === option?.label) || null)}
                                 placeholder="انتخاب نوع"
                                 className="w-full"
+                                classNames={getReactSelectClassNames(fieldState)}
                             />
                         </FormControl>
                         <FormMessage />

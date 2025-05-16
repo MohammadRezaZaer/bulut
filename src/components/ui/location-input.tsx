@@ -8,6 +8,7 @@ import states from "@/data/states.json";
 import cities from "@/data/cities.json";
 
 import { LOCATION_STATE_FIELD } from "@/lib/schema/schemas";
+import {getReactSelectClassNames} from "@/components/ui/car-brand-selector";
 
 // Define types for state and city
 interface CityProps {
@@ -102,7 +103,7 @@ const LocationSelector = ({ disabled, form }: LocationSelectorProps) => {
             <FormField
                 control={form.control}
                 name={STATE_FIELD}
-                render={({ field }) => (
+                render={({ field,fieldState }) => (
                     <FormItem>
                         <FormLabel>انتخاب استان</FormLabel>
                         <FormControl>
@@ -115,6 +116,7 @@ const LocationSelector = ({ disabled, form }: LocationSelectorProps) => {
                                 className="w-full"
                                 getOptionLabel={(e) => e.label}
                                 getOptionValue={(e) => e.value}
+                                classNames={getReactSelectClassNames(fieldState)}
                             />
                         </FormControl>
                         <FormMessage />
@@ -126,7 +128,7 @@ const LocationSelector = ({ disabled, form }: LocationSelectorProps) => {
             <FormField
                 control={form.control}
                 name={CITY_FIELD}
-                render={({ field }) => (
+                render={({ field,fieldState }) => (
                     <FormItem>
                         <FormLabel>انتخاب شهر</FormLabel>
                         <FormControl>
@@ -139,6 +141,7 @@ const LocationSelector = ({ disabled, form }: LocationSelectorProps) => {
                                 className="w-full"
                                 getOptionLabel={(e) => e.label}
                                 getOptionValue={(e) => e.value}
+                                classNames={getReactSelectClassNames(fieldState)}
                             />
                         </FormControl>
                         <FormMessage />

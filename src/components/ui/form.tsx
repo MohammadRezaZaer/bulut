@@ -141,31 +141,63 @@ const FormDescription = React.forwardRef<
   )
 })
 FormDescription.displayName = "FormDescription"
+function extractErrorMessages(error: unknown): string[] {
+  if (!error) return []
+
+  // اگر error یک شیء با message باشد
+  if (typeof error === "object" && "message" in error && typeof error.message === "string") {
+    return [error.message]
+  }
+
+  // اگر error یک شیء تو در تو باشد
+  if (typeof error === "object" && error !== null) {
+    return Object.values(error).flatMap((value) => extractErrorMessages(value))
+  }
+
+  return []
+}
 
 const FormMessage = React.forwardRef<
-  HTMLParagraphElement,
-  React.HTMLAttributes<HTMLParagraphElement>
+    HTMLParagraphElement,
+    React.HTMLAttributes<HTMLParagraphElement>
 >(({ className, children, ...props }, ref) => {
   const { error, formMessageId } = useFormField()
-  // console.log({error})
-  const body = error ? String(error?.message) : children
-  console.log({error,formMessageId,body})
-  if (!body) {
+
+  const messages = extractErrorMessages(error)
+
+  if (!messages.length && !children) {
     return null
   }
 
   return (
-    <p
-      ref={ref}
-      id={formMessageId}
-      className={cn("text-sm font-medium text-red-500 dark:text-red-900", className)}
-      {...props}
-    >
-      {body}
-    </p>
+      <div id={formMessageId}>
+        {[...messages].reverse().map((msg, index) => (
+            <p
+                key={index}
+                ref={index === 0 ? ref : undefined}
+                className={cn("text-sm font-medium text-red-500 dark:text-red-900", className)}
+                {...props}
+            >
+              {msg}
+            </p>
+        ))}
+
+        {!messages.length && children && (
+            <p
+                ref={ref}
+                className={cn("text-sm font-medium text-red-500 dark:text-red-900", className)}
+                {...props}
+            >
+              {children}
+            </p>
+        )}
+      </div>
   )
 })
+
 FormMessage.displayName = "FormMessage"
+export default FormMessage
+
 
 export {
   useFormField,

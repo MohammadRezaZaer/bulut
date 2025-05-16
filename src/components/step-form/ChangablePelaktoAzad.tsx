@@ -57,7 +57,7 @@ export function ChangablePelaktoAzad(props: { form: any }) {
                             <FormItem>
 
                                 <FormControl>
-                                    <InputPlate form={props.form} onChange={field.onChange} />
+                                    <InputPlate name={PELAK} />
                                 </FormControl>
                                 <FormMessage />
                             </FormItem>
@@ -76,7 +76,7 @@ export function ChangablePelaktoAzad(props: { form: any }) {
                             <FormItem>
 
                                 <FormControl>
-                                    <AzadPlateInput form={props.form} onChange={field.onChange} />
+                                    <AzadPlateInput name={PELAK_AZAD} />
                                 </FormControl>
                                 <FormMessage />
                             </FormItem>

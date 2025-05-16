@@ -91,7 +91,7 @@ export default function MarkaziBimeRegister({goToNext, goToPrev, onboardingData}
                                         <FormLabel>شماره پلاک
                                         </FormLabel>
                                         <FormControl>
-                                            <InputPlate form={form} onChange={field.onChange}/>
+                                            <InputPlate name={PELAK} />
                                         </FormControl>
                                         <FormMessage/>
                                     </FormItem>

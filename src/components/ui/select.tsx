@@ -5,6 +5,7 @@ import * as SelectPrimitive from "@radix-ui/react-select"
 import { Check, ChevronDown, ChevronUp } from "lucide-react"
 
 import { cn } from "@/lib/utils"
+import {useFormField} from "@/components/ui/form";
 
 const Select = SelectPrimitive.Root
 
@@ -15,12 +16,18 @@ const SelectValue = SelectPrimitive.Value
 const SelectTrigger = React.forwardRef<
   React.ElementRef<typeof SelectPrimitive.Trigger>,
   React.ComponentPropsWithoutRef<typeof SelectPrimitive.Trigger>
->(({ className, children, ...props }, ref) => (
-  <SelectPrimitive.Trigger
+>(({ className, children, ...props }, ref) => {
+
+
+  const { error } = useFormField()
+
+    return (<SelectPrimitive.Trigger
     ref={ref}
     className={cn(
-      "flex h-10 w-full direction-rtl items-center justify-between rounded-md border border-neutral-200 bg-white px-3 py-2 text-sm ring-offset-white data-[placeholder]:text-neutral-500 focus:outline-none focus:ring-2 focus:ring-neutral-950 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1 dark:border-neutral-800 dark:bg-neutral-950 dark:ring-offset-neutral-950 dark:data-[placeholder]:text-neutral-400 dark:focus:ring-neutral-300",
-      className
+      "flex h-10 w-full direction-rtl items-center justify-between rounded-md border border-gray-300 bg-white px-3 py-2 text-sm data-[placeholder]:text-neutral-500 focus:outline-none focus:ring-2 focus:ring-brand  disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1 dark:border-neutral-800 dark:bg-neutral-950 dark:ring-offset-neutral-950 dark:data-[placeholder]:text-neutral-400 dark:focus:ring-neutral-300",
+        { "text-red-500 dark:text-red-900 ring-red-500  border-red-500 focus:ring-red-500 focus-visible:ring-red-500 ":error},
+
+        className
     )}
     {...props}
   >
@@ -29,7 +36,8 @@ const SelectTrigger = React.forwardRef<
       <ChevronDown className="h-4 w-4 opacity-50" />
     </SelectPrimitive.Icon>
   </SelectPrimitive.Trigger>
-))
+)
+})
 SelectTrigger.displayName = SelectPrimitive.Trigger.displayName
 
 const SelectScrollUpButton = React.forwardRef<

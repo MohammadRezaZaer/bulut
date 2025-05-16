@@ -174,33 +174,48 @@ const sharedFieldsForManual = z.object({
     }).nonempty("مقدار پوشش الزامی است."),
 });
 
-function getZodPelak() {
-    return z.preprocess((val) => {
+export function getZodPelak() {
+    return z.preprocess(
+
+
+        (val) =>{
             console.log({val})
             return val ?? {
                 leftNumber: "",
                 letter: "",
                 rightNumber: "",
                 iranNumber: "",
-            };
+            }
         },
-        z.object({
-            leftNumber: z.string(),
-            letter: z.string(),
-            rightNumber: z.string(),
-            iranNumber: z.string(),
-        })
-            .refine((data) => {
-                return (
-                    /^\d{2}$/.test(data.leftNumber) &&
-                    /^[\u0600-\u06FFa-zA-Z]+$/.test(data.letter) &&
-                    /^\d{3}$/.test(data.rightNumber) &&
-                    /^\d{2}$/.test(data.iranNumber)
-                );
-            }, {
-                message: "لطفا همه فیلدهای پلاک را بدرستی وارد نمایید.",
-                path: [],
-            }));
+
+        z
+            .object({
+                leftNumber: z
+                    .string()
+                    .regex(/^\d{2}$/, "دو رقم عددی وارد شود"),
+                letter: z
+                    .string()
+                    .regex(/^[\u0600-\u06FFa-zA-Z]{1,5}$/, "حرف پلاک معتبر نیست"),
+                rightNumber: z
+                    .string()
+                    .regex(/^\d{3}$/, "سه رقم عددی وارد شود"),
+                iranNumber: z
+                    .string()
+                    .regex(/^\d{2}$/, "کد ایران باید دو رقمی باشد"),
+            })
+            // .refine(
+            //     (data) =>
+            //         Boolean(
+            //             data.leftNumber &&
+            //             data.letter &&
+            //             data.rightNumber &&
+            //             data.iranNumber
+            //         ),
+            //     {
+            //         message: "لطفا همه فیلدهای پلاک را کامل و صحیح وارد نمایید.",
+            //     }
+            // )
+    );
 }
 
 // پلاک عادی
@@ -239,33 +254,26 @@ function getZodMotorPelak() {
 }
 
 
-
-function getZodAzadPelak() {
-    return z.preprocess((val) => {
-            console.log({val})
-            return val ?? {
+export function getZodAzadPelak() {
+    return z.preprocess(
+        (val) =>
+            val ?? {
                 azadleftNumber: "",
                 azadrightNumber: "",
+            },
+        z
+            .object({
+                azadleftNumber: z
+                    .string()
+                    .regex(/^\d{5}$/, "پنج رقم عددی وارد شود"),
+                azadrightNumber: z
+                    .string()
+                    .regex(/^\d{2}$/, "دو رقم عددی وارد شود"),
+            })
 
-            };
-        },
-        z.object({
-            azadleftNumber: z.string(),
-            azadrightNumber: z.string(),
-
-        })
-            .refine((data) => {
-                return (
-                    /^\d{5}$/.test(data.azadleftNumber) &&
-
-                    /^\d{2}$/.test(data.azadrightNumber)
-
-                );
-            }, {
-                message: "لطفا همه فیلدهای پلاک را بدرستی وارد نمایید.",
-                path: [],
-            }));
+    );
 }
+
 
 // پلاک مناطق آزاد
 const azadPlateSchema = sharedFieldsForManual.extend({
