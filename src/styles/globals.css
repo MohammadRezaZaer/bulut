@@ -30,32 +30,7 @@
 
 @layer base {
   /* inter var - latin */
-  @font-face {
-    font-family: 'YekanBakhFaNum';
-    font-style: normal;
-    font-weight: 300;
-    font-display: block;
-    src: url('/fonts/YekanBakhFaNum-Light.woff2') format('woff2');
 
-  }
-
-  @font-face {
-    font-family: 'YekanBakhFaNum';
-    font-style: normal;
-    font-weight: 400;
-    font-display: block;
-    src: url('/fonts/YekanBakhFaNum-Regular.woff2') format('woff2');
-
-  }
-
-  @font-face {
-    font-family: 'YekanBakhFaNum';
-    font-style: normal;
-    font-weight: 700;
-    font-display: block;
-    src: url('/fonts/YekanBakhFaNum-Bold.woff2') format('woff2');
-
-  }
 
   .cursor-newtab {
     cursor: url('/images/new-tab.png') 10 10, pointer;

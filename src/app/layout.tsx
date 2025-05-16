@@ -9,7 +9,8 @@ import {Metadata} from "next";
 
 import { Toaster } from "@/components/ui/sonner"
 import TopLoader from "@/components/top-loader";
-// import {yekanBakh} from "~/fonts/fonts";
+import {yekanBakh} from "@/app/lib/fonts";
+import {cn} from "@/lib/utils";
 
 
 export const metadata: Metadata = {
@@ -58,7 +59,7 @@ export default async function RootLayout(props: {
 }) {
 
   return (
-      <html lang="fa" dir={"rtl"} className={""}>
+      <html lang="fa"   className={cn(yekanBakh.variable,/* iranSansX.variable*/)} dir={"rtl"} >
 
       <body>
       <TopLoader />

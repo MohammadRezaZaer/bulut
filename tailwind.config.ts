@@ -8,9 +8,16 @@ export default {
     content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
   	extend: {
-  		fontFamily: {
-  			primary: ['YekanBakhFaNum', ...defaultTheme.fontFamily.sans]
-  		},
+
+		fontFamily: {
+			primary: ['var(--font-yekan)', ...defaultTheme.fontFamily.sans],
+			'sans': ['var(--font-yekan)', ...defaultTheme.fontFamily.sans],
+			'mono': ['var(--font-yekan)', ...defaultTheme.fontFamily.sans],
+			display: ['var(--font-yekan)'],
+			display_p: ['var(--font-yekan)'],
+			body: ['var(--font-yekan)'],
+			body_p: ['var(--font-yekan)'],
+		},
   		colors: {
   			brand: {
   				DEFAULT: brandColor,
