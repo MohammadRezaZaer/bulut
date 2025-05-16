@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { useController, useFormContext } from "react-hook-form";
 import {useFormField} from "@/components/ui/form";
 import {cn} from "@/lib/utils";
@@ -14,10 +14,10 @@ const letterOptions = [
 ];
 
 export const InputLetter = ({ name }: InputLetterProps) => {
-    const { control } = useFormContext();
+    const { control,trigger } = useFormContext();
 
     const {
-        field: { value = "", onChange, ref },
+        field: { value = "", onChange, onBlur, ref },
     } = useController({
         name,
         control,
@@ -27,11 +27,20 @@ export const InputLetter = ({ name }: InputLetterProps) => {
     const { error } = useFormField()
 
     const lastPart = name.includes('.') ? name.split('.').pop() : name;
+    const [touched, setTouched] = useState(false);
+
+    const handleBlur = async (e: React.FocusEvent<HTMLInputElement>) => {
+        setTouched(true); // کاربر از فیلد خارج شد
+        onBlur(); // به RHF اطلاع بده
+        await trigger(name); // ولیدیشن فیلد را اجرا کن
+
+    };
 
     return (
         <div className="flex h-[32px] w-[60px] items-center justify-center rounded-md ">
             <select
                 ref={ref}
+                onBlur={handleBlur}
                 value={value}
                 onChange={(e) => onChange(e.target.value)}
                 className={cn("w-[48px] focus:outline-none ring-1 ring-gray-100 ring-offset-2 focus-visible:ring-2 focus-visible:ring-brand rounded-md"

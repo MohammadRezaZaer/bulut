@@ -1,11 +1,11 @@
 "use client";
-import React from "react";
+import React, {useState} from "react";
 import {toast} from "sonner";
 import {useForm} from "react-hook-form";
 import {zodResolver} from "@hookform/resolvers/zod";
 import * as z from "zod";
 import {Button} from "@/components/ui/button";
-import {Form} from "@/components/ui/form";
+import {Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage} from "@/components/ui/form";
 import LocationSelector from "@/components/ui/location-input";
 import {carColors} from "@/utils/navigations-and_other_sets";
 import {ChangablePelaktoAzad} from "@/components/step-form/ChangablePelaktoAzad";
@@ -19,10 +19,14 @@ import {showAzadPlateAtom} from "@/lib/atoms/showAzadPlateAtom";
 import {FormPhoneControl} from "@/components/step-form/FormPhoneControl";
 import {FormDateControl} from "@/components/step-form/FormDateControl";
 import {FormFieldControl} from "@/components/step-form/FormFieldControl";
+import {FileInput, FileUploader, FileUploaderContent, FileUploaderItem} from "@/components/ui/extension/file-upload";
+import {CloudUpload, Paperclip} from "lucide-react";
+import {FormUploadControl} from "@/components/step-form/FormUploadControl";
 
 
 export default function ManualBimeRegister({goToNext, goToPrev, onboardingData}) {
     const [showAzadPlate] = useAtom(showAzadPlateAtom);
+
 
     console.log({onboardingData})
     // Form initialization using react-hook-form
@@ -117,6 +121,10 @@ export default function ManualBimeRegister({goToNext, goToPrev, onboardingData})
                                        value: ((i + 1) * 1000000).toString(),
                                        label: ((i + 1) * 1000000).toLocaleString()
                                    }))} form={form}/>
+
+
+                <FormUploadControl form={form} name={"file_upload"} />
+
 
                 {/* Submit Button */}
                 <div className="flex w-full gap-4 justify-center">

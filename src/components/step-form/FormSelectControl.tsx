@@ -1,4 +1,3 @@
-// Helper components for field controls
 import {FormControl, FormField, FormItem, FormLabel, FormMessage} from "@/components/ui/form";
 import React from "react";
 import {Select, SelectContent, SelectItem, SelectTrigger, SelectValue} from "@/components/ui/select";

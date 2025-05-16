@@ -172,6 +172,20 @@ const sharedFieldsForManual = z.object({
     coverageAmount: z.string({
         required_error: "مقدار پوشش الزامی است.",
     }).nonempty("مقدار پوشش الزامی است."),
+
+    file_upload: z
+        .array(
+            z
+                .instanceof(File)
+                .refine((file) => file.size <= 4 * 1024 * 1024, {
+                    message: "حجم فایل نباید بیشتر از ۴ مگابایت باشد.",
+                })
+                .refine((file) => ["image/png", "image/jpeg", "image/jpg", "image/gif"].includes(file.type), {
+                    message: "فرمت فایل نامعتبر است. فقط PNG, JPG, JPEG, GIF مجاز است.",
+                })
+        )
+        .min(1, { message: "انتخاب حداقل یک فایل الزامی است." })
+        .max(5, { message: "حداکثر ۵ فایل می‌توانید آپلود کنید." }),
 });
 
 export function getZodPelak() {

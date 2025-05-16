@@ -126,7 +126,7 @@ export default function MyForm() {
                                         {files &&
                                             files.length > 0 &&
                                             files.map((file, i) => (
-                                                <FileUploaderItem key={i} index={i}>
+                                                <FileUploaderItem  key={i} index={i}>
                                                     <Paperclip className="h-4 w-4 stroke-current"/>
                                                     <span>{file.name}</span>
                                                 </FileUploaderItem>
