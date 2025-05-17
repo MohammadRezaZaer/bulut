@@ -8,7 +8,7 @@ export default function Page() {
 
 
     return (<>
-            <OnboardingFlow/>
+            <OnboardingFlow url={"/insurance-signup"}/>
         </>
 
     );
